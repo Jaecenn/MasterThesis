@@ -1,0 +1,169 @@
+% arara: pdflatex: { synctex: yes }
+% arara: makeindex: { style: ctuthesis }
+% arara: bibtex
+
+% The class takes all the key=value arguments that \ctusetup does,
+% and a couple more: draft and oneside
+\documentclass[twoside]{ctuthesis}
+
+\ctusetup{
+	preprint = \ctuverlog,
+%	mainlanguage = english,
+	titlelanguage = english,
+	mainlanguage = english,
+	otherlanguages = {czech,english},
+	title-czech = {Analýza periodických vad textilních vláken ve frekvenční oblasti},
+	title-english = {Analysis of the textile fibers unevenness in frequency domain},
+	subtitle-czech = {},
+	subtitle-english = {},
+	doctype = M,
+	faculty = F3,
+	department-czech = {Katedra měření},
+	department-english = {Department of Measurements},
+	author = {Ondřej Renza},
+	supervisor = {Ing. Jakub Parák},
+%	supervisor-address = {Ústav X, \\ Uliční 5, \\ Praha 99},
+%	supervisor-specialist = {John Doe},
+	fieldofstudy-english = {Sensors and Instrumentation},
+	subfieldofstudy-english = {Cybernetics and Robotics},
+	fieldofstudy-czech = {Senzory a přístrojová technika},
+	subfieldofstudy-czech = {Kybernetika a Robotika},
+	keywords-czech = {zpracování digitálního signálu, textilní vady, nerovnoměrnost},
+	keywords-english = {digital signal processing, textile defects, uneveness},
+	day = 15,
+	month = 5,
+	year = 2016,
+	specification-file = {ctutest-zadani.pdf},
+%	front-specification = true,
+%	front-list-of-figures = false,
+%	front-list-of-tables = false,
+%	monochrome = true,
+%	layout-short = true,
+}
+
+\ctuprocess
+
+\addto\ctucaptionsczech{%
+	\def\supervisorname{Vedoucí}%
+	\def\subfieldofstudyname{Studijní program}%
+}
+
+\ctutemplateset{maketitle twocolumn default}{
+	\begin{twocolumnfrontmatterpage}
+		\ctutemplate{twocolumn.thanks}
+		\ctutemplate{twocolumn.declaration}
+		\ctutemplate{twocolumn.abstract.in.titlelanguage}
+		\ctutemplate{twocolumn.abstract.in.secondlanguage}
+		\ctutemplate{twocolumn.tableofcontents}
+		\ctutemplate{twocolumn.listoffigures}
+	\end{twocolumnfrontmatterpage}
+}
+
+% Theorem declarations, this is the reasonable default, anybody can do what they wish.
+% If you prefer theorems in italics rather than slanted, use \theoremstyle{plainit}
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{conjecture}[theorem]{Conjecture}
+
+\theoremstyle{note}
+\newtheorem*{remark*}{Remark}
+\newtheorem{remark}[theorem]{Remark}
+
+% Abstract in Czech
+\begin{abstract-czech}
+To be done.
+\end{abstract-czech}
+
+% Abstract in English
+\begin{abstract-english}
+ To be done.
+\end{abstract-english}
+
+% Acknowledgements / Podekovani
+\begin{thanks}
+Děkuji.
+\end{thanks}
+
+% Declaration / Prohlaseni
+\begin{declaration}
+Prohlašuji, že jsem předloženou práci vypracoval samostatně, a že jsem uvedl veškerou použitou literaturu.
+
+V Praze, \ctufield{day}.~\monthinlanguage{title}~\ctufield{year}
+\end{declaration}
+
+% Only for testing purposes
+\listfiles
+\usepackage[pagewise]{lineno}
+\usepackage{lipsum,blindtext}
+\usepackage{mathrsfs} % provides \mathscr used in the ridiculous examples
+
+\begin{document}
+
+\maketitle
+
+\chapter{Introduction}
+%\chapter{Introduction}
+Textile manufacturing has always been important industry field. Major part of this industry is formed by process called spinning, where twisting strands of fibers together form yarn. The modern spinners - textile machines, that execute process of spinning - have been significantly improved and now they reach high level of automation. This allows not only faster and cheaper production but also more focus on quality of the produced textile yarn. 
+
+Quality of the yarn could devaluate the final product by creating defects, such as a rapid changes in color or thickness etc., in textile material. Even with modern technologies it is still impossible to produce yarn without any defects. We can't prevent yarn defects by carefully selecting and preprocessing fiber, because some defects can be created by spinning process itself. Out of many types of defects this thesis is focused on analysis of yarn uneveness (also called yarn irregularity). This is describing yarn with a diameter that is not even along it's length, but it is changing it's value periodically. We can measure this defect in the form of mass variation per unit length.
+
+Designed system is not aiming to improve quality of spinned yarn, but to monitor quality (specifically uneveness) of produced yarn during the spinning process. Due to this monitoring it is possible to stop spinning process if defective yarn is detected. This allows the operator to resolve the issues that caused it, e.g. by replacing spinner fiber source with new one and reconnecting different yarn endings.
+
+The project - described in this thesis - has been made in cooperation with company Rieter CZ s.r.o, who provided the device requirements, critical measurement data and other important information. The goal of the project was to research and develop an algorithm for analysis and detection of yarn uneveness by using spectrograms and to design an embedded system capable of measuring diameter of yarn while fulfilling the required time constraints and implement detection algorithm to it. System is required to be controlled by ARM M4 microcontroller. Thus the algorithm has to be implemented in a way that takes in consideration memory and computational limitation of such microcontrollers.
+
+Very important specification was requirement to analyse quality of two textile fibre types: the  yarn and the sliver. Where sliver is the input textile fibre for the spinning process and the yarn is it's final product. The both of which has significant physical differences. Mainly they differ in size, because yarn diameter is usually in range of micrometers and sliver diameter is in range from millimeters to centimeters. The diameter of the sliver is measured on combing machine, which precedes the spinning process. This requires different measuring system and filtration processing, therefore two systems and algorithms were designed for quality analysis of each fibre type. Their core content is equal but there are some major differences, which are described later in this thesis. The most significant difference is that processing of signal representing sliver diameter requires much more advanced techniques of digital signal processing. This is necessary due to strong presence of periodical artefacts on sliver diameter caused by machine preprocessing. This type of diameter fluctuations have to be distinguished from the actual sliver uneveness, which is task for complicated digital filtration in frequency domain.
+
+\chapter{Teoretical Introduction}
+
+\section{Textile Engineering}
+\subsection{Textile Processes and Machines}
+\subsection{Textile Fibres and Defects}
+\subsection{State of Art}
+\section{Fourier transform}
+\subsection{Fast Fourier Transform}
+\section{Digital Processing Techniques}
+\subsection{Spectrograms}
+\section{Embedded systems and microcontrollers}
+\subsection{Embedded systems}
+\subsection{ARM M4}
+
+\chapter{Practical Implementation}
+\section{Description of Algorithm for Uneveness Analysis}
+\subsection{Flowchart Diagram}
+\section{Description of Designed System}
+\subsection{Block Diagram}
+\section{Implementation of Software}
+\subsection{Filtration}
+\subsection{Detection of Defects}
+\subsection{Automatic Evaulation}
+\subsection{Example of Designed Application}
+\section{Implementation of Hardware}
+\subsection{Electronic Circuits Design}
+\subsection{Description of possible sensors}
+\subsection{Designed Prototype}
+\chapter{Conclusions}
+
+
+\medskip
+
+\begin{proof}\begin{enumerate} \item[8] Bla \item Blo \end{enumerate} \end{proof}
+
+\appendix
+
+\printindex
+
+\appendix
+
+\bibliographystyle{amsalpha}
+\bibliography{ctutest}
+
+\ctutemplate{specification.as.chapter}
+
+\end{document}
