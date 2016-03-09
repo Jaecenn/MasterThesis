@@ -202,11 +202,25 @@ Given $N$ DFT coefficients $X[k], 0 \leq k \leq N-1$, we can recover the N sampl
 x[n]=\frac{1}{N} \sum_{k=0}^{N-1}X[k]e^{j \frac{2 \pi}{N} kn}.
 \end{equation}
 If $x[n]$ has infinite duration, the frequency samples  $X[2 \pi k/ N], k=0, 1, ..., N-1$ correspond to a periodic sequence $x_{p}[n]$ of period N, which is an aliased version of $x[n]$. When the sequence $x[n]$ has finite duration of length $L \leq N$, then  $x_{p}[n]$ is simply a periodic repetition of $x[n]$.
+
+Understanding properties of DFT are critical to application of the transformation to practical problems. List of the main DFT properties contains:
+
+- Linearity,
+- Periodicity,
+- Complex Conjugate,
+- Circular Convolution,
+- DFT and the z-transform.
+
+For detailed description of DFT properties see \cite{cite:2,cite:RT_DSP}.
+
+%smearing, leakage (403 - ADSP)
+The length N of the DFT should be larger than L = T0/T to obtain good visual representation of DTFT. If we set N to power of two N=2^Q, fft calculation done microcontroller is executed faster.
 \subsection{Fast Fourier Transform}
 \section{Digital Processing Techniques}
 \subsection{Spectrograms}
 \section{Embedded systems and microcontrollers}
 \subsection{Embedded systems}
+\subsection{Real-time constraints}
 \subsection{ARM M4}
 
 \chapter{Practical Implementation}
