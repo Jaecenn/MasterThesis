@@ -121,12 +121,87 @@ The project - described in this thesis - has been made in cooperation with compa
 Very important specification was requirement to analyse quality of two textile fibre types: the  yarn and the sliver. Where sliver is the input textile fibre for the spinning process and the yarn is it's final product. The both of which has significant physical differences. Mainly they differ in size, because yarn diameter is usually in range of micrometers and sliver diameter is in range from millimeters to centimeters. The diameter of the sliver is measured on combing machine, which precedes the spinning process. This requires different measuring system and filtration processing, therefore two systems and algorithms were designed for quality analysis of each fibre type. Their core content is equal but there are some major differences, which are described later in this thesis. The most significant difference is that processing of signal representing sliver diameter requires much more advanced techniques of digital signal processing. This is necessary due to strong presence of periodical artefacts on sliver diameter caused by machine preprocessing. This type of diameter fluctuations have to be distinguished from the actual sliver uneveness, which is task for complicated digital filtration in frequency domain.
 
 \chapter{Teoretical Introduction}
-
+Before the process of software and hardware development could begin, detailed theoretical research had to be done. Topics of the research include textile manufacturing, combing process, spinning process and textile fiber defects to understand better device requirements. Another step of research was focused on digital signal processing techniques that could be used on the project, mainly spectrogram estimation and it's calculation using Fast Fourier Transform, together with possible filtration algorithms. Another research topic was aimed to cover embedded systems and specifically micro-controller usage and it's limitations
 \section{Textile Engineering}
-\subsection{Textile Processes and Machines}
-\subsection{Textile Fibres and Defects}
+Goal of textile manufacturing is to make fabric from textile fibers, which can be then used for clothes. This process can be separated in several stages:
+
+- Preparatory Processes - prepares the textile fiber for spinning process by blending, carding and combing,
+
+- Spinning - fibres are spun into yarns,
+
+- Knitting or Weaving - yarns becomes fabric,
+
+- Finnishing - fabric is transformed into clothes etc.
+
+In regards to the topic of this thesis only two - the spinning and combing processes - are described.
+\subsection{Textile Fibers}
+Fibers are the basis for all textiles. We distinguished the two main types: natural fibers and synthetic fibers. The natural fibers are:
+
+- Cotton - from the cotton plant,
+
+- Linen - from the flax plant,
+
+- Wool - from sheep and
+
+- Silk - from silkworms.
+
+Examples of widely used synthetic fibers are:
+
+- Viscose - from pine trees and petrochemicals,
+
+- Acrylic, nylon and polyester - from oil and coal. 
+
+The cotton is the most important natural fiber and analysis of the quality in this thesis is is aimed specifically on cotton manufacturing. 
+The fibers can have two main forms during the manufacturing process - the sliver and the yarn. The sliver is created by carding the fiber. In this process textile fibers are separated and then joint together into a loose strand of 1 cm to 4 cm in diameter. In the end of textile manufacturing process an yarn is created. It is a textile fiber with significantly smaller diameter, in comparison to sliver, usually in range of micrometers.
+\subsection{Combing Process}
+Combing is a preparation process during textile manufacturing. It is sub-part of a cleaning process which precedes the spinning process. Cotton contains a lot of impurities such as dirt, dust, foreign materials, neps and very short fibers. All of these should be eliminated by cleaning process. The combing process removes mainly short fibers and neps in sliver, which helps to produce stronger and cleaner yarn.
+
+Combing is used in production of medium-fine or fine yarns, where quality of yarn is important. This quality improvement is at cost of loss of raw material and high expenses for buying and operating the combing machines. 
+
+Comber (see Image 1) consists of three main parts: 
+
+- The Feed
+
+- The Nipper
+
+- The Comb
+
+The process of removing the impurities is formed by attaching the input fibre in form of sliver to the feed roller
+
+An input of this process is textile sliver (described in chapter xx).
+\subsection{Spinning Process}
+The term “spinning” in this context refers to the process that executes conversion of a large quantity of individual unordered fibers of relatively short length into a linear, ordered product of very great length by using spinning machines. There are three main methods of executing process of spinning:
+
+- Ring Spinning,
+
+- Rotor Spinning and
+
+- Air-jet Spinning.
+
+All of these systems yields yarn with different structures and properties. Each system has its advantages and limitations in terms of technical feasibility and economic viability.
+\section{Overview of Yarn Quality Sensors}
+Importance of yarn quality on final product became clear in 1950s when first electronic yarn quality sensors were invented. Since then many principles were used in detection of yarn defects - optical, mechanical or even chemical. \cite{cite:1} 
 \subsection{State of Art}
-\section{Fourier transform}
+
+\section{Digital Signal Processing}
+Largest part of work on this project is oriented on digital signal processing. Usage of modern advanced algorithms from this field allowed to design projected device in the first place. This section covers the most importants algorithms that are used in this project.
+	
+	Digital signal processing is an area of science and engineering that has developed rapidly over the past 40 years as a result of significant advances in digital computer technology. Today, many of the signal processing tasks that were conventionally performed by analog means are now realized by less expensive digital hardware.
+	\cite{cite:2}
+	To perform the processing digitally, there is need for conversion between analog signal and digital signal. This is done by interface called analog-to-digital (A/D) converter, which yields a digital signal as it's output that is appropriate as an input to the digital processor.
+	\cite{cite:2,cite:3}
+\subsection{Discrete Fourier Transform}
+To perform frequency analysis on a discrete-time signal ${x[n]}$, we convert the time-domain sequence to an equivalent frequency-domain representation. This conversion is obtain by Discrete Fourier Transform that can be algebraically formulated as follows.\cite{cite:2,cite:3}
+	
+Given N consecutive samples $x[n], 0 \leq n \leq N-1$ of a periodic or aperiodic sequence, the N-point Discrete Fourier Transform(DFT) $X[k], 0 \leq k \leq N-1$ is defined by
+\begin{equation} \label{eq:DFT}
+X[k]=\sum_{k=0}^{N-1}x[n]e^{-j \frac{2 \pi}{N} kn}.
+\end{equation}
+Given $N$ DFT coefficients $X[k], 0 \leq k \leq N-1$, we can recover the N sample values of sequence $x[n], 0 \leq n \leq N-1$ using Inverse Discrete Fourier Transform (IDFT) given by
+\begin{equation} \label{eq:IDFT}
+x[n]=\frac{1}{N} \sum_{k=0}^{N-1}X[k]e^{j \frac{2 \pi}{N} kn}.
+\end{equation}
+If $x[n]$ has infinite duration, the frequency samples  $X[2 \pi k/ N], k=0, 1, ..., N-1$ correspond to a periodic sequence $x_{p}[n]$ of period N, which is an aliased version of $x[n]$. When the sequence $x[n]$ has finite duration of length $L \leq N$, then  $x_{p}[n]$ is simply a periodic repetition of $x[n]$.
 \subsection{Fast Fourier Transform}
 \section{Digital Processing Techniques}
 \subsection{Spectrograms}
@@ -161,8 +236,9 @@ Very important specification was requirement to analyse quality of two textile f
 
 \appendix
 
-\bibliographystyle{amsalpha}
-\bibliography{ctutest}
+%\bibliographystyle{amsalpha}
+\bibliographystyle{siam}
+\bibliography{ctuDIP_biblio}
 
 \ctutemplate{specification.as.chapter}
 
