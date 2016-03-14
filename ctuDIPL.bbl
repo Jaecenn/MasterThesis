@@ -1,15 +1,23 @@
 \begin{thebibliography}{1}
 
 \bibitem{cite:3}
-{\sc V.~K.~I. Dimitris G.~Manolakis{,}}, {\em Applied Digital Signal
-  Processing}, Cambridge University Press, 2011.
+{\sc V.~K.~I. Dimitris G.~Manolakis}, {\em Applied Digital Signal Processing},
+  Cambridge University Press, 2011.
 
 \bibitem{cite:2}
-{\sc D.~G.~M. John G.~Proakis{,}}, {\em Digital Signal Processing}, Pearson
+{\sc D.~G.~M. John G.~Proakis}, {\em Digital Signal Processing}, Pearson
   Prentice Hall, 2007.
 
 \bibitem{cite:1}
 {\sc P.~Kousalík}, {\em Inteligentní snímač pro on-line vyhodnocování
   kvality příze}, dissertation, Technická univerzita v Liberci, 2011.
+
+\bibitem{cite:RT_DSP}
+{\sc W.~T. Sen M.~Kuo, Bob H.~Lee}, {\em Real-Time Digital Signal Processing},
+  John Wiley and Sons, Ltd, 2013.
+
+\bibitem{cite:FoFF}
+{\sc A.~Ziabicki}, {\em Fundamentals of Fiber Formation}, John Wiley and Sons,
+  Ltd., 1976.
 
 \end{thebibliography}

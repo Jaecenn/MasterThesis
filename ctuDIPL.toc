@@ -20,7 +20,7 @@
 \select@language {english}
 \select@language {english}
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
-\contentsline {chapter}{\numberline {2}Teoretical Introduction}{3}{chapter.2}
+\contentsline {chapter}{\numberline {2}Theoretical Introduction}{3}{chapter.2}
 \contentsline {section}{\numberline {2.1}Textile Engineering}{3}{section.2.1}
 \contentsline {subsection}{\numberline {2.1.1}Textile Fibers}{3}{subsection.2.1.1}
 \contentsline {subsection}{\numberline {2.1.2}Combing Process}{4}{subsection.2.1.2}
@@ -30,11 +30,13 @@
 \contentsline {section}{\numberline {2.3}Digital Signal Processing}{5}{section.2.3}
 \contentsline {subsection}{\numberline {2.3.1}Discrete Fourier Transform}{5}{subsection.2.3.1}
 \contentsline {subsection}{\numberline {2.3.2}Fast Fourier Transform}{6}{subsection.2.3.2}
+\contentsline {subsection}{\numberline {2.3.3}Power spectral density}{6}{subsection.2.3.3}
 \contentsline {section}{\numberline {2.4}Digital Processing Techniques}{6}{section.2.4}
 \contentsline {subsection}{\numberline {2.4.1}Spectrograms}{6}{subsection.2.4.1}
 \contentsline {section}{\numberline {2.5}Embedded systems and microcontrollers}{6}{section.2.5}
 \contentsline {subsection}{\numberline {2.5.1}Embedded systems}{6}{subsection.2.5.1}
-\contentsline {subsection}{\numberline {2.5.2}ARM M4}{6}{subsection.2.5.2}
+\contentsline {subsection}{\numberline {2.5.2}Real-time constraints}{6}{subsection.2.5.2}
+\contentsline {subsection}{\numberline {2.5.3}ARM M4}{6}{subsection.2.5.3}
 \contentsline {chapter}{\numberline {3}Practical Implementation}{7}{chapter.3}
 \contentsline {section}{\numberline {3.1}Description of Algorithm for Uneveness Analysis}{7}{section.3.1}
 \contentsline {subsection}{\numberline {3.1.1}Flowchart Diagram}{7}{subsection.3.1.1}

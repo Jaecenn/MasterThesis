@@ -1,5 +1,5 @@
 \BOOKMARK [0][-]{chapter.1}{Introduction}{}% 1
-\BOOKMARK [0][-]{chapter.2}{Teoretical Introduction}{}% 2
+\BOOKMARK [0][-]{chapter.2}{Theoretical Introduction}{}% 2
 \BOOKMARK [1][-]{section.2.1}{Textile Engineering}{chapter.2}% 3
 \BOOKMARK [2][-]{subsection.2.1.1}{Textile Fibers}{section.2.1}% 4
 \BOOKMARK [2][-]{subsection.2.1.2}{Combing Process}{section.2.1}% 5
@@ -9,25 +9,27 @@
 \BOOKMARK [1][-]{section.2.3}{Digital Signal Processing}{chapter.2}% 9
 \BOOKMARK [2][-]{subsection.2.3.1}{Discrete Fourier Transform}{section.2.3}% 10
 \BOOKMARK [2][-]{subsection.2.3.2}{Fast Fourier Transform}{section.2.3}% 11
-\BOOKMARK [1][-]{section.2.4}{Digital Processing Techniques}{chapter.2}% 12
-\BOOKMARK [2][-]{subsection.2.4.1}{Spectrograms}{section.2.4}% 13
-\BOOKMARK [1][-]{section.2.5}{Embedded systems and microcontrollers}{chapter.2}% 14
-\BOOKMARK [2][-]{subsection.2.5.1}{Embedded systems}{section.2.5}% 15
-\BOOKMARK [2][-]{subsection.2.5.2}{ARM M4}{section.2.5}% 16
-\BOOKMARK [0][-]{chapter.3}{Practical Implementation}{}% 17
-\BOOKMARK [1][-]{section.3.1}{Description of Algorithm for Uneveness Analysis}{chapter.3}% 18
-\BOOKMARK [2][-]{subsection.3.1.1}{Flowchart Diagram}{section.3.1}% 19
-\BOOKMARK [1][-]{section.3.2}{Description of Designed System}{chapter.3}% 20
-\BOOKMARK [2][-]{subsection.3.2.1}{Block Diagram}{section.3.2}% 21
-\BOOKMARK [1][-]{section.3.3}{Implementation of Software}{chapter.3}% 22
-\BOOKMARK [2][-]{subsection.3.3.1}{Filtration}{section.3.3}% 23
-\BOOKMARK [2][-]{subsection.3.3.2}{Detection of Defects}{section.3.3}% 24
-\BOOKMARK [2][-]{subsection.3.3.3}{Automatic Evaulation}{section.3.3}% 25
-\BOOKMARK [2][-]{subsection.3.3.4}{Example of Designed Application}{section.3.3}% 26
-\BOOKMARK [1][-]{section.3.4}{Implementation of Hardware}{chapter.3}% 27
-\BOOKMARK [2][-]{subsection.3.4.1}{Electronic Circuits Design}{section.3.4}% 28
-\BOOKMARK [2][-]{subsection.3.4.2}{Description of possible sensors}{section.3.4}% 29
-\BOOKMARK [2][-]{subsection.3.4.3}{Designed Prototype}{section.3.4}% 30
-\BOOKMARK [0][-]{chapter.4}{Conclusions}{}% 31
-\BOOKMARK [0][-]{appendix.A}{Bibliography}{}% 32
-\BOOKMARK [0][-]{section*.5}{Project Specification}{}% 33
+\BOOKMARK [2][-]{subsection.2.3.3}{Power spectral density}{section.2.3}% 12
+\BOOKMARK [1][-]{section.2.4}{Digital Processing Techniques}{chapter.2}% 13
+\BOOKMARK [2][-]{subsection.2.4.1}{Spectrograms}{section.2.4}% 14
+\BOOKMARK [1][-]{section.2.5}{Embedded systems and microcontrollers}{chapter.2}% 15
+\BOOKMARK [2][-]{subsection.2.5.1}{Embedded systems}{section.2.5}% 16
+\BOOKMARK [2][-]{subsection.2.5.2}{Real-time constraints}{section.2.5}% 17
+\BOOKMARK [2][-]{subsection.2.5.3}{ARM M4}{section.2.5}% 18
+\BOOKMARK [0][-]{chapter.3}{Practical Implementation}{}% 19
+\BOOKMARK [1][-]{section.3.1}{Description of Algorithm for Uneveness Analysis}{chapter.3}% 20
+\BOOKMARK [2][-]{subsection.3.1.1}{Flowchart Diagram}{section.3.1}% 21
+\BOOKMARK [1][-]{section.3.2}{Description of Designed System}{chapter.3}% 22
+\BOOKMARK [2][-]{subsection.3.2.1}{Block Diagram}{section.3.2}% 23
+\BOOKMARK [1][-]{section.3.3}{Implementation of Software}{chapter.3}% 24
+\BOOKMARK [2][-]{subsection.3.3.1}{Filtration}{section.3.3}% 25
+\BOOKMARK [2][-]{subsection.3.3.2}{Detection of Defects}{section.3.3}% 26
+\BOOKMARK [2][-]{subsection.3.3.3}{Automatic Evaulation}{section.3.3}% 27
+\BOOKMARK [2][-]{subsection.3.3.4}{Example of Designed Application}{section.3.3}% 28
+\BOOKMARK [1][-]{section.3.4}{Implementation of Hardware}{chapter.3}% 29
+\BOOKMARK [2][-]{subsection.3.4.1}{Electronic Circuits Design}{section.3.4}% 30
+\BOOKMARK [2][-]{subsection.3.4.2}{Description of possible sensors}{section.3.4}% 31
+\BOOKMARK [2][-]{subsection.3.4.3}{Designed Prototype}{section.3.4}% 32
+\BOOKMARK [0][-]{chapter.4}{Conclusions}{}% 33
+\BOOKMARK [0][-]{appendix.A}{Bibliography}{}% 34
+\BOOKMARK [0][-]{section*.5}{Project Specification}{}% 35
