@@ -6,6 +6,7 @@
 % and a couple more: draft and oneside
 \documentclass[twoside]{ctuthesis}
 
+
 \ctusetup{
 	preprint = \ctuverlog,
 %	mainlanguage = english,
@@ -103,9 +104,10 @@ V Praze, \ctufield{day}.~\monthinlanguage{title}~\ctufield{year}
 \usepackage[pagewise]{lineno}
 \usepackage{lipsum,blindtext}
 \usepackage{mathrsfs} % provides \mathscr used in the ridiculous examples
+\usepackage{enumitem}
 
 \begin{document}
-
+	
 \maketitle
 
 \chapter{Introduction}
@@ -121,36 +123,36 @@ The project - described in this thesis - has been made in cooperation with compa
 A very important specification was the requirement to analyse quality of two textile fiber types: the  yarn and the sliver. Where sliver is the input textile fiber for the spinning process and the yarn is its final product. The both of which has significant physical differences. Mainly they differ in size because yarn diameter is usually in a range of micrometers and sliver diameter is in a range from millimeters to centimeters. The diameter of the sliver is measured on combing machine, which precedes the spinning process. This requires different measuring system and filtration processing therefore, two systems and algorithms were designed for quality analysis of each fiber type. Their core content is equal but there are some major differences, which are described later in this thesis. The most significant difference is that processing of signal representing sliver diameter requires much more advanced techniques of digital signal processing. This is necessary due to a strong presence of periodical artefacts on sliver diameter caused by machine preprocessing. This type of diameter fluctuations has to be distinguished from the actual sliver unevenness, which is task for complicated digital filtration in a frequency domain.
 
 \chapter{Theoretical Introduction}
-Before the process of software and hardware development could begin, detailed theoretical research had to be done. Topics of the research include textile manufacturing, combing process, spinning process and textile fiber defects to understand better device requirements. Another step of research was focused on digital signal processing techniques that could be used on the project, mainly spectrogram estimation and it's calculation using Fast Fourier Transform, together with possible filtration algorithms. Another research topic was aimed to cover embedded systems and specifically micro-controller usage and it's limitations
+Before the process of software and hardware development could begin, detailed theoretical research had to be done. Topics of the research include textile manufacturing, combing process, spinning process and textile fiber defects to understand better device requirements. Another step of research was focused on digital signal processing techniques that could be used on the project, mainly spectrogram estimation and it's calculation using Fast Fourier Transform, together with possible filtration algorithms. Another research topic was aimed to cover embedded systems and specifically micro-controller usage and it's real-time constraints.
 \section{Textile Engineering}
 Goal of textile manufacturing is to make fabric from textile fibers, which can be then used for clothes. This process can be separated in several stages:
+\begin{itemize}
+	\setlength{\itemsep}{5pt}
+\item Preparatory Processes - prepares the textile fiber for spinning process by blending, carding and combing,
 
-- Preparatory Processes - prepares the textile fiber for spinning process by blending, carding and combing,
+\item Spinning - fibers are spun into yarns,
 
-- Spinning - fibers are spun into yarns,
+\item Knitting or Weaving - yarns becomes fabric,
 
-- Knitting or Weaving - yarns becomes fabric,
-
-- Finishing - fabric is transformed into clothes etc.
-
+\item Finishing - fabric is transformed into clothes etc.
+\end{itemize}
 In regards to the topic of this thesis only two - the spinning and combing processes - are described.
 \subsection{Textile Fibers}
 Fibers are the basis for all textiles. We distinguished the two main types: natural fibers and synthetic fibers. The natural fibers are:
-
-- Cotton - from the cotton plant,
-
-- Linen - from the flax plant,
-
-- Wool - from sheep and
-
-- Silk - from silkworms.
-
+\begin{itemize}
+	\setlength{\itemsep}{5pt}
+\item Cotton - from the cotton plant,
+\item Linen - from the flax plant,
+\item Wool - from sheep and
+\item Silk - from silkworms.
+\end{itemize}
 Examples of widely used synthetic fibers are:
+\begin{itemize}
+	\setlength{\itemsep}{5pt}
+\item Viscose - from pine trees and petrochemicals,
 
-- Viscose - from pine trees and petrochemicals,
-
-- Acrylic, nylon, and polyester - from oil and coal. 
-
+\item Acrylic, nylon, and polyester - from oil and coal. 
+\end{itemize}
 The cotton is the most important natural fiber and analysis of the quality in this thesis is aimed specifically at cotton manufacturing. 
 The fibers can have two main forms during the manufacturing process - the sliver and the yarn. The sliver is created by carding the fiber. In this process textile fibers are separated and then joined together into a loose strand of 1 cm to 4 cm in diameter. In the end of textile manufacturing process an yarn is created. It is a textile fiber with significantly smaller diameter, in comparison to sliver, usually in a range of micrometers \cite{cite:FoFF}. 
 \subsection{Combing Process}
@@ -159,32 +161,34 @@ Combing is a preparation process during textile manufacturing. It is sub-part of
 Combing is used in a production of medium-fine or fine yarns, where the quality of yarn is important. This quality improvement is at a cost of loss of raw material and high expenses for buying and operating the combing machines. 
 
 Comber (see Image 1) consists of three main parts: 
+\begin{itemize}
+	\setlength{\itemsep}{5pt}
+\item The Feed
 
-- The Feed
+\item The Nipper
 
-- The Nipper
-
-- The Comb
-
+\item The Comb
+\end{itemize}
 The process of removing the impurities is formed by attaching the input fibre in form of sliver to the feed roller
 
 An input of this process is textile sliver (described in chapter xx).
 \subsection{Spinning Process}
 The term “spinning” in this context refers to the process that executes conversion of a large quantity of individual unordered fibers of relatively short length into a linear, ordered product of very great lengths by using spinning machines. There are three main methods of executing process of spinning:
+\begin{itemize}
+	\setlength{\itemsep}{5pt}
+\item Ring Spinning,
 
-- Ring Spinning,
+\item Rotor Spinning and
 
-- Rotor Spinning and
-
-- Air-jet Spinning.
-
+\item Air-jet Spinning.
+\end{itemize}
 All of these systems yields yarn with different structures and properties. Each system has its advantages and limitations in terms of technical feasibility and economic viability.
 \section{Overview of Yarn Quality Sensors}
 Importance of yarn quality on final product became clear in 1950s when first electronic yarn quality sensors were invented. Since then many principles were used in detection of yarn defects - optical, mechanical or even chemical \cite{cite:1} . 
 \subsection{State of Art}
 
 \section{Digital Signal Processing}
-The largest part of work on this project is oriented on digital signal processing. Usage of modern advanced algorithms from this field allowed designing projected device in the first place. This section covers the most important algorithms that are used in this project.
+The largest part of work on this project is oriented on digital signal processing (DSP). Usage of modern advanced algorithms from this field allowed designing projected device in the first place. This section covers the most important algorithms that are used in this project.
 	
 	Digital signal processing is an area of science and engineering that has developed rapidly over the past 40 years as a result of significant advances in digital computer technology. Today, many of the signal processing tasks that were conventionally performed by analog means are now realized by less expensive digital hardware \cite{cite:2}.
 	
@@ -214,30 +218,36 @@ W^{kn}_{N}=e^{-j \frac{2 \pi}{N} kn}=\cos(\frac{2\pi kn}{N})-j\sin(\frac{2\pi kn
 The parameters $W^{kn}_{N}$ are called the twiddle factors \cite{cite:RT_DSP}.
 \par
 Understanding properties of DFT is critical for application of the transformation to practical problems. List of the main DFT properties contains:
+\begin{itemize}
+	\setlength{\itemsep}{5pt}
+\item Linearity,
 
-- Linearity,
+\item Periodicity,
 
-- Periodicity,
+\item Complex Conjugate,
 
-- Complex Conjugate,
+\item Circular Convolution,
 
-- Circular Convolution,
-
-- DFT and the z-transform.
+\item DFT and the z-transform.
+\end{itemize}
 For detailed description of DFT properties see \cite{cite:2,cite:RT_DSP}.
 
-The operation of selecting a finite number of samples called windowing is equivalent to multiplying the actual sequence $x[n]$ defined in a range $-\inf < n < \inf$, by a finite-length sequence $w[n]$ called window. Using simplest rectangular windowing (truncation) on a signal, can cause an effect called \textit{leakage}, which transfers power from frequency bands that contain a large amount of signal power into bands that contain only a little. This may create "false" peaks, peaks at wrong frequencies or changes the amplitude of existing peaks. Another effect of time-windowing is \textit{smearing}. Which causes a spread of spectrum accordingly to the width of the mainlobe of the window spectrum. This result in loss of resolution \cite{cite:3} .
-% Image according to ADSP 400/ obr 7.23
-Therefore, a "good" window should have low-level sidelobes and a narrow mainlobe to minimize both of these effects. There are four most known windows used for time-windowing: 
+The operation of selecting a finite number of samples called windowing is equivalent to multiplying the actual sequence $x[n]$ defined in a range $-\infty < n < \infty$, by a finite-length sequence $w[n]$ called window. Using simplest rectangular windowing (truncation) on a signal, can cause an effect called \textit{leakage}, which transfers power from frequency bands that contain a large amount of signal power into bands that contain only a little. This may create "false" peaks, peaks at wrong frequencies or changes the amplitude of existing peaks. 
 
-	- Rectangular,
+Another effect of time-windowing is \textit{smearing}. Which causes a spread of spectrum accordingly to the width of the mainlobe of the window spectrum. This result in loss of resolution \cite{cite:3} .
+% Image according to ADSP 400/ obr 7.23
+
+Therefore, a "good" window should have low-level sidelobes and a narrow mainlobe to minimize both of these effects. There are four most known windows used for time-windowing: 
+\begin{itemize}
+	 \setlength{\itemsep}{5pt}
+\item Rectangular,
 	
-	- Triangular (or Bartlett),
+\item Triangular (or Bartlett),
 	
-	- Hann,
+\item Hann,
 	
-	- Hamming.
-	
+\item Hamming.
+\end{itemize}	
 Their differences (as shown in image XXX) relays in a different width of mainlobe and peak sidelobe level.
 % Image according to ADSP 406/ obr 7.26 
 
@@ -311,13 +321,13 @@ The PSD is very useful in the analysis of random signals since it provides us wi
 
 Methods that require direct use of finite signal for purposes of autocorrelation calculation are called \textit{non-parametric} methods. On the other hand, methods that rely on a model for signal generation are call \textit{parametric} methods \cite{cite:RT_DSP}. Widely used non-parametric methods are
 
-- Bartlett method,
-
-- Blackman-Turkey method,
-
-- Welch method or
-
-- Danielle method.
+\begin{itemize}
+	\setlength{\itemsep}{5pt}
+\item Bartlett method,
+\item Blackman-Turkey method,
+\item Welch method or
+\item Danielle method.
+\end{itemize}
 
 They differ mainly in the resolution and variance level of the result. For detailed description of methods see \cite{cite:2}.
 
@@ -327,7 +337,33 @@ They differ mainly in the resolution and variance level of the result. For detai
 
 \section{Embedded systems and microcontrollers}
 \subsection{Embedded systems}
+\subsection{DSP Hardware Options}
+DSP algorithms can be implemented on different types of digital hardware. The following are the widely used options for DSP systems:
+\begin{itemize}
+	\setlength{\itemsep}{5pt}
+\item Special-purpose chips such as application-specific integrated circuits (ASICs).
+\item Field-programmable gate arrays (FPGAs).
+\item General-purpose micro-processors or micro-controllers ($\mu$P/$\mu$C).
+\item General-purpose digital signal processors.
+\item DSP processors with application-specific hardware accelarators \cite{cite:RT_DSP}.
+\end{itemize}
+
+Each hardware (HW) platform has different advantages and constrains for different applications, thus, there is no \textit{best} HW platform that could be used for every practical project. Instead each option should be carefully considered from point of flexibility, required design time, power consumption, performance and cost. 
+
+Characteristic of mentioned hardware options are summarized in Table XXX (\cite{cite:RT_DSP}).
+
 \subsection{Real-time constraints}
+Generally, a real-time system is one that must process information and produce a response within a specified time, else risk severe consequences, including failure. A real-time DSP system demands that the signal processing time $t_{p}$, must be less than sampling period $T$, that is
+\begin{equation} \label{eq:hardRealTime1}
+t_{p}+t_{o}<T,
+\end{equation}
+where $t_{o}$ is overhead time of input-output (I/O) processing.
+Thus, this limitation gives constraint to the highest frequency signal that can be processed by DSP systems in sample-by-sample processing, given as
+
+\begin{equation} \label{eq:hardRealTime2}
+f_{M} \leq \frac{fs}{2} < \frac{1}{2(t_{p}+t_{o})} \cite{cite:RT_DSP}.
+\end{equation}
+
 \subsection{ARM M4}
 
 \chapter{Practical Implementation}
