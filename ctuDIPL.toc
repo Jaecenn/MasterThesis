@@ -30,27 +30,27 @@
 \contentsline {section}{\numberline {2.3}Digital Signal Processing}{5}{section.2.3}
 \contentsline {subsection}{\numberline {2.3.1}Discrete Fourier Transform}{5}{subsection.2.3.1}
 \contentsline {subsection}{\numberline {2.3.2}Fast Fourier Transform}{6}{subsection.2.3.2}
-\contentsline {subsection}{\numberline {2.3.3}Power spectral density}{6}{subsection.2.3.3}
-\contentsline {section}{\numberline {2.4}Digital Processing Techniques}{6}{section.2.4}
-\contentsline {subsection}{\numberline {2.4.1}Spectrograms}{6}{subsection.2.4.1}
-\contentsline {section}{\numberline {2.5}Embedded systems and microcontrollers}{6}{section.2.5}
-\contentsline {subsection}{\numberline {2.5.1}Embedded systems}{6}{subsection.2.5.1}
-\contentsline {subsection}{\numberline {2.5.2}Real-time constraints}{6}{subsection.2.5.2}
-\contentsline {subsection}{\numberline {2.5.3}ARM M4}{6}{subsection.2.5.3}
-\contentsline {chapter}{\numberline {3}Practical Implementation}{7}{chapter.3}
-\contentsline {section}{\numberline {3.1}Description of Algorithm for Uneveness Analysis}{7}{section.3.1}
-\contentsline {subsection}{\numberline {3.1.1}Flowchart Diagram}{7}{subsection.3.1.1}
-\contentsline {section}{\numberline {3.2}Description of Designed System}{7}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}Block Diagram}{7}{subsection.3.2.1}
-\contentsline {section}{\numberline {3.3}Implementation of Software}{7}{section.3.3}
-\contentsline {subsection}{\numberline {3.3.1}Filtration}{7}{subsection.3.3.1}
-\contentsline {subsection}{\numberline {3.3.2}Detection of Defects}{7}{subsection.3.3.2}
-\contentsline {subsection}{\numberline {3.3.3}Automatic Evaulation}{7}{subsection.3.3.3}
-\contentsline {subsection}{\numberline {3.3.4}Example of Designed Application}{7}{subsection.3.3.4}
-\contentsline {section}{\numberline {3.4}Implementation of Hardware}{7}{section.3.4}
-\contentsline {subsection}{\numberline {3.4.1}Electronic Circuits Design}{7}{subsection.3.4.1}
-\contentsline {subsection}{\numberline {3.4.2}Description of possible sensors}{7}{subsection.3.4.2}
-\contentsline {subsection}{\numberline {3.4.3}Designed Prototype}{7}{subsection.3.4.3}
-\contentsline {chapter}{\numberline {4}Conclusions}{9}{chapter.4}
-\contentsline {chapter}{\numberline {A}Bibliography}{11}{appendix.A}
-\contentsline {chapter}{\numberline {B}Project\ Specification}{13}{section*.5}
+\contentsline {subsection}{\numberline {2.3.3}Power spectral density}{8}{subsection.2.3.3}
+\contentsline {section}{\numberline {2.4}Digital Processing Techniques}{9}{section.2.4}
+\contentsline {subsection}{\numberline {2.4.1}Spectrograms}{9}{subsection.2.4.1}
+\contentsline {section}{\numberline {2.5}Embedded systems and microcontrollers}{9}{section.2.5}
+\contentsline {subsection}{\numberline {2.5.1}Embedded systems}{9}{subsection.2.5.1}
+\contentsline {subsection}{\numberline {2.5.2}Real-time constraints}{9}{subsection.2.5.2}
+\contentsline {subsection}{\numberline {2.5.3}ARM M4}{9}{subsection.2.5.3}
+\contentsline {chapter}{\numberline {3}Practical Implementation}{11}{chapter.3}
+\contentsline {section}{\numberline {3.1}Description of Algorithm for Uneveness Analysis}{11}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Flowchart Diagram}{11}{subsection.3.1.1}
+\contentsline {section}{\numberline {3.2}Description of Designed System}{11}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Block Diagram}{11}{subsection.3.2.1}
+\contentsline {section}{\numberline {3.3}Implementation of Software}{11}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Filtration}{11}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}Detection of Defects}{11}{subsection.3.3.2}
+\contentsline {subsection}{\numberline {3.3.3}Automatic Evaulation}{11}{subsection.3.3.3}
+\contentsline {subsection}{\numberline {3.3.4}Example of Designed Application}{11}{subsection.3.3.4}
+\contentsline {section}{\numberline {3.4}Implementation of Hardware}{11}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}Electronic Circuits Design}{11}{subsection.3.4.1}
+\contentsline {subsection}{\numberline {3.4.2}Description of possible sensors}{11}{subsection.3.4.2}
+\contentsline {subsection}{\numberline {3.4.3}Designed Prototype}{11}{subsection.3.4.3}
+\contentsline {chapter}{\numberline {4}Conclusions}{13}{chapter.4}
+\contentsline {chapter}{\numberline {A}Bibliography}{15}{appendix.A}
+\contentsline {chapter}{\numberline {B}Project\ Specification}{17}{section*.5}

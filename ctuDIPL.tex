@@ -110,15 +110,15 @@ V Praze, \ctufield{day}.~\monthinlanguage{title}~\ctufield{year}
 
 \chapter{Introduction}
 %\chapter{Introduction}
-Textile manufacturing has always been important industry field. Major part of this industry is formed by process called spinning, where twisting strands of fibers together form yarn. The modern spinners - textile machines, that execute process of spinning - have been significantly improved and now they reach high level of automation. This allows not only faster and cheaper production but also more focus on quality of the produced textile yarn. 
+Textile manufacturing has always been important industry field. A major part of this industry is formed by a process called spinning, where twisting strands of fibers together form yarn. The modern spinners - textile machines, that execute the process of spinning - have been significantly improved and now they reach a high level of automation. This allows not only faster and cheaper production but also more focus on quality of the produced textile yarn. 
 
-Quality of the yarn could devaluate the final product by creating defects, such as a rapid changes in color or thickness etc., in textile material. Even with modern technologies it is still impossible to produce yarn without any defects. We can't prevent yarn defects by carefully selecting and preprocessing fiber, because some defects can be created by spinning process itself. Out of many types of defects this thesis is focused on analysis of yarn uneveness (also called yarn irregularity). This is describing yarn with a diameter that is not even along it's length, but it is changing it's value periodically. We can measure this defect in the form of mass variation per unit length.
+The quality of the yarn could devaluate the final product by creating defects, such as rapid changes in color or thickness etc., in the textile material. Even with modern technologies, it is still impossible to produce yarn without any defects. We can't prevent yarn defects by carefully selecting and preprocessing fiber because some defects can be created by spinning process itself. Out of many types of defects, this thesis is focused on the analysis of yarn unevenness (also called yarn irregularity). This is describing yarn with a diameter that is not even along its length, but it is changing its value periodically. We can measure this defect in the form of mass variation per unit length.
 
-Designed system is not aiming to improve quality of spinned yarn, but to monitor quality (specifically uneveness) of produced yarn during the spinning process. Due to this monitoring it is possible to stop spinning process if defective yarn is detected. This allows the operator to resolve the issues that caused it, e.g. by replacing spinner fiber source with new one and reconnecting different yarn endings.
+Designed system is not aiming to improve the quality of spun yarn, but to monitor quality (specifically unevenness) of produced yarn during the spinning process. Due to this monitoring, it is possible to stop spinning process if a defective yarn is detected. This allows the operator to resolve the issues that caused it, e.g. by replacing spinner fiber source with new one and reconnecting different yarn endings.
 
-The project - described in this thesis - has been made in cooperation with company Rieter CZ s.r.o, who provided the device requirements, critical measurement data and other important information. The goal of the project was to research and develop an algorithm for analysis and detection of yarn uneveness by using spectrograms and to design an embedded system capable of measuring diameter of yarn while fulfilling the required time constraints and implement detection algorithm to it. System is required to be controlled by ARM M4 microcontroller. Thus the algorithm has to be implemented in a way that takes in consideration memory and computational limitation of such microcontrollers.
+The project - described in this thesis - has been made in cooperation with company Rieter CZ s.r.o, who provided the device requirements, critical measurement data, and other important information. The goal of the project was to research and develop an algorithm for analysis and detection of yarn unevenness by using spectrograms and to design an embedded system capable of measuring a diameter of yarn while fulfilling the required time constraints and implement detection algorithm. The system is required to be controlled by ARM M4 microcontroller. Thus, the algorithm has to be implemented in a way that takes in consideration memory and computational limitation of such microcontrollers.
 
-Very important specification was requirement to analyse quality of two textile fibre types: the  yarn and the sliver. Where sliver is the input textile fibre for the spinning process and the yarn is it's final product. The both of which has significant physical differences. Mainly they differ in size, because yarn diameter is usually in range of micrometers and sliver diameter is in range from millimeters to centimeters. The diameter of the sliver is measured on combing machine, which precedes the spinning process. This requires different measuring system and filtration processing, therefore two systems and algorithms were designed for quality analysis of each fibre type. Their core content is equal but there are some major differences, which are described later in this thesis. The most significant difference is that processing of signal representing sliver diameter requires much more advanced techniques of digital signal processing. This is necessary due to strong presence of periodical artefacts on sliver diameter caused by machine preprocessing. This type of diameter fluctuations have to be distinguished from the actual sliver uneveness, which is task for complicated digital filtration in frequency domain.
+A very important specification was the requirement to analyse quality of two textile fiber types: the  yarn and the sliver. Where sliver is the input textile fiber for the spinning process and the yarn is its final product. The both of which has significant physical differences. Mainly they differ in size because yarn diameter is usually in a range of micrometers and sliver diameter is in a range from millimeters to centimeters. The diameter of the sliver is measured on combing machine, which precedes the spinning process. This requires different measuring system and filtration processing therefore, two systems and algorithms were designed for quality analysis of each fiber type. Their core content is equal but there are some major differences, which are described later in this thesis. The most significant difference is that processing of signal representing sliver diameter requires much more advanced techniques of digital signal processing. This is necessary due to a strong presence of periodical artefacts on sliver diameter caused by machine preprocessing. This type of diameter fluctuations has to be distinguished from the actual sliver unevenness, which is task for complicated digital filtration in a frequency domain.
 
 \chapter{Theoretical Introduction}
 Before the process of software and hardware development could begin, detailed theoretical research had to be done. Topics of the research include textile manufacturing, combing process, spinning process and textile fiber defects to understand better device requirements. Another step of research was focused on digital signal processing techniques that could be used on the project, mainly spectrogram estimation and it's calculation using Fast Fourier Transform, together with possible filtration algorithms. Another research topic was aimed to cover embedded systems and specifically micro-controller usage and it's limitations
@@ -127,11 +127,11 @@ Goal of textile manufacturing is to make fabric from textile fibers, which can b
 
 - Preparatory Processes - prepares the textile fiber for spinning process by blending, carding and combing,
 
-- Spinning - fibres are spun into yarns,
+- Spinning - fibers are spun into yarns,
 
 - Knitting or Weaving - yarns becomes fabric,
 
-- Finnishing - fabric is transformed into clothes etc.
+- Finishing - fabric is transformed into clothes etc.
 
 In regards to the topic of this thesis only two - the spinning and combing processes - are described.
 \subsection{Textile Fibers}
@@ -149,14 +149,14 @@ Examples of widely used synthetic fibers are:
 
 - Viscose - from pine trees and petrochemicals,
 
-- Acrylic, nylon and polyester - from oil and coal. 
+- Acrylic, nylon, and polyester - from oil and coal. 
 
-The cotton is the most important natural fiber and analysis of the quality in this thesis is is aimed specifically on cotton manufacturing. 
-The fibers can have two main forms during the manufacturing process - the sliver and the yarn. The sliver is created by carding the fiber. In this process textile fibers are separated and then joint together into a loose strand of 1 cm to 4 cm in diameter. In the end of textile manufacturing process an yarn is created. It is a textile fiber with significantly smaller diameter, in comparison to sliver, usually in range of micrometers \cite{cite:FoFF}. 
+The cotton is the most important natural fiber and analysis of the quality in this thesis is aimed specifically at cotton manufacturing. 
+The fibers can have two main forms during the manufacturing process - the sliver and the yarn. The sliver is created by carding the fiber. In this process textile fibers are separated and then joined together into a loose strand of 1 cm to 4 cm in diameter. In the end of textile manufacturing process an yarn is created. It is a textile fiber with significantly smaller diameter, in comparison to sliver, usually in a range of micrometers \cite{cite:FoFF}. 
 \subsection{Combing Process}
 Combing is a preparation process during textile manufacturing. It is sub-part of a cleaning process which precedes the spinning process. Cotton contains a lot of impurities such as dirt, dust, foreign materials, neps and very short fibers. All of these should be eliminated by cleaning process. The combing process removes mainly short fibers and neps in sliver, which helps to produce stronger and cleaner yarn.
 
-Combing is used in production of medium-fine or fine yarns, where quality of yarn is important. This quality improvement is at cost of loss of raw material and high expenses for buying and operating the combing machines. 
+Combing is used in a production of medium-fine or fine yarns, where the quality of yarn is important. This quality improvement is at a cost of loss of raw material and high expenses for buying and operating the combing machines. 
 
 Comber (see Image 1) consists of three main parts: 
 
@@ -170,7 +170,7 @@ The process of removing the impurities is formed by attaching the input fibre in
 
 An input of this process is textile sliver (described in chapter xx).
 \subsection{Spinning Process}
-The term “spinning” in this context refers to the process that executes conversion of a large quantity of individual unordered fibers of relatively short length into a linear, ordered product of very great length by using spinning machines. There are three main methods of executing process of spinning:
+The term “spinning” in this context refers to the process that executes conversion of a large quantity of individual unordered fibers of relatively short length into a linear, ordered product of very great lengths by using spinning machines. There are three main methods of executing process of spinning:
 
 - Ring Spinning,
 
@@ -184,14 +184,14 @@ Importance of yarn quality on final product became clear in 1950s when first ele
 \subsection{State of Art}
 
 \section{Digital Signal Processing}
-Largest part of work on this project is oriented on digital signal processing. Usage of modern advanced algorithms from this field allowed to design projected device in the first place. This section covers the most importants algorithms that are used in this project.
+The largest part of work on this project is oriented on digital signal processing. Usage of modern advanced algorithms from this field allowed designing projected device in the first place. This section covers the most important algorithms that are used in this project.
 	
 	Digital signal processing is an area of science and engineering that has developed rapidly over the past 40 years as a result of significant advances in digital computer technology. Today, many of the signal processing tasks that were conventionally performed by analog means are now realized by less expensive digital hardware \cite{cite:2}.
 	
-	To perform the processing digitally, there is need for conversion between analog signal and digital signal. This is done by interface called analog-to-digital (A/D) converter, which yields a digital signal as it's output that is appropriate as an input to the digital processor \cite{cite:2,cite:3}.
+	To perform the processing digitally, there is need for the conversion between an analog signal and digital signal. This is done by an interface called analog-to-digital (A/D) converter, which yields a digital signal as it's output that is appropriate as an input to the digital processor \cite{cite:2,cite:3}.
 	
 \subsection{Discrete Fourier Transform}
-To perform frequency analysis on a discrete-time signal ${x[n]}$, we convert the time-domain sequence to an equivalent frequency-domain representation. This conversion is obtain by Discrete Fourier Transform that can be algebraically formulated as follows \cite{cite:2,cite:3}.
+To perform frequency analysis on a discrete-time signal ${x[n]}$, we convert the time-domain sequence to an equivalent frequency-domain representation. This conversion is obtained by Discrete Fourier Transform that can be algebraically formulated as (according to \cite{cite:2,cite:3}).
 	
 Given N consecutive samples $x[n], 0 \leq n \leq N-1$ of a periodic or aperiodic sequence, the N-point Discrete Fourier Transform(DFT) $X[k], 0 \leq k \leq N-1$ is defined by
 \begin{equation} \label{eq:DFT}
@@ -203,6 +203,16 @@ x[n]=\frac{1}{N} \sum_{k=0}^{N-1}X[k]e^{j \frac{2 \pi}{N} kn}.
 \end{equation}
 If $x[n]$ has infinite duration, the frequency samples  $X[2 \pi k/ N], k=0, 1, ..., N-1$ correspond to a periodic sequence $x_{p}[n]$ of period N, which is an aliased version of $x[n]$. When the sequence $x[n]$ has finite duration of length $L \leq N$, then  $x_{p}[n]$ is simply a periodic repetition of $x[n]$.
 
+The DFT defined in (\ref{eq:DFT}) can also be rewritten as
+\begin{equation} \label{eq:DFT2}
+X[k]=\sum_{k=0}^{N-1}x[n]W^{kn}_{N},\; k = 0, 1, ..., N-1,
+\end{equation}
+where
+\begin{equation} \label{eq:Twiddle}
+W^{kn}_{N}=e^{-j \frac{2 \pi}{N} kn}=\cos(\frac{2\pi kn}{N})-j\sin(\frac{2\pi kn}{N}), \;0\leq k,n\leq N-1
+\end{equation}
+The parameters $W^{kn}_{N}$ are called the twiddle factors \cite{cite:RT_DSP}.
+\par
 Understanding properties of DFT is critical for application of the transformation to practical problems. List of the main DFT properties contains:
 
 - Linearity,
@@ -214,12 +224,11 @@ Understanding properties of DFT is critical for application of the transformatio
 - Circular Convolution,
 
 - DFT and the z-transform.
-
 For detailed description of DFT properties see \cite{cite:2,cite:RT_DSP}.
 
-The operation of selecting a finite number of samples called windowing is equivalent to multiplying the actual sequence $x[n]$ defined in range $-\inf < n < \inf$, by a finite-length sequence $w[n]$ called window. Using simplest rectangular windowing (truncation) on signal, can cause effect called \textit{leakage}, which transfers power from frequency bands that contain large amount of signal power into bands that contain only little. This may create "false" peaks, peaks at wrong frequencies or changes the amplitude of existing peaks. Another effect of time-windowing is \textit{smearing}. Which causes spread of spectrum accordingly to the width of the mainlobe of the window spectrum. This result in loss of resolution \cite{cite:3} .
+The operation of selecting a finite number of samples called windowing is equivalent to multiplying the actual sequence $x[n]$ defined in a range $-\inf < n < \inf$, by a finite-length sequence $w[n]$ called window. Using simplest rectangular windowing (truncation) on a signal, can cause an effect called \textit{leakage}, which transfers power from frequency bands that contain a large amount of signal power into bands that contain only a little. This may create "false" peaks, peaks at wrong frequencies or changes the amplitude of existing peaks. Another effect of time-windowing is \textit{smearing}. Which causes a spread of spectrum accordingly to the width of the mainlobe of the window spectrum. This result in loss of resolution \cite{cite:3} .
 % Image according to ADSP 400/ obr 7.23
-Therefore a "good" window should have low level sidelobes and a narrow mainlobe tu minimize both of these effects. There are four most known windows used for time-windowing: 
+Therefore, a "good" window should have low-level sidelobes and a narrow mainlobe to minimize both of these effects. There are four most known windows used for time-windowing: 
 
 	- Rectangular,
 	
@@ -229,13 +238,89 @@ Therefore a "good" window should have low level sidelobes and a narrow mainlobe 
 	
 	- Hamming.
 	
-Their differences can be (as shown in image XXX) relays in different width of mainlobe, peak sidelobe level.
+Their differences (as shown in image XXX) relays in a different width of mainlobe and peak sidelobe level.
 % Image according to ADSP 406/ obr 7.26 
 
 %The length N of the DFT should be larger than L = T0/T to obtain good visual representation of DTFT. If we set N to power of two N=2^Q, fft calculation %done microcontroller is executed faster.
 \subsection{Fast Fourier Transform}
+Difficulty in using the DFT for practical applications is its high computational requirements. Direct computation of the N-point DFT requrires computational cost of $N^2$. However class of efficient DFT algorithms called \textit{Fast Fourier Transform (FFT)} has computational cost proportional to $Nlog_{2}N$ \cite{cite:RT_DSP,cite:3}.
+\par 
+Decimation-in-time FFT algorithms are based in splitting the N-point DFT summation into two summations, that one sum over the even-indexed points of $x[n]$ and another sum over the odd-indexed points of $x[n]$.
+Therefore, we obtain
+\begin{equation} \label{eq:decimInTime1}
+\begin{aligned}
+X[k] &= \sum_{n=0}^{N-1}x[n]W^{kn}_{N}, \; k=0,1,...,N-1\\
+     &= \sum_{m=0}^{N/2-1}x[2m]W^{k(2m)}_{N} + W^{k}_{N}\sum_{m=0}^{N/2-1}x[2m+1]W^{k(2m)}_{N}
+     \end{aligned}
+\end{equation}
+Dividing sequence $x[n]$ we get two shorter sequences:
+\begin{equation} \label{eq:decimatedSequencesA}
+a[n]=x[2n],\qquad n=0, 1, ..., N/2 -1
+\end{equation}
+\begin{equation} \label{eq:decimatedSequencesB}
+b[n]=x[2n+1],\qquad n=0, 1, ..., N/2 -1
+\end{equation}
+Shorter sequences are obtained by \textit{decimating}
+\footnote{Decimation of a signal with sampling rate $f_{s}$ by a integer factor $D$ results in the lower sampling rate $f'_{s}=f_{s}/D$.}
+ the sequence $x[n]$, thus, this FFT algorithm is called decimation-in-time.
+Substituting definitions \ref{eq:decimatedSequencesA} and \ref{eq:decimatedSequencesB} into \ref{eq:decimInTime1} yields
+\begin{equation} \label{eq:fft2_A}
+A[k]=\sum_{m=0}^{N/2-1}a[m]W^{km}_{N/2},\qquad k=0, 1, ..., N/2 -1
+\end{equation}
+\begin{equation} \label{eq:fft2_B}
+B[k]=\sum_{m=0}^{N/2-1}a[m]W^{km}_{N/2},\qquad k=0, 1, ..., N/2 -1
+\end{equation}
+where $A[k]$ and $B[k]$ are $N/2$-point DFTs \cite{cite:3,cite:2}.
+
+Thus, we can calculate $N$-point DFT $X[k]$ from the $N/2$-point DFTs $A[k]$ and $B[k]$ (\ref{eq:fft2_A}, \ref{eq:fft2_B}) using the following merging formulas
+\begin{equation} \label{eq:fft3_A}
+X[k]=A[k] + W^{k}_{N}B[k],\qquad k=0, 1, ..., N/2 -1
+\end{equation}
+\begin{equation} \label{eq:fft3_B}
+X[k+\frac{N}{2}]=A[k] - W^{k}_{N}B[k],\qquad k=0, 1, ..., N/2 -1
+\end{equation}
+These formulas (\ref{eq:fft3_A}, \ref{eq:fft3_B}) can be applied to any FFT of even length \cite{cite:3}.
+
+This procedure is shown in Figure XXX (\cite{cite:3}). The displayed structure in the figure is called the butterfly network. Each butterfly consist of just a single complex multiplication by the twiddle factor $W^{k}_{N}$, one addition and one substraction. 
+
+An example for $N=8$ is show in Figure XXX. Each $N/2$-point DFT can be computed by two smaller $N/4$-point DFTs. By repeating the same process, we will obtain a set of two-point DFTs, which is illustrated in Figure XXX \cite{cite:RT_DSP}.
+
+FFT algorithm \textit{decimation-in-frequency} is similar to the decimation-in-time, with important differences, that the decomposition and symmetry relationships are reversed. The bit reversal occurs at the output instead of the input and the order of the output samples $X[k]$ will be rearranged \cite{cite:RT_DSP}.
+
+The FFT algorithms shown in the previous paragraphs can be modified to calculate the inverse FFT (IFFT).
+
 \subsection{Power spectral density}
-Consider a signal $x[n]$ of length $N$ with DFT $X[k]$
+%Consider a signal $x[n]$ of length $N$ with DFT $X[k]$ 
+Energy Spectral Density $S(\omega)$ defined as \ref{eq:EnergySD}
+\begin{equation} \label{eq:EnergySD}
+S(\omega)=\left|Y(\omega)\right|^2
+\end{equation}
+Which can be obtained from Parseval's theorem (\ref{eq:Parseval})
+\begin{equation} \label{eq:Parseval}
+\sum_{t=-\infty}^{\infty}\left|y(t)\right|^2 = \frac{1}{2\pi}\int_{-\pi}^{\pi}S(\omega)d\omega
+\end{equation}
+This equality shows that $S(\omega)$ represents the distribution of sequence energy as a function of frequency. For this reason, $S(\omega)$ is called the \textit{energy spectral density}. 
+Most of the signals in practical applications are such that their variation in the future cannot be known. It is only possible to make probabilistic statement about the variation. Such sequences are called \textit{random signals}. 
+
+A random signal usually has finite average power, therefore, we can use average power spectral density for its characterization. Which is, for simplicity, better known under name \textit{power spectral density} (PSD). As shown in \cite{cite:SAoS} is defined as
+\begin{equation} \label{eq:PSD1}
+\phi(\omega) = \sum_{t=-\infty}^{\infty}r(k)e^{-i\omega k}
+\end{equation}
+where $r(k)$ is auto covariance function $r(k) = E[y_{t}y_{t+k}]$.
+The PSD is very useful in the analysis of random signals since it provides us with information about distribution of the average power over the frequency. There are several different methods for estimating the PSD. 
+
+Methods that require direct use of finite signal for purposes of autocorrelation calculation are called \textit{non-parametric} methods. On the other hand, methods that rely on a model for signal generation are call \textit{parametric} methods \cite{cite:RT_DSP}. Widely used non-parametric methods are
+
+- Bartlett method,
+
+- Blackman-Turkey method,
+
+- Welch method or
+
+- Danielle method.
+
+They differ mainly in the resolution and variance level of the result. For detailed description of methods see \cite{cite:2}.
+
 \section{Digital Processing Techniques}
 
 \subsection{Spectrograms}

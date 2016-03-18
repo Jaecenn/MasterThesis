@@ -12,6 +12,10 @@
 {\sc P.~Kousalík}, {\em Inteligentní snímač pro on-line vyhodnocování
   kvality příze}, dissertation, Technická univerzita v Liberci, 2011.
 
+\bibitem{cite:SAoS}
+{\sc R.~M. Petre~Stoica}, {\em Specral Analysis of Signals}, Prentice Hall,
+  2005.
+
 \bibitem{cite:RT_DSP}
 {\sc W.~T. Sen M.~Kuo, Bob H.~Lee}, {\em Real-Time Digital Signal Processing},
   John Wiley and Sons, Ltd, 2013.
