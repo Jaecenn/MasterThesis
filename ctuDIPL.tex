@@ -173,6 +173,7 @@ The process of removing the impurities is formed by attaching the input fibre in
 
 An input of this process is textile sliver (described in chapter xx).
 \subsection{Spinning Process}
+\label{spinningProcesses}
 The term “spinning” in this context refers to the process that executes conversion of a large quantity of individual unordered fibers of relatively short length into a linear, ordered product of very great lengths by using spinning machines. There are three main methods of executing process of spinning:
 \begin{itemize}
 	\setlength{\itemsep}{5pt}
@@ -184,7 +185,28 @@ The term “spinning” in this context refers to the process that executes conv
 \end{itemize}
 All of these systems yields yarn with different structures and properties. Each system has its advantages and limitations in terms of technical feasibility and economic viability.
 \section{Overview of Yarn Quality Sensors}
-Importance of yarn quality on final product became clear in 1950s when first electronic yarn quality sensors were invented. Since then many principles were used in detection of yarn defects - optical, mechanical or even chemical \cite{cite:1} . 
+Importance of yarn quality on final product became clear in 1950s when first electronic yarn quality sensors were invented. Since then many principles were used in detection of yarn defects - optical, mechanical or even chemical \cite{cite:1}.
+
+Sensors of yarn quality are in textile industry often called \textit{yarn clearer}. This term was created for first such devices because goal of yarn clearers wasn't only to discover possible yarn defects but also to immediately remove them. Today, yarn clearers analyse defects that are much more complex (given their properties such as periodicity etc.) and difficult to be immediately removed. Such defects are invisible to naked eye on single yarn and they appear only when turned to fabric.
+
+Following overview is concerned with yarn quality sensors that have similar purpose and functions as the developed device. Therefore, only online yarn clearers that check quality of spun yarn on every spinning point in real-time are listed. All of the following devices are also aimed to be used on the yarn spun by a rotor spinners (see \ref{spinningProcesses}).
+
+\subsubsection{Uster Quantum 3}
+Uster Quantum 3 is modern, state of art yarn clearer, which provide detection of many types of defects and includes several interesting features:
+
+\begin{itemize}
+	\setlength{\itemsep}{5pt}
+	\item full yarn body display,
+	\item foreign matter sensor with multicolored light sources,
+	\item polypropylene detection,
+	\item detection of moiré,
+	\item unevenness calculation CV\%,
+	\item IPI classification,
+	\item calculation of hairiness,
+	\item spectrograms calculation
+\end{itemize}
+
+Uster Quantum 3 has been developed by company Uster Technologies, which is developing yarn clearers for 30 years. Their devices often feature application of new technologies and they offer 
 \subsection{State of Art}
 
 \section{Digital Signal Processing}
@@ -253,6 +275,7 @@ Their differences (as shown in image XXX) relays in a different width of mainlob
 
 %The length N of the DFT should be larger than L = T0/T to obtain good visual representation of DTFT. If we set N to power of two N=2^Q, fft calculation %done microcontroller is executed faster.
 \subsection{Fast Fourier Transform}
+\label{sec:FFT}
 Difficulty in using the DFT for practical applications is its high computational requirements. Direct computation of the N-point DFT requrires computational cost of $N^2$. However class of efficient DFT algorithms called \textit{Fast Fourier Transform (FFT)} has computational cost proportional to $Nlog_{2}N$ \cite{cite:RT_DSP,cite:3}.
 \par 
 Decimation-in-time FFT algorithms are based in splitting the N-point DFT summation into two summations, that one sum over the even-indexed points of $x[n]$ and another sum over the odd-indexed points of $x[n]$.
@@ -336,7 +359,15 @@ They differ mainly in the resolution and variance level of the result. For detai
 \subsection{Spectrograms}
 
 \section{Embedded systems and microcontrollers}
+There are many definitions of embedded systems. The one picked for this thesis subjectively seems well accurate in the description of the given term. It goes as follows.
+
+\textit{"An embedded system is a specialized computer system that is usually integrated as part of a larger system. An embedded system consist of a combination of hardware and software components to form a computational engine that will perform a specific function. Unlike desktop systems which are designed to perform a general function, embedded systems are constrained in their application \cite{cite:SE_for_ES}."}
+
+Embedded systems very often perform in reactive and real-time environments, which has to fulfill the real-time constrains that are described in \ref{R-T constrains}. Not satisfying these constrains can cause significant system consequences. If the consequences consist of a degradation of performance, but not failure, the system is referred to as a soft real-time system (e.g. highway car counter). On the contrary, if the consequences are system failure, the system is referred to as a hard real-time system (e.g. a braking system in vehicle). 
+
+Typical embedded system receives information about the surrounding enviroment via sensors and responds with actuators. General block diagram of such system is in Figure XXX.																	
 \subsection{Embedded systems}
+
 \subsection{DSP Hardware Options}
 DSP algorithms can be implemented on different types of digital hardware. The following are the widely used options for DSP systems:
 \begin{itemize}
@@ -345,7 +376,7 @@ DSP algorithms can be implemented on different types of digital hardware. The fo
 \item Field-programmable gate arrays (FPGAs).
 \item General-purpose micro-processors or micro-controllers ($\mu$P/$\mu$C).
 \item General-purpose digital signal processors.
-\item DSP processors with application-specific hardware accelarators \cite{cite:RT_DSP}.
+\item DSP processors with application-specific hardware accelerators \cite{cite:RT_DSP}.
 \end{itemize}
 
 Each hardware (HW) platform has different advantages and constrains for different applications, thus, there is no \textit{best} HW platform that could be used for every practical project. Instead each option should be carefully considered from point of flexibility, required design time, power consumption, performance and cost. 
@@ -353,6 +384,7 @@ Each hardware (HW) platform has different advantages and constrains for differen
 Characteristic of mentioned hardware options are summarized in Table XXX (\cite{cite:RT_DSP}).
 
 \subsection{Real-time constraints}
+\label{R-T constrains}
 Generally, a real-time system is one that must process information and produce a response within a specified time, else risk severe consequences, including failure. A real-time DSP system demands that the signal processing time $t_{p}$, must be less than sampling period $T$, that is
 \begin{equation} \label{eq:hardRealTime1}
 t_{p}+t_{o}<T,
@@ -364,7 +396,24 @@ Thus, this limitation gives constraint to the highest frequency signal that can 
 f_{M} \leq \frac{fs}{2} < \frac{1}{2(t_{p}+t_{o})} \cite{cite:RT_DSP}.
 \end{equation}
 
-\subsection{ARM M4}
+Using different techniques of processing can reduce the I/O overhead time and increase the performance of the DSP hardware platforms. For example by applying a block-by-block processing, where the I/O operations are handled by DMA controllers, which place data samples in memory buffers \cite{cite:RT_DSP}.
+
+Today, with performance improvement of hardware platforms, it is even possible to calculate FFT (see \ref{sec:FFT}) of 64-points in matter of tenths of milliseconds with low-cost ARM microprocessor (e.g. specifically in $0.16ms$ for microcontrollers of STM32F1xx series according to \cite{cite:STM32_DSP_library}).
+\subsection{ARM Cortex-M3}
+First manufactured microprocessor of Cortex series was ARM Cortex-M3. It was developed in 2006 and its target group of application were 32-bit microcontrollers. Its main advantage is an excellent efficiency which yields high performance and a low energy consumption without need for a very high system clock frequency. It is based on architecture \textit{ARMv7}.
+
+An ARMv7 architecture was developed as modern type of a general architecture that could be used for low-level microprocessors as well as for high-performance application processors. Design of the architecture is split in three main profiles:
+\begin{itemize}
+	\setlength{\itemsep}{5pt}
+	\item Profile A - aimed on application processors for performance-intensive systems capable of using embedded operational systems (such as Symbian, Android or Linux Embedded).
+	\item Profile R - aimed on high-performance processors for real-time applications.
+	\item Profile M - aimed on wide-range processors for deeply embedded applications \cite{cite:ARM-M3}.
+\end{itemize}
+
+\subsubsection{Instruction Set}
+There are two instruction sets supported by ARM cores in general: the ARM instructions which are 32-bit and the Thumb instructions which are 16-bit. During the execution, the processor can switch either to the ARM state or to the Thumb state accordingly to the instruction set it is currently using.
+
+The ARMv7 architecture is using new instruction set called a Thumb-2 which consist of the 32-bit Thumb instructions and also 16-bit Thumb instructions. This yields big improvement from the perspective of the ease of use, performance and code size. It allows execution of complex operation in state Thumb which increases the effectivity \cite{cite:ARM-M3}.
 
 \chapter{Practical Implementation}
 

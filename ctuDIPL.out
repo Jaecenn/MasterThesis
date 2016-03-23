@@ -16,7 +16,7 @@
 \BOOKMARK [2][-]{subsection.2.5.1}{Embedded systems}{section.2.5}% 16
 \BOOKMARK [2][-]{subsection.2.5.2}{DSP Hardware Options}{section.2.5}% 17
 \BOOKMARK [2][-]{subsection.2.5.3}{Real-time constraints}{section.2.5}% 18
-\BOOKMARK [2][-]{subsection.2.5.4}{ARM M4}{section.2.5}% 19
+\BOOKMARK [2][-]{subsection.2.5.4}{ARM Cortex-M3}{section.2.5}% 19
 \BOOKMARK [0][-]{chapter.3}{Practical Implementation}{}% 20
 \BOOKMARK [1][-]{section.3.1}{Description of Algorithm for Uneveness Analysis}{chapter.3}% 21
 \BOOKMARK [2][-]{subsection.3.1.1}{Flowchart Diagram}{section.3.1}% 22
@@ -33,4 +33,4 @@
 \BOOKMARK [2][-]{subsection.3.4.3}{Designed Prototype}{section.3.4}% 33
 \BOOKMARK [0][-]{chapter.4}{Conclusions}{}% 34
 \BOOKMARK [0][-]{appendix.A}{Bibliography}{}% 35
-\BOOKMARK [0][-]{section*.5}{Project Specification}{}% 36
+\BOOKMARK [0][-]{section*.7}{Project Specification}{}% 36

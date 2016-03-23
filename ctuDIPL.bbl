@@ -16,9 +16,19 @@
 {\sc R.~M. Petre~Stoica}, {\em Specral Analysis of Signals}, Prentice Hall,
   2005.
 
+\bibitem{cite:SE_for_ES}
+{\sc M.~K. Robert~Oshana}, {\em Software Engineering for Embedded Systems},
+  Elsevier, 2013.
+
 \bibitem{cite:RT_DSP}
 {\sc W.~T. Sen M.~Kuo, Bob H.~Lee}, {\em Real-Time Digital Signal Processing},
   John Wiley and Sons, Ltd, 2013.
+
+\bibitem{cite:STM32_DSP_library}
+{\sc STMicroelectronics}, {\em STM32F10x DSP library}, 2010.
+
+\bibitem{cite:ARM-M3}
+{\sc J.~Yiu}, {\em The definitive guide to the ARM cortex-M3}, Newnes, 2010.
 
 \bibitem{cite:FoFF}
 {\sc A.~Ziabicki}, {\em Fundamentals of Fiber Formation}, John Wiley and Sons,

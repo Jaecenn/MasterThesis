@@ -3,44 +3,44 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: ctuDIPL.aux
 The style file: siam.bst
 Database file #1: ctuDIP_biblio.bib
-You've used 6 entries,
+You've used 9 entries,
             2030 wiz_defined-function locations,
-            530 strings with 4364 characters,
-and the built_in function-call counts, 1224 in all, are:
-= -- 87
-> -- 42
+            545 strings with 4635 characters,
+and the built_in function-call counts, 1812 in all, are:
+= -- 130
+> -- 63
 < -- 0
-+ -- 18
-- -- 12
-* -- 75
-:= -- 221
-add.period$ -- 6
-call.type$ -- 6
-change.case$ -- 19
++ -- 28
+- -- 18
+* -- 110
+:= -- 323
+add.period$ -- 9
+call.type$ -- 9
+change.case$ -- 28
 chr.to.int$ -- 0
-cite$ -- 6
-duplicate$ -- 75
-empty$ -- 131
-format.name$ -- 12
-if$ -- 246
+cite$ -- 9
+duplicate$ -- 111
+empty$ -- 194
+format.name$ -- 18
+if$ -- 365
 int.to.chr$ -- 0
-int.to.str$ -- 6
-missing$ -- 10
-newline$ -- 21
-num.names$ -- 12
-pop$ -- 44
+int.to.str$ -- 9
+missing$ -- 14
+newline$ -- 30
+num.names$ -- 18
+pop$ -- 65
 preamble$ -- 1
-purify$ -- 18
+purify$ -- 27
 quote$ -- 0
-skip$ -- 30
+skip$ -- 45
 stack$ -- 0
-substring$ -- 30
-swap$ -- 12
+substring$ -- 46
+swap$ -- 18
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 14
+type$ -- 22
 warning$ -- 0
-while$ -- 12
-width$ -- 7
-write$ -- 51
+while$ -- 18
+width$ -- 10
+write$ -- 74
