@@ -138,6 +138,7 @@ Goal of textile manufacturing is to make fabric from textile fibers, which can b
 \end{itemize}
 In regards to the topic of this thesis only two - the spinning and combing processes - are described.
 \subsection{Textile Fibers}
+\label{textileFibers}
 Fibers are the basis for all textiles. We distinguished the two main types: natural fibers and synthetic fibers. The natural fibers are:
 \begin{itemize}
 	\setlength{\itemsep}{5pt}
@@ -402,8 +403,9 @@ f_{M} \leq \frac{fs}{2} < \frac{1}{2(t_{p}+t_{o})} \cite{cite:RT_DSP}.
 
 Using different techniques of processing can reduce the I/O overhead time and increase the performance of the DSP hardware platforms. For example by applying a block-by-block processing, where the I/O operations are handled by DMA controllers, which place data samples in memory buffers \cite{cite:RT_DSP}.
 
-Today, with performance improvement of hardware platforms, it is even possible to calculate FFT (see \ref{sec:FFT}) of 64-points in matter of tenths of milliseconds with low-cost ARM microprocessor (e.g. specifically in $0.16ms$ for microcontrollers of STM32F1xx series according to \cite{cite:STM32_DSP_library}).
+Today, with performance improvement of hardware platforms, it is even possible to calculate FFT (see \ref{sec:FFT}) of 64-points in matter of tenths of milliseconds with low-cost ARM microprocessor (e.g. specifically in $0.16 ms$ for microcontrollers of STM32F1xx series according to \cite{cite:STM32_DSP_library}).
 \subsection{ARM Cortex-M3}
+\label{sec:ARM_M3}
 First manufactured microprocessor of Cortex series was ARM Cortex-M3. It was developed in 2006 and its target group of application were 32-bit microcontrollers. Its main advantage is an excellent efficiency which yields high performance and a low energy consumption without need for a very high system clock frequency. It is based on architecture \textit{ARMv7}.
 
 An ARMv7 architecture was developed as modern type of a general architecture that could be used for low-level microprocessors as well as for high-performance application processors. Design of the architecture is split in three main profiles:
@@ -422,25 +424,75 @@ The ARMv7 architecture is using new instruction set called a Thumb-2 which consi
 \chapter{Practical Implementation}
 Prior to the design of the system architecture a list of requirements for the device had to be created. This was done in discussion with company Rieter CZ s.r.o. who provided resources for development. The most important requirement is that the device shall be able to analyse quality of a yarn and sliver. This separates the project in two parts, where core software algorithms are shared but other parts significantly different. 
 
-\subsubsection{Yarn Quality Analysis}
-	The yarn quality analysis didn't require any additional hardware, but only software algorithm. This is because measurement of yarn diameter is done by row camera sensor that is connected to processing board which was already developed in Rieter. Processing board has CAN interface that sends values of diameters to the microcontroller. 
-	
-	Therefore, in this part of the project, only input we consider are values of diameter send over CAN. This determines the project as software system with main requirements and features as follows:
-	 \begin{itemize}
-	 	\setlength{\itemsep}{5pt}
-	 	\item System shall receive yarn diameter values and process them in a way that yields spectrogram values as output.
-	 	\item System shall communicate via CAN bus.
-	 	\item System shall be able to run on ARM microcontrollers STM32F1xx series.
-	 \end{itemize}
+\section{Yarn Quality Analysis}
+The yarn quality analysis requires only software algorithm and no additional hardware. This is because measurement of a yarn diameter is done by a row camera sensor that is connected to processing board which was already developed in Rieter. Processing board has CAN interface that sends values of diameters to the microcontroller. 
+
+Therefore, in this part of the project, only input we consider are values of diameter send over CAN. This determines the project as software system with main requirements and features defined as follows:
+\begin{itemize}
+ 	\setlength{\itemsep}{5pt}
+ 	\item The system shall receive yarn diameter values and process them in a way that yields spectrogram values as output.
+ 	\item The system shall communicate via CAN bus.
+ 	\item The system shall be able to run on ARM microcontrollers STM32F1xx series.
+\end{itemize}
+
+\subsection{Description of Algorithm for Uneveness Analysis}
+\subsection{Flowchart Diagram}
 
 
- The main requirements and features for the device prototype were as following:
+\section{Sliver Quality Analysis}
+ The sliver quality analysis require development of software and also additional hardware. In this case - opposite to yarn quality system - it is necessary to design new processing board due to the fact that sliver and yarn has significant size differences (see \ref{textileFibers} and different sensors needs to be used). Also it was decided that device developed in this project will be only prototype version, thus, it has additional functionality that can be removed in final product. The main requirements and features for the device prototype were defined as follows:
 \begin{itemize}
 	\setlength{\itemsep}{5pt}
-	\item Device shall be able to measure diameter of a yarn and sliver.
-	\item Device shall be able to measure with one or more specified sensors simultaneously.
-	\item Device shall be able to log measured data to the service computer in real-time with sampling frequency at least $f_{s}=1200Hz$. 
-	\item Profile M - aimed on wide-range processors for deeply embedded applications \cite{cite:ARM-M3}.
+	\item The device shall be able to measure diameter of a sliver.
+	\item The device shall be able to filter, and process measured data in a way that allows to calculate CV\% value and Variance-length Curve.
+	\item The device shall be able to measure the diameter with one or more specified sensors simultaneously.
+	\item The device shall be able to send measured data to the service computer in real-time.
+	\item A PC application shall be implemented for receiving and storing data received from the device.
+	\item The device shall be able to send measured data to the service computer in real-time.
+	\item The device shall run on ARM microcontroller STM32F446.
+\end{itemize}
+\subsection{Hardware}
+Purpose of the hardware section relays in providing the correct supply to the control unit and the sensors. Another feature of hardware platform is processing the signals from sensors and converting it to the range which is suitable for ADC\footnote{Analog to digital converter} unit. Additionally the hardware platform allows to communicate with other distributed systems or PC by providing necessary interfaces. 
+
+%As the main innovation and focus of this project is oriented on the software, the hardware was designed with close cooperation
+
+The hardware block diagram of the system is shown in Figure \ref{fig:blockDiagram_HW}. Description of each blocks follows in next paragraphs.
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1.0\textwidth]{blockSchematic4.eps}
+	\caption{Block Diagram of the System}
+	\label{fig:blockDiagram_HW}
+\end{figure}
+
+\subsubsection{Control Unit}
+	The main part of the hardware is ARM microcontroller STM32F446 from STMicroelectronics. Its choice was given by a requirement from Rieter CZ s.r.o with a description that it was chosen for its low cost, sufficient performance and company's good long-term experience with manufacturer's support. 
+	
+	Microcontroller STM32F446 is based on ARM Cortex-M4 technology with ARMv7 architecture \ref{sec:ARM_M3}. With DSP instructions it is capable of handling DSP algorithms such as FFT calculation in very short time (less than $0.5 ms$ for 1024-point FFT). Maximal operation frequency is $180 MHz$ at which gives $225 DMIPS$ (Dhrystone benchmark). The most important features and peripherals of this microcontroller are:
+\begin{itemize}
+	\setlength{\itemsep}{5pt}
+	\item ARM 32-bit Cortex-M4, 180 MHz,
+	\item 512 kB of Flash memory,
+	\item 128 kB of SRAM,
+	\item SWD and JTAG debug interface,
+	\item 17 Timers and 3 ADC,
+	\item Communication interfaces such as USART, CAN, SPI, SAI, SDIO, I2C, LIN etc.
+\end{itemize}	
+\subsubsection{Power Supply Converters}
+Hardware platform of this system has to provide correct supply voltages to microcontroller and sensors. Supplying the sensors is especially complicated since they require three different voltages:
+\begin{itemize}
+	\setlength{\itemsep}{5pt}
+	\item $5 V$,
+	\item $-5 V$,
+	\item $24 V$.
+\end{itemize}
+Voltage supply of the microcontroller is $3.3 V$.
+The power supply of the hardware board was required to be $12 V$. Therefore, four DC-DC convertors has to be designed, specifically:
+\begin{itemize}
+	\setlength{\itemsep}{5pt}
+	\item $12 V$ to $5 V$,
+	\item $5 V$ to $-5 V$,
+	\item $5 V$ to $24 V$,
+	\item $5 V to 3.3 V$.
 \end{itemize}
 
 \section{Description of Algorithm for Uneveness Analysis}

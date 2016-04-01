@@ -18,19 +18,24 @@
 \BOOKMARK [2][-]{subsection.2.5.3}{Real-time constraints}{section.2.5}% 18
 \BOOKMARK [2][-]{subsection.2.5.4}{ARM Cortex-M3}{section.2.5}% 19
 \BOOKMARK [0][-]{chapter.3}{Practical Implementation}{}% 20
-\BOOKMARK [1][-]{section.3.1}{Description of Algorithm for Uneveness Analysis}{chapter.3}% 21
-\BOOKMARK [2][-]{subsection.3.1.1}{Flowchart Diagram}{section.3.1}% 22
-\BOOKMARK [1][-]{section.3.2}{Description of Designed System}{chapter.3}% 23
-\BOOKMARK [2][-]{subsection.3.2.1}{Block Diagram}{section.3.2}% 24
-\BOOKMARK [1][-]{section.3.3}{Implementation of Software}{chapter.3}% 25
-\BOOKMARK [2][-]{subsection.3.3.1}{Filtration}{section.3.3}% 26
-\BOOKMARK [2][-]{subsection.3.3.2}{Detection of Defects}{section.3.3}% 27
-\BOOKMARK [2][-]{subsection.3.3.3}{Automatic Evaulation}{section.3.3}% 28
-\BOOKMARK [2][-]{subsection.3.3.4}{Example of Designed Application}{section.3.3}% 29
-\BOOKMARK [1][-]{section.3.4}{Implementation of Hardware}{chapter.3}% 30
-\BOOKMARK [2][-]{subsection.3.4.1}{Electronic Circuits Design}{section.3.4}% 31
-\BOOKMARK [2][-]{subsection.3.4.2}{Description of possible sensors}{section.3.4}% 32
-\BOOKMARK [2][-]{subsection.3.4.3}{Designed Prototype}{section.3.4}% 33
-\BOOKMARK [0][-]{chapter.4}{Conclusions}{}% 34
-\BOOKMARK [0][-]{appendix.A}{Bibliography}{}% 35
-\BOOKMARK [0][-]{section*.7}{Project Specification}{}% 36
+\BOOKMARK [1][-]{section.3.1}{Yarn Quality Analysis}{chapter.3}% 21
+\BOOKMARK [2][-]{subsection.3.1.1}{Description of Algorithm for Uneveness Analysis}{section.3.1}% 22
+\BOOKMARK [2][-]{subsection.3.1.2}{Flowchart Diagram}{section.3.1}% 23
+\BOOKMARK [1][-]{section.3.2}{Sliver Quality Analysis}{chapter.3}% 24
+\BOOKMARK [2][-]{subsection.3.2.1}{Hardware}{section.3.2}% 25
+\BOOKMARK [1][-]{section.3.3}{Description of Algorithm for Uneveness Analysis}{chapter.3}% 26
+\BOOKMARK [2][-]{subsection.3.3.1}{Flowchart Diagram}{section.3.3}% 27
+\BOOKMARK [1][-]{section.3.4}{Description of Designed System}{chapter.3}% 28
+\BOOKMARK [2][-]{subsection.3.4.1}{Block Diagram}{section.3.4}% 29
+\BOOKMARK [1][-]{section.3.5}{Implementation of Software}{chapter.3}% 30
+\BOOKMARK [2][-]{subsection.3.5.1}{Filtration}{section.3.5}% 31
+\BOOKMARK [2][-]{subsection.3.5.2}{Detection of Defects}{section.3.5}% 32
+\BOOKMARK [2][-]{subsection.3.5.3}{Automatic Evaulation}{section.3.5}% 33
+\BOOKMARK [2][-]{subsection.3.5.4}{Example of Designed Application}{section.3.5}% 34
+\BOOKMARK [1][-]{section.3.6}{Implementation of Hardware}{chapter.3}% 35
+\BOOKMARK [2][-]{subsection.3.6.1}{Electronic Circuits Design}{section.3.6}% 36
+\BOOKMARK [2][-]{subsection.3.6.2}{Description of possible sensors}{section.3.6}% 37
+\BOOKMARK [2][-]{subsection.3.6.3}{Designed Prototype}{section.3.6}% 38
+\BOOKMARK [0][-]{chapter.4}{Conclusions}{}% 39
+\BOOKMARK [0][-]{appendix.A}{Bibliography}{}% 40
+\BOOKMARK [0][-]{section*.8}{Project Specification}{}% 41
