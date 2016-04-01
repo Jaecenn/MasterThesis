@@ -203,10 +203,14 @@ Uster Quantum 3 is modern, state of art yarn clearer, which provide detection of
 	\item unevenness calculation CV\%,
 	\item IPI classification,
 	\item calculation of hairiness,
-	\item spectrograms calculation
+	\item spectrograms calculation.
 \end{itemize}
 
-Uster Quantum 3 has been developed by company Uster Technologies, which is developing yarn clearers for 30 years. Their devices often feature application of new technologies and they offer 
+Uster Quantum 3 has been developed by company Uster Technologies, which is developing yarn clearers for 30 years. Their devices often feature application of new technologies and they offer high-quality products.
+
+This yarn clearer is also one of the two commercially sold products capable of calculating spectrograms and evaulate yarn unevenness CV\%.
+
+ 
 \subsection{State of Art}
 
 \section{Digital Signal Processing}
@@ -416,6 +420,28 @@ There are two instruction sets supported by ARM cores in general: the ARM instru
 The ARMv7 architecture is using new instruction set called a Thumb-2 which consist of the 32-bit Thumb instructions and also 16-bit Thumb instructions. This yields big improvement from the perspective of the ease of use, performance and code size. It allows execution of complex operation in state Thumb which increases the effectivity \cite{cite:ARM-M3}.
 
 \chapter{Practical Implementation}
+Prior to the design of the system architecture a list of requirements for the device had to be created. This was done in discussion with company Rieter CZ s.r.o. who provided resources for development. The most important requirement is that the device shall be able to analyse quality of a yarn and sliver. This separates the project in two parts, where core software algorithms are shared but other parts significantly different. 
+
+\subsubsection{Yarn Quality Analysis}
+	The yarn quality analysis didn't require any additional hardware, but only software algorithm. This is because measurement of yarn diameter is done by row camera sensor that is connected to processing board which was already developed in Rieter. Processing board has CAN interface that sends values of diameters to the microcontroller. 
+	
+	Therefore, in this part of the project, only input we consider are values of diameter send over CAN. This determines the project as software system with main requirements and features as follows:
+	 \begin{itemize}
+	 	\setlength{\itemsep}{5pt}
+	 	\item System shall receive yarn diameter values and process them in a way that yields spectrogram values as output.
+	 	\item System shall communicate via CAN bus.
+	 	\item System shall be able to run on ARM microcontrollers STM32F1xx series.
+	 \end{itemize}
+
+
+ The main requirements and features for the device prototype were as following:
+\begin{itemize}
+	\setlength{\itemsep}{5pt}
+	\item Device shall be able to measure diameter of a yarn and sliver.
+	\item Device shall be able to measure with one or more specified sensors simultaneously.
+	\item Device shall be able to log measured data to the service computer in real-time with sampling frequency at least $f_{s}=1200Hz$. 
+	\item Profile M - aimed on wide-range processors for deeply embedded applications \cite{cite:ARM-M3}.
+\end{itemize}
 
 \section{Description of Algorithm for Uneveness Analysis}
 \subsection{Flowchart Diagram}
