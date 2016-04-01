@@ -486,14 +486,23 @@ Hardware platform of this system has to provide correct supply voltages to micro
 	\item $24 V$.
 \end{itemize}
 Voltage supply of the microcontroller is $3.3 V$.
-The power supply of the hardware board was required to be $12 V$. Therefore, four DC-DC convertors has to be designed, specifically:
+
+The power supply of the hardware board was required to be $12 V$. Therefore, four DC-DC converters has to be designed, specifically:
 \begin{itemize}
 	\setlength{\itemsep}{5pt}
 	\item $12 V$ to $5 V$,
 	\item $5 V$ to $-5 V$,
 	\item $5 V$ to $24 V$,
-	\item $5 V to 3.3 V$.
+	\item $5 V$ to $3.3 V$.
 \end{itemize}
+
+For the first conversion from $12 V$ to $5 V$ was used an integrated step-down voltage regulator LM2594. To obtain negative $-5 V$ an charge pump inverter TPS60400 was used. The conversion from $5 V$ to $3.3 V$ is done by simple linear regulator MCP1825. The only step-up was necessary to get $24 V$ from $5 V$, for this purpose was chosen step-up voltage regulator LM1577.
+
+Concrete circuits schematics of these converters are added as attachment to the CD annexed with this thesis.
+
+\subsubsection{Sensors and Input Modules}
+
+
 
 \section{Description of Algorithm for Uneveness Analysis}
 \subsection{Flowchart Diagram}
