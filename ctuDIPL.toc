@@ -52,19 +52,23 @@
 \contentsline {subsubsection}{Control Unit}{14}{subsubsection*.7}
 \contentsline {subsubsection}{Power Supply Converters}{15}{subsubsection*.8}
 \contentsline {subsubsection}{Power Supply Converters}{15}{subsubsection*.8}
-\contentsline {section}{\numberline {3.3}Description of Algorithm for Uneveness Analysis}{16}{section.3.3}
-\contentsline {subsection}{\numberline {3.3.1}Flowchart Diagram}{16}{subsection.3.3.1}
-\contentsline {section}{\numberline {3.4}Description of Designed System}{16}{section.3.4}
-\contentsline {subsection}{\numberline {3.4.1}Block Diagram}{16}{subsection.3.4.1}
-\contentsline {section}{\numberline {3.5}Implementation of Software}{16}{section.3.5}
-\contentsline {subsection}{\numberline {3.5.1}Filtration}{16}{subsection.3.5.1}
-\contentsline {subsection}{\numberline {3.5.2}Detection of Defects}{16}{subsection.3.5.2}
-\contentsline {subsection}{\numberline {3.5.3}Automatic Evaulation}{16}{subsection.3.5.3}
-\contentsline {subsection}{\numberline {3.5.4}Example of Designed Application}{16}{subsection.3.5.4}
-\contentsline {section}{\numberline {3.6}Implementation of Hardware}{16}{section.3.6}
-\contentsline {subsection}{\numberline {3.6.1}Electronic Circuits Design}{16}{subsection.3.6.1}
-\contentsline {subsection}{\numberline {3.6.2}Description of possible sensors}{16}{subsection.3.6.2}
-\contentsline {subsection}{\numberline {3.6.3}Designed Prototype}{16}{subsection.3.6.3}
-\contentsline {chapter}{\numberline {4}Conclusions}{17}{chapter.4}
-\contentsline {chapter}{\numberline {A}Bibliography}{19}{appendix.A}
-\contentsline {chapter}{\numberline {B}Project\ Specification}{21}{section*.9}
+\contentsline {subsubsection}{Sensors and Input Modules}{16}{subsubsection*.9}
+\contentsline {subsubsection}{Sensors and Input Modules}{16}{subsubsection*.9}
+\contentsline {section}{\numberline {3.3}Algorithm for Sliver Quality Analysis}{16}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Solution for Embedded Systems Constraints}{17}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}Wavelengths Specification}{18}{subsection.3.3.2}
+\contentsline {subsection}{\numberline {3.3.3}Flowchart Diagram}{19}{subsection.3.3.3}
+\contentsline {section}{\numberline {3.4}Description of Designed System}{19}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}Block Diagram}{19}{subsection.3.4.1}
+\contentsline {section}{\numberline {3.5}Implementation of Software}{19}{section.3.5}
+\contentsline {subsection}{\numberline {3.5.1}Filtration}{19}{subsection.3.5.1}
+\contentsline {subsection}{\numberline {3.5.2}Detection of Defects}{19}{subsection.3.5.2}
+\contentsline {subsection}{\numberline {3.5.3}Automatic Evaulation}{19}{subsection.3.5.3}
+\contentsline {subsection}{\numberline {3.5.4}Example of Designed Application}{19}{subsection.3.5.4}
+\contentsline {section}{\numberline {3.6}Implementation of Hardware}{19}{section.3.6}
+\contentsline {subsection}{\numberline {3.6.1}Electronic Circuits Design}{19}{subsection.3.6.1}
+\contentsline {subsection}{\numberline {3.6.2}Description of possible sensors}{19}{subsection.3.6.2}
+\contentsline {subsection}{\numberline {3.6.3}Designed Prototype}{19}{subsection.3.6.3}
+\contentsline {chapter}{\numberline {4}Conclusions}{21}{chapter.4}
+\contentsline {chapter}{\numberline {A}Bibliography}{23}{appendix.A}
+\contentsline {chapter}{\numberline {B}Project\ Specification}{25}{section*.10}
