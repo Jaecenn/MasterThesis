@@ -539,7 +539,7 @@ One of the requirements for the software was determined that the device has to b
 
 This sliver speed was chosen as it is default settings of combing machines and was used during testing. If different sliver speed is set on combing machine, its value is send over a CAN communication during initialization and basic sampling frequency is adjusted in a way that decimation factor always stays set on $M=2$. This allows to use the same filter coefficients independently on set sliver speeds.
 
-Knowing these informations allows us to determine a \textit{cut off frequency}\footnote{XXX} $f_c$ of FIR filters that are used for limiting the bandwidth and an anti-aliasing. This is according to the formula $f_c=f_s/2$ for each wavelength as shown in table XXX.
+Knowing these informations allows us to determine a \textit{cut off frequency}\footnote{XXX} $f_c$ of FIR filters that are used for limiting the bandwidth and an anti-aliasing. This is done according to the formula $f_c=f_s/2$ for each wavelength as shown in table XXX.
 
 \begin{table}[htbp]
 	\centering
@@ -548,18 +548,19 @@ Knowing these informations allows us to determine a \textit{cut off frequency}\f
 		\toprule
 		Index of Stage & $\lambda_{min} [cm]$ & $\lambda_{max} [cm]$ & $\lambda_{s} [cm]$ & $f_s [Hz]$ & $f_c [Hz]$ \\
 		\midrule
-		1     & 0,25  & 0,5   & 0,125 & 480   & 240 \\
-		2     & 0,5   & 1     & 0,25  & 240   & 120 \\
-		3     & 1     & 2     & 0,5   & 120   & 60 \\
-		4     & 2     & 4     & 1     & 60    & 30 \\
-		5     & 4     & 8     & 2     & 30    & 15 \\
-		6     & 8     & 16    & 4     & 15    & 7,5 \\
-		7     & 16    & 32    & 8     & 7,5   & 3,75 \\
-		8     & 32    & 64    & 16    & 3,75  & 1,875 \\
-		9     & 64    & 128   & 32    & 1,875 & 0,9375 \\
-		10    & 128   & 256   & 64    & 0,9375 & 0,46875 \\
-		11    & 256   & 512   & 128   & 0,46875 & 0,234375 \\
-		12    & 512   & 1024  & 256   & 0,234375 & 0,1171875 \\
+    1     & 0,25  & 0,5   & 0,125 & 240   & 120 \\
+    2     & 0,5   & 1     & 0,25  & 120   & 60 \\
+    3     & 1     & 2     & 0,5   & 60    & 30 \\
+    4     & 2     & 4     & 1     & 30    & 15 \\
+    5     & 4     & 8     & 2     & 15    & 7,5 \\
+    6     & 8     & 16    & 4     & 7,5   & 3,75 \\
+    7     & 16    & 32    & 8     & 3,75  & 1,875 \\
+    8     & 32    & 64    & 16    & 1,875 & 0,9375 \\
+    9     & 64    & 128   & 32    & 0,9375 & 0,46875 \\
+    10    & 128   & 256   & 64    & 0,46875 & 0,234375 \\
+    11    & 256   & 512   & 128   & 0,234375 & 0,1171875 \\
+    12    & 512   & 1024  & 256   & 0,1171875 & 0,05859375 \\
+
 		\bottomrule
 	\end{tabular}%
 	\label{tab:Wavelengths}%
