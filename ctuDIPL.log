@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/W32TeX) (preloaded format=pdflatex 2016.1.12)  1 MAY 2016 11:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/W32TeX) (preloaded format=pdflatex 2016.1.12)  1 MAY 2016 22:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1188,7 +1188,11 @@ Package: enumitem 2011/09/28 v3.5.2 Customized lists
 \enit@toks=\toks38
 \enit@inbox=\box84
 \enitdp@description=\count192
-) (./ctuDIPL.aux)
+) (./ctuDIPL.aux
+
+LaTeX Warning: Label `fig:FIR_decimator' multiply defined.
+
+)
 \openout1 = `ctuDIPL.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 109.
@@ -1206,8 +1210,7 @@ LaTeX Font Info:    ... okay on input line 109.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 109.
 LaTeX Font Info:    ... okay on input line 109.
 LaTeX Font Info:    Try loading font information for T1+lmr on input line 109.
-
-(c:/texlive/2015/texmf-dist/tex/latex/lm/t1lmr.fd
+ (c:/texlive/2015/texmf-dist/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Info: Redefining \microtypecontext on input line 109.
@@ -1551,7 +1554,7 @@ Package epstopdf Info: Source file: <blockSchematic4.eps>
 ted-to.pdf blockSchematic4.eps>
 (epstopdf)             \includegraphics on input line 462.
 Package epstopdf Info: Output file is already uptodate.
- <blockSchematic4-eps-converted-to.pdf, id=416, 728.7225pt x 551.05875pt>
+ <blockSchematic4-eps-converted-to.pdf, id=419, 728.7225pt x 551.05875pt>
 File: blockSchematic4-eps-converted-to.pdf Graphic file (type pdf)
 
 <use blockSchematic4-eps-converted-to.pdf>
@@ -1574,7 +1577,7 @@ ted-to.pdf system_overview.eps>
 (epstopdf)             \includegraphics on input line 522.
 Package epstopdf Info: Output file is already uptodate.
 
-<system_overview-eps-converted-to.pdf, id=447, 388.45125pt x 247.92625pt>
+<system_overview-eps-converted-to.pdf, id=450, 388.45125pt x 247.92625pt>
 File: system_overview-eps-converted-to.pdf Graphic file (type pdf)
 
 <use system_overview-eps-converted-to.pdf>
@@ -1593,24 +1596,75 @@ nverted-to.pdf sliver_singleBranch.eps>
 (epstopdf)             \includegraphics on input line 578.
 Package epstopdf Info: Output file is already uptodate.
 
-<sliver_singleBranch-eps-converted-to.pdf, id=474, 368.37625pt x 200.75pt>
+<sliver_singleBranch-eps-converted-to.pdf, id=477, 368.37625pt x 200.75pt>
 File: sliver_singleBranch-eps-converted-to.pdf Graphic file (type pdf)
 
 <use sliver_singleBranch-eps-converted-to.pdf>
 Package pdftex.def Info: sliver_singleBranch-eps-converted-to.pdf used on input
  line 578.
 (pdftex.def)             Requested size: 363.0pt x 197.81801pt.
- [19 <./sliver_singleBranch-eps-converted-to.pdf>] [20]
+ [19 <./sliver_singleBranch-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <firDecimator.eps>
+(epstopdf)                    date: 2016-05-01 22:35:17
+(epstopdf)                    size: 34942 bytes
+(epstopdf)             Output file: <firDecimator-eps-converted-to.pdf>
+(epstopdf)                    date: 2016-05-01 22:43:07
+(epstopdf)                    size: 12952 bytes
+(epstopdf)             Command: <repstopdf --outfile=firDecimator-eps-converted
+-to.pdf firDecimator.eps>
+(epstopdf)             \includegraphics on input line 594.
+Package epstopdf Info: Output file is already uptodate.
+
+<firDecimator-eps-converted-to.pdf, id=491, 412.54124pt x 476.78125pt>
+File: firDecimator-eps-converted-to.pdf Graphic file (type pdf)
+
+<use firDecimator-eps-converted-to.pdf>
+Package pdftex.def Info: firDecimator-eps-converted-to.pdf used on input line 5
+94.
+(pdftex.def)             Requested size: 363.0pt x 419.53241pt.
+Package epstopdf Info: Source file: <magnitudeResponse.eps>
+(epstopdf)                    date: 2016-05-01 22:41:20
+(epstopdf)                    size: 30764 bytes
+(epstopdf)             Output file: <magnitudeResponse-eps-converted-to.pdf>
+(epstopdf)                    date: 2016-05-01 22:43:09
+(epstopdf)                    size: 9835 bytes
+(epstopdf)             Command: <repstopdf --outfile=magnitudeResponse-eps-conv
+erted-to.pdf magnitudeResponse.eps>
+(epstopdf)             \includegraphics on input line 601.
+Package epstopdf Info: Output file is already uptodate.
+
+<magnitudeResponse-eps-converted-to.pdf, id=492, 562.1pt x 342.27875pt>
+File: magnitudeResponse-eps-converted-to.pdf Graphic file (type pdf)
+
+<use magnitudeResponse-eps-converted-to.pdf>
+Package pdftex.def Info: magnitudeResponse-eps-converted-to.pdf used on input l
+ine 601.
+(pdftex.def)             Requested size: 363.0pt x 221.04228pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [20]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [21 <./firDecimator-eps-converted-to.pdf>] [22 <./magnitudeResponse-eps-conver
+ted-to.pdf>]
 Chapter 4.
 .................................................
 . LaTeX info: "xparse/redefine-command"
 . 
-. Redefining command \chapter with sig. 's' on line 616.
+. Redefining command \chapter with sig. 's' on line 629.
 .................................................
 .................................................
 . LaTeX info: "xparse/redefine-command"
 . 
-. Redefining command \appendix with sig. 'ss' on line 616.
+. Redefining command \appendix with sig. 'ss' on line 629.
 .................................................
 No file ctuDIPL.ind.
 *************************************************
@@ -1618,57 +1672,57 @@ No file ctuDIPL.ind.
 * 
 * The macro \appendix should be used only once. Silently ignoring.
 *************************************************
-(./ctuDIPL.bbl [21
+(./ctuDIPL.bbl [23
 
-] [22
+] [24
 
 ]
 Appendix A.
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/lmr/m/sc/10.95'.
 (microtype)             Ignoring protrusion settings for this character.
-) [23] [24
+) [25] [26
 
-] <ctutest-zadani.pdf, id=510, 597.432pt x 845.0762pt>
+] <ctutest-zadani.pdf, id=543, 597.432pt x 845.0762pt>
 File: ctutest-zadani.pdf Graphic file (type pdf)
 
 <use ctutest-zadani.pdf>
-Package pdftex.def Info: ctutest-zadani.pdf used on input line 625.
+Package pdftex.def Info: ctutest-zadani.pdf used on input line 638.
 (pdftex.def)             Requested size: 597.43054pt x 845.07414pt.
 File: ctutest-zadani.pdf Graphic file (type pdf)
  <use ctutest-zadani.pdf>
-Package pdftex.def Info: ctutest-zadani.pdf used on input line 625.
+Package pdftex.def Info: ctutest-zadani.pdf used on input line 638.
 (pdftex.def)             Requested size: 597.43054pt x 845.07414pt.
 
-<ctutest-zadani.pdf, id=513, page=1, 597.432pt x 845.0762pt>
+<ctutest-zadani.pdf, id=546, page=1, 597.432pt x 845.0762pt>
 File: ctutest-zadani.pdf Graphic file (type pdf)
 
 <use ctutest-zadani.pdf, page 1>
-Package pdftex.def Info: ctutest-zadani.pdf, page1 used on input line 625.
+Package pdftex.def Info: ctutest-zadani.pdf, page1 used on input line 638.
 (pdftex.def)             Requested size: 597.43054pt x 845.07414pt.
 File: ctutest-zadani.pdf Graphic file (type pdf)
  <use ctutest-zadani.pdf, page 1>
-Package pdftex.def Info: ctutest-zadani.pdf, page1 used on input line 625.
+Package pdftex.def Info: ctutest-zadani.pdf, page1 used on input line 638.
 (pdftex.def)             Requested size: 597.45789pt x 845.11282pt.
 File: ctutest-zadani.pdf Graphic file (type pdf)
 
 <use ctutest-zadani.pdf, page 1>
-Package pdftex.def Info: ctutest-zadani.pdf, page1 used on input line 625.
+Package pdftex.def Info: ctutest-zadani.pdf, page1 used on input line 638.
 (pdftex.def)             Requested size: 597.45789pt x 845.11282pt.
 File: ctutest-zadani.pdf Graphic file (type pdf)
  <use ctutest-zadani.pdf, page 1>
-Package pdftex.def Info: ctutest-zadani.pdf, page1 used on input line 625.
+Package pdftex.def Info: ctutest-zadani.pdf, page1 used on input line 638.
 (pdftex.def)             Requested size: 597.45789pt x 845.11282pt.
 File: ctutest-zadani.pdf Graphic file (type pdf)
 
 <use ctutest-zadani.pdf, page 1>
-Package pdftex.def Info: ctutest-zadani.pdf, page1 used on input line 625.
+Package pdftex.def Info: ctutest-zadani.pdf, page1 used on input line 638.
 (pdftex.def)             Requested size: 597.45789pt x 845.11282pt.
- [25 <./ctutest-zadani.pdf>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 627.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 627.
+ [27 <./ctutest-zadani.pdf>]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 640.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 640.
  (./ctuDIPL.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 627.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 640.
 
 
  *File List*
@@ -1803,6 +1857,8 @@ ctu_logo_black.pdf    Graphic file (type pdf)
 blockSchematic4-eps-converted-to.pdf    Graphic file (type pdf)
 system_overview-eps-converted-to.pdf    Graphic file (type pdf)
 sliver_singleBranch-eps-converted-to.pdf    Graphic file (type pdf)
+firDecimator-eps-converted-to.pdf    Graphic file (type pdf)
+magnitudeResponse-eps-converted-to.pdf    Graphic file (type pdf)
  ctuDIPL.bbl
 ctutest-zadani.pdf    Graphic file (type pdf)
 ctutest-zadani.pdf    Graphic file (type pdf)
@@ -1810,16 +1866,19 @@ ctutest-zadani.pdf    Graphic file (type pdf)
 ctutest-zadani.pdf    Graphic file (type pdf)
  ***********
 
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 627.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 640.
 Package rerunfilecheck Info: File `ctuDIPL.out' has not changed.
 (rerunfilecheck)             Checksum: A2E0E0E9288FEA27C7972F2F2988EAD0;3144.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 627.
+
+LaTeX Warning: There were multiply-defined labels.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 640.
  ) 
 Here is how much of TeX's memory you used:
- 20611 strings out of 493054
- 352847 string characters out of 6138327
- 578255 words of memory out of 5000000
- 23505 multiletter control sequences out of 15000+600000
+ 20626 strings out of 493054
+ 353259 string characters out of 6138327
+ 578360 words of memory out of 5000000
+ 23514 multiletter control sequences out of 15000+600000
  108081 words of font info for 171 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  40i,18n,58p,10350b,811s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1839,11 +1898,11 @@ m/lmri10.pfb><c:/texlive/2015/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb><c:
 /texlive/2015/texmf-dist/fonts/type1/public/lm/lmsso10.pfb><c:/texlive/2015/tex
 mf-dist/fonts/type1/public/lm/lmsy10.pfb><c:/texlive/2015/texmf-dist/fonts/type
 1/public/lm/lmsy6.pfb><c:/texlive/2015/texmf-dist/fonts/type1/public/lm/lmsy8.p
-fb><c:/texlive/2015/texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
-Output written on ctuDIPL.pdf (31 pages, 429238 bytes).
+fb>
+Output written on ctuDIPL.pdf (33 pages, 427153 bytes).
 PDF statistics:
- 625 PDF objects out of 1000 (max. 8388607)
- 556 compressed objects within 6 object streams
- 127 named destinations out of 1000 (max. 500000)
- 32137 words of extra memory for PDF output out of 35830 (max. 10000000)
+ 653 PDF objects out of 1000 (max. 8388607)
+ 577 compressed objects within 6 object streams
+ 131 named destinations out of 1000 (max. 500000)
+ 32147 words of extra memory for PDF output out of 35830 (max. 10000000)
 

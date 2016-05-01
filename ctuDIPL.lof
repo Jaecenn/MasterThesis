@@ -21,5 +21,7 @@
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Block Diagram of the System\relax }}{15}{figure.3.1}
 \contentsline {figure}{\numberline {3.2}{\ignorespaces Software Architecture Overview\relax }}{17}{figure.3.2}
 \contentsline {figure}{\numberline {3.3}{\ignorespaces Component Diagram of Individual Processing Branch\relax }}{19}{figure.3.3}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Flowchart diagram of FIR decimator component\relax }}{21}{figure.3.4}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Magnitude response of designed FIR filter\relax }}{22}{figure.3.5}
 \addvspace {10\p@ }
 \addvspace {10\p@ }

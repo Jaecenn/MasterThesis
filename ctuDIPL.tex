@@ -8,7 +8,7 @@
 
 
 \ctusetup{
-	preprint = \ctuverlog,
+%	preprint = \ctuverlog,
 %	mainlanguage = english,
 	titlelanguage = english,
 	mainlanguage = english,
@@ -584,15 +584,27 @@ Following paragraphs contain detail description for each component of processing
 
 \subsubsection{Input Sample}
 Input sample is taken by ADC peripheral of microcontroller. Particular input pin of ADC is set during initialization phase to the input module that is connected to the mechanical sensor of diameter (see \ref{sec:Sensors}). This sensor was chosen as for the first manufactured version of the device, because of its sufficiently accurate results and significantly lower price than other types of possible sensors. The ADC itself is set in DMA mode, with enabled interrupt after one sample is stored by DMA and to 12b size of the sample.
-
 The sampling frequency is set to be the double of the frequency required for the first wavelength $\lambda=0.25 cm$. This frequency is dependent on sliver speed which is send over a CAN communication during initialization. Adjusting the sampling frequency is the only solution that allows to use the same filter coefficients independently on value of the sliver speed. It is done by changing settings of the ADC peripheral.
 
 \subsubsection{FIR Filter and Decimation}
 Each branch has to contain lowpass FIR filter, because it is necessary to prevent aliasing and to remove frequencies that correspond to the smaller wavelengths. As mentioned in \ref{sec:SolutionForEmbedded} each branch also has to implement decimation. Both of these operation can be combined in a component called \textit{FIR decimator}. This is implementation of FIR filter that calculates only each $M-th$ output, where $M$ is a decimation factor. Thus, FIR decimator reduces required computational resources. 
+The last version of DSP library for ARM microcontrollers do contain functions for the execution of FIR decimation. Unfortunately, these are not appropriate to use in this algorithm, since we need to the sample-by-sample filtration. This means that input for our implementation of FIR decimator has to be only one sample and output as well only one (or none) sample. Implementation is shown in the flowchart diagram XXX.
 
-The last version of DSP library for ARM microcontrollers do contain functions for the execution of FIR decimation. Unfortunately, these are not appropriate to use in this algorithm, since we need to the sample-by-sample filtration. This means that input for our implementation of FIR decimator has to be only one sample and output as well only one (or none) sample. 
+Input sample for the FIR decimator is added to the Input Buffer. This buffer is unique for each stage. First, algorithm checks whether Input Buffer already has at least 33 samples, which is number of taps in used FIR filter (also number of filter coefficients). If there is 33 samples, the filtration delay is overcomed 
 
-FIR filter used in the FIR decimation was chosen as lowpass filter with order 32 and \textit{Bartlett-Hanning} window. Using this order and window yields required frequency properties as can be seen in its frequency response XXX. Also its order is still small enough to allow fast calculation. 
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1.0\textwidth]{firDecimator.eps}
+	\caption{Flowchart diagram of FIR decimator component}
+	\label{fig:FIR_decimator}
+\end{figure}
+FIR filter used in the FIR decimation was chosen as lowpass filter with order 32 and \textit{Bartlett-Hanning} window. Using this order and window yields required frequency properties as can be seen in its frequency response XXX. Also its order is still small enough to allow fast calculation.
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1.0\textwidth]{magnitudeResponse.eps}
+	\caption{Magnitude response of designed FIR filter}
+	\label{fig:FIR_decimator}
+\end{figure}
 
 
 
