@@ -501,7 +501,7 @@ For the first conversion from $12 V$ to $5 V$ was used an integrated step-down v
 Concrete circuits schematics of these converters are added as attachment to the CD annexed with this thesis.
 
 \subsubsection{Sensors and Input Modules}
-
+\label{sec:Sensors}
 
 
 \section{Algorithm for Sliver Quality Analysis}
@@ -532,14 +532,14 @@ This could be done with computer and was used in first version algorithm program
 
 Another issue is limitation of microcontroller is that DSP function for calculation of radix-4 FFT: \textit{cr4\_fft\_1024\_stm32} requires maximally 1024 samples as input. This disallows usage of FFT on much larger amount of samples and processing its frequency spectrum in a way that would also provided us information on the quality of sliver, since (with enough samples) all required frequencies - corresponding to wavelengths - would be visible. This issue is also resolved by decimation of the signal and using multi-rate analysis. 
 
-Using this solution we will only need buffers for 1024 samples, specifically one for each stage of calculation.
+Using this solution means that only buffers for 1024 samples are needed. Specifically one for each stage of calculation.
 
 \subsection{Wavelengths Specification}
 One of the requirements for the software was determined that the device has to be capable of evaluate quality of sliver for wavelengths in range from $0.25 cm$ to $512 cm$ because others wavelengths are not significant enough to the final product. This range is then divided among twelve values, each wavelength representing one stage of calculation. This division will yield each wavelength to be the double of the previous and that allows us to set the decimation factor (see \ref{sec:SolutionForEmbedded}) to $M=2$ for decimators in all stages. The table XXX shows these wavelengths and their corresponding sampling frequencies $f_s$ calculated according to equation \ref{eq:wavelengthToFreq} with sliver speed $v_{s}=30 cm/s$. 
 
-This sliver speed was chosen as it is default settings of combing machines and was used during testing. If different sliver speed is set on combing machine, its value is send over a CAN communication during initialization and basic sampling frequency is adjusted in a way that decimation factor always stays set on $M=2$. This allows to use the same filter coefficients independently on set sliver speeds.
+This sliver speed was chosen as it is default settings of combing machines and was used during testing. If different sliver speed is set on combing machine, its value is send over a CAN communication during initialization and basic sampling frequency is adjusted in a way that decimation factor always stays set on $M=2$. This allows to use the same filter coefficients independently on value of sliver speed.
 
-Knowing these informations allows us to determine a \textit{cut off frequency}\footnote{XXX} $f_c$ of FIR filters that are used for limiting the bandwidth and an anti-aliasing. This is done according to the formula $f_c=f_s/2$ for each wavelength as shown in table XXX.
+Knowing these informations allows us to determine a \textit{cut off frequency}\footnote{XXX} $f_c$ of FIR filters that are used for limiting the bandwidth and an anti-aliasing. This is done according to the formula $f_c=f_s/2$ for each wavelength as shown in table \ref{tab:Wavelengths}.
 
 \begin{table}[htbp]
 	\centering
@@ -565,6 +565,35 @@ Knowing these informations allows us to determine a \textit{cut off frequency}\f
 	\end{tabular}%
 	\label{tab:Wavelengths}%
 \end{table}%
+
+\subsection{Processing Branch}
+CV values for each of these wavelengths (as shown in table \ref{tab:Wavelengths}) are calculated in individual processing branch. They are in sequential order and input for each branch is a partial result of previous one.
+
+With every sampling period one sample is taken by ADC peripheral and its values is stored in memory by DMA\footnote{Direct Memory Access peripheral} and interrupt is invoked. Then, in interrupt handler a volatile flag determining that new sample was taken is set and main software state machine periodically checks its state. If flag is set, state is changed to first processing branch and sample processing begins.
+
+Individual processing branch can be represented in component diagram as shown in XXX.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1.0\textwidth]{sliver_singleBranch.eps}
+	\caption{Component Diagram of Individual Processing Branch}
+	\label{fig:singleBranch}
+\end{figure}
+
+Following paragraphs contain detail description for each component of processing branch.
+
+\subsubsection{Input Sample}
+Input sample is taken by ADC peripheral of microcontroller. Particular input pin of ADC is set during initialization phase to the input module that is connected to the mechanical sensor of diameter (see \ref{sec:Sensors}). This sensor was chosen as for the first manufactured version of the device, because of its sufficiently accurate results and significantly lower price than other types of possible sensors. The ADC itself is set in DMA mode, with enabled interrupt after one sample is stored by DMA and to 12b size of the sample.
+
+The sampling frequency is set to be the double of the frequency required for the first wavelength $\lambda=0.25 cm$. This frequency is dependent on sliver speed which is send over a CAN communication during initialization. Adjusting the sampling frequency is the only solution that allows to use the same filter coefficients independently on value of the sliver speed. It is done by changing settings of the ADC peripheral.
+
+\subsubsection{FIR Filter and Decimation}
+Each branch has to contain lowpass FIR filter, because it is necessary to prevent aliasing and to remove frequencies that correspond to the smaller wavelengths. As mentioned in \ref{sec:SolutionForEmbedded} each branch also has to implement decimation. Both of these operation can be combined in a component called \textit{FIR decimator}. This is implementation of FIR filter that calculates only each $M-th$ output, where $M$ is a decimation factor. Thus, FIR decimator reduces required computational resources. 
+
+The last version of DSP library for ARM microcontrollers do contain functions for the execution of FIR decimation. Unfortunately, these are not appropriate to use in this algorithm, since we need to the sample-by-sample filtration. This means that input for our implementation of FIR decimator has to be only one sample and output as well only one (or none) sample. 
+
+FIR filter used in the FIR decimation was chosen as lowpass filter with order 32 and \textit{Bartlett-Hanning} window. Using this order and window yields required frequency properties as can be seen in its frequency response XXX. Also its order is still small enough to allow fast calculation. 
+
 
 
 \subsection{Flowchart Diagram}

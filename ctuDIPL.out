@@ -26,18 +26,19 @@
 \BOOKMARK [1][-]{section.3.3}{Algorithm for Sliver Quality Analysis}{chapter.3}% 26
 \BOOKMARK [2][-]{subsection.3.3.1}{Solution for Embedded Systems Constraints}{section.3.3}% 27
 \BOOKMARK [2][-]{subsection.3.3.2}{Wavelengths Specification}{section.3.3}% 28
-\BOOKMARK [2][-]{subsection.3.3.3}{Flowchart Diagram}{section.3.3}% 29
-\BOOKMARK [1][-]{section.3.4}{Description of Designed System}{chapter.3}% 30
-\BOOKMARK [2][-]{subsection.3.4.1}{Block Diagram}{section.3.4}% 31
-\BOOKMARK [1][-]{section.3.5}{Implementation of Software}{chapter.3}% 32
-\BOOKMARK [2][-]{subsection.3.5.1}{Filtration}{section.3.5}% 33
-\BOOKMARK [2][-]{subsection.3.5.2}{Detection of Defects}{section.3.5}% 34
-\BOOKMARK [2][-]{subsection.3.5.3}{Automatic Evaulation}{section.3.5}% 35
-\BOOKMARK [2][-]{subsection.3.5.4}{Example of Designed Application}{section.3.5}% 36
-\BOOKMARK [1][-]{section.3.6}{Implementation of Hardware}{chapter.3}% 37
-\BOOKMARK [2][-]{subsection.3.6.1}{Electronic Circuits Design}{section.3.6}% 38
-\BOOKMARK [2][-]{subsection.3.6.2}{Description of possible sensors}{section.3.6}% 39
-\BOOKMARK [2][-]{subsection.3.6.3}{Designed Prototype}{section.3.6}% 40
-\BOOKMARK [0][-]{chapter.4}{Conclusions}{}% 41
-\BOOKMARK [0][-]{appendix.A}{Bibliography}{}% 42
-\BOOKMARK [0][-]{section*.10}{Project Specification}{}% 43
+\BOOKMARK [2][-]{subsection.3.3.3}{Processing Branch}{section.3.3}% 29
+\BOOKMARK [2][-]{subsection.3.3.4}{Flowchart Diagram}{section.3.3}% 30
+\BOOKMARK [1][-]{section.3.4}{Description of Designed System}{chapter.3}% 31
+\BOOKMARK [2][-]{subsection.3.4.1}{Block Diagram}{section.3.4}% 32
+\BOOKMARK [1][-]{section.3.5}{Implementation of Software}{chapter.3}% 33
+\BOOKMARK [2][-]{subsection.3.5.1}{Filtration}{section.3.5}% 34
+\BOOKMARK [2][-]{subsection.3.5.2}{Detection of Defects}{section.3.5}% 35
+\BOOKMARK [2][-]{subsection.3.5.3}{Automatic Evaulation}{section.3.5}% 36
+\BOOKMARK [2][-]{subsection.3.5.4}{Example of Designed Application}{section.3.5}% 37
+\BOOKMARK [1][-]{section.3.6}{Implementation of Hardware}{chapter.3}% 38
+\BOOKMARK [2][-]{subsection.3.6.1}{Electronic Circuits Design}{section.3.6}% 39
+\BOOKMARK [2][-]{subsection.3.6.2}{Description of possible sensors}{section.3.6}% 40
+\BOOKMARK [2][-]{subsection.3.6.3}{Designed Prototype}{section.3.6}% 41
+\BOOKMARK [0][-]{chapter.4}{Conclusions}{}% 42
+\BOOKMARK [0][-]{appendix.A}{Bibliography}{}% 43
+\BOOKMARK [0][-]{section*.12}{Project Specification}{}% 44

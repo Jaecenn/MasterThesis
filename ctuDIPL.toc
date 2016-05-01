@@ -57,18 +57,23 @@
 \contentsline {section}{\numberline {3.3}Algorithm for Sliver Quality Analysis}{16}{section.3.3}
 \contentsline {subsection}{\numberline {3.3.1}Solution for Embedded Systems Constraints}{17}{subsection.3.3.1}
 \contentsline {subsection}{\numberline {3.3.2}Wavelengths Specification}{18}{subsection.3.3.2}
-\contentsline {subsection}{\numberline {3.3.3}Flowchart Diagram}{19}{subsection.3.3.3}
-\contentsline {section}{\numberline {3.4}Description of Designed System}{19}{section.3.4}
-\contentsline {subsection}{\numberline {3.4.1}Block Diagram}{19}{subsection.3.4.1}
-\contentsline {section}{\numberline {3.5}Implementation of Software}{19}{section.3.5}
-\contentsline {subsection}{\numberline {3.5.1}Filtration}{19}{subsection.3.5.1}
-\contentsline {subsection}{\numberline {3.5.2}Detection of Defects}{19}{subsection.3.5.2}
-\contentsline {subsection}{\numberline {3.5.3}Automatic Evaulation}{19}{subsection.3.5.3}
-\contentsline {subsection}{\numberline {3.5.4}Example of Designed Application}{19}{subsection.3.5.4}
-\contentsline {section}{\numberline {3.6}Implementation of Hardware}{19}{section.3.6}
-\contentsline {subsection}{\numberline {3.6.1}Electronic Circuits Design}{19}{subsection.3.6.1}
-\contentsline {subsection}{\numberline {3.6.2}Description of possible sensors}{19}{subsection.3.6.2}
-\contentsline {subsection}{\numberline {3.6.3}Designed Prototype}{19}{subsection.3.6.3}
+\contentsline {subsection}{\numberline {3.3.3}Processing Branch}{18}{subsection.3.3.3}
+\contentsline {subsubsection}{Input Sample}{19}{subsubsection*.10}
+\contentsline {subsubsection}{Input Sample}{19}{subsubsection*.10}
+\contentsline {subsubsection}{FIR Filter and Decimation}{20}{subsubsection*.11}
+\contentsline {subsubsection}{FIR Filter and Decimation}{20}{subsubsection*.11}
+\contentsline {subsection}{\numberline {3.3.4}Flowchart Diagram}{20}{subsection.3.3.4}
+\contentsline {section}{\numberline {3.4}Description of Designed System}{20}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}Block Diagram}{20}{subsection.3.4.1}
+\contentsline {section}{\numberline {3.5}Implementation of Software}{20}{section.3.5}
+\contentsline {subsection}{\numberline {3.5.1}Filtration}{20}{subsection.3.5.1}
+\contentsline {subsection}{\numberline {3.5.2}Detection of Defects}{20}{subsection.3.5.2}
+\contentsline {subsection}{\numberline {3.5.3}Automatic Evaulation}{20}{subsection.3.5.3}
+\contentsline {subsection}{\numberline {3.5.4}Example of Designed Application}{20}{subsection.3.5.4}
+\contentsline {section}{\numberline {3.6}Implementation of Hardware}{20}{section.3.6}
+\contentsline {subsection}{\numberline {3.6.1}Electronic Circuits Design}{20}{subsection.3.6.1}
+\contentsline {subsection}{\numberline {3.6.2}Description of possible sensors}{20}{subsection.3.6.2}
+\contentsline {subsection}{\numberline {3.6.3}Designed Prototype}{20}{subsection.3.6.3}
 \contentsline {chapter}{\numberline {4}Conclusions}{21}{chapter.4}
 \contentsline {chapter}{\numberline {A}Bibliography}{23}{appendix.A}
-\contentsline {chapter}{\numberline {B}Project\ Specification}{25}{section*.10}
+\contentsline {chapter}{\numberline {B}Project\ Specification}{25}{section*.12}
