@@ -31,7 +31,7 @@
 \contentsline {subsection}{\numberline {2.2.1}State of Art}{6}{subsection.2.2.1}
 \contentsline {section}{\numberline {2.3}Digital Signal Processing}{6}{section.2.3}
 \contentsline {subsection}{\numberline {2.3.1}Discrete Fourier Transform}{6}{subsection.2.3.1}
-\contentsline {subsection}{\numberline {2.3.2}Fast Fourier Transform}{7}{subsection.2.3.2}
+\contentsline {subsection}{\numberline {2.3.2}Fast Fourier Transform}{8}{subsection.2.3.2}
 \contentsline {subsection}{\numberline {2.3.3}Power spectral density}{9}{subsection.2.3.3}
 \contentsline {section}{\numberline {2.4}Digital Processing Techniques}{10}{section.2.4}
 \contentsline {subsection}{\numberline {2.4.1}Spectrograms}{10}{subsection.2.4.1}
@@ -59,21 +59,29 @@
 \contentsline {subsection}{\numberline {3.3.2}Wavelengths Specification}{18}{subsection.3.3.2}
 \contentsline {subsection}{\numberline {3.3.3}Processing Branch}{18}{subsection.3.3.3}
 \contentsline {subsubsection}{Input Sample}{19}{subsubsection*.10}
-\contentsline {subsubsection}{Input Sample}{19}{subsubsection*.10}
+\contentsline {subsubsection}{Input Sample}{20}{subsubsection*.10}
 \contentsline {subsubsection}{FIR Filter and Decimation}{20}{subsubsection*.11}
 \contentsline {subsubsection}{FIR Filter and Decimation}{20}{subsubsection*.11}
-\contentsline {subsection}{\numberline {3.3.4}Flowchart Diagram}{22}{subsection.3.3.4}
-\contentsline {section}{\numberline {3.4}Description of Designed System}{22}{section.3.4}
-\contentsline {subsection}{\numberline {3.4.1}Block Diagram}{22}{subsection.3.4.1}
-\contentsline {section}{\numberline {3.5}Implementation of Software}{22}{section.3.5}
-\contentsline {subsection}{\numberline {3.5.1}Filtration}{22}{subsection.3.5.1}
-\contentsline {subsection}{\numberline {3.5.2}Detection of Defects}{22}{subsection.3.5.2}
-\contentsline {subsection}{\numberline {3.5.3}Automatic Evaulation}{22}{subsection.3.5.3}
-\contentsline {subsection}{\numberline {3.5.4}Example of Designed Application}{22}{subsection.3.5.4}
-\contentsline {section}{\numberline {3.6}Implementation of Hardware}{22}{section.3.6}
-\contentsline {subsection}{\numberline {3.6.1}Electronic Circuits Design}{22}{subsection.3.6.1}
-\contentsline {subsection}{\numberline {3.6.2}Description of possible sensors}{22}{subsection.3.6.2}
-\contentsline {subsection}{\numberline {3.6.3}Designed Prototype}{22}{subsection.3.6.3}
-\contentsline {chapter}{\numberline {4}Conclusions}{23}{chapter.4}
-\contentsline {chapter}{\numberline {A}Bibliography}{25}{appendix.A}
-\contentsline {chapter}{\numberline {B}Project\ Specification}{27}{section*.12}
+\contentsline {subsubsection}{Buffering}{21}{subsubsection*.12}
+\contentsline {subsubsection}{Buffering}{22}{subsubsection*.12}
+\contentsline {subsubsection}{Windowing}{22}{subsubsection*.13}
+\contentsline {subsubsection}{Windowing}{22}{subsubsection*.13}
+\contentsline {subsubsection}{FFT}{22}{subsubsection*.14}
+\contentsline {subsubsection}{FFT}{22}{subsubsection*.14}
+\contentsline {subsubsection}{Spectrum Filtration}{23}{subsubsection*.15}
+\contentsline {subsubsection}{Spectrum Filtration}{23}{subsubsection*.15}
+\contentsline {subsection}{\numberline {3.3.4}Flowchart Diagram}{24}{subsection.3.3.4}
+\contentsline {section}{\numberline {3.4}Description of Designed System}{24}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}Block Diagram}{24}{subsection.3.4.1}
+\contentsline {section}{\numberline {3.5}Implementation of Software}{24}{section.3.5}
+\contentsline {subsection}{\numberline {3.5.1}Filtration}{24}{subsection.3.5.1}
+\contentsline {subsection}{\numberline {3.5.2}Detection of Defects}{24}{subsection.3.5.2}
+\contentsline {subsection}{\numberline {3.5.3}Automatic Evaulation}{24}{subsection.3.5.3}
+\contentsline {subsection}{\numberline {3.5.4}Example of Designed Application}{24}{subsection.3.5.4}
+\contentsline {section}{\numberline {3.6}Implementation of Hardware}{24}{section.3.6}
+\contentsline {subsection}{\numberline {3.6.1}Electronic Circuits Design}{24}{subsection.3.6.1}
+\contentsline {subsection}{\numberline {3.6.2}Description of possible sensors}{24}{subsection.3.6.2}
+\contentsline {subsection}{\numberline {3.6.3}Designed Prototype}{24}{subsection.3.6.3}
+\contentsline {chapter}{\numberline {4}Conclusions}{25}{chapter.4}
+\contentsline {chapter}{\numberline {A}Bibliography}{27}{appendix.A}
+\contentsline {chapter}{\numberline {B}Project\ Specification}{29}{section*.16}

@@ -112,7 +112,7 @@ V Praze, \ctufield{day}.~\monthinlanguage{title}~\ctufield{year}
 
 \chapter{Introduction}
 %\chapter{Introduction}
-Textile manufacturing has always been important industry field. A major part of this industry is formed by a process called spinning, where twisting strands of fibers together form yarn. The modern spinners - textile machines, that execute the process of spinning - have been significantly improved and now they reach a high level of automation. This allows not only faster and cheaper production but also more focus on quality of the produced textile yarn. 
+Textile manufacturing has always been important industry field. A major part of this industry is formed by a process called spinning, where twisting strands of fibers together form yarn. The modern spinners - textile machines, that execute the process of spinning - have been significantly improved and now they reach a high level of automation. This allows not only faster and cheaper production but also more focus on a quality of the produced textile yarn. 
 
 The quality of the yarn could devaluate the final product by creating defects, such as rapid changes in color or thickness etc., in the textile material. Even with modern technologies, it is still impossible to produce yarn without any defects. We can't prevent yarn defects by carefully selecting and preprocessing fiber because some defects can be created by spinning process itself. Out of many types of defects, this thesis is focused on the analysis of yarn unevenness (also called yarn irregularity). This is describing yarn with a diameter that is not even along its length, but it is changing its value periodically. We can measure this defect in the form of mass variation per unit length.
 
@@ -120,12 +120,12 @@ Designed system is not aiming to improve the quality of spun yarn, but to monito
 
 The project - described in this thesis - has been made in cooperation with company Rieter CZ s.r.o, who provided the device requirements, critical measurement data, and other important information. The goal of the project was to research and develop an algorithm for analysis and detection of yarn unevenness by using spectrograms and to design an embedded system capable of measuring a diameter of yarn while fulfilling the required time constraints and implement detection algorithm. The system is required to be controlled by ARM M4 microcontroller. Thus, the algorithm has to be implemented in a way that takes in consideration memory and computational limitation of such microcontrollers.
 
-A very important specification was the requirement to analyse quality of two textile fiber types: the  yarn and the sliver. Where sliver is the input textile fiber for the spinning process and the yarn is its final product. The both of which has significant physical differences. Mainly they differ in size because yarn diameter is usually in a range of micrometers and sliver diameter is in a range from millimeters to centimeters. The diameter of the sliver is measured on combing machine, which precedes the spinning process. This requires different measuring system and filtration processing therefore, two systems and algorithms were designed for quality analysis of each fiber type. Their core content is equal but there are some major differences, which are described later in this thesis. The most significant difference is that processing of signal representing sliver diameter requires much more advanced techniques of digital signal processing. This is necessary due to a strong presence of periodical artefacts on sliver diameter caused by machine preprocessing. This type of diameter fluctuations has to be distinguished from the actual sliver unevenness, which is task for complicated digital filtration in a frequency domain.
+A very important specification was the requirement to analyze a quality of two textile fiber types: the  yarn and the sliver. Where sliver is the input textile fiber for the spinning process and the yarn is its final product. The both of which has significant physical differences. Mainly they differ in size because yarn diameter is usually in a range of micrometers and sliver diameter is in a range from millimeters to centimeters. The diameter of the sliver is measured on combing machine, which precedes the spinning process. This requires different measuring system and filtration processing, therefore, two systems and algorithms were designed for quality analysis of each fiber type. Their core content is equal but there are some major differences, which are described later in this thesis. The most significant difference is that processing of signal representing sliver diameter requires much more advanced techniques of digital signal processing. This is necessary due to a strong presence of periodical artefacts on sliver diameter caused by machine preprocessing. This type of diameter fluctuations has to be distinguished from the actual sliver unevenness, which is a task for complicated digital filtration in a frequency domain.
 
 \chapter{Theoretical Introduction}
 Before the process of software and hardware development could begin, detailed theoretical research had to be done. Topics of the research include textile manufacturing, combing process, spinning process and textile fiber defects to understand better device requirements. Another step of research was focused on digital signal processing techniques that could be used on the project, mainly spectrogram estimation and it's calculation using Fast Fourier Transform, together with possible filtration algorithms. Another research topic was aimed to cover embedded systems and specifically micro-controller usage and it's real-time constraints.
 \section{Textile Engineering}
-Goal of textile manufacturing is to make fabric from textile fibers, which can be then used for clothes. This process can be separated in several stages:
+The goal of textile manufacturing is to make fabric from textile fibers, which can be then used for clothes. This process can be separated into several stages:
 \begin{itemize}
 	\setlength{\itemsep}{5pt}
 \item Preparatory Processes - prepares the textile fiber for spinning process by blending, carding and combing,
@@ -155,7 +155,7 @@ Examples of widely used synthetic fibers are:
 \item Acrylic, nylon, and polyester - from oil and coal. 
 \end{itemize}
 The cotton is the most important natural fiber and analysis of the quality in this thesis is aimed specifically at cotton manufacturing. 
-The fibers can have two main forms during the manufacturing process - the sliver and the yarn. The sliver is created by carding the fiber. In this process textile fibers are separated and then joined together into a loose strand of 1 cm to 4 cm in diameter. In the end of textile manufacturing process an yarn is created. It is a textile fiber with significantly smaller diameter, in comparison to sliver, usually in a range of micrometers \cite{cite:FoFF}. 
+The fibers can have two main forms during the manufacturing process - the sliver and the yarn. The sliver is created by carding the fiber. In this process textile fibers are separated and then joined together into a loose strand of 1 cm to 4 cm in diameter. In the end of textile manufacturing process, a yarn is created. It is a textile fiber with significantly smaller diameter, in comparison to sliver, usually in a range of micrometers \cite{cite:FoFF}. 
 \subsection{Combing Process}
 Combing is a preparation process during textile manufacturing. It is sub-part of a cleaning process which precedes the spinning process. Cotton contains a lot of impurities such as dirt, dust, foreign materials, neps and very short fibers. All of these should be eliminated by cleaning process. The combing process removes mainly short fibers and neps in sliver, which helps to produce stronger and cleaner yarn.
 
@@ -170,7 +170,7 @@ Comber (see Image 1) consists of three main parts:
 
 \item The Comb
 \end{itemize}
-The process of removing the impurities is formed by attaching the input fibre in form of sliver to the feed roller
+The process of removing the impurities is formed by attaching the input fiber in form of sliver to the feed roller
 
 An input of this process is textile sliver (described in chapter xx).
 \subsection{Spinning Process}
@@ -186,14 +186,14 @@ The term “spinning” in this context refers to the process that executes conv
 \end{itemize}
 All of these systems yields yarn with different structures and properties. Each system has its advantages and limitations in terms of technical feasibility and economic viability.
 \section{Overview of Yarn Quality Sensors}
-Importance of yarn quality on final product became clear in 1950s when first electronic yarn quality sensors were invented. Since then many principles were used in detection of yarn defects - optical, mechanical or even chemical \cite{cite:1}.
+An importance of yarn quality on final product became clear in the 1950s when first electronic yarn quality sensors were invented. Since then many principles were used in the detection of yarn defects - optical, mechanical or even chemical \cite{cite:1}.
 
-Sensors of yarn quality are in textile industry often called \textit{yarn clearer}. This term was created for first such devices because goal of yarn clearers wasn't only to discover possible yarn defects but also to immediately remove them. Today, yarn clearers analyse defects that are much more complex (given their properties such as periodicity etc.) and difficult to be immediately removed. Such defects are invisible to naked eye on single yarn and they appear only when turned to fabric.
+Sensors of yarn quality are in the textile industry often called \textit{yarn clearer}. This term was created for first such devices because goal of yarn clearers wasn't only to discover possible yarn defects but also to immediately remove them. Today, yarn clearers analyze defects that are much more complex (given their properties such as periodicity etc.) and difficult to be immediately removed. Such defects are invisible to a naked eye on single yarn and they appear only when turned to fabric.
 
-Following overview is concerned with yarn quality sensors that have similar purpose and functions as the developed device. Therefore, only online yarn clearers that check quality of spun yarn on every spinning point in real-time are listed. All of the following devices are also aimed to be used on the yarn spun by a rotor spinners (see \ref{spinningProcesses}).
+The following overview is concerned with yarn quality sensors that have similar purpose and functions as the developed device. Therefore, only online yarn clearers that check quality of spun yarn on every spinning point in real-time are listed. All of the following devices are also aimed to be used on the yarn spun by a rotor spinners (see \ref{spinningProcesses}).
 
 \subsubsection{Uster Quantum 3}
-Uster Quantum 3 is modern, state of art yarn clearer, which provide detection of many types of defects and includes several interesting features:
+Uster Quantum 3 is modern yarn clearer, which provides detection of many types of defects and includes several interesting features:
 
 \begin{itemize}
 	\setlength{\itemsep}{5pt}
@@ -207,9 +207,9 @@ Uster Quantum 3 is modern, state of art yarn clearer, which provide detection of
 	\item spectrograms calculation.
 \end{itemize}
 
-Uster Quantum 3 has been developed by company Uster Technologies, which is developing yarn clearers for 30 years. Their devices often feature application of new technologies and they offer high-quality products.
+Uster Quantum 3 has been developed by company Uster Technologies, which is developing yarn clearers for 30 years. Their devices often feature an application of new technologies and they offer high-quality products.
 
-This yarn clearer is also one of the two commercially sold products capable of calculating spectrograms and evaulate yarn unevenness CV\%.
+This yarn clearer is also one of the two commercially sold products capable of calculating spectrograms and evaluate yarn unevenness CV\%.
 
  
 \subsection{State of Art}
@@ -219,9 +219,10 @@ The largest part of work on this project is oriented on digital signal processin
 	
 	Digital signal processing is an area of science and engineering that has developed rapidly over the past 40 years as a result of significant advances in digital computer technology. Today, many of the signal processing tasks that were conventionally performed by analog means are now realized by less expensive digital hardware \cite{cite:2}.
 	
-	To perform the processing digitally, there is need for the conversion between an analog signal and digital signal. This is done by an interface called analog-to-digital (A/D) converter, which yields a digital signal as it's output that is appropriate as an input to the digital processor \cite{cite:2,cite:3}.
+	To perform the processing digitally, there is the need for the conversion between an analog signal and digital signal. This is done by an interface called analog-to-digital (A/D) converter, which yields a digital signal as it's output that is appropriate as an input to the digital processor \cite{cite:2,cite:3}.
 	
 \subsection{Discrete Fourier Transform}
+\label{sec:DiscreteFourierTransform}
 To perform frequency analysis on a discrete-time signal ${x[n]}$, we convert the time-domain sequence to an equivalent frequency-domain representation. This conversion is obtained by Discrete Fourier Transform that can be algebraically formulated as (according to \cite{cite:2,cite:3}).
 	
 Given N consecutive samples $x[n], 0 \leq n \leq N-1$ of a periodic or aperiodic sequence, the N-point Discrete Fourier Transform(DFT) $X[k], 0 \leq k \leq N-1$ is defined by
@@ -259,7 +260,7 @@ Understanding properties of DFT is critical for application of the transformatio
 \end{itemize}
 For detailed description of DFT properties see \cite{cite:2,cite:RT_DSP}.
 
-The operation of selecting a finite number of samples called windowing is equivalent to multiplying the actual sequence $x[n]$ defined in a range $-\infty < n < \infty$, by a finite-length sequence $w[n]$ called window. Using simplest rectangular windowing (truncation) on a signal, can cause an effect called \textit{leakage}, which transfers power from frequency bands that contain a large amount of signal power into bands that contain only a little. This may create "false" peaks, peaks at wrong frequencies or changes the amplitude of existing peaks. 
+The operation of selecting a finite number of samples called windowing is equivalent to multiplying the actual sequence $x[n]$ defined in a range $-\infty < n < \infty$, by a finite-length sequence $w[n]$ called window. Using simplest rectangular windowing (truncation) on a signal can cause an effect called \textit{leakage}, which transfers power from frequency bands that contain a large amount of signal power into bands that contain only a little. This may create "false" peaks, peaks at wrong frequencies or changes the amplitude of existing peaks. 
 
 Another effect of time-windowing is \textit{smearing}. Which causes a spread of spectrum accordingly to the width of the mainlobe of the window spectrum. This result in loss of resolution \cite{cite:3} .
 % Image according to ADSP 400/ obr 7.23
@@ -281,7 +282,7 @@ Their differences (as shown in image XXX) relays in a different width of mainlob
 %The length N of the DFT should be larger than L = T0/T to obtain good visual representation of DTFT. If we set N to power of two N=2^Q, fft calculation %done microcontroller is executed faster.
 \subsection{Fast Fourier Transform}
 \label{sec:FFT}
-Difficulty in using the DFT for practical applications is its high computational requirements. Direct computation of the N-point DFT requrires computational cost of $N^2$. However class of efficient DFT algorithms called \textit{Fast Fourier Transform (FFT)} has computational cost proportional to $Nlog_{2}N$ \cite{cite:RT_DSP,cite:3}.
+Difficulty in using the DFT for practical applications is its high computational requirements. Direct computation of the N-point DFT requires computational cost of $N^2$. However class of efficient DFT algorithms called \textit{Fast Fourier Transform (FFT)} has computational cost proportional to $Nlog_{2}N$ \cite{cite:RT_DSP,cite:3}.
 \par 
 Decimation-in-time FFT algorithms are based in splitting the N-point DFT summation into two summations, that one sum over the even-indexed points of $x[n]$ and another sum over the odd-indexed points of $x[n]$.
 Therefore, we obtain
@@ -319,9 +320,9 @@ X[k+\frac{N}{2}]=A[k] - W^{k}_{N}B[k],\qquad k=0, 1, ..., N/2 -1
 \end{equation}
 These formulas (\ref{eq:fft3_A}, \ref{eq:fft3_B}) can be applied to any FFT of even length \cite{cite:3}.
 
-This procedure is shown in Figure XXX (\cite{cite:3}). The displayed structure in the figure is called the butterfly network. Each butterfly consist of just a single complex multiplication by the twiddle factor $W^{k}_{N}$, one addition and one substraction. 
+This procedure is shown in Figure XXX (\cite{cite:3}). The displayed structure in the figure is called the butterfly network. Each butterfly consists of just a single complex multiplication by the twiddle factor $W^{k}_{N}$, one addition and one subtraction. 
 
-An example for $N=8$ is show in Figure XXX. Each $N/2$-point DFT can be computed by two smaller $N/4$-point DFTs. By repeating the same process, we will obtain a set of two-point DFTs, which is illustrated in Figure XXX \cite{cite:RT_DSP}.
+An example for $N=8$ is shown in Figure XXX. Each $N/2$-point DFT can be computed by two smaller $N/4$-point DFTs. By repeating the same process, we will obtain a set of two-point DFTs, which is illustrated in Figure XXX \cite{cite:RT_DSP}.
 
 FFT algorithm \textit{decimation-in-frequency} is similar to the decimation-in-time, with important differences, that the decomposition and symmetry relationships are reversed. The bit reversal occurs at the output instead of the input and the order of the output samples $X[k]$ will be rearranged \cite{cite:RT_DSP}.
 
@@ -345,9 +346,9 @@ A random signal usually has finite average power, therefore, we can use average 
 \phi(\omega) = \sum_{t=-\infty}^{\infty}r(k)e^{-i\omega k}
 \end{equation}
 where $r(k)$ is auto covariance function $r(k) = E[y_{t}y_{t+k}]$.
-The PSD is very useful in the analysis of random signals since it provides us with information about distribution of the average power over the frequency. There are several different methods for estimating the PSD. 
+The PSD is very useful in the analysis of random signals since it provides us with information about the distribution of the average power over the frequency. There are several different methods for estimating the PSD. 
 
-Methods that require direct use of finite signal for purposes of autocorrelation calculation are called \textit{non-parametric} methods. On the other hand, methods that rely on a model for signal generation are call \textit{parametric} methods \cite{cite:RT_DSP}. Widely used non-parametric methods are
+Methods that require direct use of a finite signal for purposes of autocorrelation calculation are called \textit{non-parametric} methods. On the other hand, methods that rely on a model for signal generation are call \textit{parametric} methods \cite{cite:RT_DSP}. Widely used non-parametric methods are
 
 \begin{itemize}
 	\setlength{\itemsep}{5pt}
@@ -357,7 +358,7 @@ Methods that require direct use of finite signal for purposes of autocorrelation
 \item Danielle method.
 \end{itemize}
 
-They differ mainly in the resolution and variance level of the result. For detailed description of methods see \cite{cite:2}.
+They differ mainly in the resolution and variance level of the result. For a detailed description of methods see \cite{cite:2}.
 
 \section{Digital Processing Techniques}
 
@@ -368,9 +369,9 @@ There are many definitions of embedded systems. The one picked for this thesis s
 
 \textit{"An embedded system is a specialized computer system that is usually integrated as part of a larger system. An embedded system consist of a combination of hardware and software components to form a computational engine that will perform a specific function. Unlike desktop systems which are designed to perform a general function, embedded systems are constrained in their application \cite{cite:SE_for_ES}."}
 
-Embedded systems very often perform in reactive and real-time environments, which has to fulfill the real-time constrains that are described in \ref{R-T constrains}. Not satisfying these constrains can cause significant system consequences. If the consequences consist of a degradation of performance, but not failure, the system is referred to as a soft real-time system (e.g. highway car counter). On the contrary, if the consequences are system failure, the system is referred to as a hard real-time system (e.g. a braking system in vehicle). 
+Embedded systems very often perform in reactive and real-time environments, which has to fulfill the real-time constrains that are described in \ref{R-T constrains}. Not satisfying these constraints can cause significant system consequences. If the consequences consist of a degradation of performance, but not a failure, the system is referred to as a soft real-time system (e.g. highway car counter). On the contrary, if the consequences are a system failure, the system is referred to as a hard real-time system (e.g. a braking system in a vehicle). 
 
-Typical embedded system receives information about the surrounding enviroment via sensors and responds with actuators. General block diagram of such system is in Figure XXX.																	
+Typical embedded system receives information about the surrounding environment via sensors and responds with actuators. General block diagram of such system is in Figure XXX.																	
 \subsection{Embedded systems}
 
 \subsection{DSP Hardware Options}
@@ -384,7 +385,7 @@ DSP algorithms can be implemented on different types of digital hardware. The fo
 \item DSP processors with application-specific hardware accelerators \cite{cite:RT_DSP}.
 \end{itemize}
 
-Each hardware (HW) platform has different advantages and constrains for different applications, thus, there is no \textit{best} HW platform that could be used for every practical project. Instead each option should be carefully considered from point of flexibility, required design time, power consumption, performance and cost. 
+Each hardware (HW) platform has different advantages and constraints for different applications, thus, there is no \textit{best} HW platform that could be used for every practical project. Instead, each option should be carefully considered from point of flexibility, required design time, power consumption, performance and cost. 
 
 Characteristic of mentioned hardware options are summarized in Table XXX (\cite{cite:RT_DSP}).
 
@@ -403,31 +404,31 @@ f_{M} \leq \frac{fs}{2} < \frac{1}{2(t_{p}+t_{o})} \cite{cite:RT_DSP}.
 
 Using different techniques of processing can reduce the I/O overhead time and increase the performance of the DSP hardware platforms. For example by applying a block-by-block processing, where the I/O operations are handled by DMA controllers, which place data samples in memory buffers \cite{cite:RT_DSP}.
 
-Today, with performance improvement of hardware platforms, it is even possible to calculate FFT (see \ref{sec:FFT}) of 64-points in matter of tenths of milliseconds with low-cost ARM microprocessor (e.g. specifically in $0.16 ms$ for microcontrollers of STM32F1xx series according to \cite{cite:STM32_DSP_library}).
+Today, with performance improvement of hardware platforms, it is even possible to calculate FFT (see \ref{sec:FFT}) of 64-points in a matter of tenths of milliseconds with low-cost ARM microprocessor (e.g. specifically in $0.16 ms$ for microcontrollers of STM32F1xx series according to \cite{cite:STM32_DSP_library}).
 \subsection{ARM Cortex-M3}
 \label{sec:ARM_M3}
-First manufactured microprocessor of Cortex series was ARM Cortex-M3. It was developed in 2006 and its target group of application were 32-bit microcontrollers. Its main advantage is an excellent efficiency which yields high performance and a low energy consumption without need for a very high system clock frequency. It is based on architecture \textit{ARMv7}.
+First manufactured microprocessor of Cortex series was ARM Cortex-M3. It was developed in 2006 and its target group of application was 32-bit microcontrollers. Its main advantage is an excellent efficiency which yields high performance and a low energy consumption without the need for a very high system clock frequency. It is based on architecture \textit{ARMv7}.
 
-An ARMv7 architecture was developed as modern type of a general architecture that could be used for low-level microprocessors as well as for high-performance application processors. Design of the architecture is split in three main profiles:
+An ARMv7 architecture was developed as a modern type of a general architecture that could be used for low-level microprocessors as well as for high-performance application processors. Design of the architecture is split into three main profiles:
 \begin{itemize}
 	\setlength{\itemsep}{5pt}
-	\item Profile A - aimed on application processors for performance-intensive systems capable of using embedded operational systems (such as Symbian, Android or Linux Embedded).
-	\item Profile R - aimed on high-performance processors for real-time applications.
-	\item Profile M - aimed on wide-range processors for deeply embedded applications \cite{cite:ARM-M3}.
+	\item Profile A - aimed at application processors for performance-intensive systems capable of using embedded operational systems (such as Symbian, Android or Linux Embedded).
+	\item Profile R - aimed at high-performance processors for real-time applications.
+	\item Profile M - aimed at wide-range processors for deeply embedded applications \cite{cite:ARM-M3}.
 \end{itemize}
 
 \subsubsection{Instruction Set}
 There are two instruction sets supported by ARM cores in general: the ARM instructions which are 32-bit and the Thumb instructions which are 16-bit. During the execution, the processor can switch either to the ARM state or to the Thumb state accordingly to the instruction set it is currently using.
 
-The ARMv7 architecture is using new instruction set called a Thumb-2 which consist of the 32-bit Thumb instructions and also 16-bit Thumb instructions. This yields big improvement from the perspective of the ease of use, performance and code size. It allows execution of complex operation in state Thumb which increases the effectivity \cite{cite:ARM-M3}.
+The ARMv7 architecture is using new instruction set called a Thumb-2 which consists of the 32-bit Thumb instructions and also 16-bit Thumb instructions. This yields big improvement from the perspective of the ease of use, performance and code size. It allows execution of a complex operation in state Thumb which increases the effectivity \cite{cite:ARM-M3}.
 
 \chapter{Practical Implementation}
-Prior to the design of the system architecture a list of requirements for the device had to be created. This was done in discussion with company Rieter CZ s.r.o. who provided resources for development. The most important requirement is that the device shall be able to analyse quality of a yarn and sliver. This separates the project in two parts, where core software algorithms are shared but other parts significantly different. 
+Prior to the design of the system architecture, a list of requirements for the device had to be created. This was done in discussion with company Rieter CZ s.r.o. who provided resources for development. The most important requirement is that the device shall be able to analyze the quality of a yarn and sliver. This separates the project in two parts, where core software algorithms are shared but other parts significantly different. 
 
 \section{Yarn Quality Analysis}
 The yarn quality analysis requires only software algorithm and no additional hardware. This is because measurement of a yarn diameter is done by a row camera sensor that is connected to processing board which was already developed in Rieter. Processing board has CAN interface that sends values of diameters to the microcontroller. 
 
-Therefore, in this part of the project, only input we consider are values of diameter send over CAN. This determines the project as software system with main requirements and features defined as follows:
+Therefore, in this part of the project, the only input we consider are values of diameter send over CAN. This determines the project as software system with main requirements and features defined as follows:
 \begin{itemize}
  	\setlength{\itemsep}{5pt}
  	\item The system shall receive yarn diameter values and process them in a way that yields spectrogram values as output.
@@ -440,11 +441,11 @@ Therefore, in this part of the project, only input we consider are values of dia
 
 
 \section{Sliver Quality Analysis}
- The sliver quality analysis require development of software and also additional hardware. In this case - opposite to yarn quality system - it is necessary to design new processing board due to the fact that sliver and yarn has significant size differences (see \ref{textileFibers} and different sensors needs to be used). Also it was decided that device developed in this project will be only prototype version, thus, it has additional functionality that can be removed in final product. The main requirements and features for the device prototype were defined as follows:
+ The sliver quality analysis requires development of software and also additional hardware. In this case - opposite to yarn quality system - it is necessary to design new processing board due to the fact that sliver and yarn have significant size differences (see \ref{textileFibers} and different sensors need to be used). Also, it was decided that device developed in this project will be only prototype version, thus, it has additional functionality that can be removed in a final product. The main requirements and features for the device prototype were defined as follows:
 \begin{itemize}
 	\setlength{\itemsep}{5pt}
-	\item The device shall be able to measure diameter of a sliver.
-	\item The device shall be able to filter, and process measured data in a way that allows to calculate CV\% value and Variance-length Curve.
+	\item The device shall be able to measure the diameter of a sliver.
+	\item The device shall be able to filter, and process measured data in a way that allows calculating CV\% value and Variance-length Curve.
 	\item The device shall be able to measure the diameter with one or more specified sensors simultaneously.
 	\item The device shall be able to send measured data to the service computer in real-time.
 	\item A PC application shall be implemented for receiving and storing data received from the device.
@@ -452,11 +453,11 @@ Therefore, in this part of the project, only input we consider are values of dia
 	\item The device shall run on ARM microcontroller STM32F446.
 \end{itemize}
 \subsection{Hardware}
-Purpose of the hardware section relays in providing the correct supply to the control unit and the sensors. Another feature of hardware platform is processing the signals from sensors and converting it to the range which is suitable for ADC\footnote{Analog to digital converter} unit. Additionally the hardware platform allows to communicate with other distributed systems or PC by providing necessary interfaces. 
+The purpose of the hardware section relays in providing the correct supply to the control unit and the sensors. Another feature of the hardware platform is processing the signals from sensors and converting it to the range which is suitable for ADC\footnote{Analog to digital converter} unit. Additionally, the hardware platform allows communicating with other distributed systems or PC by providing necessary interfaces. 
 
 %As the main innovation and focus of this project is oriented on the software, the hardware was designed with close cooperation
 
-The hardware block diagram of the system is shown in Figure \ref{fig:blockDiagram_HW}. Description of each blocks follows in next paragraphs.
+The hardware block diagram of the system is shown in Figure \ref{fig:blockDiagram_HW}. Description of each block follows in next paragraphs.
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=1.0\textwidth]{blockSchematic4.eps}
@@ -465,9 +466,10 @@ The hardware block diagram of the system is shown in Figure \ref{fig:blockDiagra
 \end{figure}
 
 \subsubsection{Control Unit}
+\label{sec:microController}
 	The main part of the hardware is ARM microcontroller STM32F446 from STMicroelectronics. Its choice was given by a requirement from Rieter CZ s.r.o with a description that it was chosen for its low cost, sufficient performance and company's good long-term experience with manufacturer's support. 
 	
-	Microcontroller STM32F446 is based on ARM Cortex-M4 technology with ARMv7 architecture \ref{sec:ARM_M3}. With DSP instructions it is capable of handling DSP algorithms such as FFT calculation in very short time (less than $0.5 ms$ for 1024-point FFT). Maximal operation frequency is $180 MHz$ at which gives $225 DMIPS$ (Dhrystone benchmark). The most important features and peripherals of this microcontroller are:
+	Microcontroller STM32F446 is based on ARM Cortex-M4 technology with ARMv7 architecture \ref{sec:ARM_M3}. With DSP instructions, it is capable of handling DSP algorithms such as FFT calculation in very short time (less than $0.5 ms$ for 1024-point FFT). Maximal operation frequency is $180 MHz$ at which gives $225 DMIPS$ (Dhrystone benchmark). The most important features and peripherals of this microcontroller are:
 \begin{itemize}
 	\setlength{\itemsep}{5pt}
 	\item ARM 32-bit Cortex-M4, 180 MHz,
@@ -498,14 +500,14 @@ The power supply of the hardware board was required to be $12 V$. Therefore, fou
 
 For the first conversion from $12 V$ to $5 V$ was used an integrated step-down voltage regulator LM2594. To obtain $-5 V$ a charge pump inverter TPS60400 was used. The conversion from $5 V$ to $3.3 V$ is done by simple linear regulator MCP1825. The only step-up was necessary to get $24 V$ from $5 V$, for this purpose was chosen step-up voltage regulator LM1577.
 
-Concrete circuits schematics of these converters are added as attachment to the CD annexed with this thesis.
+Concrete circuits schematics of these converters are added as an attachment to the CD annexed with this thesis.
 
 \subsubsection{Sensors and Input Modules}
 \label{sec:Sensors}
 
 
 \section{Algorithm for Sliver Quality Analysis}
-Algorithm overview diagram is shown in Fig. \ref{fig:software_overview}. This is simplified representation of software used for sliver quality analysis in microcontroller. The input of the system is a sample - measured by ADC - which represents diameter of the sliver. Required output shall be a variance-length curve which is composed by CV(\%) values calculated for several wavelengths\footnote{\label{footnote1:textileTerms}For explanation of the terms used in this paragraph see chapter XXX}. Each software components are individually described in following paragraphs.
+Algorithm overview diagram is shown in Fig. \ref{fig:software_overview}. This is the simplified representation of software used for sliver quality analysis in the microcontroller. The input of the system is a sample - measured by ADC - which represents the diameter of the sliver. Required output shall be a variance-length curve which is composed of CV(\%) values calculated for several wavelengths\footnote{\label{footnote1:textileTerms}For explanation of the terms used in this paragraph see chapter XXX}. Each software components are individually described in following paragraphs.
 
 The main principle of designed quality analysis lies in determining the coefficient of variation (CV(\%)) value. This value can be obtain from signal that corresponds to appropriate wavelength (cut length). Different wavelengths can be yielded by filtrating the input signal with lowpass filter that passes only frequencies that correspond to given wavelength. Specifically if it is chosen that signal of wavelengths between $\lambda_{min}$ and $\lambda_{max}$ is required, then signal can contain the frequencies only up to $f_{max}$. Where relation between $\lambda_{min}$ and $f_{max}$ is based on knowledge of the \textit{sliver speed} $v_{s}$\footnote{Speed of winding up sliver during the process of combing.} determined as follows in equation \ref{eq:wavelengthToFreq}:
 
@@ -513,9 +515,9 @@ The main principle of designed quality analysis lies in determining the coeffici
 f_{max} = \frac{v_{s}}{\lambda_{min}}.
 \end{equation}
 
-From this, we can see that the lower boundary $\lambda_{min}$ is more important and as matter of notation it is used to specify the whole wavelength range. This means that when speaking of CV(\%) for wavelength of $\lambda$ it is actually meant $\lambda_{min}$.
+From this, we can see that the lower boundary $\lambda_{min}$ is more important and as a matter of notation it is used to specify the whole wavelength range. This means that when speaking of CV(\%) for the wavelength of $\lambda$ it is actually meant $\lambda_{min}$.
 
-When sufficient amount of CV(\%) values for different wavelength is obtained, then they are joined in \textit{variance-length curve} (see chapter XXX). This curve can be easily represented graphically and as such it allows users to see quality of sliver for different wavelengths just by looking at the shape of the curve. Taking new samples may cause change in appropriate CV(\%) values, therefore, the variance-length curve is periodically updated. It is important to mention that part of curve with lowest wavelength can be updated several times before even one update of higher wavelengths can be calculated. This is due to the fact that higher wavelengths require significantly more input samples.
+When sufficient amount of CV(\%) values for different wavelength is obtained, then they are joined in \textit{variance-length curve} (see chapter XXX). This curve can be easily represented graphically and as such it allows users to see the quality of a sliver for different wavelengths just by looking at the shape of the curve. Taking new samples may cause a change in appropriate CV(\%) values, therefore, the variance-length curve is periodically updated. It is important to mention that part of the curve with the lowest wavelength can be updated several times before even one update of higher wavelengths can be calculated. This is due to the fact that higher wavelengths require significantly more input samples.
 
 \begin{figure}[h]
 	\centering
@@ -526,20 +528,20 @@ When sufficient amount of CV(\%) values for different wavelength is obtained, th
 
 \subsection{Solution for Embedded Systems Constraints}
 \label{sec:SolutionForEmbedded}
-As described in chapter \ref{R-T constrains} using embedded systems brings several important constrains. The most significant issues this system has to solve were DSP performance and memory restriction of used microcontroller. The memory issue turned to be critical, because if we had control unit capable of storing hundreds of thousands 16bit samples, we could easily store enough of input samples that allow calculation of all chosen wavelengths and then sequentially use low pass filter to obtain corresponding CV(\%) values. 
+As described in chapter \ref{R-T constrains} using embedded systems brings several important constraints. The most significant issues this system has to solve were DSP performance and memory restriction of used microcontroller. The memory issue turned to be critical, because if we had control unit capable of storing hundreds of thousands of 16bit samples, we could easily store enough of input samples that allow calculation of all chosen wavelengths and then sequentially use low pass filter to obtain corresponding CV(\%) values. 
 
-This could be done with computer and was used in first version algorithm programmed in MATLAB. However porting software to microcontroller requires usage of decimation (see chapter XXX) which allows us to the lower number of samples used for each stage by throwing out every M-th sample (M is called the decimation factor). Of course, to prevent an \textit{aliasing}\footnote{Effect of violating the Nyqist-Shannon theorem.} low pass filter has to be used to filter out frequencies higher than \textit{Nyquist frequency}\footnote{Half of the sampling frequency}. But, as mentioned in previous paragraphs our application requires use of low pass filter which will always filter out frequencies higher than Nyquist frequency. Thus, no other filter is required prior decimation.
+This could be done with a computer and was used in first version algorithm programmed in MATLAB. However, porting software to the microcontroller requires usage of decimation (see chapter XXX) which allows us to the lower number of samples used for each stage by throwing out every M-th sample (M is called the decimation factor). Of course, to prevent an \textit{aliasing}\footnote{Effect of violating the Nyquist-Shannon theorem.} low pass filter has to be used to filter out frequencies higher than \textit{Nyquist frequency}\footnote{Half of the sampling frequency}. But, as mentioned in previous paragraphs our application requires the use of low pass filter which will always filter out frequencies higher than Nyquist frequency. Thus, no other filter is required prior decimation.
 
-Another issue is limitation of microcontroller is that DSP function for calculation of radix-4 FFT: \textit{cr4\_fft\_1024\_stm32} requires maximally 1024 samples as input. This disallows usage of FFT on much larger amount of samples and processing its frequency spectrum in a way that would also provided us information on the quality of sliver, since (with enough samples) all required frequencies - corresponding to wavelengths - would be visible. This issue is also resolved by decimation of the signal and using multi-rate analysis. 
+Another issue is limitation of microcontroller is that DSP function for calculation of radix-4 FFT: \textit{cr4\_fft\_1024\_stm32} requires maximally 1024 samples as input. This disallows usage of FFT on a much larger amount of samples and processing its frequency spectrum in a way that would also provide us information on the quality of sliver, since (with enough samples) all required frequencies - corresponding to wavelengths - would be visible. This issue is also resolved by the decimation of the signal and using multi-rate analysis. 
 
 Using this solution means that only buffers for 1024 samples are needed. Specifically one for each stage of calculation.
 
 \subsection{Wavelengths Specification}
-One of the requirements for the software was determined that the device has to be capable of evaluate quality of sliver for wavelengths in range from $0.25 cm$ to $512 cm$ because others wavelengths are not significant enough to the final product. This range is then divided among twelve values, each wavelength representing one stage of calculation. This division will yield each wavelength to be the double of the previous and that allows us to set the decimation factor (see \ref{sec:SolutionForEmbedded}) to $M=2$ for decimators in all stages. The table XXX shows these wavelengths and their corresponding sampling frequencies $f_s$ calculated according to equation \ref{eq:wavelengthToFreq} with sliver speed $v_{s}=30 cm/s$. 
+One of the requirements for the software was determined that the device has to be capable of evaluating the quality of a sliver for wavelengths in the range from $0.25 cm$ to $512 cm$ because others wavelengths are not significant enough to the final product. This range is then divided among twelve values, each wavelength representing one stage of calculation. This division will yield each wavelength to be the double of the previous and that allows us to set the decimation factor (see \ref{sec:SolutionForEmbedded}) to $M=2$ for decimators in all stages. The table XXX shows these wavelengths and their corresponding sampling frequencies $f_s$ calculated according to equation \ref{eq:wavelengthToFreq} with sliver speed $v_{s}=30 cm/s$. 
 
-This sliver speed was chosen as it is default settings of combing machines and was used during testing. If different sliver speed is set on combing machine, its value is send over a CAN communication during initialization and basic sampling frequency is adjusted in a way that decimation factor always stays set on $M=2$. This allows to use the same filter coefficients independently on value of sliver speed.
+This sliver speed was chosen as it is default settings of combing machines and was used during testing. If different sliver speed is set on combing machine, its value is sent over a CAN communication during initialization and the basic sampling frequency is adjusted in a way that decimation factor always stays set on $M=2$. This allows using the same filter coefficients independently on value of sliver speed.
 
-Knowing these informations allows us to determine a \textit{cut off frequency}\footnote{XXX} $f_c$ of FIR filters that are used for limiting the bandwidth and an anti-aliasing. This is done according to the formula $f_c=f_s/2$ for each wavelength as shown in table \ref{tab:Wavelengths}.
+Knowing this information allows us to determine a \textit{cut off frequency}\footnote{XXX} $f_c$ of FIR filters that are used for limiting the bandwidth and an anti-aliasing. This is done according to the formula $f_c=f_s/2$ for each wavelength as shown in table \ref{tab:Wavelengths}.
 
 \begin{table}[htbp]
 	\centering
@@ -567,11 +569,11 @@ Knowing these informations allows us to determine a \textit{cut off frequency}\f
 \end{table}%
 
 \subsection{Processing Branch}
-CV values for each of these wavelengths (as shown in table \ref{tab:Wavelengths}) are calculated in individual processing branch. They are in sequential order and input for each branch is a partial result of previous one.
+CV values for each of these wavelengths (as shown in table \ref{tab:Wavelengths}) are calculated in individual processing branch. They are in sequential order and input for each branch is a partial result of the previous one.
 
-With every sampling period one sample is taken by ADC peripheral and its values is stored in memory by DMA\footnote{Direct Memory Access peripheral} and interrupt is invoked. Then, in interrupt handler a volatile flag determining that new sample was taken is set and main software state machine periodically checks its state. If flag is set, state is changed to first processing branch and sample processing begins.
+With every sampling period, one sample is taken by ADC peripheral and its values are stored in memory by DMA\footnote{Direct Memory Access peripheral} and an interrupt is invoked. Then, in the interrupt handler a volatile flag determining that new sample was taken is set and main software state machine periodically checks its state. If the flag is set, the state is changed to first processing branch and sample processing begins.
 
-Individual processing branch can be represented in component diagram as shown in XXX.
+Individual processing branch can be represented in the component diagram as shown in \ref{fig:singleBranch}.
 
 \begin{figure}[h]
 	\centering
@@ -583,14 +585,18 @@ Individual processing branch can be represented in component diagram as shown in
 Following paragraphs contain detail description for each component of processing branch.
 
 \subsubsection{Input Sample}
-Input sample is taken by ADC peripheral of microcontroller. Particular input pin of ADC is set during initialization phase to the input module that is connected to the mechanical sensor of diameter (see \ref{sec:Sensors}). This sensor was chosen as for the first manufactured version of the device, because of its sufficiently accurate results and significantly lower price than other types of possible sensors. The ADC itself is set in DMA mode, with enabled interrupt after one sample is stored by DMA and to 12b size of the sample.
-The sampling frequency is set to be the double of the frequency required for the first wavelength $\lambda=0.25 cm$. This frequency is dependent on sliver speed which is send over a CAN communication during initialization. Adjusting the sampling frequency is the only solution that allows to use the same filter coefficients independently on value of the sliver speed. It is done by changing settings of the ADC peripheral.
+Input sample is taken by ADC peripheral of the microcontroller. Particular input pin of ADC is set during initialization phase to the input module that is connected to the mechanical sensor of diameter (see \ref{sec:Sensors}). This sensor was chosen as for the first manufactured version of the device, because of its sufficiently accurate results and significantly lower price than other types of possible sensors. The ADC itself is set in DMA mode, with enabled interrupt after one sample is stored by DMA and to 12b size of the sample.
+The sampling frequency is set to be the double of the frequency required for the first wavelength $\lambda=0.25 cm$. This frequency is dependent on sliver speed which is sent over a CAN communication during initialization. Adjusting the sampling frequency is the only solution that allows using the same filter coefficients independently on a value of the sliver speed. It is done by changing settings of the ADC peripheral.
 
 \subsubsection{FIR Filter and Decimation}
-Each branch has to contain lowpass FIR filter, because it is necessary to prevent aliasing and to remove frequencies that correspond to the smaller wavelengths. As mentioned in \ref{sec:SolutionForEmbedded} each branch also has to implement decimation. Both of these operation can be combined in a component called \textit{FIR decimator}. This is implementation of FIR filter that calculates only each $M-th$ output, where $M$ is a decimation factor. Thus, FIR decimator reduces required computational resources. 
-The last version of DSP library for ARM microcontrollers do contain functions for the execution of FIR decimation. Unfortunately, these are not appropriate to use in this algorithm, since we need to the sample-by-sample filtration. This means that input for our implementation of FIR decimator has to be only one sample and output as well only one (or none) sample. Implementation is shown in the flowchart diagram XXX.
+Each branch has to contain lowpass FIR filter because it is necessary to prevent aliasing and to remove frequencies that correspond to the smaller wavelengths. As mentioned in \ref{sec:SolutionForEmbedded} each branch also has to implement decimation. Both of these operations can be combined in a component called \textit{FIR decimator}. This is an implementation of FIR filter that calculates only each $M-th$ output, where $M$ is a decimation factor. Thus, FIR decimator reduces required computational resources. 
+The last version of DSP library for ARM microcontrollers does contain functions for the execution of FIR decimation. Unfortunately, these are not appropriate to use in this algorithm, since we need to the sample-by-sample filtration. This means that input for our implementation of FIR decimator has to be only one sample and output as well only one (or none) sample. Implementation is shown in the flowchart diagram \ref{fig:FIR_decimator}.
 
-Input sample for the FIR decimator is added to the Input Buffer. This buffer is unique for each stage. First, algorithm checks whether Input Buffer already has at least 33 samples, which is number of taps in used FIR filter (also number of filter coefficients). If there is 33 samples, the filtration delay is overcomed 
+Input sample for the FIR decimator is added to the Input Buffer. This buffer is unique for each stage. First, algorithm checks whether Input Buffer already has at least 33 samples, which is a number of taps in used FIR filter (also number of filter coefficients). If there are 33 samples, first filter output can be calculated. If there are fewer samples (it never can be more) than 33, buffer index is iterated by one and function returns $-1$ which indicates that output sample is not ready.
+
+Next, the decimation flag is checked. In case, it is false no output is required during this run of FIR decimator. But it is still necessary to shift the Input Buffer to the left so that the actual input sample is correctly used in next filter calculation. In opposite case, when it is true, this run should calculate and return the output value. This is the decimation part of the algorithm. The flag is negated after each valid output value is produced and this yields downsampling with factor $M=2$.
+
+Output itself is calculated as a sum over the result of multiplication of Input Buffer and coefficients. This value is returned from the function that implements this filtering and is passed to other components in processing branch and to the next stage FIR decimator.
 
 \begin{figure}[h]
 	\centering
@@ -598,14 +604,61 @@ Input sample for the FIR decimator is added to the Input Buffer. This buffer is 
 	\caption{Flowchart diagram of FIR decimator component}
 	\label{fig:FIR_decimator}
 \end{figure}
-FIR filter used in the FIR decimation was chosen as lowpass filter with order 32 and \textit{Bartlett-Hanning} window. Using this order and window yields required frequency properties as can be seen in its frequency response XXX. Also its order is still small enough to allow fast calculation.
+FIR filter used in the FIR decimation was chosen as lowpass filter with order 32 and \textit{Bartlett-Hanning} window. Using this order and window yields required frequency properties as can be seen in its frequency response shown in figure \ref{fig:MagnitudeResponse}. Also its order is still small enough to allow sufficiently fast calculation. The cut-off frequencies are shown in table \ref{tab:Wavelengths}. The cut-off frequency is the same in normalized frequency\footnote{Range 0 to 1 and 1 corresponds to the $f_s/2$} for all the branches. Therefore, the same filter coefficients can be used for all the processing branches.
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=1.0\textwidth]{magnitudeResponse.eps}
 	\caption{Magnitude response of designed FIR filter}
-	\label{fig:FIR_decimator}
+	\label{fig:MagnitudeResponse}
 \end{figure}
 
+\subsubsection{Buffering}
+Output samples from FIR decimator are buffered in vectors of length 1024. When the buffer is filled to full an appropriate flag is set and calculation can proceed to the next component. This creates a requirement for memory space. We know that it is required to has 12 processing stages and each stage has to have one buffer of 1024 sample and one sample is stored in 2B integer word. Another buffer for 1024 samples has to be ready for an output of FFT. From this conclude that \textit{Memory required} $= 12 \cdot 2 \cdot(1024 \cdot 2)=49152B\cong49.2kB$. This is not an issue for used microcontroller STM32F446 which has 128 kB of SRAM (see \ref{sec:microController}).
+
+\subsubsection{Windowing}
+Before calculation of FFT can be executed an operation called windowing (see chapter \ref{sec:DiscreteFourierTransform}) should be performed. This will prevent leakage and smearing, which are effects that are distorting the frequency spectrum obtained by FFT.
+
+\subsubsection{FFT}
+The frequency spectrum is obtained by algorithm called FFT (see chapter \ref{sec:FFT}). This is a fast implementation of Fourier transform and it is the most widely used technique used for obtaining frequency spectrum of signals. DSP libraries for ARM systems do contain functions for complex and real FFT. For our case we can use real FFT function \textit{arm\_rfft\_fast\_f32} with length of FFT 1024. This calculation can be performed on used microcontroller in tenths of milliseconds. \cite{cite:STM32_DSP_library}.
+
+The FFT is defined over complex data but in many applications is the applied input real. Real FFT algorithms have speed advantage over complex algorithms of the same length because they properly use the symmetry properties of the FFT.
+
+\subsubsection{Spectrum Filtration}
+With frequency spectrum of the signal we can filter out the frequencies that are proclaimed as artefacts. Such errors in signal are caused by used mechanical sensor. This sensor measures the diameter of a sliver but during the measuring it is affected by mechanical vibration caused by turning gears inside the combing machine. Each of this gear creates vibration with frequency that is depending on a number of teeth and shaft speed. 
+
+It would be possible to determine the frequencies that are distorting the signal from a detailed technical materials about combing machine and its gears. But unfortunately non such materials were available. Therefore, different approach to determine the error frequencies had to be used. 
+
+For this purpose, a special measurement was executed (see chapter XXX). For this measurement it was possible to run the combing machine without any sliver, thus, only the mechanical vibrations were measured by sensor. Signal from this case was digitally post-processed in MATLAB and from obtained frequency spectrum specific artefact frequencies were distinguished. They were clearly visible even to the naked eye as the given frequencies had much higher amplitude than their surrounding. To obtain concrete frequency bins a peak detection was implemented and used. Result is shown in frequency spectrum of a signal measured without sliver with sampling frequency $f_s=240Hz$ (see figure \ref{fig:withoutMat_foundPeaks}).
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1.0\textwidth]{withoutMat_foundPeaks_half.eps}
+	\caption{Frequency spectrum of signal measured without sliver}
+	\label{fig:withoutMat_foundPeaks}
+\end{figure}
+
+The most significant found frequencies are listed in table 	\ref{tab:DistortinFreq}%as follows.
+\begin{table}[htbp]
+	\centering
+	\caption{List of distorting frequencies}
+	\begin{tabular}{crrrrrrrrr}
+%		\toprule
+%		 & $\lambda_{min} [cm]$ & $\lambda_{max} [cm]$ & $\lambda_{s} [cm]$ & $f_s [Hz]$ & $f_c [Hz]$ \\
+		\midrule
+		Frequency [Hz]  & 0.94  & 1.88   & 2.34 & 4.45   & 4.92  & 8.672  & 17.11   & 34.45 & 42.89 \\
+				
+		\bottomrule
+	\end{tabular}%
+	\label{tab:DistortinFreq}%
+\end{table}%
+
+This peak detection algorithm is based on 
+
+
+
+Although we knew which frequencies should occur in spectrum, it was unsure  During the test data measurement it was possible to start measuring without any materials, 
+
+They are shown in table XXX.
 
 
 \subsection{Flowchart Diagram}
