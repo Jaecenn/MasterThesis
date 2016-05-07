@@ -628,7 +628,7 @@ With frequency spectrum of the signal we can filter out the frequencies that are
 
 It would be possible to determine the frequencies that are distorting the signal from a detailed technical materials about combing machine and its gears. But unfortunately non such materials were available. Therefore, different approach to determine the error frequencies had to be used. 
 
-For this purpose, a special measurement was executed (see chapter XXX). For this measurement it was possible to run the combing machine without any sliver, thus, only the mechanical vibrations were measured by sensor. Signal from this case was digitally post-processed in MATLAB and from obtained frequency spectrum specific artefact frequencies were distinguished. They were clearly visible even to the naked eye as the given frequencies had much higher amplitude than their surrounding. To obtain concrete frequency bins a peak detection was implemented and used. Result is shown in frequency spectrum of a signal measured without sliver with sampling frequency $f_s=240Hz$ (see figure \ref{fig:withoutMat_foundPeaks}).
+For this purpose, a special measurement was executed (see chapter XXX). In this measurement it was possible to run the combing machine without any sliver, thus, only the mechanical vibrations were measured by sensor. Signal from this case was digitally post-processed in MATLAB and from obtained frequency spectrum specific artefact frequencies were distinguished. They were clearly visible even to the naked eye as the given frequencies had much higher amplitude than their surrounding. To obtain concrete frequency bins a peak detection was implemented and used. Result is shown in frequency spectrum of a signal measured without sliver with sampling frequency $f_s=240Hz$ (see figure \ref{fig:withoutMat_foundPeaks}).
 
 \begin{figure}[h]
 	\centering
@@ -652,13 +652,88 @@ The most significant found frequencies are listed in table 	\ref{tab:DistortinFr
 	\label{tab:DistortinFreq}%
 \end{table}%
 
-This peak detection algorithm is based on 
+The peak detection algorithm can be described as follows. Given the input signal $x[n]$ where $n=0,1,2\ldots N$ and $\delta$ as parameters. The algorithm identifies local maximum by comparing specific value with its neighbours. If the value of the local maximum $x[i]$ is higher than $x[i+1] + \delta $ and $x[i-1] + \delta$ then the $x[i]$ is marked and stored as peak.
+But since some of the peaks in the frequency spectrum are made of several frequency bins, this method would be insufficient. The improvement to overcome this issue relays in repeating the process of peak detection several times. Each time the peak detection is performed the found peaks are replaced by their local average. In next iteration a new peak may be found next to the one found in previous. This implicates that the original peak was spreaded over more than one frequency bin. Every peak found in all the iterations is stored.
 
+Using this method we know exact position of the distorting frequencies and they corresponding frequency bins in the result of 1024-point FFT for sampling frequency $f_s=240Hz$. To obtain location of these frequencies in other stages we use the information that decimation factor is $M=2$. Considering that the length of the FFT is the same (1024) for each stage, we now know that frequency resolution is double for each consequent stage. This allows us to simply divide the positions of the frequency peaks by two, and limit the range to the corresponding sampling frequency. By doing so, we got the frequency bins that needs to be filtered out in each stage before the calculation of CV\%.
 
+Now, it is possible to obtain signal that has suppressed vibration frequencies for each stage. This is done by taking the expected location of the distorting frequency for the given stage and finding the actual position of the peak in its close area determined by an offset. Flowchart diagram of this technique used for filtering is shown in \ref{fig:frequencyFiltration}. To better explain the issue an example can be set: e.g. if we know that expected distorting frequency $f=17.11Hz$ should be in frequency bins 36 and 37 for the second stage, therefore, for wavelength $\lambda=0.5cm$ (calculated according to previous paragraph). A peak detection is used in range from $36-offset=36-3=33$ to $37+offset=37+3=40$. The highest peak in this area can be proclaimed as distorting frequency and the whole peak is suppressed. This is done by setting its value to the local average.
 
-Although we knew which frequencies should occur in spectrum, it was unsure  During the test data measurement it was possible to start measuring without any materials, 
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1.0\textwidth]{frequencyFiltration.eps}
+	\caption{Flowchart diagram of applied frequency filtration}
+	\label{fig:frequencyFiltration}
+\end{figure}
 
-They are shown in table XXX.
+Inputs to the function are:
+\begin{itemize}
+	\setlength{\itemsep}{5pt}
+	\item Distorted frequency spectrum.
+	\item Known approximate locations of distorting frequencies.
+\end{itemize}
+And parameters for the frequency filtration:
+\begin{itemize}
+	\setlength{\itemsep}{5pt}
+	\item Difference criterium.
+	\item Filtration depth.
+\end{itemize}
+The difference criterium is used to calculate parameter $\delta$ for peak detection. This is done according to the formula \ref{eq:deltaCalculation}.
+\begin{equation} \label{eq:deltaCalculation}
+\delta = \sigma \cdot \textit{difference criterium},
+\end{equation}
+where $\sigma$ is standard deviation of given frequency spectrum.
+Filtration depth is parameter determining how many times is the peak detection performed over the same areas. Executing peak detection several times can help to refine the result since it improves filtration of wider peaks. The parameters were empirically set as $\textit{difference criterium}=1.5$ and $\textit{filter depth} = 2$ for all the stages.
+
+\subsubsection{IFFT}
+After the filtration in frequency domain we have to obtain the corresponding signal in time domain. For this purpose we use inverse fourier transform (see \ref{sec:FFT}). Implementation for microcontroller is available in the DSP libraries for ARM. Specficially, for IFFT we use the same function as for FFT with difference that the flag determining whether forward or inverse Fourier transfourm should be calculated, is set. This means using function \textit{arm\_rfft\_fast\_f32} with length of IFFT 1024.
+
+\subsubsection{CV Calculation}
+Last step of every branch is calculation of coefficient of variation (see chapter XXX). This coefficient is widely used in describing quality of textile fibers. Its percentual value the CV\% can be calculated as follows in \ref{eq:CVCalculation}:
+
+\begin{equation} \label{eq:CVCalculation}
+CV\% = \frac{\sigma}{\mu} \cdot 100
+\end{equation}
+
+Since we have obtained filtered signal from the IFFT, it is easy to calculate the resulting CV value. This is done for each branch (i.e. wavelength), therefore, there is 12 CV values.
+
+\subsection{Variance-Length Curve}
+The output of the quality sensor for the sliver is required to be a variance length curve (see chapter XXX). This curve is composed of the results of the processing branches, therefore, of the CV\% values. These values are concatenated in a vector that represents values on the y-axis of the curve. The x-axis contains values of the corresponding wavelengths (see table \ref{tab:Wavelengths}). Since every wavelength value is the double of the previous one, it is appropriate to use logarithmic scale on the x-axis. Example of the result in form of the variance-length curve is shown in figure \ref{fig:VLC_example11}. This particular curve was calculated on data set of high quality sliver without any simulated defect (more information in chapter XXX). 
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1.0\textwidth]{full_VLC_11.eps}
+	\caption{Variance-length curve - the output of the algorithm}
+	\label{fig:VLC_example11}
+\end{figure}
+
+\subsection{Measurement and Testing}
+For the purpose of testing the algorithm new data set has to be created. This was obtain in Swiss laboratories of Rieter where I personally conducted measurement on the prototype of the device. This prototype had to be specifically modified to perform the measurements. Hardware remained the same but change was made in the software to meet the goals of measurement. The device didn't evaulated quality of the sliver but instead sent the measured data to the service computer over the USART peripheral. Specifically sample is taken by an ADC from the pin connected to a sensor, then the sample is propagated to the USART interface by DMA. The USART is connected to the computer which stores the data on a hard-drive.
+To obtain as much information as possible, the sampling frequency is needed to be set to the feasible maximum. This maximum is strictly dependent on a number of sensors used, since the more samples has to be send in each cycle. And the sending has to be executed in a time lesser than a sampling period. This is, of course, limited by speed of the USART which was set to the maximum speed of $115200 b/s$. Maximum allowed sampling frequencies where set as shown in table XXX.
+\begin{table}[htbp]
+	\centering
+	\caption{Maximum possible sampling frequencies}
+	\begin{tabular}{crrrrr}
+		\toprule
+		Nu. of Sensors	 & 1 & 2 & 3 & 4 & 5 \\
+		\midrule
+		Sampling Frequency [Hz]  & 0.94  & 1.88   & 2.34 & 4.45   & 4.92  \\
+		
+		\bottomrule
+	\end{tabular}%
+	\label{tab:possibleFs}%
+\end{table}%
+
+\subsubsection{Measurement Application}
+To control and set the properties of measurement and also to store measured values an application for service computer was implemented. This application was written in Java. Its main purpose relays in connecting the device using USART, receiving measured samples and logging them into a file. As an auxiliary action it is also capable of sending required settings to the microcontroller and starting or stopping the measurement.
+
+The application allows to pick sensors that should be used by enabling corresponding ADC pins (1 to 5). Another options to set is sampling frequency. This can be done by choosing from several values offered by graphical user interface. The values offered are changed according to number of ADC pins enabled and only sampling frequencies smaller than the corresponding one in table \ref{tab:possibleFs} are available. These settings are send to the microcontroller after button \textit{Connect \& Set} is applied. The microcontroller will parse these values and use them in initialization of the ADC peripheral.
+Another options are available for setting in the application that are designated only as parameters for the application itself.
+\begin{itemize}
+	\setlength{\itemsep}{5pt}
+	\item Sampling frequency,
+	\item Format of the 
+\end{itemize}
 
 
 \subsection{Flowchart Diagram}
