@@ -537,6 +537,7 @@ Another issue is limitation of microcontroller is that DSP function for calculat
 Using this solution means that only buffers for 1024 samples are needed. Specifically one for each stage of calculation.
 
 \subsection{Wavelengths Specification}
+\label{sec:WavelengthSpecification}
 One of the requirements for the software was determined that the device has to be capable of evaluating the quality of a sliver for wavelengths in the range from $0.25 cm$ to $512 cm$ because others wavelengths are not significant enough to the final product. This range is then divided among twelve values, each wavelength representing one stage of calculation. This division will yield each wavelength to be the double of the previous and that allows us to set the decimation factor (see \ref{sec:SolutionForEmbedded}) to $M=2$ for decimators in all stages. The table XXX shows these wavelengths and their corresponding sampling frequencies $f_s$ calculated according to equation \ref{eq:wavelengthToFreq} with sliver speed $v_{s}=30 cm/s$. 
 
 This sliver speed was chosen as it is default settings of combing machines and was used during testing. If different sliver speed is set on combing machine, its value is sent over a CAN communication during initialization and the basic sampling frequency is adjusted in a way that decimation factor always stays set on $M=2$. This allows using the same filter coefficients independently on value of sliver speed.
@@ -624,11 +625,12 @@ The frequency spectrum is obtained by algorithm called FFT (see chapter \ref{sec
 The FFT is defined over complex data but in many applications is the applied input real. Real FFT algorithms have speed advantage over complex algorithms of the same length because they properly use the symmetry properties of the FFT.
 
 \subsubsection{Spectrum Filtration}
+\label{sec:spectrumFiltration}
 With frequency spectrum of the signal we can filter out the frequencies that are proclaimed as artefacts. Such errors in signal are caused by used mechanical sensor. This sensor measures the diameter of a sliver but during the measuring it is affected by mechanical vibration caused by turning gears inside the combing machine. Each of this gear creates vibration with frequency that is depending on a number of teeth and shaft speed. 
 
 It would be possible to determine the frequencies that are distorting the signal from a detailed technical materials about combing machine and its gears. But unfortunately non such materials were available. Therefore, different approach to determine the error frequencies had to be used. 
 
-For this purpose, a special measurement was executed (see chapter XXX). In this measurement it was possible to run the combing machine without any sliver, thus, only the mechanical vibrations were measured by sensor. Signal from this case was digitally post-processed in MATLAB and from obtained frequency spectrum specific artefact frequencies were distinguished. They were clearly visible even to the naked eye as the given frequencies had much higher amplitude than their surrounding. To obtain concrete frequency bins a peak detection was implemented and used. Result is shown in frequency spectrum of a signal measured without sliver with sampling frequency $f_s=240Hz$ (see figure \ref{fig:withoutMat_foundPeaks}).
+For this purpose, a special measurement was executed (see chapter \ref{sec:MeasurmentAndTesting}). In this measurement it was possible to run the combing machine without any sliver, thus, only the mechanical vibrations were measured by sensor. Signal from this case was digitally post-processed in MATLAB and from obtained frequency spectrum specific artefact frequencies were distinguished. They were clearly visible even to the naked eye as the given frequencies had much higher amplitude than their surrounding. To obtain concrete frequency bins a peak detection was implemented and used. Result is shown in frequency spectrum of a signal measured without sliver with sampling frequency $f_s=240Hz$ (see figure \ref{fig:withoutMat_foundPeaks}).
 
 \begin{figure}[h]
 	\centering
@@ -661,7 +663,7 @@ Now, it is possible to obtain signal that has suppressed vibration frequencies f
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=1.0\textwidth]{frequencyFiltration.eps}
+	\includegraphics[width=0.75\textwidth]{frequencyFiltration.eps}
 	\caption{Flowchart diagram of applied frequency filtration}
 	\label{fig:frequencyFiltration}
 \end{figure}
@@ -708,16 +710,18 @@ The output of the quality sensor for the sliver is required to be a variance len
 \end{figure}
 
 \subsection{Measurement and Testing}
+\label{sec:MeasurmentAndTesting}
 For the purpose of testing the algorithm new data set has to be created. This was obtain in Swiss laboratories of Rieter where I personally conducted measurement on the prototype of the device. This prototype had to be specifically modified to perform the measurements. Hardware remained the same but change was made in the software to meet the goals of measurement. The device didn't evaulated quality of the sliver but instead sent the measured data to the service computer over the USART peripheral. Specifically sample is taken by an ADC from the pin connected to a sensor, then the sample is propagated to the USART interface by DMA. The USART is connected to the computer which stores the data on a hard-drive.
-To obtain as much information as possible, the sampling frequency is needed to be set to the feasible maximum. This maximum is strictly dependent on a number of sensors used, since the more samples has to be send in each cycle. And the sending has to be executed in a time lesser than a sampling period. This is, of course, limited by speed of the USART which was set to the maximum speed of $115200 b/s$. Maximum allowed sampling frequencies where set as shown in table XXX.
+
+To obtain as much information as possible, the sampling frequency is needed to be set to the feasible maximum. This maximum is strictly dependent on a number of sensors used, since the more samples has to be send in each cycle. And the sending has to be executed in a time lesser than a sampling period. This is, of course, limited by speed of the USART which was set to the maximum speed of $115200 b/s$. Maximum allowed sampling frequencies where set as shown in table \ref{tab:possibleFs}.
 \begin{table}[htbp]
 	\centering
 	\caption{Maximum possible sampling frequencies}
-	\begin{tabular}{crrrrr}
+	\begin{tabular}{cccccc}
 		\toprule
-		Nu. of Sensors	 & 1 & 2 & 3 & 4 & 5 \\
+		Number of Sensors	 & 1 & 2 & 3 & 4 & 5 \\
 		\midrule
-		Sampling Frequency [Hz]  & 0.94  & 1.88   & 2.34 & 4.45   & 4.92  \\
+		Sampling Frequency [Hz]  & 6500  & 4400   & 3300 & 2600   & 2200  \\
 		
 		\bottomrule
 	\end{tabular}%
@@ -725,16 +729,51 @@ To obtain as much information as possible, the sampling frequency is needed to b
 \end{table}%
 
 \subsubsection{Measurement Application}
-To control and set the properties of measurement and also to store measured values an application for service computer was implemented. This application was written in Java. Its main purpose relays in connecting the device using USART, receiving measured samples and logging them into a file. As an auxiliary action it is also capable of sending required settings to the microcontroller and starting or stopping the measurement.
+To control and set the properties of measurement and also to store measured values an application for service computer was implemented. This application was written in Java. Its main purpose relays in connecting the device using USART, receiving measured samples and logging them into a file. As an auxiliary action it is also capable of sending required settings to the microcontroller and starting or stopping the measurement. Graphical user interface of the application is shown in figure \ref{fig:gui_APP}.
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.5\textwidth]{Measurement_app.JPG}
+	\caption{Measurement application - graphical user interface}
+	\label{fig:gui_APP}
+\end{figure}
 
 The application allows to pick sensors that should be used by enabling corresponding ADC pins (1 to 5). Another options to set is sampling frequency. This can be done by choosing from several values offered by graphical user interface. The values offered are changed according to number of ADC pins enabled and only sampling frequencies smaller than the corresponding one in table \ref{tab:possibleFs} are available. These settings are send to the microcontroller after button \textit{Connect \& Set} is applied. The microcontroller will parse these values and use them in initialization of the ADC peripheral.
-Another options are available for setting in the application that are designated only as parameters for the application itself.
+Another options are available for setting in the application that are designated only as parameters for the application itself. It is possible to set a format of the output to either representation in Volts or in unconverted output values of ADC, which ranges between 0 to 4095.
+The data that are read over USART are being continuously logged in a file from the moment the \textit{Start Measurement} is clicked until \textit{Stop Measurement} is pressed. This means that a length of the measured signal is unknown, thus, no buffering can be used. The data has to be written into file in sample by sample technique. An action diagram of the application is shown in figure XXX.
+
+
+\subsubsection{Measurement}
+To test if algorithm can properly calculate variance-length curve measurements had to be made with slivers of different qualities. This allows to compare the curve of a high quality sliver and a sliver that contains defects. The variance-length curves of the two should clearly distinguishable. Unfortunately, no sliver with defect is easy to obtain as defects are not known until the sliver is being processed. 
+
+The solution was found by artificially simulating defects. This could be done by incorrect settings of the pressures of the sliver holder in combing machine. The holder can be set by two pressures: $p_{left}$ and $p_{right}$. If these pressures are set to inappropriate values, the sliver gets defected with periodical errors. As an inappropriate values can be considered either too high or too uneven levels of pressures. Image of how does the sliver affects the sliver is shown in figure XXX.
+Using this method of simulating defects 6 data sets were measured. Their properties are listed in table \ref{tab:measuredData}%.
+\begin{table}[htbp]
+	\centering
+	\caption{Measured data and their properties}
+	\begin{tabular}{cccc}
+		\toprule
+		Dataset ID & $p_{left}$ [bar] & $p_{right}$ [bar] & Visual Sliver Quality \\
+		\midrule
+		1     & 1.85  & 2.1   & Very Poor \\
+		2     & 1.7   & 2.1   & Poor \\
+		3     & 1.7   & 1.3   & Good \\
+		4     & 1.9   & 1.8   & Good \\
+		5     & 1.5   & 1.6   & Excellent \\
+		6     & -     & -     & No Sliver \\
+		\bottomrule
+	\end{tabular}%
+	\label{tab:measuredData}%
+\end{table}%
+All the datasets were measured with the same sliver speed $v_s=30cm/s$. This is important for the calculation of the wavelengths, which is described in section \ref{sec:WavelengthSpecification}).
+The dataset 6 is a special case where no sliver was placed into the combing machine. This was for the purpose of measuring distorting frequencies caused by vibrations of the gears (see chapter \ref{sec:spectrumFiltration}). Without a sliver as input only these frequencies are measured by the sensor.
+
+\subsection{Algorithm Results}
+The algorithm was tested on the data described in table XXX. To meet the requirements for the device, a result should have following properties:
 \begin{itemize}
 	\setlength{\itemsep}{5pt}
-	\item Sampling frequency,
-	\item Format of the 
+	\item Result should have form of variance-length curve.
+	\item Quality of a sliver should be recognizable from the result by a service personnel.
 \end{itemize}
-
 
 \subsection{Flowchart Diagram}
 \section{Description of Designed System}

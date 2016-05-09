@@ -72,21 +72,27 @@
 \contentsline {subsubsection}{Spectrum Filtration}{23}{subsubsection*.15}
 \contentsline {subsubsection}{IFFT}{25}{subsubsection*.16}
 \contentsline {subsubsection}{IFFT}{25}{subsubsection*.16}
-\contentsline {subsubsection}{CV Calculation}{25}{subsubsection*.17}
-\contentsline {subsubsection}{CV Calculation}{25}{subsubsection*.17}
-\contentsline {subsection}{\numberline {3.3.4}Variance-Length Curve}{25}{subsection.3.3.4}
-\contentsline {subsection}{\numberline {3.3.5}Flowchart Diagram}{26}{subsection.3.3.5}
-\contentsline {section}{\numberline {3.4}Description of Designed System}{26}{section.3.4}
-\contentsline {subsection}{\numberline {3.4.1}Block Diagram}{26}{subsection.3.4.1}
-\contentsline {section}{\numberline {3.5}Implementation of Software}{26}{section.3.5}
-\contentsline {subsection}{\numberline {3.5.1}Filtration}{26}{subsection.3.5.1}
-\contentsline {subsection}{\numberline {3.5.2}Detection of Defects}{26}{subsection.3.5.2}
-\contentsline {subsection}{\numberline {3.5.3}Automatic Evaulation}{26}{subsection.3.5.3}
-\contentsline {subsection}{\numberline {3.5.4}Example of Designed Application}{26}{subsection.3.5.4}
-\contentsline {section}{\numberline {3.6}Implementation of Hardware}{26}{section.3.6}
-\contentsline {subsection}{\numberline {3.6.1}Electronic Circuits Design}{26}{subsection.3.6.1}
-\contentsline {subsection}{\numberline {3.6.2}Description of possible sensors}{26}{subsection.3.6.2}
-\contentsline {subsection}{\numberline {3.6.3}Designed Prototype}{26}{subsection.3.6.3}
-\contentsline {chapter}{\numberline {4}Conclusions}{29}{chapter.4}
-\contentsline {chapter}{\numberline {A}Bibliography}{31}{appendix.A}
-\contentsline {chapter}{\numberline {B}Project\ Specification}{33}{section*.18}
+\contentsline {subsubsection}{CV Calculation}{26}{subsubsection*.17}
+\contentsline {subsubsection}{CV Calculation}{26}{subsubsection*.17}
+\contentsline {subsection}{\numberline {3.3.4}Variance-Length Curve}{26}{subsection.3.3.4}
+\contentsline {subsection}{\numberline {3.3.5}Measurement and Testing}{26}{subsection.3.3.5}
+\contentsline {subsubsection}{Measurement Application}{27}{subsubsection*.18}
+\contentsline {subsubsection}{Measurement Application}{27}{subsubsection*.18}
+\contentsline {subsubsection}{Measurement}{28}{subsubsection*.19}
+\contentsline {subsubsection}{Measurement}{28}{subsubsection*.19}
+\contentsline {subsection}{\numberline {3.3.6}Algorithm Results}{29}{subsection.3.3.6}
+\contentsline {subsection}{\numberline {3.3.7}Flowchart Diagram}{29}{subsection.3.3.7}
+\contentsline {section}{\numberline {3.4}Description of Designed System}{29}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}Block Diagram}{29}{subsection.3.4.1}
+\contentsline {section}{\numberline {3.5}Implementation of Software}{29}{section.3.5}
+\contentsline {subsection}{\numberline {3.5.1}Filtration}{29}{subsection.3.5.1}
+\contentsline {subsection}{\numberline {3.5.2}Detection of Defects}{29}{subsection.3.5.2}
+\contentsline {subsection}{\numberline {3.5.3}Automatic Evaulation}{29}{subsection.3.5.3}
+\contentsline {subsection}{\numberline {3.5.4}Example of Designed Application}{29}{subsection.3.5.4}
+\contentsline {section}{\numberline {3.6}Implementation of Hardware}{29}{section.3.6}
+\contentsline {subsection}{\numberline {3.6.1}Electronic Circuits Design}{29}{subsection.3.6.1}
+\contentsline {subsection}{\numberline {3.6.2}Description of possible sensors}{29}{subsection.3.6.2}
+\contentsline {subsection}{\numberline {3.6.3}Designed Prototype}{29}{subsection.3.6.3}
+\contentsline {chapter}{\numberline {4}Conclusions}{31}{chapter.4}
+\contentsline {chapter}{\numberline {A}Bibliography}{33}{appendix.A}
+\contentsline {chapter}{\numberline {B}Project\ Specification}{35}{section*.20}
