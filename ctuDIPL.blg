@@ -3,44 +3,49 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: ctuDIPL.aux
 The style file: siam.bst
 Database file #1: ctuDIP_biblio.bib
-You've used 9 entries,
+Warning--entry type for "cite:RIKIpedia_combing" isn't style-file defined
+--line 177 of file ctuDIP_biblio.bib
+Warning--entry type for "cite:brittanicaWavelength" isn't style-file defined
+--line 193 of file ctuDIP_biblio.bib
+You've used 15 entries,
             2030 wiz_defined-function locations,
-            545 strings with 4635 characters,
-and the built_in function-call counts, 1812 in all, are:
-= -- 130
-> -- 63
+            575 strings with 5262 characters,
+and the built_in function-call counts, 3318 in all, are:
+= -- 244
+> -- 159
 < -- 0
-+ -- 28
-- -- 18
-* -- 110
-:= -- 323
-add.period$ -- 9
-call.type$ -- 9
-change.case$ -- 28
++ -- 65
+- -- 49
+* -- 220
+:= -- 577
+add.period$ -- 15
+call.type$ -- 15
+change.case$ -- 58
 chr.to.int$ -- 0
-cite$ -- 9
-duplicate$ -- 111
-empty$ -- 194
-format.name$ -- 18
-if$ -- 365
+cite$ -- 15
+duplicate$ -- 177
+empty$ -- 323
+format.name$ -- 49
+if$ -- 670
 int.to.chr$ -- 0
-int.to.str$ -- 9
-missing$ -- 14
-newline$ -- 30
-num.names$ -- 18
-pop$ -- 65
+int.to.str$ -- 15
+missing$ -- 20
+newline$ -- 48
+num.names$ -- 29
+pop$ -- 120
 preamble$ -- 1
-purify$ -- 27
+purify$ -- 55
 quote$ -- 0
-skip$ -- 45
+skip$ -- 84
 stack$ -- 0
-substring$ -- 46
-swap$ -- 18
+substring$ -- 76
+swap$ -- 29
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 22
+type$ -- 40
 warning$ -- 0
-while$ -- 18
-width$ -- 10
-write$ -- 74
+while$ -- 29
+width$ -- 17
+write$ -- 119
+(There were 2 warnings)

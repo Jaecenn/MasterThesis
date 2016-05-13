@@ -105,6 +105,7 @@ V Praze, \ctufield{day}.~\monthinlanguage{title}~\ctufield{year}
 \usepackage{lipsum,blindtext}
 \usepackage{mathrsfs} % provides \mathscr used in the ridiculous examples
 \usepackage{enumitem}
+\usepackage{subcaption}
 
 \begin{document}
 	
@@ -157,11 +158,20 @@ Examples of widely used synthetic fibers are:
 The cotton is the most important natural fiber and analysis of the quality in this thesis is aimed specifically at cotton manufacturing. 
 The fibers can have two main forms during the manufacturing process - the sliver and the yarn. The sliver is created by carding the fiber. In this process textile fibers are separated and then joined together into a loose strand of 1 cm to 4 cm in diameter. In the end of textile manufacturing process, a yarn is created. It is a textile fiber with significantly smaller diameter, in comparison to sliver, usually in a range of micrometers \cite{cite:FoFF}. 
 \subsection{Combing Process}
+\label{sec:Combing}
 Combing is a preparation process during textile manufacturing. It is sub-part of a cleaning process which precedes the spinning process. Cotton contains a lot of impurities such as dirt, dust, foreign materials, neps and very short fibers. All of these should be eliminated by cleaning process. The combing process removes mainly short fibers and neps in sliver, which helps to produce stronger and cleaner yarn.
 
 Combing is used in a production of medium-fine or fine yarns, where the quality of yarn is important. This quality improvement is at a cost of loss of raw material and high expenses for buying and operating the combing machines. 
 
-Comber (see Image 1) consists of three main parts: 
+Example of comber machine manufactured by Rieter is shown in figure \ref{fig:rieterComber} (\cite{cite:RIKIpedia_combing}).
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.5\textwidth]{Rieter_comber.jpg}
+	\caption{Rieter Comber E86 (\cite{cite:RIKIpedia_combing})}
+	\label{fig:rieterComber}
+\end{figure}
+
+It consists of three main parts: 
 \begin{itemize}
 	\setlength{\itemsep}{5pt}
 \item The Feed
@@ -170,9 +180,8 @@ Comber (see Image 1) consists of three main parts:
 
 \item The Comb
 \end{itemize}
-The process of removing the impurities is formed by attaching the input fiber in form of sliver to the feed roller
-
-An input of this process is textile sliver (described in chapter xx).
+%The process of removing the impurities is formed by attaching the input fiber in form of sliver to the feed roller
+An input of this process is textile sliver (described in chapter \ref{textileFibers}).
 \subsection{Spinning Process}
 \label{spinningProcesses}
 The term “spinning” in this context refers to the process that executes conversion of a large quantity of individual unordered fibers of relatively short length into a linear, ordered product of very great lengths by using spinning machines. There are three main methods of executing process of spinning:
@@ -185,7 +194,38 @@ The term “spinning” in this context refers to the process that executes conv
 \item Air-jet Spinning.
 \end{itemize}
 All of these systems yields yarn with different structures and properties. Each system has its advantages and limitations in terms of technical feasibility and economic viability.
-\section{Overview of Yarn Quality Sensors}
+
+\subsection{Wavelength}
+In encylopaedia Britannica the \textit{wavelength} is defined as:
+\textit{Distance between corresponding points of two consecutive waves.} \cite{cite:brittanicaWavelength}. In other words, wavelength is the spatial period of a sinusoidal wave. Under an assumption a wave is moving at a fixed speed, then frequency of the wave is inversely proportional to the wavelength. This is shown in a figure \ref{fig:wavelengthExplaination}.
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\textwidth]{wavelengt_explained.jpg}
+	\caption{Wavelength}
+	\label{fig:wavelengthExplaination}
+\end{figure}
+
+From the mathematical representation of the sinusoidal waves a formula can be derived that expresses relation of a wavelength, velocity and frequency of a wave, as can be seen in \cite{cite:fundamentalsOfPhysics}. The formula is stated as follows in \ref{eq:wavelengthFormula}.
+\begin{equation} \label{eq:wavelengthFormula}
+\lambda=\frac{v}{f}
+\end{equation}
+
+In the textile engineering this term is used to describe wave property of a textile fiber that is being processed. This can improve the perception of a quality by knowing the wavelength of a defect in the fiber \cite{cite:TextileEngineering}. In some book about textile engineering the term wavelength is interchanged with term \textit{cut length}. As an example, this is useful in situations such as when a textile defect has been found at the wavelength $\lambda=8cm$ and it allows to quickly visually check if any unwanted pattern with this wavelength is visible on the fiber.
+
+\subsection{Coefficient of Variation}
+\label{sec:CoefficientOfvariation}
+Coefficient of variation, hereafter CV, is a measure of dispersion of a probability or frequency distribution. In textile engineering its used as indicator of quality of textile fibers, because as it states the irregularity of sampled length. Often it is expressed as percentage, which is noted as CV\%. It can be calculated according to the equation \ref{eq:CVCalculationIntroduction} \cite{cite:fundamentalsOfSpunYarn}.
+
+\begin{equation} \label{eq:CVCalculationIntroduction}
+ CV\% = \frac{\sigma}{\mu} \cdot 100
+\end{equation}
+
+\subsection{Variance-length Curve}
+\label{sec:VarianceL_curve}
+CV\% values for different wavelengths provides useful information of the variation of a fiber. When CV\% values of different wavelengths are simultaneously represented graphically, it provides the possibility of determining wavelengths at which defects occur and consequently identify the process stage that caused it. This graphical representation is called \textit{variance-length curve}.
+
+\section{State of Art}
+\subsection{Overview of Yarn Quality Sensors}
 An importance of yarn quality on final product became clear in the 1950s when first electronic yarn quality sensors were invented. Since then many principles were used in the detection of yarn defects - optical, mechanical or even chemical \cite{cite:1}.
 
 Sensors of yarn quality are in the textile industry often called \textit{yarn clearer}. This term was created for first such devices because goal of yarn clearers wasn't only to discover possible yarn defects but also to immediately remove them. Today, yarn clearers analyze defects that are much more complex (given their properties such as periodicity etc.) and difficult to be immediately removed. Such defects are invisible to a naked eye on single yarn and they appear only when turned to fabric.
@@ -212,7 +252,7 @@ Uster Quantum 3 has been developed by company Uster Technologies, which is devel
 This yarn clearer is also one of the two commercially sold products capable of calculating spectrograms and evaluate yarn unevenness CV\%.
 
  
-\subsection{State of Art}
+
 
 \section{Digital Signal Processing}
 The largest part of work on this project is oriented on digital signal processing (DSP). Usage of modern advanced algorithms from this field allowed designing projected device in the first place. This section covers the most important algorithms that are used in this project.
@@ -455,7 +495,7 @@ Therefore, in this part of the project, the only input we consider are values of
 \subsection{Hardware}
 The purpose of the hardware section relays in providing the correct supply to the control unit and the sensors. Another feature of the hardware platform is processing the signals from sensors and converting it to the range which is suitable for ADC\footnote{Analog to digital converter} unit. Additionally, the hardware platform allows communicating with other distributed systems or PC by providing necessary interfaces. 
 
-%As the main innovation and focus of this project is oriented on the software, the hardware was designed with close cooperation
+As the main innovation and focus of this project is oriented on the software, the hardware layout of PCB\footnote{Printed circuit board} was designed in Rieter according to the submitted electronic diagram. Resulting hardware platform is shown in figure \ref{fig:cvBox_dps}.
 
 The hardware block diagram of the system is shown in Figure \ref{fig:blockDiagram_HW}. Description of each block follows in next paragraphs.
 \begin{figure}[h]
@@ -463,6 +503,13 @@ The hardware block diagram of the system is shown in Figure \ref{fig:blockDiagra
 	\includegraphics[width=1.0\textwidth]{blockSchematic4.eps}
 	\caption{Block Diagram of the System}
 	\label{fig:blockDiagram_HW}
+\end{figure}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.75\textwidth]{cvBox.jpg}
+	\caption{Hardware Platform - PCB}
+	\label{fig:cvBox_dps}
 \end{figure}
 
 \subsubsection{Control Unit}
@@ -711,7 +758,15 @@ The output of the quality sensor for the sliver is required to be a variance len
 
 \subsection{Measurement and Testing}
 \label{sec:MeasurmentAndTesting}
-For the purpose of testing the algorithm new data set has to be created. This was obtain in Swiss laboratories of Rieter where I personally conducted measurement on the prototype of the device. This prototype had to be specifically modified to perform the measurements. Hardware remained the same but change was made in the software to meet the goals of measurement. The device didn't evaulated quality of the sliver but instead sent the measured data to the service computer over the USART peripheral. Specifically sample is taken by an ADC from the pin connected to a sensor, then the sample is propagated to the USART interface by DMA. The USART is connected to the computer which stores the data on a hard-drive.
+For the purpose of testing the algorithm new data set has to be created. This was obtain in Swiss laboratories of Rieter where I personally conducted measurement on the prototype of the device. The prototype was connected to the sensor which was placed inside combing machine (see chapter \ref{sec:Combing}). In concrete, the comber type was \textit{E86} developed by Rieter and its technical description is in \cite{cite:ComberE86}. The sensor that was used for the measurement of the diameter was Baumer Inductive Sensor S35A (for details see chapter \ref{sec:Sensors}).
+
+This prototype had to be specifically modified to perform the measurements. Hardware remained the same but change was made in the software to meet the goals of measurement. The device didn't evaulated quality of the sliver but instead sent the measured data to the service computer over the USART peripheral. Specifically sample is taken by an ADC from the pin connected to a sensor, then the sample is propagated to the USART interface by DMA. The USART is connected to the computer which stores the data on a hard-drive. The prototype of the device is shown in figure \ref{fig:cvBox_covered}.
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.75\textwidth]{cvBox_covered.jpg}
+	\caption{Prototype of the device}
+	\label{fig:cvBox_covered}
+\end{figure}
 
 To obtain as much information as possible, the sampling frequency is needed to be set to the feasible maximum. This maximum is strictly dependent on a number of sensors used, since the more samples has to be send in each cycle. And the sending has to be executed in a time lesser than a sampling period. This is, of course, limited by speed of the USART which was set to the maximum speed of $115200 b/s$. Maximum allowed sampling frequencies where set as shown in table \ref{tab:possibleFs}.
 \begin{table}[htbp]
@@ -743,10 +798,11 @@ The data that are read over USART are being continuously logged in a file from t
 
 
 \subsubsection{Measurement}
+\label{sec:measurement}
 To test if algorithm can properly calculate variance-length curve measurements had to be made with slivers of different qualities. This allows to compare the curve of a high quality sliver and a sliver that contains defects. The variance-length curves of the two should clearly distinguishable. Unfortunately, no sliver with defect is easy to obtain as defects are not known until the sliver is being processed. 
 
 The solution was found by artificially simulating defects. This could be done by incorrect settings of the pressures of the sliver holder in combing machine. The holder can be set by two pressures: $p_{left}$ and $p_{right}$. If these pressures are set to inappropriate values, the sliver gets defected with periodical errors. As an inappropriate values can be considered either too high or too uneven levels of pressures. Image of how does the sliver affects the sliver is shown in figure XXX.
-Using this method of simulating defects 6 data sets were measured. Their properties are listed in table \ref{tab:measuredData}%.
+Using this method of simulating defects 6 data sets were measured. Their properties are listed in table \ref{tab:measuredData}.
 \begin{table}[htbp]
 	\centering
 	\caption{Measured data and their properties}
@@ -768,13 +824,53 @@ All the datasets were measured with the same sliver speed $v_s=30cm/s$. This is 
 The dataset 6 is a special case where no sliver was placed into the combing machine. This was for the purpose of measuring distorting frequencies caused by vibrations of the gears (see chapter \ref{sec:spectrumFiltration}). Without a sliver as input only these frequencies are measured by the sensor.
 
 \subsection{Algorithm Results}
-The algorithm was tested on the data described in table XXX. To meet the requirements for the device, a result should have following properties:
+The algorithm was tested on the data described in table \ref{tab:measuredData}. To meet the requirements for the device, a result should have following properties:
 \begin{itemize}
 	\setlength{\itemsep}{5pt}
 	\item Result should have form of variance-length curve.
-	\item Quality of a sliver should be recognizable from the result by a service personnel.
+	\item Quality of a sliver should be recognizable from the result.
 \end{itemize}
 
+Slivers with good visual quality are expected to have lower CV\% values than the one with a bad visual quality. This expectation is based on how is the CV\% calculated (see \ref{sec:CoefficientOfvariation}). Another expectation is that the variance length should be decreasing for the longer wavelengths, unless there is a defect on the corresponding wavelength in the sliver.
+
+Variance-length curve calculated on the dataset 5 (see section \ref{sec:measurement}) is shown in the figure \ref{fig:sub_dataset5}. Accordingly to the table \ref{tab:measuredData}, we can state that the sliver in this dataset is of very good visual quality and it was with low amount of simulated defects. For comparison, the sliver with worse visual quality from dataset 2 is shown in figure \ref{fig:sub_dataset2}. From the \ref{fig:vlc_curves} it is observable that the sliver in dataset 5 has lower CV\% values for all of the wavelengths than sliver in dataset 2. Thus, it has smaller variance and we can state that the quality of the sliver is higher. This observation corresponds to the visual quality of th slivers.
+It can also be seen that the shapes of variance-length curves are very similar in both of them. This is due to the fact that used slivers are, in fact the same one and only difference is in added simulated defects. These defects are significant in wavelengths smaller than $\lambda=16cm$ after which the CV\% values are on equivalent level. If it would be possible to simulate defect only on a specific wavelength, it would be distinguishable in charts as a peak. 
+
+\begin{figure}
+	\centering
+	\begin{subfigure}{0.5\textwidth}
+		\centering
+		\includegraphics[width=1.0\linewidth]{full_VLC_11.eps}
+		\caption{Dataset 5}
+		\label{fig:sub_dataset5}
+	\end{subfigure}%
+	\begin{subfigure}{0.5\textwidth}
+		\centering
+		\includegraphics[width=1.0\linewidth]{full_VLC_6.eps}
+		\caption{Dataset 2}
+		\label{fig:sub_dataset2}
+	\end{subfigure}
+	\caption{Variance-length curves}
+	\label{fig:vlc_curves}
+\end{figure}
+
+Plot of results for the datasets 3-5 is shown in figure \ref{fig:VLC_3_4_5}. All of these datasets were measured with slivers whose visual quality was rated as good or excellent (in case of dataset 5). This comparison can be considered as a prove that the algorithm is capable of distinguishing slivers of very similar quality. This can be stated because the dataset 5 appears in the chart as superior in terms of quality, which corresponds with its visual quality rating \textit{excellent}. Visual check of the slivers in datasets 3 and 4 could not determine which has better quality as they were both rated \textit{good}.But it is clearly determinable from variance-length curve that dataset 4 has better quality.
+
+It is interesting to observe that although the dataset 5 has the best quality as determined by visual check and variance-length curve, there is an exception to this statement on wavelength $\lambda=32cm$. From the plot \ref{fig:VLC_3_4_5} it can be seen as little peak. This is especially visible in comparison with the dataset 4, which doesn't contain this defect. This tells us that there is small defect on this particular wavelength. And even though the defect is not visible in the sliver, it can cause a visible periodic error in final product.
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1.0\textwidth]{VLC_curves_3_4_5.eps}
+	\caption{Variance length curves - comparison of datasets with slivers of high quality}
+	\label{fig:VLC_3_4_5}
+\end{figure}
+
+Comparison of the results of the algorithm on all datasets 1-5 are shown in an figure \ref{fig:VLC_all}.
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1.0\textwidth]{VLC_allCurves.eps}
+	\caption{Variance length curves - comparison of all datasets}
+	\label{fig:VLC_all}
+\end{figure}
 \subsection{Flowchart Diagram}
 \section{Description of Designed System}
 \subsection{Block Diagram}

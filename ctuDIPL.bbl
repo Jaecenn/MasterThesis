@@ -1,31 +1,52 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
-\bibitem{cite:3}
-{\sc V.~K.~I. Dimitris G.~Manolakis}, {\em Applied Digital Signal Processing},
-  Cambridge University Press, 2011.
+\bibitem{cite:brittanicaWavelength}
+{\sc {Encyclopedia Britannica}}, {\em Wavelength}, 2016.
 
-\bibitem{cite:2}
-{\sc D.~G.~M. John G.~Proakis}, {\em Digital Signal Processing}, Pearson
-  Prentice Hall, 2007.
+\bibitem{cite:TextileEngineering}
+{\sc T.~Gries, D.~Veit, and B.~Wulfhorst}, {\em Textile Technology}, Hanser
+  Publishers, 2015.
+
+\bibitem{cite:fundamentalsOfPhysics}
+{\sc Halliday, Resnick, and Walker}, {\em Fundamentals of Physics Extended, 8th
+  ed}, Wiley India Pvt. Limited, 2008.
 
 \bibitem{cite:1}
 {\sc P.~Kousalík}, {\em Inteligentní snímač pro on-line vyhodnocování
   kvality příze}, dissertation, Technická univerzita v Liberci, 2011.
 
-\bibitem{cite:SAoS}
-{\sc R.~M. Petre~Stoica}, {\em Specral Analysis of Signals}, Prentice Hall,
-  2005.
+\bibitem{cite:RT_DSP}
+{\sc S.~M. Kuo, B.~H. Lee, and W.~Tian}, {\em Real-Time Digital Signal
+  Processing}, John Wiley and Sons, Ltd, 2013.
+
+\bibitem{cite:fundamentalsOfSpunYarn}
+{\sc C.~Lawrence}, {\em Fundamentals of Spun Yarn Technology}, CRC Press, 2003.
+
+\bibitem{cite:3}
+{\sc D.~G. Manolakis and V.~K. Ingle}, {\em Applied Digital Signal Processing},
+  Cambridge University Press, 2011.
 
 \bibitem{cite:SE_for_ES}
-{\sc M.~K. Robert~Oshana}, {\em Software Engineering for Embedded Systems},
-  Elsevier, 2013.
+{\sc R.~Oshana and M.~Kraeling}, {\em Software Engineering for Embedded
+  Systems}, Elsevier, 2013.
 
-\bibitem{cite:RT_DSP}
-{\sc W.~T. Sen M.~Kuo, Bob H.~Lee}, {\em Real-Time Digital Signal Processing},
-  John Wiley and Sons, Ltd, 2013.
+\bibitem{cite:2}
+{\sc J.~G. Proakis and D.~G. Manolakis}, {\em Digital Signal Processing},
+  Pearson Prentice Hall, 2007.
+
+\bibitem{cite:ComberE86}
+{\sc Rieter}, {\em E86 Comber Brochure}, 2016.
+
+\bibitem{cite:RIKIpedia_combing}
+\leavevmode\vrule height 2pt depth -1.6pt width 23pt, {\em Rikipedia: The
+  combing section}, 2016.
 
 \bibitem{cite:STM32_DSP_library}
 {\sc STMicroelectronics}, {\em STM32F10x DSP library}, 2010.
+
+\bibitem{cite:SAoS}
+{\sc P.~Stoica and R.~Moses}, {\em Spectral Analysis of Signals}, Prentice
+  Hall, 2005.
 
 \bibitem{cite:ARM-M3}
 {\sc J.~Yiu}, {\em The definitive guide to the ARM cortex-M3}, Newnes, 2010.
