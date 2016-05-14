@@ -22,17 +22,19 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Block Diagram of the System\relax }}{17}{figure.3.1}
 \contentsline {figure}{\numberline {3.2}{\ignorespaces Hardware Platform - PCB\relax }}{18}{figure.3.2}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Software Architecture Overview\relax }}{20}{figure.3.3}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Component Diagram of Individual Processing Branch\relax }}{22}{figure.3.4}
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Flowchart diagram of FIR decimator component\relax }}{24}{figure.3.5}
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Magnitude response of designed FIR filter\relax }}{25}{figure.3.6}
-\contentsline {figure}{\numberline {3.7}{\ignorespaces Frequency spectrum of signal measured without sliver\relax }}{26}{figure.3.7}
-\contentsline {figure}{\numberline {3.8}{\ignorespaces Flowchart diagram of applied frequency filtration\relax }}{27}{figure.3.8}
-\contentsline {figure}{\numberline {3.9}{\ignorespaces Variance-length curve - the output of the algorithm\relax }}{29}{figure.3.9}
-\contentsline {figure}{\numberline {3.10}{\ignorespaces Prototype of the device\relax }}{30}{figure.3.10}
-\contentsline {figure}{\numberline {3.11}{\ignorespaces Measurement application - graphical user interface\relax }}{30}{figure.3.11}
-\contentsline {figure}{\numberline {3.12}{\ignorespaces Variance-length curves\relax }}{32}{figure.3.12}
-\contentsline {figure}{\numberline {3.13}{\ignorespaces Variance length curves - comparison of datasets with slivers of high quality\relax }}{33}{figure.3.13}
-\contentsline {figure}{\numberline {3.14}{\ignorespaces Variance length curves - comparison of all datasets\relax }}{34}{figure.3.14}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Usage of distance inductive sensor S35A for measurement of sliver diameter\relax }}{19}{figure.3.3}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Variance-length curves\relax }}{20}{figure.3.4}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Software Architecture Overview\relax }}{21}{figure.3.5}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Component Diagram of Individual Processing Branch\relax }}{24}{figure.3.6}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Flowchart diagram of FIR decimator component\relax }}{26}{figure.3.7}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Magnitude response of designed FIR filter\relax }}{27}{figure.3.8}
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Frequency spectrum of signal measured without sliver\relax }}{28}{figure.3.9}
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Flowchart diagram of applied frequency filtration\relax }}{29}{figure.3.10}
+\contentsline {figure}{\numberline {3.11}{\ignorespaces Variance-length curve - the output of the algorithm\relax }}{31}{figure.3.11}
+\contentsline {figure}{\numberline {3.12}{\ignorespaces Prototype of the device\relax }}{32}{figure.3.12}
+\contentsline {figure}{\numberline {3.13}{\ignorespaces Measurement application - graphical user interface\relax }}{32}{figure.3.13}
+\contentsline {figure}{\numberline {3.14}{\ignorespaces Variance-length curves\relax }}{34}{figure.3.14}
+\contentsline {figure}{\numberline {3.15}{\ignorespaces Variance length curves - comparison of datasets with slivers of high quality\relax }}{35}{figure.3.15}
+\contentsline {figure}{\numberline {3.16}{\ignorespaces Variance length curves - comparison of all datasets\relax }}{36}{figure.3.16}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
