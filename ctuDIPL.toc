@@ -28,39 +28,36 @@
 \contentsline {subsection}{\numberline {2.1.4}Wavelength}{5}{subsection.2.1.4}
 \contentsline {subsection}{\numberline {2.1.5}Coefficient of Variation}{6}{subsection.2.1.5}
 \contentsline {subsection}{\numberline {2.1.6}Variance-length Curve}{6}{subsection.2.1.6}
+\contentsline {subsection}{\numberline {2.1.7}Spectrogram}{6}{subsection.2.1.7}
 \contentsline {section}{\numberline {2.2}State of Art}{6}{section.2.2}
 \contentsline {subsection}{\numberline {2.2.1}Overview of Yarn Quality Sensors}{6}{subsection.2.2.1}
-\contentsline {subsubsection}{Uster Quantum 3}{6}{subsubsection*.5}
-\contentsline {subsubsection}{Uster Quantum 3}{6}{subsubsection*.5}
+\contentsline {subsubsection}{Uster Quantum 3}{7}{subsubsection*.5}
+\contentsline {subsubsection}{Uster Quantum 3}{7}{subsubsection*.5}
 \contentsline {section}{\numberline {2.3}Digital Signal Processing}{7}{section.2.3}
-\contentsline {subsection}{\numberline {2.3.1}Discrete Fourier Transform}{7}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.1}Discrete Fourier Transform}{8}{subsection.2.3.1}
 \contentsline {subsection}{\numberline {2.3.2}Fast Fourier Transform}{9}{subsection.2.3.2}
 \contentsline {subsection}{\numberline {2.3.3}Power spectral density}{10}{subsection.2.3.3}
-\contentsline {section}{\numberline {2.4}Digital Processing Techniques}{11}{section.2.4}
-\contentsline {subsection}{\numberline {2.4.1}Spectrograms}{11}{subsection.2.4.1}
-\contentsline {section}{\numberline {2.5}Embedded systems and microcontrollers}{11}{section.2.5}
-\contentsline {subsection}{\numberline {2.5.1}Embedded systems}{11}{subsection.2.5.1}
-\contentsline {subsection}{\numberline {2.5.2}DSP Hardware Options}{11}{subsection.2.5.2}
-\contentsline {subsection}{\numberline {2.5.3}Real-time constraints}{12}{subsection.2.5.3}
-\contentsline {subsection}{\numberline {2.5.4}ARM Cortex-M3}{12}{subsection.2.5.4}
+\contentsline {subsection}{\numberline {2.3.4}Decimation}{11}{subsection.2.3.4}
+\contentsline {section}{\numberline {2.4}Embedded systems and microcontrollers}{11}{section.2.4}
+\contentsline {subsection}{\numberline {2.4.1}Embedded systems}{12}{subsection.2.4.1}
+\contentsline {subsection}{\numberline {2.4.2}DSP Hardware Options}{12}{subsection.2.4.2}
+\contentsline {subsection}{\numberline {2.4.3}Real-time constraints}{12}{subsection.2.4.3}
+\contentsline {subsection}{\numberline {2.4.4}ARM Cortex-M3}{13}{subsection.2.4.4}
 \contentsline {subsubsection}{Instruction Set}{13}{subsubsection*.6}
 \contentsline {subsubsection}{Instruction Set}{13}{subsubsection*.6}
 \contentsline {chapter}{\numberline {3}Practical Implementation}{15}{chapter.3}
-\contentsline {section}{\numberline {3.1}Yarn Quality Analysis}{15}{section.3.1}
-\contentsline {subsection}{\numberline {3.1.1}Description of Algorithm for Uneveness Analysis}{15}{subsection.3.1.1}
-\contentsline {subsection}{\numberline {3.1.2}Flowchart Diagram}{15}{subsection.3.1.2}
-\contentsline {section}{\numberline {3.2}Sliver Quality Analysis}{15}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}Hardware}{16}{subsection.3.2.1}
+\contentsline {section}{\numberline {3.1}Sliver Quality Analysis}{15}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Hardware}{16}{subsection.3.1.1}
 \contentsline {subsubsection}{Control Unit}{16}{subsubsection*.7}
 \contentsline {subsubsection}{Control Unit}{16}{subsubsection*.7}
 \contentsline {subsubsection}{Power Supply Converters}{17}{subsubsection*.8}
 \contentsline {subsubsection}{Power Supply Converters}{17}{subsubsection*.8}
 \contentsline {subsubsection}{Sensors and Input Modules}{18}{subsubsection*.9}
 \contentsline {subsubsection}{Sensors and Input Modules}{18}{subsubsection*.9}
-\contentsline {section}{\numberline {3.3}Algorithm for Sliver Quality Analysis}{20}{section.3.3}
-\contentsline {subsection}{\numberline {3.3.1}Solution for Embedded Systems Constraints}{22}{subsection.3.3.1}
-\contentsline {subsection}{\numberline {3.3.2}Wavelengths Specification}{22}{subsection.3.3.2}
-\contentsline {subsection}{\numberline {3.3.3}Processing Branch}{23}{subsection.3.3.3}
+\contentsline {section}{\numberline {3.2}Algorithm for Sliver Quality Analysis}{19}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Solution for Embedded Systems Constraints}{21}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Wavelengths Specification}{22}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3}Processing Branch}{23}{subsection.3.2.3}
 \contentsline {subsubsection}{Input Sample}{23}{subsubsection*.10}
 \contentsline {subsubsection}{Input Sample}{23}{subsubsection*.10}
 \contentsline {subsubsection}{FIR Filter and Decimation}{24}{subsubsection*.11}
@@ -68,34 +65,44 @@
 \contentsline {subsubsection}{Buffering}{25}{subsubsection*.12}
 \contentsline {subsubsection}{Buffering}{25}{subsubsection*.12}
 \contentsline {subsubsection}{Windowing}{25}{subsubsection*.13}
-\contentsline {subsubsection}{Windowing}{25}{subsubsection*.13}
-\contentsline {subsubsection}{FFT}{25}{subsubsection*.14}
-\contentsline {subsubsection}{FFT}{25}{subsubsection*.14}
+\contentsline {subsubsection}{Windowing}{26}{subsubsection*.13}
+\contentsline {subsubsection}{FFT}{26}{subsubsection*.14}
+\contentsline {subsubsection}{FFT}{26}{subsubsection*.14}
 \contentsline {subsubsection}{Spectrum Filtration}{26}{subsubsection*.15}
-\contentsline {subsubsection}{Spectrum Filtration}{27}{subsubsection*.15}
-\contentsline {subsubsection}{IFFT}{30}{subsubsection*.16}
-\contentsline {subsubsection}{IFFT}{30}{subsubsection*.16}
-\contentsline {subsubsection}{CV Calculation}{30}{subsubsection*.17}
-\contentsline {subsubsection}{CV Calculation}{30}{subsubsection*.17}
-\contentsline {subsection}{\numberline {3.3.4}Variance-Length Curve}{30}{subsection.3.3.4}
-\contentsline {subsection}{\numberline {3.3.5}Measurement and Testing}{31}{subsection.3.3.5}
+\contentsline {subsubsection}{Spectrum Filtration}{26}{subsubsection*.15}
+\contentsline {subsubsection}{IFFT}{29}{subsubsection*.16}
+\contentsline {subsubsection}{IFFT}{29}{subsubsection*.16}
+\contentsline {subsubsection}{CV Calculation}{29}{subsubsection*.17}
+\contentsline {subsubsection}{CV Calculation}{29}{subsubsection*.17}
+\contentsline {subsection}{\numberline {3.2.4}Variance-Length Curve}{30}{subsection.3.2.4}
+\contentsline {subsection}{\numberline {3.2.5}Measurement and Testing}{30}{subsection.3.2.5}
 \contentsline {subsubsection}{Measurement Application}{31}{subsubsection*.18}
-\contentsline {subsubsection}{Measurement Application}{32}{subsubsection*.18}
-\contentsline {subsubsection}{Measurement}{33}{subsubsection*.19}
-\contentsline {subsubsection}{Measurement}{33}{subsubsection*.19}
-\contentsline {subsection}{\numberline {3.3.6}Algorithm Results}{34}{subsection.3.3.6}
-\contentsline {subsection}{\numberline {3.3.7}Flowchart Diagram}{37}{subsection.3.3.7}
-\contentsline {section}{\numberline {3.4}Description of Designed System}{37}{section.3.4}
-\contentsline {subsection}{\numberline {3.4.1}Block Diagram}{37}{subsection.3.4.1}
-\contentsline {section}{\numberline {3.5}Implementation of Software}{37}{section.3.5}
-\contentsline {subsection}{\numberline {3.5.1}Filtration}{37}{subsection.3.5.1}
-\contentsline {subsection}{\numberline {3.5.2}Detection of Defects}{37}{subsection.3.5.2}
-\contentsline {subsection}{\numberline {3.5.3}Automatic Evaulation}{37}{subsection.3.5.3}
-\contentsline {subsection}{\numberline {3.5.4}Example of Designed Application}{37}{subsection.3.5.4}
-\contentsline {section}{\numberline {3.6}Implementation of Hardware}{37}{section.3.6}
-\contentsline {subsection}{\numberline {3.6.1}Electronic Circuits Design}{37}{subsection.3.6.1}
-\contentsline {subsection}{\numberline {3.6.2}Description of possible sensors}{37}{subsection.3.6.2}
-\contentsline {subsection}{\numberline {3.6.3}Designed Prototype}{37}{subsection.3.6.3}
-\contentsline {chapter}{\numberline {4}Conclusions}{39}{chapter.4}
-\contentsline {chapter}{\numberline {A}Bibliography}{41}{appendix.A}
-\contentsline {chapter}{\numberline {B}Project\ Specification}{43}{section*.20}
+\contentsline {subsubsection}{Measurement Application}{31}{subsubsection*.18}
+\contentsline {subsubsection}{Measurement}{32}{subsubsection*.19}
+\contentsline {subsubsection}{Measurement}{32}{subsubsection*.19}
+\contentsline {subsection}{\numberline {3.2.6}Algorithm Results}{33}{subsection.3.2.6}
+\contentsline {section}{\numberline {3.3}Yarn Quality Analysis}{34}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Hardware}{35}{subsection.3.3.1}
+\contentsline {subsubsection}{Control Unit}{35}{subsubsection*.20}
+\contentsline {subsubsection}{Control Unit}{35}{subsubsection*.20}
+\contentsline {subsection}{\numberline {3.3.2}Algorithm for Yarn Quality Analysis}{36}{subsection.3.3.2}
+\contentsline {subsection}{\numberline {3.3.3}Processing Branch}{37}{subsection.3.3.3}
+\contentsline {subsubsection}{Windowing}{37}{subsubsection*.21}
+\contentsline {subsubsection}{Windowing}{37}{subsubsection*.21}
+\contentsline {subsubsection}{Spectrogram Calculation}{38}{subsubsection*.22}
+\contentsline {subsubsection}{Spectrogram Calculation}{39}{subsubsection*.22}
+\contentsline {subsection}{\numberline {3.3.4}Flowchart Diagram}{39}{subsection.3.3.4}
+\contentsline {section}{\numberline {3.4}Description of Designed System}{39}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}Block Diagram}{39}{subsection.3.4.1}
+\contentsline {section}{\numberline {3.5}Implementation of Software}{39}{section.3.5}
+\contentsline {subsection}{\numberline {3.5.1}Filtration}{39}{subsection.3.5.1}
+\contentsline {subsection}{\numberline {3.5.2}Detection of Defects}{39}{subsection.3.5.2}
+\contentsline {subsection}{\numberline {3.5.3}Automatic Evaulation}{39}{subsection.3.5.3}
+\contentsline {subsection}{\numberline {3.5.4}Example of Designed Application}{39}{subsection.3.5.4}
+\contentsline {section}{\numberline {3.6}Implementation of Hardware}{39}{section.3.6}
+\contentsline {subsection}{\numberline {3.6.1}Electronic Circuits Design}{39}{subsection.3.6.1}
+\contentsline {subsection}{\numberline {3.6.2}Description of possible sensors}{39}{subsection.3.6.2}
+\contentsline {subsection}{\numberline {3.6.3}Designed Prototype}{39}{subsection.3.6.3}
+\contentsline {chapter}{\numberline {4}Conclusions}{41}{chapter.4}
+\contentsline {chapter}{\numberline {A}Bibliography}{43}{appendix.A}
+\contentsline {chapter}{\numberline {B}Project\ Specification}{45}{section*.23}

@@ -222,7 +222,14 @@ Coefficient of variation, hereafter CV, is a measure of dispersion of a probabil
 
 \subsection{Variance-length Curve}
 \label{sec:VarianceL_curve}
-CV\% values for different wavelengths provides useful information of the variation of a fiber. When CV\% values of different wavelengths are simultaneously represented graphically, it provides the possibility of determining wavelengths at which defects occur and consequently identify the process stage that caused it. This graphical representation is called \textit{variance-length curve}.
+CV\% values for different wavelengths provides useful information about the variation of a fiber. When CV\% values of different wavelengths are simultaneously represented graphically, it provides the possibility of determining wavelengths at which defects occur and consequently identify the process stage that caused it. This graphical representation is called \textit{variance-length curve}.
+
+\subsection{Spectrogram}
+In digital signal processing the spectrogram is function that represents frequency spectrum of time-varying signal. Its calculation is done by obtaining spectrum of a short-time interval. This interval can be obtained by using sliding window over a long signal, breaking it into several short blocks. This technique is known as short-time Fourier transform \cite{cite:RT_DSP}. 
+
+However, in textile engineering the meaning is different. Spectrogram can be stated as variant of a power-spectral density (described in chapter \ref{sec:PSD}) with respect to the wavelength. This is difference to the usual power-spectral density which is with respect to the frequency. The conversion from frequency to the wavelength is based on equation \ref{eq:wavelengthFormula}.
+
+A simple example of the spectrogram is shown in figure XXX. In subfigure XXX the spectrogram is calculated on textile fiber that doesn't contain any periodicall defect. On the other hand, subfigure XXX shows spectrogram of a fiber with a defect. It is clearly visible as a peak and its wavelength can be easily determined.
 
 \section{State of Art}
 \subsection{Overview of Yarn Quality Sensors}
@@ -369,6 +376,7 @@ FFT algorithm \textit{decimation-in-frequency} is similar to the decimation-in-t
 The FFT algorithms shown in the previous paragraphs can be modified to calculate the inverse FFT (IFFT).
 
 \subsection{Power spectral density}
+\label{sec:PSD}
 %Consider a signal $x[n]$ of length $N$ with DFT $X[k]$ 
 Energy Spectral Density $S(\omega)$ defined as \ref{eq:EnergySD}
 \begin{equation} \label{eq:EnergySD}
@@ -400,9 +408,12 @@ Methods that require direct use of a finite signal for purposes of autocorrelati
 
 They differ mainly in the resolution and variance level of the result. For a detailed description of methods see \cite{cite:2}.
 
-\section{Digital Processing Techniques}
-
-\subsection{Spectrograms}
+\subsection{Decimation}
+The decimation is process that combines downsampling and anti-aliasing filtration. Downsampling is process of reducing the sampling frequency by an integer factor $M$. Thus, decimation of a signal of sampling frequency $f_s$ by decimation factor of $M$ results in lower sampling frequency ${f_s^{2}=f_s/M}$. Implementation of downsampling by factor $M$ can be simply done by discarding (D-1) samples for every D samples \cite{cite:2}. 
+Problem occurs if the original high-rate signal has frequency components that are outside the new reduced bandwitdh, which causes aliasing. The issue can be resolved by using lowpass filter on the original signal before execution of downsampling. The cutoff frequency of the lowpass filter is given as
+\begin{equation} \label{eq:decimation}
+f_c=f_s^{2}/2=f_s/(2\cdot M) \cite{cite:RT_DSP}.
+\end{equation}
 
 \section{Embedded systems and microcontrollers}
 There are many definitions of embedded systems. The one picked for this thesis subjectively seems well accurate in the description of the given term. It goes as follows.
@@ -648,6 +659,7 @@ Knowing this information allows us to determine a \textit{cut off frequency}\foo
 \end{table}%
 
 \subsection{Processing Branch}
+\label{processingBranch_sliver}
 CV values for each of these wavelengths (as shown in table \ref{tab:Wavelengths}) are calculated in individual processing branch. They are in sequential order and input for each branch is a partial result of the previous one.
 
 With every sampling period, one sample is taken by ADC peripheral and its values are stored in memory by DMA\footnote{Direct Memory Access peripheral} and an interrupt is invoked. Then, in the interrupt handler a volatile flag determining that new sample was taken is set and main software state machine periodically checks its state. If the flag is set, the state is changed to first processing branch and sample processing begins.
@@ -696,7 +708,7 @@ FIR filter used in the FIR decimation was chosen as lowpass filter with order 32
 Output samples from FIR decimator are buffered in vectors of length 1024. When the buffer is filled to full an appropriate flag is set and calculation can proceed to the next component. This creates a requirement for memory space. We know that it is required to has 12 processing stages and each stage has to have one buffer of 1024 sample and one sample is stored in 2B integer word. Another buffer for 1024 samples has to be ready for an output of FFT. From this conclude that \textit{Memory required} $= 12 \cdot 2 \cdot(1024 \cdot 2)=49152B\cong49.2kB$. This is not an issue for used microcontroller STM32F446 which has 128 kB of SRAM (see \ref{sec:microController}).
 
 \subsubsection{Windowing}
-Before calculation of FFT can be executed an operation called windowing (see chapter \ref{sec:DiscreteFourierTransform}) should be performed. This will prevent leakage and smearing, which are effects that are distorting the frequency spectrum obtained by FFT.
+Before calculation of FFT can be executed an operation called windowing (see chapter \ref{sec:DiscreteFourierTransform}) is performed. For sliver quality analysis only simple rectangular window of length 1024 is used. No other window was suitable for using as one of the next steps is inverse FFT, which would yield deformed signal and, thus, incorrect CV\% values.
 
 \subsubsection{FFT}
 The frequency spectrum is obtained by algorithm called FFT (see chapter \ref{sec:FFT}). This is a fast implementation of Fourier transform and it is the most widely used technique used for obtaining frequency spectrum of signals. DSP libraries for ARM systems do contain functions for complex and real FFT. For our case we can use real FFT function \textit{arm\_rfft\_fast\_f32} with length of FFT 1024. This calculation can be performed on used microcontroller in tenths of milliseconds. \cite{cite:STM32_DSP_library}.
@@ -958,6 +970,12 @@ In processing branch for yarn quality analysis signal is first filtered by FIR f
 	\label{fig:singleBranch_yarn}
 \end{figure}
 
+As yarn processing branch is equal in many components with the processing branch for sliver (see chapter \ref{processingBranch_sliver}) only blocks that differ are described in detail in following paragraphs.
+
+\subsubsection{Windowing}
+Before calculation of FFT can be executed an operation called windowing is performed. This can prevent leakage and smearing, which are effects that are distorting the frequency spectrum obtained by FFT. Used window is Hann (or Hanning) of length 1024. It is shown in figure XXX.
+
+\subsubsection{Spectrogram Calculation}
 
 
 \subsection{Flowchart Diagram}
