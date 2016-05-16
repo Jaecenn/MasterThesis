@@ -33,18 +33,18 @@
 \contentsline {subsection}{\numberline {2.2.1}Overview of Yarn Quality Sensors}{6}{subsection.2.2.1}
 \contentsline {subsubsection}{Uster Quantum 3}{7}{subsubsection*.5}
 \contentsline {subsubsection}{Uster Quantum 3}{7}{subsubsection*.5}
-\contentsline {section}{\numberline {2.3}Digital Signal Processing}{7}{section.2.3}
+\contentsline {section}{\numberline {2.3}Digital Signal Processing}{8}{section.2.3}
 \contentsline {subsection}{\numberline {2.3.1}Discrete Fourier Transform}{8}{subsection.2.3.1}
 \contentsline {subsection}{\numberline {2.3.2}Fast Fourier Transform}{9}{subsection.2.3.2}
-\contentsline {subsection}{\numberline {2.3.3}Power spectral density}{10}{subsection.2.3.3}
+\contentsline {subsection}{\numberline {2.3.3}Power spectral density}{11}{subsection.2.3.3}
 \contentsline {subsection}{\numberline {2.3.4}Decimation}{11}{subsection.2.3.4}
-\contentsline {section}{\numberline {2.4}Embedded systems and microcontrollers}{11}{section.2.4}
+\contentsline {section}{\numberline {2.4}Embedded systems and microcontrollers}{12}{section.2.4}
 \contentsline {subsection}{\numberline {2.4.1}Embedded systems}{12}{subsection.2.4.1}
 \contentsline {subsection}{\numberline {2.4.2}DSP Hardware Options}{12}{subsection.2.4.2}
-\contentsline {subsection}{\numberline {2.4.3}Real-time constraints}{12}{subsection.2.4.3}
+\contentsline {subsection}{\numberline {2.4.3}Real-time constraints}{13}{subsection.2.4.3}
 \contentsline {subsection}{\numberline {2.4.4}ARM Cortex-M3}{13}{subsection.2.4.4}
-\contentsline {subsubsection}{Instruction Set}{13}{subsubsection*.6}
-\contentsline {subsubsection}{Instruction Set}{13}{subsubsection*.6}
+\contentsline {subsubsection}{Instruction Set}{14}{subsubsection*.6}
+\contentsline {subsubsection}{Instruction Set}{14}{subsubsection*.6}
 \contentsline {chapter}{\numberline {3}Practical Implementation}{15}{chapter.3}
 \contentsline {section}{\numberline {3.1}Sliver Quality Analysis}{15}{section.3.1}
 \contentsline {subsection}{\numberline {3.1.1}Hardware}{16}{subsection.3.1.1}
@@ -90,19 +90,23 @@
 \contentsline {subsubsection}{Windowing}{37}{subsubsection*.21}
 \contentsline {subsubsection}{Windowing}{37}{subsubsection*.21}
 \contentsline {subsubsection}{Spectrogram Calculation}{38}{subsubsection*.22}
-\contentsline {subsubsection}{Spectrogram Calculation}{39}{subsubsection*.22}
-\contentsline {subsection}{\numberline {3.3.4}Flowchart Diagram}{39}{subsection.3.3.4}
-\contentsline {section}{\numberline {3.4}Description of Designed System}{39}{section.3.4}
-\contentsline {subsection}{\numberline {3.4.1}Block Diagram}{39}{subsection.3.4.1}
-\contentsline {section}{\numberline {3.5}Implementation of Software}{39}{section.3.5}
-\contentsline {subsection}{\numberline {3.5.1}Filtration}{39}{subsection.3.5.1}
-\contentsline {subsection}{\numberline {3.5.2}Detection of Defects}{39}{subsection.3.5.2}
-\contentsline {subsection}{\numberline {3.5.3}Automatic Evaulation}{39}{subsection.3.5.3}
-\contentsline {subsection}{\numberline {3.5.4}Example of Designed Application}{39}{subsection.3.5.4}
-\contentsline {section}{\numberline {3.6}Implementation of Hardware}{39}{section.3.6}
-\contentsline {subsection}{\numberline {3.6.1}Electronic Circuits Design}{39}{subsection.3.6.1}
-\contentsline {subsection}{\numberline {3.6.2}Description of possible sensors}{39}{subsection.3.6.2}
-\contentsline {subsection}{\numberline {3.6.3}Designed Prototype}{39}{subsection.3.6.3}
+\contentsline {subsubsection}{Spectrogram Calculation}{38}{subsubsection*.22}
+\contentsline {subsubsection}{Correction of Spectrum}{39}{subsubsection*.23}
+\contentsline {subsubsection}{Correction of Spectrum}{39}{subsubsection*.23}
+\contentsline {subsubsection}{Summation of the Frequency Bins}{39}{subsubsection*.24}
+\contentsline {subsubsection}{Summation of the Frequency Bins}{39}{subsubsection*.24}
+\contentsline {subsection}{\numberline {3.3.4}Flowchart Diagram}{40}{subsection.3.3.4}
+\contentsline {section}{\numberline {3.4}Description of Designed System}{40}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}Block Diagram}{40}{subsection.3.4.1}
+\contentsline {section}{\numberline {3.5}Implementation of Software}{40}{section.3.5}
+\contentsline {subsection}{\numberline {3.5.1}Filtration}{40}{subsection.3.5.1}
+\contentsline {subsection}{\numberline {3.5.2}Detection of Defects}{40}{subsection.3.5.2}
+\contentsline {subsection}{\numberline {3.5.3}Automatic Evaulation}{40}{subsection.3.5.3}
+\contentsline {subsection}{\numberline {3.5.4}Example of Designed Application}{40}{subsection.3.5.4}
+\contentsline {section}{\numberline {3.6}Implementation of Hardware}{40}{section.3.6}
+\contentsline {subsection}{\numberline {3.6.1}Electronic Circuits Design}{40}{subsection.3.6.1}
+\contentsline {subsection}{\numberline {3.6.2}Description of possible sensors}{40}{subsection.3.6.2}
+\contentsline {subsection}{\numberline {3.6.3}Designed Prototype}{40}{subsection.3.6.3}
 \contentsline {chapter}{\numberline {4}Conclusions}{41}{chapter.4}
 \contentsline {chapter}{\numberline {A}Bibliography}{43}{appendix.A}
-\contentsline {chapter}{\numberline {B}Project\ Specification}{45}{section*.23}
+\contentsline {chapter}{\numberline {B}Project\ Specification}{45}{section*.25}

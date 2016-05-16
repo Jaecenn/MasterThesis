@@ -225,11 +225,29 @@ Coefficient of variation, hereafter CV, is a measure of dispersion of a probabil
 CV\% values for different wavelengths provides useful information about the variation of a fiber. When CV\% values of different wavelengths are simultaneously represented graphically, it provides the possibility of determining wavelengths at which defects occur and consequently identify the process stage that caused it. This graphical representation is called \textit{variance-length curve}.
 
 \subsection{Spectrogram}
+\label{SpecExplained}
 In digital signal processing the spectrogram is function that represents frequency spectrum of time-varying signal. Its calculation is done by obtaining spectrum of a short-time interval. This interval can be obtained by using sliding window over a long signal, breaking it into several short blocks. This technique is known as short-time Fourier transform \cite{cite:RT_DSP}. 
 
 However, in textile engineering the meaning is different. Spectrogram can be stated as variant of a power-spectral density (described in chapter \ref{sec:PSD}) with respect to the wavelength. This is difference to the usual power-spectral density which is with respect to the frequency. The conversion from frequency to the wavelength is based on equation \ref{eq:wavelengthFormula}.
 
-A simple example of the spectrogram is shown in figure XXX. In subfigure XXX the spectrogram is calculated on textile fiber that doesn't contain any periodicall defect. On the other hand, subfigure XXX shows spectrogram of a fiber with a defect. It is clearly visible as a peak and its wavelength can be easily determined.
+A simple example of the spectrogram is shown in figure \ref{fig:specExpl}. In subfigure \ref{fig:specExpl_A} the spectrogram is calculated on textile fiber that doesn't contain any periodicall defect. On the other hand, subfigure \ref{fig:specExpl_B} shows spectrogram of a fiber with a defect. It is clearly visible as a peak and its wavelength can be easily determined.
+\begin{figure}
+	\centering
+	\begin{subfigure}{0.5\textwidth}
+		\centering
+		\includegraphics[width=1.0\linewidth]{spectrogram_good.eps}
+		\caption{Spectrogram A - no defect}
+		\label{fig:specExpl_A}
+	\end{subfigure}%
+	\begin{subfigure}{0.5\textwidth}
+		\centering
+		\includegraphics[width=1.0\linewidth]{spectrogram_bad.eps}
+		\caption{Spectrogram B - with defect}
+		\label{fig:specExpl_B}
+	\end{subfigure}
+	\caption{Simplified Spectrogram Example}
+	\label{fig:specExpl}
+\end{figure}
 
 \section{State of Art}
 \subsection{Overview of Yarn Quality Sensors}
@@ -818,7 +836,7 @@ To obtain as much information as possible, the sampling frequency is needed to b
 	\caption{Maximum possible sampling frequencies}
 	\begin{tabular}{cccccc}
 		\toprule
-		Number of Sensors	 & 1 & 2 & 3 & 4 & 5 \\
+		Number of Sensor	 & 1 & 2 & 3 & 4 & 5 \\
 		\midrule
 		Sampling Frequency [Hz]  & 6500  & 4400   & 3300 & 2600   & 2200  \\
 		
@@ -973,10 +991,47 @@ In processing branch for yarn quality analysis signal is first filtered by FIR f
 As yarn processing branch is equal in many components with the processing branch for sliver (see chapter \ref{processingBranch_sliver}) only blocks that differ are described in detail in following paragraphs.
 
 \subsubsection{Windowing}
-Before calculation of FFT can be executed an operation called windowing is performed. This can prevent leakage and smearing, which are effects that are distorting the frequency spectrum obtained by FFT. Used window is Hann (or Hanning) of length 1024. It is shown in figure XXX.
+Before calculation of FFT can be executed an operation called windowing is performed. This can prevent leakage and smearing (see chapter \ref{sec:DiscreteFourierTransform}), which are effects that are distorting the frequency spectrum obtained by FFT. Used window is Hann (or Hanning) of length 1024. It is shown in figure XXX in attachments to this thesis.
 
 \subsubsection{Spectrogram Calculation}
+Spectrograms used in textile industry are explained in chapter \ref{SpecExplained}. For calculation of spectrogram in this application is used frequency spectrum obtained by FFT. The FFT output in each stage has length of 1024 and spectrogram can be obtained by summing some of its samples. 
 
+The full spectrogram is formed of partial spectrograms, each of them calculated in one processing branch. Each of the processing branches can give information about certain range of wavelengths determined by $\lambda_{min}$ and $\lambda_{max}$ (see table \ref{tab:Wavelengths}). In frequency spectrum these wavelengths corresponds to frequency from $f_s/4$ to $f_s/2$. In the output of the FFT, this frequency range is mapped into frequency bins from $L/4$ to $L/2$, where $L$ is length of the FFT output (for this application $L=1024$). Thus, partial spectrogram is obtained by summing the frequency bins in this range. 
+This would be true if partial spectrogram was represented by only one column (or bin) in full spectrogram. However, that would yield poor resolution of the result. Therefore, frequency range for summing is split between several bins, which create the partial spectrogram. Number of bins in partial spectrogram was determined as 5 as this yields sufficient resolution and still fulfils the real-time constrains of the application. 
+
+Unfortunately, dividing the frequency spectrum is more complicated because the resulting spectrogram has to be equidistant in logarithmic scale. This is necessary for displaying all the wavelengths at once. Thus the division needs to respect this requirement. The logarithmic scale implies that ratio between two adjacent point is a constant. This can be described by equation $x[n]=x[n-1]\cdot q$ where $n=1\ldots N$.
+From this we can simply deduce a general equation \ref{eq:spectro1}:
+\begin{equation} \label{eq:spectro1}
+x[n]=x[0]\cdot q^n
+\end{equation}
+Now, by realizing that after 5 multiplications (number of bins $N=5$ for one stage) we need to get from $L/4$ to $L/2$, the coefficient $q$ can be obtained as:
+\begin{equation} \label{eq:spectro2}
+{\left(\frac{L/4}{L/2}\right)}^{\frac{1}{N}}={\left(\frac{1}{2}\right)}^{\frac{1}{N}}=0.8706
+\end{equation}
+With the coefficient $q$ we can simply put the corresponding numbers to the equation \ref{eq:spectro1} for $n=0\ldots N$. The results are border values (as frequency bins) of all the 5 bins and they are shown in table \ref{tab:indiciesBins}.
+
+\begin{table}[htbp]
+	\centering
+	\caption{Indicies of frequency bins for partial spectrogram}
+	\begin{tabular}{cccccc}
+		\toprule
+		Spectrogram Bin Index & 0 & 1 & 2 & 3 & 4 \\
+		\midrule
+		Frequency Bins Range  & 512 - 446  & 445 - 389 & 388 - 338 & 337 - 294 & 293 - 256  \\
+		\bottomrule
+	\end{tabular}%
+	\label{tab:indiciesBins}%
+\end{table}%
+
+\subsubsection{Correction of Spectrum}
+Frequency bins from table \ref{tab:indiciesBins} has to be summed to obtain one spectrogram bin. Before this step is executed a correction has to made. This is process that corrects the amplitudes of the frequency spectrum, which are distorted because frequency response of the used FIR filter (see figure \ref{fig:MagnitudeResponse}) is not equal in passband. Therefore, correction coefficients were obtained from the magnitude response. This was done by scaling left half of magnitude response (passband) to the same scale as useful frequency bins (1-512). The process of correction is now done by dividing the frequency bins by the corresponding value on the scaled magnitude response. This equalizes the passband of the filter and allows to generate non-distorted spectrogram.
+
+\subsubsection{Summation of the Frequency Bins}
+The summation is done over the ranges noted in table \ref{tab:indiciesBins}. After all the values in given range are summed an effective value of the spectrum (RMS) is calculated. This is described in \cite{cite:1} and the equation for obtain RMS value of the spectrum is  
+\begin{equation} \label{eq:spectro3}
+RMS_k=\frac{\sqrt{2}}{L}\cdot \sqrt{|X_k|^2},
+\end{equation}
+where $k=1\ldots \frac{L}{2}-1$ and $k=0$.
 
 \subsection{Flowchart Diagram}
 \section{Description of Designed System}
