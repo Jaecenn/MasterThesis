@@ -42,7 +42,7 @@
 \contentsline {subsection}{\numberline {2.4.1}Embedded systems}{12}{subsection.2.4.1}
 \contentsline {subsection}{\numberline {2.4.2}DSP Hardware Options}{12}{subsection.2.4.2}
 \contentsline {subsection}{\numberline {2.4.3}Real-time constraints}{13}{subsection.2.4.3}
-\contentsline {subsection}{\numberline {2.4.4}ARM Cortex-M3}{13}{subsection.2.4.4}
+\contentsline {subsection}{\numberline {2.4.4}ARM Cortex-M4}{13}{subsection.2.4.4}
 \contentsline {subsubsection}{Instruction Set}{14}{subsubsection*.6}
 \contentsline {subsubsection}{Instruction Set}{14}{subsubsection*.6}
 \contentsline {chapter}{\numberline {3}Practical Implementation}{15}{chapter.3}
@@ -84,29 +84,23 @@
 \contentsline {section}{\numberline {3.3}Yarn Quality Analysis}{34}{section.3.3}
 \contentsline {subsection}{\numberline {3.3.1}Hardware}{35}{subsection.3.3.1}
 \contentsline {subsubsection}{Control Unit}{35}{subsubsection*.20}
-\contentsline {subsubsection}{Control Unit}{35}{subsubsection*.20}
+\contentsline {subsubsection}{Control Unit}{36}{subsubsection*.20}
 \contentsline {subsection}{\numberline {3.3.2}Algorithm for Yarn Quality Analysis}{36}{subsection.3.3.2}
 \contentsline {subsection}{\numberline {3.3.3}Processing Branch}{37}{subsection.3.3.3}
-\contentsline {subsubsection}{Windowing}{37}{subsubsection*.21}
-\contentsline {subsubsection}{Windowing}{37}{subsubsection*.21}
+\contentsline {subsubsection}{Windowing}{38}{subsubsection*.21}
+\contentsline {subsubsection}{Windowing}{38}{subsubsection*.21}
 \contentsline {subsubsection}{Spectrogram Calculation}{38}{subsubsection*.22}
 \contentsline {subsubsection}{Spectrogram Calculation}{38}{subsubsection*.22}
 \contentsline {subsubsection}{Correction of Spectrum}{39}{subsubsection*.23}
 \contentsline {subsubsection}{Correction of Spectrum}{39}{subsubsection*.23}
 \contentsline {subsubsection}{Summation of the Frequency Bins}{39}{subsubsection*.24}
 \contentsline {subsubsection}{Summation of the Frequency Bins}{39}{subsubsection*.24}
-\contentsline {subsection}{\numberline {3.3.4}Flowchart Diagram}{40}{subsection.3.3.4}
-\contentsline {section}{\numberline {3.4}Description of Designed System}{40}{section.3.4}
-\contentsline {subsection}{\numberline {3.4.1}Block Diagram}{40}{subsection.3.4.1}
-\contentsline {section}{\numberline {3.5}Implementation of Software}{40}{section.3.5}
-\contentsline {subsection}{\numberline {3.5.1}Filtration}{40}{subsection.3.5.1}
-\contentsline {subsection}{\numberline {3.5.2}Detection of Defects}{40}{subsection.3.5.2}
-\contentsline {subsection}{\numberline {3.5.3}Automatic Evaulation}{40}{subsection.3.5.3}
-\contentsline {subsection}{\numberline {3.5.4}Example of Designed Application}{40}{subsection.3.5.4}
-\contentsline {section}{\numberline {3.6}Implementation of Hardware}{40}{section.3.6}
-\contentsline {subsection}{\numberline {3.6.1}Electronic Circuits Design}{40}{subsection.3.6.1}
-\contentsline {subsection}{\numberline {3.6.2}Description of possible sensors}{40}{subsection.3.6.2}
-\contentsline {subsection}{\numberline {3.6.3}Designed Prototype}{40}{subsection.3.6.3}
-\contentsline {chapter}{\numberline {4}Conclusions}{41}{chapter.4}
-\contentsline {chapter}{\numberline {A}Bibliography}{43}{appendix.A}
-\contentsline {chapter}{\numberline {B}Project\ Specification}{45}{section*.25}
+\contentsline {subsection}{\numberline {3.3.4}Compilation of Full Spectrogram}{40}{subsection.3.3.4}
+\contentsline {subsection}{\numberline {3.3.5}Measurement and Testing}{40}{subsection.3.3.5}
+\contentsline {subsection}{\numberline {3.3.6}Algorithm Results}{41}{subsection.3.3.6}
+\contentsline {subsubsection}{Alarm Function}{42}{subsubsection*.25}
+\contentsline {subsubsection}{Alarm Function}{42}{subsubsection*.25}
+\contentsline {chapter}{\numberline {4}Prospective Development}{45}{chapter.4}
+\contentsline {chapter}{\numberline {5}Conclusions}{47}{chapter.5}
+\contentsline {chapter}{\numberline {A}Bibliography}{49}{appendix.A}
+\contentsline {chapter}{\numberline {B}Project\ Specification}{51}{section*.26}

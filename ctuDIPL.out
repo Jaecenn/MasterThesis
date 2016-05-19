@@ -19,7 +19,7 @@
 \BOOKMARK [2][-]{subsection.2.4.1}{Embedded systems}{section.2.4}% 19
 \BOOKMARK [2][-]{subsection.2.4.2}{DSP Hardware Options}{section.2.4}% 20
 \BOOKMARK [2][-]{subsection.2.4.3}{Real-time constraints}{section.2.4}% 21
-\BOOKMARK [2][-]{subsection.2.4.4}{ARM Cortex-M3}{section.2.4}% 22
+\BOOKMARK [2][-]{subsection.2.4.4}{ARM Cortex-M4}{section.2.4}% 22
 \BOOKMARK [0][-]{chapter.3}{Practical Implementation}{}% 23
 \BOOKMARK [1][-]{section.3.1}{Sliver Quality Analysis}{chapter.3}% 24
 \BOOKMARK [2][-]{subsection.3.1.1}{Hardware}{section.3.1}% 25
@@ -34,18 +34,10 @@
 \BOOKMARK [2][-]{subsection.3.3.1}{Hardware}{section.3.3}% 34
 \BOOKMARK [2][-]{subsection.3.3.2}{Algorithm for Yarn Quality Analysis}{section.3.3}% 35
 \BOOKMARK [2][-]{subsection.3.3.3}{Processing Branch}{section.3.3}% 36
-\BOOKMARK [2][-]{subsection.3.3.4}{Flowchart Diagram}{section.3.3}% 37
-\BOOKMARK [1][-]{section.3.4}{Description of Designed System}{chapter.3}% 38
-\BOOKMARK [2][-]{subsection.3.4.1}{Block Diagram}{section.3.4}% 39
-\BOOKMARK [1][-]{section.3.5}{Implementation of Software}{chapter.3}% 40
-\BOOKMARK [2][-]{subsection.3.5.1}{Filtration}{section.3.5}% 41
-\BOOKMARK [2][-]{subsection.3.5.2}{Detection of Defects}{section.3.5}% 42
-\BOOKMARK [2][-]{subsection.3.5.3}{Automatic Evaulation}{section.3.5}% 43
-\BOOKMARK [2][-]{subsection.3.5.4}{Example of Designed Application}{section.3.5}% 44
-\BOOKMARK [1][-]{section.3.6}{Implementation of Hardware}{chapter.3}% 45
-\BOOKMARK [2][-]{subsection.3.6.1}{Electronic Circuits Design}{section.3.6}% 46
-\BOOKMARK [2][-]{subsection.3.6.2}{Description of possible sensors}{section.3.6}% 47
-\BOOKMARK [2][-]{subsection.3.6.3}{Designed Prototype}{section.3.6}% 48
-\BOOKMARK [0][-]{chapter.4}{Conclusions}{}% 49
-\BOOKMARK [0][-]{appendix.A}{Bibliography}{}% 50
-\BOOKMARK [0][-]{section*.25}{Project Specification}{}% 51
+\BOOKMARK [2][-]{subsection.3.3.4}{Compilation of Full Spectrogram}{section.3.3}% 37
+\BOOKMARK [2][-]{subsection.3.3.5}{Measurement and Testing}{section.3.3}% 38
+\BOOKMARK [2][-]{subsection.3.3.6}{Algorithm Results}{section.3.3}% 39
+\BOOKMARK [0][-]{chapter.4}{Prospective Development}{}% 40
+\BOOKMARK [0][-]{chapter.5}{Conclusions}{}% 41
+\BOOKMARK [0][-]{appendix.A}{Bibliography}{}% 42
+\BOOKMARK [0][-]{section*.26}{Project Specification}{}% 43

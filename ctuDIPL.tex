@@ -30,7 +30,7 @@
 	fieldofstudy-czech = {Senzory a přístrojová technika},
 	subfieldofstudy-czech = {Kybernetika a Robotika},
 	keywords-czech = {zpracování digitálního signálu, textilní vady, nerovnoměrnost},
-	keywords-english = {digital signal processing, textile defects, uneveness},
+	keywords-english = {digital signal processing, textile defects, unevenness},
 	day = 15,
 	month = 5,
 	year = 2016,
@@ -79,22 +79,34 @@
 
 % Abstract in Czech
 \begin{abstract-czech}
-To be done.
+Hmotnostní nerovnoměrnost má významný vliv na kvalitu textilních vláken. Analyzováním nerovnoměrností vlákna je tak možné určit jeho kvalitu. Tato práce se zabývá algoritmem pro vyhodnocování kvality textilních vláken analyzováním jejich nerovnoměrnosti. Navržený algorithms pro digitalní zpracování signálu je založen na multi-rate analýze a je implementován jako software pro mikrokontroléry. Byly vyvinuty dva algoritmy založené na stejném principu, a to pro analýzu dvou typů textilních vláken: pramene a příze. Pro analýzu kvality textilního pramene byl také vyvinut vestavný systém za účelem měření průměru pramene a následného zpracování naměřeného signálu. Výsledkem analýzy je rozptylová křivka, která je použita jako měřítko kvality pramene. Pro vyhodnocení kvality příze byla naprogramována softwarová knihovna cílená pro mikrokontroléry. Provedené testy dokázali, že spektrogram, který je výstupem algoritmu, je schopný spolehlivě určit kvalitu příze.
 \end{abstract-czech}
 
 % Abstract in English
 \begin{abstract-english}
- To be done.
+Mass unevenness significantly affects a quality of the textile fibers. By analysing the unevenness of a fiber it is possible to determine its quality. This thesis describes algorithm for evaluation of the quality of the textile fibers by analysing their unevenness. Designed digital signal processing algorithm is based on a multi-rate analysis and is implemented as software targeted for general-purpose microcontrollers. Two algorithms based on the same basis were developed for an analysis of the two textile fiber types: sliver and yarn.  For the analysis of a sliver quality an embedded device is developed for measuring the diameter of the sliver and subsequent processing of the measured signal. Result of the analysis is variance-length curve, which is used as a measure of the sliver quality. For the quality evaluation of the yarn a software library, targeted for microcontrollers, is developed. Executed tests proved that a spectrogram, which is the output of the algorithm, can reliably determine the quality of the yarn.
+
 \end{abstract-english}
 
 % Acknowledgements / Podekovani
 \begin{thanks}
-Děkuji.
+I would like to thank my supervisor Ing. Jakub Parák without whose guidance this thesis could not be written. I would also like to thank Ing. Pavel Kousalík, Ph.D. from Rieter CZ s.r.o, for providing me with invaluable advices and support. And, of course, I would like to thank my family and all the people who supported me during the writing.
 \end{thanks}
 
 % Declaration / Prohlaseni
 \begin{declaration}
-Prohlašuji, že jsem předloženou práci vypracoval samostatně, a že jsem uvedl veškerou použitou literaturu.
+Některé skutečnosti, uvedené v této práci, jsou předmětem obchodního tajemství Rieter CZ,
+popř. koncernu RIETER ve smyslu ustanovení § 17 a následujících zákona č.513/1991 Sb. ve
+znění pozdějších změn a doplňků (Obchodní zákoník).
+Bez souhlasu Rieter CZ s.r.o. lze tyto informace použít pouze v souladu s platnými předpisy,
+týkajícími se magisterského studia.
+RIETER si vyhrazuje veškerá práva k předmětům duševního vlastnictví, týkajících se zde
+uvedených informací, zejména pro ochranné přihlášky předmětů průmyslových práv a
+poukazuje výslovně na to, že jejich případné zveřejnění nebo poskytnutí třetí osobě
+představuje zřejmé zneužití ve smyslu §5 zákona č. 527/1990 Sb.(Zákon o vynálezech). 
+\vfill
+Prohlašuji, že jsem předloženou práci vypracoval samostatně, a že jsem uvedl veškeré použité informační zdroje v souladu s Metodickým pokynem o dodržování etických principů při přípravě vysokoškolských závěřečných prací.
+\bigskip
 
 V Praze, \ctufield{day}.~\monthinlanguage{title}~\ctufield{year}
 \end{declaration}
@@ -115,9 +127,9 @@ V Praze, \ctufield{day}.~\monthinlanguage{title}~\ctufield{year}
 %\chapter{Introduction}
 Textile manufacturing has always been important industry field. A major part of this industry is formed by a process called spinning, where twisting strands of fibers together form yarn. The modern spinners - textile machines, that execute the process of spinning - have been significantly improved and now they reach a high level of automation. This allows not only faster and cheaper production but also more focus on a quality of the produced textile yarn. 
 
-The quality of the yarn could devaluate the final product by creating defects, such as rapid changes in color or thickness etc., in the textile material. Even with modern technologies, it is still impossible to produce yarn without any defects. We can't prevent yarn defects by carefully selecting and preprocessing fiber because some defects can be created by spinning process itself. Out of many types of defects, this thesis is focused on the analysis of yarn unevenness (also called yarn irregularity). This is describing yarn with a diameter that is not even along its length, but it is changing its value periodically. We can measure this defect in the form of mass variation per unit length.
+The quality of the yarn could devaluate the final product by creating defects, such as rapid changes in color or thickness etc., in the textile material. Even with modern technologies, it is still impossible to produce yarn without any defects. We can't prevent yarn defects by carefully selecting and preprocessing fiber because some defects can be created by spinning process itself. Out of many types of defects, this thesis is focused on the analysis of fiber unevenness (also called irregularity). This is describing fiber with a diameter that is not even along its length, but it is changing its value periodically. We can measure this defect in the form of mass variation per unit length.
 
-Designed system is not aiming to improve the quality of spun yarn, but to monitor quality (specifically unevenness) of produced yarn during the spinning process. Due to this monitoring, it is possible to stop spinning process if a defective yarn is detected. This allows the operator to resolve the issues that caused it, e.g. by replacing spinner fiber source with new one and reconnecting different yarn endings.
+Goal of the designed system is to monitor quality (specifically unevenness) of produced yarn during the spinning process. Due to this monitoring, it is possible to stop spinning process if a defective yarn is detected. This allows the operator to resolve the issues that caused it, e.g. by replacing spinner fiber source with new one and reconnecting different yarn endings.
 
 The project - described in this thesis - has been made in cooperation with company Rieter CZ s.r.o, who provided the device requirements, critical measurement data, and other important information. The goal of the project was to research and develop an algorithm for analysis and detection of yarn unevenness by using spectrograms and to design an embedded system capable of measuring a diameter of yarn while fulfilling the required time constraints and implement detection algorithm. The system is required to be controlled by ARM M4 microcontroller. Thus, the algorithm has to be implemented in a way that takes in consideration memory and computational limitation of such microcontrollers.
 
@@ -249,7 +261,10 @@ A simple example of the spectrogram is shown in figure \ref{fig:specExpl}. In su
 	\label{fig:specExpl}
 \end{figure}
 
-\section{State of Art}
+\section{State of the Art}
+
+Several academics articles were written on this topic. The most important one is \cite{cite:paperKorobov_Jun} were Korobov and Jun (2005) describe new method of spectrogram calculation using multi-rate analysis. Their idea is practical, but today it is obsolete, since microcontrollers are capable of much better performance, thus, their approach loses its value. 
+
 \subsection{Overview of Yarn Quality Sensors}
 An importance of yarn quality on final product became clear in the 1950s when first electronic yarn quality sensors were invented. Since then many principles were used in the detection of yarn defects - optical, mechanical or even chemical \cite{cite:1}.
 
@@ -272,12 +287,21 @@ Uster Quantum 3 is modern yarn clearer, which provides detection of many types o
 	\item spectrograms calculation.
 \end{itemize}
 
-Uster Quantum 3 has been developed by company Uster Technologies, which is developing yarn clearers for 30 years. Their devices often feature an application of new technologies and they offer high-quality products.
+Uster Quantum 3 has been developed by company Uster Technologies, which is developing yarn clearers for 30 years. Their devices often feature an application of new technologies.
 
-This yarn clearer is also one of the two commercially sold products capable of calculating spectrograms and evaluate yarn unevenness CV\%.
-
+\subsubsection{USTER® TESTER 5}  
+Complex and large machine for evaluating sliver and yarn quality. Using optical and capacitive technology it measures several quality characteristics:
+\begin{itemize}
+	\setlength{\itemsep}{5pt}
+	\item unevenness and imperfections,
+	\item determination of foreign matter,
+	\item humidity and temperature of the enviroment,
+	\item yarn hairness,
+	\item spectrograms calculation.
+\end{itemize}
+This machine is developed specifically for testing the textile fibers and it uses state-of-art technologies, but for price starting at \$400 (basic version) it can't be used as improvement for spinning and combing machines.  
  
-
+In the field of textile engineering with focus on a fiber quality several other companies such as \textit{Premier}, \textit{Kesiokki} or \textit{Changling} manufacture devices for textile fiber evaluation. But none of these companies has any device that would be similar with the developed device. This is due to the fact that non of their devices are capable of obtaining CV\% or spectrograms.
 
 \section{Digital Signal Processing}
 The largest part of work on this project is oriented on digital signal processing (DSP). Usage of modern advanced algorithms from this field allowed designing projected device in the first place. This section covers the most important algorithms that are used in this project.
@@ -474,9 +498,9 @@ f_{M} \leq \frac{fs}{2} < \frac{1}{2(t_{p}+t_{o})} \cite{cite:RT_DSP}.
 Using different techniques of processing can reduce the I/O overhead time and increase the performance of the DSP hardware platforms. For example by applying a block-by-block processing, where the I/O operations are handled by DMA controllers, which place data samples in memory buffers \cite{cite:RT_DSP}.
 
 Today, with performance improvement of hardware platforms, it is even possible to calculate FFT (see \ref{sec:FFT}) of 64-points in a matter of tenths of milliseconds with low-cost ARM microprocessor (e.g. specifically in $0.16 ms$ for microcontrollers of STM32F1xx series according to \cite{cite:STM32_DSP_library}).
-\subsection{ARM Cortex-M3}
+\subsection{ARM Cortex-M4}
 \label{sec:ARM_M3}
-First manufactured microprocessor of Cortex series was ARM Cortex-M3. It was developed in 2006 and its target group of application was 32-bit microcontrollers. Its main advantage is an excellent efficiency which yields high performance and a low energy consumption without the need for a very high system clock frequency. It is based on architecture \textit{ARMv7}.
+First microprocessor of Cortex series was developed in 2006 and its target group of application was 32-bit microcontrollers. Its main advantage is an excellent efficiency which yields high performance and a low energy consumption without the need for a very high system clock frequency. It is based on architecture \textit{ARMv7}.
 
 An ARMv7 architecture was developed as a modern type of a general architecture that could be used for low-level microprocessors as well as for high-performance application processors. Design of the architecture is split into three main profiles:
 \begin{itemize}
@@ -935,6 +959,8 @@ Comparison of the results of the algorithm on all datasets 1-5 are shown in an f
 \end{figure}
 
 \section{Yarn Quality Analysis}
+The yarn is a product of the process called spinning (see chapter \ref{spinningProcesses}). Quality of the yarn has significant effect on the final product - the cloth. To analyse quality of the yarn a benchmark called \textit{spectrogram} is used (see chapter \ref{SpecExplained}).
+
 The yarn quality analysis requires only software algorithm and no additional hardware. This is because measurement of a yarn diameter is done by a row camera sensor that is connected to processing board which was already developed in Rieter. Processing board has CAN interface that sends values of diameters to the microcontroller. 
 
 Therefore, in this part of the project, the only input we consider are values of diameter send over CAN. This determines the project as software system with main requirements and features defined as follows:
@@ -1006,9 +1032,9 @@ x[n]=x[0]\cdot q^n
 \end{equation}
 Now, by realizing that after 5 multiplications (number of bins $N=5$ for one stage) we need to get from $L/4$ to $L/2$, the coefficient $q$ can be obtained as:
 \begin{equation} \label{eq:spectro2}
-{\left(\frac{L/4}{L/2}\right)}^{\frac{1}{N}}={\left(\frac{1}{2}\right)}^{\frac{1}{N}}=0.8706
+q={\left(\frac{L/4}{L/2}\right)}^{\frac{1}{N}}={\left(\frac{1}{2}\right)}^{\frac{1}{N}}=0.8706
 \end{equation}
-With the coefficient $q$ we can simply put the corresponding numbers to the equation \ref{eq:spectro1} for $n=0\ldots N$. The results are border values (as frequency bins) of all the 5 bins and they are shown in table \ref{tab:indiciesBins}.
+With the coefficient $q$ we can simply put the corresponding numbers to the equation \ref{eq:spectro1} for $n=1\ldots N$. The results are border values (as frequency bins) of all the 5 bins and they are shown in table \ref{tab:indiciesBins}.
 
 \begin{table}[htbp]
 	\centering
@@ -1027,31 +1053,121 @@ With the coefficient $q$ we can simply put the corresponding numbers to the equa
 Frequency bins from table \ref{tab:indiciesBins} has to be summed to obtain one spectrogram bin. Before this step is executed a correction has to made. This is process that corrects the amplitudes of the frequency spectrum, which are distorted because frequency response of the used FIR filter (see figure \ref{fig:MagnitudeResponse}) is not equal in passband. Therefore, correction coefficients were obtained from the magnitude response. This was done by scaling left half of magnitude response (passband) to the same scale as useful frequency bins (1-512). The process of correction is now done by dividing the frequency bins by the corresponding value on the scaled magnitude response. This equalizes the passband of the filter and allows to generate non-distorted spectrogram.
 
 \subsubsection{Summation of the Frequency Bins}
-The summation is done over the ranges noted in table \ref{tab:indiciesBins}. After all the values in given range are summed an effective value of the spectrum (RMS) is calculated. This is described in \cite{cite:1} and the equation for obtain RMS value of the spectrum is  
+The summation is done over the ranges noted in table \ref{tab:indiciesBins}. After all the values in given range are summed an effective value of the spectrum (RMS) is calculated. This is described in \cite{cite:1} and the equation for obtaining the RMS values of the spectrum $X$ is  
 \begin{equation} \label{eq:spectro3}
-RMS_k=\frac{\sqrt{2}}{L}\cdot \sqrt{|X_k|^2},
+RMS[k]=\frac{\sqrt{2}}{L}\cdot \sqrt{|X[k]|^2},
 \end{equation}
-where $k=1\ldots \frac{L}{2}-1$ and $k=0$.
+where $k=1\ldots \frac{L}{2}$ \cite{cite:1}.
+Using the formula \ref{eq:spectro3} and border values from the indicies vector $x=512,\ldots1$ obtained by \ref{eq:spectro1} we can simply derive the equation for calculation of a each partial spectrogram bin:
+\begin{equation} \label{eq:spectro4}
+SPC[i]=\frac{\sqrt{2}}{L}\cdot \sqrt{\sum_{k=x[0]\cdot q^n}^{k=x[0]\cdot q^{n+1}}|X[k]|^2}, \text{where }n=1\ldots N
+\end{equation}
+This calculation is done in each processing branch, thus, we obtain 12 partial spectrograms, each containing $N$ spectrogram bins.
 
-\subsection{Flowchart Diagram}
-\section{Description of Designed System}
-\subsection{Block Diagram}
-\section{Implementation of Software}
-\subsection{Filtration}
-%For practical spectral analysis like this, we deal with finite duration discrete-time signals, whose spectrum is given by the DTFT. The N-point FFT is merely used to evaluate samples of the DTFT at N equally spaced frequencies omega=2pik/N, 0 leq n leq N-1. Therefore we needed to use good window (like Hann) and oversample DTFT.
-\subsection{Detection of Defects}
-\subsection{Automatic Evaulation}
-\subsection{Example of Designed Application}
-\section{Implementation of Hardware}
-\subsection{Electronic Circuits Design}
-\subsection{Description of possible sensors}
-\subsection{Designed Prototype}
+\subsection{Compilation of Full Spectrogram}
+Now, that we have the partial spectrograms, we need to compilate them in one full spectrogram. This is done simply by concatenating the partial spectrogram with the partial spectrogram of another branches. Doing this for all branches consequently creates a vector of length $N\cdot 12$, with values to the left belonging to the first processing branch. This process is explained in the figure \ref{fig:yarnSpec_color} which shows resulting spectrogram with color separation of each partial spectrogram. Every 5 bins, distinguished by color, are the result of a one processing branch.
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1.0\textwidth]{sp_barevny.eps}
+	\caption{Spectrogram Example with Highlighted Partial Spectrograms}
+	\label{fig:yarnSpec_color}
+\end{figure}
+
+\subsection{Measurement and Testing}
+For testing of yarn analysis algorithm no particular measurements had to be done, because three datasets of measured yarn diameter by raw camera sensor were already available from Rieter. The description of the datasets is in table \ref{tab:measuredDataYarn}. Visual quality of the yarn could not be evaluated by naked eye since the diameter is in range of micrometers. Thus, to obtain datasets of poor quality a yarn was found that caused periodical defect in the final product - the cloth.
+\begin{table}[htbp]
+	\centering
+	\caption{Measured yarn data and their properties}
+	\begin{tabular}{cccc}
+		\toprule
+		Dataset ID & Yarn Quality \\
+		\midrule
+		1     & Good \\
+		2     & Good \\
+		3     & Poor \\
+		\bottomrule
+	\end{tabular}%
+	\label{tab:measuredDataYarn}%
+\end{table}%
+Data were measured with sampling frequency $f_s=2400 Hz$ but for testing purposes they were decimated with factor $M = 5$ to $f_s=480Hz$. The yarn speed $v_y$ (speed of the material during the process of spinning) was $v_y=30cm/s$.
+
+\subsection{Algorithm Results}
+Algorithm for yarn quality analysis was tested on the datasets described in the table \ref{tab:measuredDataYarn}. The result in the form of full spectrogram is shown in figure \ref{fig:yarnSpec_1}. This particular spectrogram is calculated on dataset 1.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1.0\textwidth]{prize4.eps}
+	\caption{Spectrogram Example with Highlighted Partial Spectrograms}
+	\label{fig:yarnSpec_1}
+\end{figure}
+Detection of the defects from spectrogram is shown in figure \ref{fig:specComparison}. The subfigure \ref{fig:specData2} contains the spectrogram of the dataset 2, thus, it should contain little or no defect. In the other subfigure \ref{fig:specData3} is shown the spectrogram of the dataset 3, which should contain significant defects.
+\begin{figure}
+	\centering
+	\begin{subfigure}{0.5\textwidth}
+		\centering
+		\includegraphics[width=1.0\linewidth]{prize1_short.eps}
+		\caption{Dataset 2 - No Defect}
+		\label{fig:specData2}
+	\end{subfigure}%
+	%\newline
+	\begin{subfigure}{0.5\textwidth}
+		\centering
+		\includegraphics[width=1.0\linewidth]{moire1.eps}
+		\caption{Dataset 3 - Contains Yarn Defects}
+		\label{fig:specData3}
+	\end{subfigure}
+	\caption{Comparison of Spectrograms}
+	\label{fig:specComparison}
+\end{figure}
+
+Spectrograms shown in \ref{fig:specComparison} are zoomed to only show 8 partial spectograms and not full spectrogram for the reason of figure clarity. In the subfigure \ref{fig:specData3} there are clearly visible peaks, which denote that on the particular wavelengths there are periodical defects of the yarn. From these results, it is possible to say that the algorithm can clearly distinguish the yarn quality, thus, the requirement is fulfilled.
+
+\subsubsection{Alarm Function}
+As an enhancement of the algorithm an automatic evaluation was also tested. This was done using empirically derived equation \ref{eq:alarmFunction} for spectrogram alarm function $a$ (taken from \cite{cite:1}). The only user definable parameter of the alarm function is \textit{CA} (Coefficient of Alarm) which can range from 0 to 1. Where setting lower number means that alarm gets triggered for defects with lesser significance.
+\begin{equation} \label{eq:alarmFunction}
+a[i] = \left(\left( A1\cdot \frac{\overline{SPC[i]}}{max(\overline{(SPC)})}+A2\right) \cdot CA + 1 \right) \cdot \overline{SPC[i]},
+\end{equation}
+where $i=1\ldots N \cdot 12$ and $\overline{SPC[i]}$ denotes a local average calculated as in equation \ref{eq:localAvg}.
+\begin{equation} \label{eq:localAvg}
+\overline{SPC[i]} = \frac{SPC[i-2]+SPC[i-1]+SPC[i]+SPC[i+1]+SPC[i+2]}{5}
+\end{equation}
+Values A1 and A2 were determined empirically as $A1=-1.65$ and $A2=2$.
+Now, that we have alarm function $a$, then an alarm is triggered when
+\begin{equation} \label{eq:alarmTrig}
+SPC[i] \geq a[i], \text{for } i=1\ldots N \cdot 12.
+\end{equation}
+When this occurs, service personnel can react by changing yarn source or by resolving any possible mechanical defect on the spinning machine. Example of alarm function in spectrogram is shown in figure \ref{fig:alarm1}.
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.75\textwidth]{prize1_alarm.eps}
+	\caption{Spectrogram with alarm function}
+	\label{fig:alarm1}
+\end{figure}
+Effect of \textit{CA} (Coefficient of Alarm) is shown in figure \ref{fig:alarm2}. It contains comparison of two alarm functions with different \textit{CA}. From the figure we can see that alarm with higher \textit{CA} would not be triggered by this defects. Alarm with lower \textit{CA} would get triggered as condition \ref{eq:alarmTrig} is fulfilled.
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.75\textwidth]{moire1_alarm.eps}
+	\caption{Spectrogram with alarm functions of different \textit{CA}}
+	\label{fig:alarm2}
+\end{figure}
+\chapter{Prospective Development}
+Device for the sliver quality analysis has been successfully tested in its first prototype version. The algorithm implemented in the device has proved to be suitable for determining quality of the sliver. The first version of the device does contain hardware parts that will be removed in the final product, such as additional input modules. Only one input module for the inductive sensor will be present, since others were aimed for testing of sensors that were discarded during the development.
+Sliver quality analysis could be enhanced in future by adding possibility of calculating spectrograms. That would add another measure of quality, without a significant increase of performance costs, since the FFT is already calculated during the processing. 
+Another possibility of improving the system can be by automatic setting of the pressures on the sliver holder (see chapter \ref{sec:measurement}). Changing the pressures was technique used during the measurement to simulate periodical defects. Thus, their correct setting should yield no sliver defect. Now, the pressures are set empirically by service personnel according to the reference tables and their experience. This approach doesn't yield sufficient precision and could be improved adding an automatic controller. This controller could use as variance-length curve (output of the algorithm) as input, and set the pressures in a way, where the curve has lowest values for all the wavelengths. This would mean that no defect is added by the sliver holder.
+
 \chapter{Conclusions}
+This thesis has aimed to develop new approach of analysing the quality of the textile fibers using general-purpose microcontrollers. Quality of the fibers is significantly influenced by their periodical changes of diameter. Detection of these periodical defects is the goal of the designed algorithms. Development was done in cooperation with the Rieter CZ, s.r.o and their main requirement was to analyse quality of two fibre types: the sliver and yarn. 
 
+For analysis of the sliver quality a device was designed and developed for measurement of the diameter and its subsequent processing. Implementation of its software is based on a digital signal processing algorithm that was created to perform multi-rate analysis and filtration in frequency spectrum. Result of the algorithm is in form a variance-length curve, which provides an information about variance of a sliver on the corresponding wavelengths. Variance-length curve is appropriate measure of quality of the sliver in textile industry.
 
-\medskip
+For the testing of the algorithm a measurement of the diameter was performed on slivers with different quality. Algorithm was able to distinguish slivers of distinct class and evaluate its quality by variance-length curve. Information about wavelengths of the detected defects, which is also provided by the curve, can be used for determining the processing stage in which could the defect originate. This is important information for a service personnel that can use it for resolving the processing fault. The device for a sliver quality analysis passed the system tests in laboratories of Rieter and now its being prepared for a larger scale factory tests.
 
-\begin{proof}\begin{enumerate} \item[8] Bla \item Blo \end{enumerate} \end{proof}
+To analyse the quality of a yarn a software library for ARM microcontrollers has been developed. This library contains digital signal processing algorithm based on the algorithm for sliver analysis, but with important distinctions. The output of the algorithm is a spectrogram, which provides information about how much power corresponds to each wavelength. This is a standard measure for evaluating quality of the yarn. Algorithm used for its calculation is implemented specifically for general-purpose ARM-M4 microcontrollers and fulfils the real-time constrains of the system.
+
+Software library was tested on several datasets of yarn diameter. Yarns with defects could be easily recognizable in the resulting spectrogram. This fulfils the requirement to analyse quality of the yarn. Beyond the assignment an automatic evaluation of spectrogram was also implemented. This is done by creating an alarm function that is compared with resulting spectrogram function. If there is a defect in yarn - represented by significant peak in spectrogram - its value overcomes the value on the alarm function and an alarm is triggered. When this occurs, service personnel can either replace source of the yarn or check the spinning machines for faults. The implementation of this algorithm is now being used widely in spinning machines manufactured by Rieter.
+
+The yarn quality analysis algorithm already proved to be useful component in the textile industry. Embedded system for sliver quality analysis is  expected to be applied in new series of Rieter combing machine. It should provide advantage over the competitors, since analogical device capable of sliver quality analysis is available only by third party producer for a significantly higher price that would not allow use in mass production. Developed device is also more technologically advanced, since no other similar device currently on market is capable of evaluate variance-length curve of a sliver.
+
 
 \appendix
 

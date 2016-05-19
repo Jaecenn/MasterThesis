@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/W32TeX) (preloaded format=pdflatex 2016.1.12)  17 MAY 2016 00:15
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/W32TeX) (preloaded format=pdflatex 2016.1.12)  19 MAY 2016 22:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1196,26 +1196,26 @@ Package: subcaption 2015/09/15 v1.1-100 Sub-captions (AR)
 ) (./ctuDIPL.aux)
 \openout1 = `ctuDIPL.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 110.
-LaTeX Font Info:    ... okay on input line 110.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 110.
-LaTeX Font Info:    ... okay on input line 110.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 110.
-LaTeX Font Info:    ... okay on input line 110.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 110.
-LaTeX Font Info:    ... okay on input line 110.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 110.
-LaTeX Font Info:    ... okay on input line 110.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 110.
-LaTeX Font Info:    ... okay on input line 110.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 110.
-LaTeX Font Info:    ... okay on input line 110.
-LaTeX Font Info:    Try loading font information for T1+lmr on input line 110.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 122.
+LaTeX Font Info:    ... okay on input line 122.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 122.
+LaTeX Font Info:    ... okay on input line 122.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 122.
+LaTeX Font Info:    ... okay on input line 122.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 122.
+LaTeX Font Info:    ... okay on input line 122.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 122.
+LaTeX Font Info:    ... okay on input line 122.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 122.
+LaTeX Font Info:    ... okay on input line 122.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 122.
+LaTeX Font Info:    ... okay on input line 122.
+LaTeX Font Info:    Try loading font information for T1+lmr on input line 122.
 
 (c:/texlive/2015/texmf-dist/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Info: Redefining \microtypecontext on input line 110.
+LaTeX Info: Redefining \microtypecontext on input line 122.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -1305,7 +1305,7 @@ Package pdflscape Info: Auto-detected driver: pdftex on input line 80.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
-Package hyperref Info: Link coloring OFF on input line 110.
+Package hyperref Info: Link coloring OFF on input line 122.
 (c:/texlive/2015/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
@@ -1314,9 +1314,9 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count267
 )
-LaTeX Info: Redefining \ref on input line 110.
-LaTeX Info: Redefining \pageref on input line 110.
-LaTeX Info: Redefining \nameref on input line 110.
+LaTeX Info: Redefining \ref on input line 122.
+LaTeX Info: Redefining \pageref on input line 122.
+LaTeX Info: Redefining \nameref on input line 122.
 
 (./ctuDIPL.out) (./ctuDIPL.out)
 \@outlinefile=\write4
@@ -1326,37 +1326,37 @@ Package microtype Info: Loading generic settings for font family
 (microtype)             `lmss' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 112.
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 124.
 
 
 (c:/texlive/2015/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 112.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 124.
 
 
 (c:/texlive/2015/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 112
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 124
 .
 
 (c:/texlive/2015/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 112
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 124
 .
 
 (c:/texlive/2015/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 112.
+(Font)              <10.95> on input line 124.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 112.
+(Font)              <8> on input line 124.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 112.
-LaTeX Font Info:    Try loading font information for U+msa on input line 112.
+(Font)              <6> on input line 124.
+LaTeX Font Info:    Try loading font information for U+msa on input line 124.
 
 (c:/texlive/2015/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
@@ -1364,7 +1364,7 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 (c:/texlive/2015/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 112.
+LaTeX Font Info:    Try loading font information for U+msb on input line 124.
 
 (c:/texlive/2015/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -1372,25 +1372,25 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 (c:/texlive/2015/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
-LaTeX Font Info:    Try loading font information for U+rsfs on input line 112.
+LaTeX Font Info:    Try loading font information for U+rsfs on input line 124.
 
 (c:/texlive/2015/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
-<ctu_logo_black.pdf, id=209, 366.36874pt x 279.0425pt>
+<ctu_logo_black.pdf, id=176, 366.36874pt x 279.0425pt>
 File: ctu_logo_black.pdf Graphic file (type pdf)
 
 <use ctu_logo_black.pdf>
-Package pdftex.def Info: ctu_logo_black.pdf used on input line 112.
+Package pdftex.def Info: ctu_logo_black.pdf used on input line 124.
 (pdftex.def)             Requested size: 85.86746pt x 65.40001pt.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14.4> on input line 112.
+(Font)              <14.4> on input line 124.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 112.
+(Font)              <10> on input line 124.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 112.
+(Font)              <7> on input line 124.
 
-Overfull \hbox (5.0pt too wide) in paragraph at lines 112--112
+Overfull \hbox (5.0pt too wide) in paragraph at lines 124--124
 []|| [][][][][][] 
  []
 
@@ -1400,7 +1400,7 @@ Overfull \hbox (5.0pt too wide) in paragraph at lines 112--112
 
 {c:/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./ctu_logo_blac
 k.pdf>]
-LaTeX Font Info:    Try loading font information for T1+lmtt on input line 112.
+LaTeX Font Info:    Try loading font information for T1+lmtt on input line 124.
 
  (c:/texlive/2015/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -1448,30 +1448,39 @@ Package microtype Info: Loading generic settings for font family
 .................................................
 . LaTeX info: "xparse/redefine-command"
 . 
-. Redefining command \chapter with sig. 'som' on line 112.
+. Redefining command \chapter with sig. 'som' on line 124.
 .................................................
 .................................................
 . LaTeX info: "xparse/redefine-command"
 . 
-. Redefining command \tableofcontents with sig. '' on line 112.
+. Redefining command \tableofcontents with sig. '' on line 124.
 .................................................
 .................................................
 . LaTeX info: "xparse/redefine-command"
 . 
-. Redefining command \listoffigures with sig. '' on line 112.
+. Redefining command \listoffigures with sig. '' on line 124.
 .................................................
 .................................................
 . LaTeX info: "xparse/redefine-command"
 . 
-. Redefining command \listoftables with sig. '' on line 112.
+. Redefining command \listoftables with sig. '' on line 124.
 .................................................
- [3
 
+Underfull \hbox (badness 3078) in paragraph at lines 124--124
+\T1/lmr/m/n/10.95 (+20) ve²k-eré pouºité in-for-ma£ní zdroje v
+ []
 
-] [4
+[3
+
 
 ]
-(./ctuDIPL.toc)
+Underfull \hbox (badness 5105) in paragraph at lines 124--124
+\T1/lmr/m/n/10.95 (+20) Hmotnostní ne-rov-no-m¥r-nost má vý-
+ []
+
+[4
+
+] (./ctuDIPL.toc)
 \tf@toc=\write5
 \openout5 = `ctuDIPL.toc'.
 
@@ -1531,23 +1540,23 @@ Chapter 1.
 
 ]
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <10.95> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 126.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 138.
  [2]
 Chapter 2.
 [3
 
-] <Rieter_comber.jpg, id=366, 163.812pt x 97.8054pt>
+] <Rieter_comber.jpg, id=339, 163.812pt x 97.8054pt>
 File: Rieter_comber.jpg Graphic file (type jpg)
  <use Rieter_comber.jpg>
-Package pdftex.def Info: Rieter_comber.jpg used on input line 169.
+Package pdftex.def Info: Rieter_comber.jpg used on input line 181.
 (pdftex.def)             Requested size: 181.5pt x 108.37572pt.
 
 [4 <./Rieter_comber.jpg>]
-<wavelengt_explained.jpg, id=377, 149.1171pt x 34.9305pt>
+<wavelengt_explained.jpg, id=350, 149.1171pt x 34.9305pt>
 File: wavelengt_explained.jpg Graphic file (type jpg)
 
 <use wavelengt_explained.jpg>
-Package pdftex.def Info: wavelengt_explained.jpg used on input line 203.
+Package pdftex.def Info: wavelengt_explained.jpg used on input line 215.
 (pdftex.def)             Requested size: 254.09889pt x 59.52495pt.
  [5 <./wavelengt_explained.jpg>]
 Package epstopdf Info: Source file: <spectrogram_good.eps>
@@ -1558,15 +1567,15 @@ Package epstopdf Info: Source file: <spectrogram_good.eps>
 (epstopdf)                    size: 5898 bytes
 (epstopdf)             Command: <repstopdf --outfile=spectrogram_good-eps-conve
 rted-to.pdf spectrogram_good.eps>
-(epstopdf)             \includegraphics on input line 238.
+(epstopdf)             \includegraphics on input line 250.
 Package epstopdf Info: Output file is already uptodate.
 
-<spectrogram_good-eps-converted-to.pdf, id=400, 154.5775pt x 109.40875pt>
+<spectrogram_good-eps-converted-to.pdf, id=372, 154.5775pt x 109.40875pt>
 File: spectrogram_good-eps-converted-to.pdf Graphic file (type pdf)
 
 <use spectrogram_good-eps-converted-to.pdf>
 Package pdftex.def Info: spectrogram_good-eps-converted-to.pdf used on input li
-ne 238.
+ne 250.
 (pdftex.def)             Requested size: 181.5pt x 128.47514pt.
 Package epstopdf Info: Source file: <spectrogram_bad.eps>
 (epstopdf)                    date: 2016-05-16 20:46:26
@@ -1576,22 +1585,22 @@ Package epstopdf Info: Source file: <spectrogram_bad.eps>
 (epstopdf)                    size: 5904 bytes
 (epstopdf)             Command: <repstopdf --outfile=spectrogram_bad-eps-conver
 ted-to.pdf spectrogram_bad.eps>
-(epstopdf)             \includegraphics on input line 244.
+(epstopdf)             \includegraphics on input line 256.
 Package epstopdf Info: Output file is already uptodate.
 
-<spectrogram_bad-eps-converted-to.pdf, id=401, 154.5775pt x 109.40875pt>
+<spectrogram_bad-eps-converted-to.pdf, id=373, 154.5775pt x 109.40875pt>
 File: spectrogram_bad-eps-converted-to.pdf Graphic file (type pdf)
 
 <use spectrogram_bad-eps-converted-to.pdf>
 Package pdftex.def Info: spectrogram_bad-eps-converted-to.pdf used on input lin
-e 244.
+e 256.
 (pdftex.def)             Requested size: 181.5pt x 128.47514pt.
  [6] [7 <./spectrogram_good-eps-converted-to.pdf> <./spectrogram_bad-eps-conver
 ted-to.pdf>] [8] [9]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9> on input line 368.
+(Font)              <9> on input line 380.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 368.
+(Font)              <5> on input line 380.
  [10] [11]
 [12] [13] [14]
 Chapter 3.
@@ -1606,20 +1615,20 @@ Package epstopdf Info: Source file: <blockSchematic5.eps>
 (epstopdf)                    size: 12245 bytes
 (epstopdf)             Command: <repstopdf --outfile=blockSchematic5-eps-conver
 ted-to.pdf blockSchematic5.eps>
-(epstopdf)             \includegraphics on input line 517.
+(epstopdf)             \includegraphics on input line 529.
 Package epstopdf Info: Output file is already uptodate.
- <blockSchematic5-eps-converted-to.pdf, id=550, 728.7225pt x 551.05875pt>
+ <blockSchematic5-eps-converted-to.pdf, id=522, 728.7225pt x 551.05875pt>
 File: blockSchematic5-eps-converted-to.pdf Graphic file (type pdf)
 
 <use blockSchematic5-eps-converted-to.pdf>
 Package pdftex.def Info: blockSchematic5-eps-converted-to.pdf used on input lin
-e 517.
+e 529.
 (pdftex.def)             Requested size: 363.0pt x 274.49445pt.
 
-<cvBox.jpg, id=551, 490.9542pt x 289.08pt>
+<cvBox.jpg, id=523, 490.9542pt x 289.08pt>
 File: cvBox.jpg Graphic file (type jpg)
  <use cvBox.jpg>
-Package pdftex.def Info: cvBox.jpg used on input line 524.
+Package pdftex.def Info: cvBox.jpg used on input line 536.
 (pdftex.def)             Requested size: 272.25pt x 160.30896pt.
 
 
@@ -1634,32 +1643,32 @@ Package epstopdf Info: Source file: <SensorDiagram.eps>
 (epstopdf)                    size: 15762 bytes
 (epstopdf)             Command: <repstopdf --outfile=SensorDiagram-eps-converte
 d-to.pdf SensorDiagram.eps>
-(epstopdf)             \includegraphics on input line 576.
+(epstopdf)             \includegraphics on input line 588.
 Package epstopdf Info: Output file is already uptodate.
 
-<SensorDiagram-eps-converted-to.pdf, id=572, 182.6825pt x 190.7125pt>
+<SensorDiagram-eps-converted-to.pdf, id=544, 182.6825pt x 190.7125pt>
 File: SensorDiagram-eps-converted-to.pdf Graphic file (type pdf)
 
 <use SensorDiagram-eps-converted-to.pdf>
 Package pdftex.def Info: SensorDiagram-eps-converted-to.pdf used on input line 
-576.
+588.
 (pdftex.def)             Requested size: 235.94778pt x 246.3315pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[18] <baumer_inductiveSensor.JPG, id=584, 133.24782pt x 165.61874pt>
+[18] <baumer_inductiveSensor.JPG, id=555, 133.24782pt x 165.61874pt>
 File: baumer_inductiveSensor.JPG Graphic file (type jpg)
 
 <use baumer_inductiveSensor.JPG>
-Package pdftex.def Info: baumer_inductiveSensor.JPG used on input line 597.
+Package pdftex.def Info: baumer_inductiveSensor.JPG used on input line 609.
 (pdftex.def)             Requested size: 136.125pt x 169.20938pt.
 
-<Sensor_mechanics.jpg, id=587, 898.557pt x 798.5835pt>
+<Sensor_mechanics.jpg, id=558, 898.557pt x 798.5835pt>
 File: Sensor_mechanics.jpg Graphic file (type jpg)
 
 <use Sensor_mechanics.jpg>
-Package pdftex.def Info: Sensor_mechanics.jpg used on input line 603.
+Package pdftex.def Info: Sensor_mechanics.jpg used on input line 615.
 (pdftex.def)             Requested size: 181.5pt x 161.29797pt.
  [19 <./SensorDiagram-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <system_overview.eps>
@@ -1670,15 +1679,15 @@ Package epstopdf Info: Source file: <system_overview.eps>
 (epstopdf)                    size: 14626 bytes
 (epstopdf)             Command: <repstopdf --outfile=system_overview-eps-conver
 ted-to.pdf system_overview.eps>
-(epstopdf)             \includegraphics on input line 631.
+(epstopdf)             \includegraphics on input line 643.
 Package epstopdf Info: Output file is already uptodate.
 
-<system_overview-eps-converted-to.pdf, id=605, 388.45125pt x 247.92625pt>
+<system_overview-eps-converted-to.pdf, id=576, 388.45125pt x 247.92625pt>
 File: system_overview-eps-converted-to.pdf Graphic file (type pdf)
 
 <use system_overview-eps-converted-to.pdf>
 Package pdftex.def Info: system_overview-eps-converted-to.pdf used on input lin
-e 631.
+e 643.
 (pdftex.def)             Requested size: 363.0pt x 231.68881pt.
 
 
@@ -1694,15 +1703,15 @@ Package epstopdf Info: Source file: <sliver_singleBranch.eps>
 (epstopdf)                    size: 11569 bytes
 (epstopdf)             Command: <repstopdf --outfile=sliver_singleBranch-eps-co
 nverted-to.pdf sliver_singleBranch.eps>
-(epstopdf)             \includegraphics on input line 689.
+(epstopdf)             \includegraphics on input line 701.
 Package epstopdf Info: Output file is already uptodate.
 
-<sliver_singleBranch-eps-converted-to.pdf, id=638, 368.37625pt x 200.75pt>
+<sliver_singleBranch-eps-converted-to.pdf, id=610, 368.37625pt x 200.75pt>
 File: sliver_singleBranch-eps-converted-to.pdf Graphic file (type pdf)
 
 <use sliver_singleBranch-eps-converted-to.pdf>
 Package pdftex.def Info: sliver_singleBranch-eps-converted-to.pdf used on input
- line 689.
+ line 701.
 (pdftex.def)             Requested size: 363.0pt x 197.81801pt.
  [23 <./sliver_singleBranch-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <firDecimator.eps>
@@ -1713,15 +1722,15 @@ Package epstopdf Info: Source file: <firDecimator.eps>
 (epstopdf)                    size: 12952 bytes
 (epstopdf)             Command: <repstopdf --outfile=firDecimator-eps-converted
 -to.pdf firDecimator.eps>
-(epstopdf)             \includegraphics on input line 713.
+(epstopdf)             \includegraphics on input line 725.
 Package epstopdf Info: Output file is already uptodate.
 
-<firDecimator-eps-converted-to.pdf, id=653, 412.54124pt x 476.78125pt>
+<firDecimator-eps-converted-to.pdf, id=625, 412.54124pt x 476.78125pt>
 File: firDecimator-eps-converted-to.pdf Graphic file (type pdf)
 
 <use firDecimator-eps-converted-to.pdf>
 Package pdftex.def Info: firDecimator-eps-converted-to.pdf used on input line 7
-13.
+25.
 (pdftex.def)             Requested size: 363.0pt x 419.53241pt.
 
 
@@ -1735,14 +1744,14 @@ Package epstopdf Info: Source file: <magnitudeResponse.eps>
 (epstopdf)                    size: 9835 bytes
 (epstopdf)             Command: <repstopdf --outfile=magnitudeResponse-eps-conv
 erted-to.pdf magnitudeResponse.eps>
-(epstopdf)             \includegraphics on input line 720.
+(epstopdf)             \includegraphics on input line 732.
 Package epstopdf Info: Output file is already uptodate.
-<magnitudeResponse-eps-converted-to.pdf, id=657, 562.1pt x 342.27875pt>
+<magnitudeResponse-eps-converted-to.pdf, id=629, 562.1pt x 342.27875pt>
 File: magnitudeResponse-eps-converted-to.pdf Graphic file (type pdf)
 
 <use magnitudeResponse-eps-converted-to.pdf>
 Package pdftex.def Info: magnitudeResponse-eps-converted-to.pdf used on input l
-ine 720.
+ine 732.
 (pdftex.def)             Requested size: 363.0pt x 221.04228pt.
 
 
@@ -1759,18 +1768,18 @@ o.pdf>
 (epstopdf)                    size: 8998 bytes
 (epstopdf)             Command: <repstopdf --outfile=withoutMat_foundPeaks_half
 -eps-converted-to.pdf withoutMat_foundPeaks_half.eps>
-(epstopdf)             \includegraphics on input line 746.
+(epstopdf)             \includegraphics on input line 758.
 Package epstopdf Info: Output file is already uptodate.
 
-<withoutMat_foundPeaks_half-eps-converted-to.pdf, id=701, 750.805pt x 407.5225p
+<withoutMat_foundPeaks_half-eps-converted-to.pdf, id=672, 750.805pt x 407.5225p
 t>
 File: withoutMat_foundPeaks_half-eps-converted-to.pdf Graphic file (type pdf)
  <use withoutMat_foundPeaks_half-eps-converted-to.pdf>
 Package pdftex.def Info: withoutMat_foundPeaks_half-eps-converted-to.pdf used o
-n input line 746.
+n input line 758.
 (pdftex.def)             Requested size: 363.0pt x 197.03256pt.
 
-Overfull \hbox (25.76201pt too wide) in paragraph at lines 755--764
+Overfull \hbox (25.76201pt too wide) in paragraph at lines 767--776
  [][][] 
  []
 
@@ -1783,15 +1792,15 @@ Package epstopdf Info: Source file: <frequencyFiltration.eps>
 (epstopdf)                    size: 11509 bytes
 (epstopdf)             Command: <repstopdf --outfile=frequencyFiltration-eps-co
 nverted-to.pdf frequencyFiltration.eps>
-(epstopdf)             \includegraphics on input line 775.
+(epstopdf)             \includegraphics on input line 787.
 Package epstopdf Info: Output file is already uptodate.
 
-<frequencyFiltration-eps-converted-to.pdf, id=713, 325.215pt x 452.69125pt>
+<frequencyFiltration-eps-converted-to.pdf, id=685, 325.215pt x 452.69125pt>
 File: frequencyFiltration-eps-converted-to.pdf Graphic file (type pdf)
 
 <use frequencyFiltration-eps-converted-to.pdf>
 Package pdftex.def Info: frequencyFiltration-eps-converted-to.pdf used on input
- line 775.
+ line 787.
 (pdftex.def)             Requested size: 272.25pt x 378.99397pt.
 
 
@@ -1806,29 +1815,29 @@ Package epstopdf Info: Source file: <full_VLC_11.eps>
 (epstopdf)                    size: 7467 bytes
 (epstopdf)             Command: <repstopdf --outfile=full_VLC_11-eps-converted-
 to.pdf full_VLC_11.eps>
-(epstopdf)             \includegraphics on input line 816.
+(epstopdf)             \includegraphics on input line 828.
 Package epstopdf Info: Output file is already uptodate.
 
-<full_VLC_11-eps-converted-to.pdf, id=739, 816.04875pt x 543.02875pt>
+<full_VLC_11-eps-converted-to.pdf, id=711, 816.04875pt x 543.02875pt>
 File: full_VLC_11-eps-converted-to.pdf Graphic file (type pdf)
 
 <use full_VLC_11-eps-converted-to.pdf>
-Package pdftex.def Info: full_VLC_11-eps-converted-to.pdf used on input line 81
-6.
+Package pdftex.def Info: full_VLC_11-eps-converted-to.pdf used on input line 82
+8.
 (pdftex.def)             Requested size: 363.0pt x 241.55173pt.
- [30 <./full_VLC_11-eps-converted-to.pdf>] <cvBox_covered.jpg, id=753, 996.7237
+ [30 <./full_VLC_11-eps-converted-to.pdf>] <cvBox_covered.jpg, id=725, 996.7237
 5pt x 548.64975pt>
 File: cvBox_covered.jpg Graphic file (type jpg)
 
 <use cvBox_covered.jpg>
-Package pdftex.def Info: cvBox_covered.jpg used on input line 828.
+Package pdftex.def Info: cvBox_covered.jpg used on input line 840.
 (pdftex.def)             Requested size: 272.25pt x 149.8536pt.
 
-<Measurement_app.JPG, id=756, 274.02374pt x 266.49562pt>
+<Measurement_app.JPG, id=728, 274.02374pt x 266.49562pt>
 File: Measurement_app.JPG Graphic file (type jpg)
 
 <use Measurement_app.JPG>
-Package pdftex.def Info: Measurement_app.JPG used on input line 852.
+Package pdftex.def Info: Measurement_app.JPG used on input line 864.
 (pdftex.def)             Requested size: 181.5pt x 176.51793pt.
  [31 <./cvBox_covered.jpg>] [32 <./Measurement_app.JPG>] [33]
 Package epstopdf Info: Source file: <full_VLC_11.eps>
@@ -1839,12 +1848,12 @@ Package epstopdf Info: Source file: <full_VLC_11.eps>
 (epstopdf)                    size: 7467 bytes
 (epstopdf)             Command: <repstopdf --outfile=full_VLC_11-eps-converted-
 to.pdf full_VLC_11.eps>
-(epstopdf)             \includegraphics on input line 905.
+(epstopdf)             \includegraphics on input line 917.
 Package epstopdf Info: Output file is already uptodate.
 File: full_VLC_11-eps-converted-to.pdf Graphic file (type pdf)
  <use full_VLC_11-eps-converted-to.pdf>
-Package pdftex.def Info: full_VLC_11-eps-converted-to.pdf used on input line 90
-5.
+Package pdftex.def Info: full_VLC_11-eps-converted-to.pdf used on input line 91
+7.
 (pdftex.def)             Requested size: 181.5pt x 120.77586pt.
 Package epstopdf Info: Source file: <full_VLC_6.eps>
 (epstopdf)                    date: 2016-05-13 19:59:31
@@ -1854,14 +1863,14 @@ Package epstopdf Info: Source file: <full_VLC_6.eps>
 (epstopdf)                    size: 6967 bytes
 (epstopdf)             Command: <repstopdf --outfile=full_VLC_6-eps-converted-t
 o.pdf full_VLC_6.eps>
-(epstopdf)             \includegraphics on input line 911.
+(epstopdf)             \includegraphics on input line 923.
 Package epstopdf Info: Output file is already uptodate.
 
-<full_VLC_6-eps-converted-to.pdf, id=786, 815.045pt x 542.025pt>
+<full_VLC_6-eps-converted-to.pdf, id=758, 815.045pt x 542.025pt>
 File: full_VLC_6-eps-converted-to.pdf Graphic file (type pdf)
 
 <use full_VLC_6-eps-converted-to.pdf>
-Package pdftex.def Info: full_VLC_6-eps-converted-to.pdf used on input line 911
+Package pdftex.def Info: full_VLC_6-eps-converted-to.pdf used on input line 923
 .
 (pdftex.def)             Requested size: 181.5pt x 120.70149pt.
 Package epstopdf Info: Source file: <VLC_curves_3_4_5.eps>
@@ -1872,15 +1881,15 @@ Package epstopdf Info: Source file: <VLC_curves_3_4_5.eps>
 (epstopdf)                    size: 7422 bytes
 (epstopdf)             Command: <repstopdf --outfile=VLC_curves_3_4_5-eps-conve
 rted-to.pdf VLC_curves_3_4_5.eps>
-(epstopdf)             \includegraphics on input line 924.
+(epstopdf)             \includegraphics on input line 936.
 Package epstopdf Info: Output file is already uptodate.
 
-<VLC_curves_3_4_5-eps-converted-to.pdf, id=789, 421.575pt x 317.185pt>
+<VLC_curves_3_4_5-eps-converted-to.pdf, id=761, 421.575pt x 317.185pt>
 File: VLC_curves_3_4_5-eps-converted-to.pdf Graphic file (type pdf)
 
 <use VLC_curves_3_4_5-eps-converted-to.pdf>
 Package pdftex.def Info: VLC_curves_3_4_5-eps-converted-to.pdf used on input li
-ne 924.
+ne 936.
 (pdftex.def)             Requested size: 363.0pt x 273.11739pt.
 
 
@@ -1894,21 +1903,21 @@ Package epstopdf Info: Source file: <VLC_allCurves.eps>
 (epstopdf)                    size: 7398 bytes
 (epstopdf)             Command: <repstopdf --outfile=VLC_allCurves-eps-converte
 d-to.pdf VLC_allCurves.eps>
-(epstopdf)             \includegraphics on input line 932.
+(epstopdf)             \includegraphics on input line 944.
 Package epstopdf Info: Output file is already uptodate.
-<VLC_allCurves-eps-converted-to.pdf, id=791, 421.575pt x 317.185pt>
+<VLC_allCurves-eps-converted-to.pdf, id=763, 421.575pt x 317.185pt>
 File: VLC_allCurves-eps-converted-to.pdf Graphic file (type pdf)
 
 <use VLC_allCurves-eps-converted-to.pdf>
 Package pdftex.def Info: VLC_allCurves-eps-converted-to.pdf used on input line 
-932.
+944.
 (pdftex.def)             Requested size: 363.0pt x 273.11739pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [34 <./full_VLC_6-eps-converted-to.pdf>] [35 <./VLC_curves_3_4_5-eps-converted-
-to.pdf>]
+to.pdf>] [36 <./VLC_allCurves-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <system_overview_yarn.eps>
 (epstopdf)                    date: 2016-05-14 19:40:14
 (epstopdf)                    size: 44529 bytes
@@ -1918,21 +1927,16 @@ Package epstopdf Info: Source file: <system_overview_yarn.eps>
 (epstopdf)                    size: 14598 bytes
 (epstopdf)             Command: <repstopdf --outfile=system_overview_yarn-eps-c
 onverted-to.pdf system_overview_yarn.eps>
-(epstopdf)             \includegraphics on input line 975.
+(epstopdf)             \includegraphics on input line 989.
 Package epstopdf Info: Output file is already uptodate.
 
-<system_overview_yarn-eps-converted-to.pdf, id=816, 388.45125pt x 247.92625pt>
+<system_overview_yarn-eps-converted-to.pdf, id=800, 388.45125pt x 247.92625pt>
 File: system_overview_yarn-eps-converted-to.pdf Graphic file (type pdf)
 
 <use system_overview_yarn-eps-converted-to.pdf>
 Package pdftex.def Info: system_overview_yarn-eps-converted-to.pdf used on inpu
-t line 975.
+t line 989.
 (pdftex.def)             Requested size: 363.0pt x 231.68881pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[36 <./VLC_allCurves-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <yarn_singleBranch.eps>
 (epstopdf)                    date: 2016-05-14 20:31:08
 (epstopdf)                    size: 30368 bytes
@@ -1941,95 +1945,214 @@ Package epstopdf Info: Source file: <yarn_singleBranch.eps>
 (epstopdf)                    size: 11493 bytes
 (epstopdf)             Command: <repstopdf --outfile=yarn_singleBranch-eps-conv
 erted-to.pdf yarn_singleBranch.eps>
-(epstopdf)             \includegraphics on input line 986.
+(epstopdf)             \includegraphics on input line 1000.
 Package epstopdf Info: Output file is already uptodate.
 
-<yarn_singleBranch-eps-converted-to.pdf, id=830, 368.37625pt x 200.75pt>
+<yarn_singleBranch-eps-converted-to.pdf, id=804, 368.37625pt x 200.75pt>
 File: yarn_singleBranch-eps-converted-to.pdf Graphic file (type pdf)
 
 <use yarn_singleBranch-eps-converted-to.pdf>
 Package pdftex.def Info: yarn_singleBranch-eps-converted-to.pdf used on input l
-ine 986.
+ine 1000.
 (pdftex.def)             Requested size: 363.0pt x 197.81801pt.
+ [37 <./system_overview_yarn-eps-converted-to.pdf>] [38 <./yarn_singleBranch-ep
+s-converted-to.pdf>]
+Overfull \hbox (39.53671pt too wide) in paragraph at lines 1030--1038
+ [][][] 
+ []
+
+[39]
+Package epstopdf Info: Source file: <sp_barevny.eps>
+(epstopdf)                    date: 2016-05-18 11:19:31
+(epstopdf)                    size: 15416 bytes
+(epstopdf)             Output file: <sp_barevny-eps-converted-to.pdf>
+(epstopdf)                    date: 2016-05-18 11:21:54
+(epstopdf)                    size: 8410 bytes
+(epstopdf)             Command: <repstopdf --outfile=sp_barevny-eps-converted-t
+o.pdf sp_barevny.eps>
+(epstopdf)             \includegraphics on input line 1059.
+Package epstopdf Info: Output file is already uptodate.
+ <sp_barevny-eps-converted-to.pdf, id=849, 659.46375pt x 317.185pt>
+File: sp_barevny-eps-converted-to.pdf Graphic file (type pdf)
+
+<use sp_barevny-eps-converted-to.pdf>
+Package pdftex.def Info: sp_barevny-eps-converted-to.pdf used on input line 105
+9.
+(pdftex.def)             Requested size: 363.0pt x 174.59747pt.
+ [40 <./sp_barevny-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <prize4.eps>
+(epstopdf)                    date: 2016-05-18 00:52:54
+(epstopdf)                    size: 15238 bytes
+(epstopdf)             Output file: <prize4-eps-converted-to.pdf>
+(epstopdf)                    date: 2016-05-18 12:25:54
+(epstopdf)                    size: 8406 bytes
+(epstopdf)             Command: <repstopdf --outfile=prize4-eps-converted-to.pd
+f prize4.eps>
+(epstopdf)             \includegraphics on input line 1087.
+Package epstopdf Info: Output file is already uptodate.
+
+<prize4-eps-converted-to.pdf, id=865, 553.06625pt x 317.185pt>
+File: prize4-eps-converted-to.pdf Graphic file (type pdf)
+
+<use prize4-eps-converted-to.pdf>
+Package pdftex.def Info: prize4-eps-converted-to.pdf used on input line 1087.
+(pdftex.def)             Requested size: 363.0pt x 208.18117pt.
+Package epstopdf Info: Source file: <prize1_short.eps>
+(epstopdf)                    date: 2016-05-18 12:19:29
+(epstopdf)                    size: 12948 bytes
+(epstopdf)             Output file: <prize1_short-eps-converted-to.pdf>
+(epstopdf)                    date: 2016-05-18 12:28:30
+(epstopdf)                    size: 7570 bytes
+(epstopdf)             Command: <repstopdf --outfile=prize1_short-eps-converted
+-to.pdf prize1_short.eps>
+(epstopdf)             \includegraphics on input line 1096.
+Package epstopdf Info: Output file is already uptodate.
+
+<prize1_short-eps-converted-to.pdf, id=869, 531.9875pt x 317.185pt>
+File: prize1_short-eps-converted-to.pdf Graphic file (type pdf)
+
+<use prize1_short-eps-converted-to.pdf>
+Package pdftex.def Info: prize1_short-eps-converted-to.pdf used on input line 1
+096.
+(pdftex.def)             Requested size: 181.5pt x 108.21413pt.
+Package epstopdf Info: Source file: <moire1.eps>
+(epstopdf)                    date: 2016-05-18 12:14:02
+(epstopdf)                    size: 12764 bytes
+(epstopdf)             Output file: <moire1-eps-converted-to.pdf>
+(epstopdf)                    date: 2016-05-18 12:28:36
+(epstopdf)                    size: 7529 bytes
+(epstopdf)             Command: <repstopdf --outfile=moire1-eps-converted-to.pd
+f moire1.eps>
+(epstopdf)             \includegraphics on input line 1103.
+Package epstopdf Info: Output file is already uptodate.
+
+<moire1-eps-converted-to.pdf, id=870, 526.96875pt x 317.185pt>
+File: moire1-eps-converted-to.pdf Graphic file (type pdf)
+
+<use moire1-eps-converted-to.pdf>
+Package pdftex.def Info: moire1-eps-converted-to.pdf used on input line 1103.
+(pdftex.def)             Requested size: 181.5pt x 109.24501pt.
+ [41 <./prize4-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <prize1_alarm.eps>
+(epstopdf)                    date: 2016-05-18 15:00:51
+(epstopdf)                    size: 16440 bytes
+(epstopdf)             Output file: <prize1_alarm-eps-converted-to.pdf>
+(epstopdf)                    date: 2016-05-18 15:18:58
+(epstopdf)                    size: 8984 bytes
+(epstopdf)             Command: <repstopdf --outfile=prize1_alarm-eps-converted
+-to.pdf prize1_alarm.eps>
+(epstopdf)             \includegraphics on input line 1130.
+Package epstopdf Info: Output file is already uptodate.
+
+<prize1_alarm-eps-converted-to.pdf, id=889, 543.02875pt x 317.185pt>
+File: prize1_alarm-eps-converted-to.pdf Graphic file (type pdf)
+
+<use prize1_alarm-eps-converted-to.pdf>
+Package pdftex.def Info: prize1_alarm-eps-converted-to.pdf used on input line 1
+130.
+(pdftex.def)             Requested size: 272.25pt x 159.02768pt.
+Package epstopdf Info: Source file: <moire1_alarm.eps>
+(epstopdf)                    date: 2016-05-18 15:06:26
+(epstopdf)                    size: 14345 bytes
+(epstopdf)             Output file: <moire1_alarm-eps-converted-to.pdf>
+(epstopdf)                    date: 2016-05-18 15:19:00
+(epstopdf)                    size: 8567 bytes
+(epstopdf)             Command: <repstopdf --outfile=moire1_alarm-eps-converted
+-to.pdf moire1_alarm.eps>
+(epstopdf)             \includegraphics on input line 1137.
+Package epstopdf Info: Output file is already uptodate.
+
+<moire1_alarm-eps-converted-to.pdf, id=892, 571.13374pt x 317.185pt>
+File: moire1_alarm-eps-converted-to.pdf Graphic file (type pdf)
+
+<use moire1_alarm-eps-converted-to.pdf>
+Package pdftex.def Info: moire1_alarm-eps-converted-to.pdf used on input line 1
+137.
+(pdftex.def)             Requested size: 272.25pt x 151.19681pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[37 <./system_overview_yarn-eps-converted-to.pdf>] [38 <./yarn_singleBranch-eps
--converted-to.pdf>]
-Overfull \hbox (39.53671pt too wide) in paragraph at lines 1016--1024
- [][][] 
- []
 
-[39] [40]
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[42 <./prize1_short-eps-converted-to.pdf> <./moire1-eps-converted-to.pdf>]
+[43 <./prize1_alarm-eps-converted-to.pdf> <./moire1_alarm-eps-converted-to.pdf>
+] [44
+
+]
 Chapter 4.
+[45] [46
+
+]
+Chapter 5.
+[47]
 .................................................
 . LaTeX info: "xparse/redefine-command"
 . 
-. Redefining command \chapter with sig. 's' on line 1057.
+. Redefining command \chapter with sig. 's' on line 1161.
 .................................................
 .................................................
 . LaTeX info: "xparse/redefine-command"
 . 
-. Redefining command \appendix with sig. 'ss' on line 1057.
+. Redefining command \appendix with sig. 'ss' on line 1161.
 .................................................
+
 No file ctuDIPL.ind.
 *************************************************
 * ctuthesis warning: "appendix-twice"
 * 
 * The macro \appendix should be used only once. Silently ignoring.
 *************************************************
-(./ctuDIPL.bbl [41
-
-] [42
-
-]
+(./ctuDIPL.bbl [48]
 Appendix A.
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/lmr/m/sc/10.95'.
 (microtype)             Ignoring protrusion settings for this character.
-) [43] [44
+) [49
 
-] <ctutest-zadani.pdf, id=896, 597.432pt x 845.0762pt>
+] [50
+
+] <ctutest-zadani.pdf, id=962, 597.432pt x 845.0762pt>
 File: ctutest-zadani.pdf Graphic file (type pdf)
 
 <use ctutest-zadani.pdf>
-Package pdftex.def Info: ctutest-zadani.pdf used on input line 1066.
+Package pdftex.def Info: ctutest-zadani.pdf used on input line 1170.
 (pdftex.def)             Requested size: 597.43054pt x 845.07414pt.
 File: ctutest-zadani.pdf Graphic file (type pdf)
  <use ctutest-zadani.pdf>
-Package pdftex.def Info: ctutest-zadani.pdf used on input line 1066.
+Package pdftex.def Info: ctutest-zadani.pdf used on input line 1170.
 (pdftex.def)             Requested size: 597.43054pt x 845.07414pt.
 
-<ctutest-zadani.pdf, id=899, page=1, 597.432pt x 845.0762pt>
+<ctutest-zadani.pdf, id=965, page=1, 597.432pt x 845.0762pt>
 File: ctutest-zadani.pdf Graphic file (type pdf)
 
 <use ctutest-zadani.pdf, page 1>
-Package pdftex.def Info: ctutest-zadani.pdf, page1 used on input line 1066.
+Package pdftex.def Info: ctutest-zadani.pdf, page1 used on input line 1170.
 (pdftex.def)             Requested size: 597.43054pt x 845.07414pt.
 File: ctutest-zadani.pdf Graphic file (type pdf)
  <use ctutest-zadani.pdf, page 1>
-Package pdftex.def Info: ctutest-zadani.pdf, page1 used on input line 1066.
+Package pdftex.def Info: ctutest-zadani.pdf, page1 used on input line 1170.
 (pdftex.def)             Requested size: 597.45789pt x 845.11282pt.
 File: ctutest-zadani.pdf Graphic file (type pdf)
 
 <use ctutest-zadani.pdf, page 1>
-Package pdftex.def Info: ctutest-zadani.pdf, page1 used on input line 1066.
+Package pdftex.def Info: ctutest-zadani.pdf, page1 used on input line 1170.
 (pdftex.def)             Requested size: 597.45789pt x 845.11282pt.
 File: ctutest-zadani.pdf Graphic file (type pdf)
  <use ctutest-zadani.pdf, page 1>
-Package pdftex.def Info: ctutest-zadani.pdf, page1 used on input line 1066.
+Package pdftex.def Info: ctutest-zadani.pdf, page1 used on input line 1170.
 (pdftex.def)             Requested size: 597.45789pt x 845.11282pt.
 File: ctutest-zadani.pdf Graphic file (type pdf)
 
 <use ctutest-zadani.pdf, page 1>
-Package pdftex.def Info: ctutest-zadani.pdf, page1 used on input line 1066.
+Package pdftex.def Info: ctutest-zadani.pdf, page1 used on input line 1170.
 (pdftex.def)             Requested size: 597.45789pt x 845.11282pt.
- [45 <./ctutest-zadani.pdf>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1068.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1068.
+ [51 <./ctutest-zadani.pdf>]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1172.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1172.
  (./ctuDIPL.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1068.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1172.
 
 
  *File List*
@@ -2186,6 +2309,12 @@ VLC_curves_3_4_5-eps-converted-to.pdf    Graphic file (type pdf)
 VLC_allCurves-eps-converted-to.pdf    Graphic file (type pdf)
 system_overview_yarn-eps-converted-to.pdf    Graphic file (type pdf)
 yarn_singleBranch-eps-converted-to.pdf    Graphic file (type pdf)
+sp_barevny-eps-converted-to.pdf    Graphic file (type pdf)
+prize4-eps-converted-to.pdf    Graphic file (type pdf)
+prize1_short-eps-converted-to.pdf    Graphic file (type pdf)
+moire1-eps-converted-to.pdf    Graphic file (type pdf)
+prize1_alarm-eps-converted-to.pdf    Graphic file (type pdf)
+moire1_alarm-eps-converted-to.pdf    Graphic file (type pdf)
  ctuDIPL.bbl
 ctutest-zadani.pdf    Graphic file (type pdf)
 ctutest-zadani.pdf    Graphic file (type pdf)
@@ -2193,20 +2322,20 @@ ctutest-zadani.pdf    Graphic file (type pdf)
 ctutest-zadani.pdf    Graphic file (type pdf)
  ***********
 
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1068.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1172.
 
 Package rerunfilecheck Info: File `ctuDIPL.out' has not changed.
-(rerunfilecheck)             Checksum: 1AE9DD4764AF2A9A885008BF8492B512;3621.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1068.
+(rerunfilecheck)             Checksum: FA9F7A192FBE9B3B22DE0FCED18B2D96;3018.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1172.
  ) 
 Here is how much of TeX's memory you used:
- 20953 strings out of 493054
- 359832 string characters out of 6138327
- 583098 words of memory out of 5000000
- 23710 multiletter control sequences out of 15000+600000
- 117880 words of font info for 186 fonts, out of 8000000 for 9000
+ 21003 strings out of 493054
+ 360987 string characters out of 6138327
+ 587223 words of memory out of 5000000
+ 23736 multiletter control sequences out of 15000+600000
+ 122616 words of font info for 191 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 40i,18n,58p,10350b,811s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 40i,18n,58p,10350b,815s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/texlive/2015/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{c:/texlive/2015/tex
 mf-dist/fonts/enc/dvips/lm/lm-rm.enc}{c:/texlive/2015/texmf-dist/fonts/enc/dvip
 s/lm/lm-mathsy.enc}{c:/texlive/2015/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc
@@ -2224,10 +2353,10 @@ m/lmri10.pfb><c:/texlive/2015/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb><c:
 mf-dist/fonts/type1/public/lm/lmsy10.pfb><c:/texlive/2015/texmf-dist/fonts/type
 1/public/lm/lmsy6.pfb><c:/texlive/2015/texmf-dist/fonts/type1/public/lm/lmsy8.p
 fb>
-Output written on ctuDIPL.pdf (51 pages, 7948938 bytes).
+Output written on ctuDIPL.pdf (57 pages, 8000229 bytes).
 PDF statistics:
- 1024 PDF objects out of 1200 (max. 8388607)
- 895 compressed objects within 9 object streams
- 212 named destinations out of 1000 (max. 500000)
- 33317 words of extra memory for PDF output out of 35830 (max. 10000000)
+ 1095 PDF objects out of 1200 (max. 8388607)
+ 947 compressed objects within 10 object streams
+ 222 named destinations out of 1000 (max. 500000)
+ 35331 words of extra memory for PDF output out of 35830 (max. 10000000)
 
