@@ -29,78 +29,81 @@
 \contentsline {subsection}{\numberline {2.1.5}Coefficient of Variation}{6}{subsection.2.1.5}
 \contentsline {subsection}{\numberline {2.1.6}Variance-length Curve}{6}{subsection.2.1.6}
 \contentsline {subsection}{\numberline {2.1.7}Spectrogram}{6}{subsection.2.1.7}
-\contentsline {section}{\numberline {2.2}State of Art}{6}{section.2.2}
+\contentsline {section}{\numberline {2.2}State of the Art}{6}{section.2.2}
 \contentsline {subsection}{\numberline {2.2.1}Overview of Yarn Quality Sensors}{6}{subsection.2.2.1}
 \contentsline {subsubsection}{Uster Quantum 3}{7}{subsubsection*.5}
 \contentsline {subsubsection}{Uster Quantum 3}{7}{subsubsection*.5}
+\contentsline {subsubsection}{USTER\IeC {\textregistered } TESTER 5}{8}{subsubsection*.6}
+\contentsline {subsubsection}{USTER\IeC {\textregistered } TESTER 5}{8}{subsubsection*.6}
 \contentsline {section}{\numberline {2.3}Digital Signal Processing}{8}{section.2.3}
 \contentsline {subsection}{\numberline {2.3.1}Discrete Fourier Transform}{8}{subsection.2.3.1}
-\contentsline {subsection}{\numberline {2.3.2}Fast Fourier Transform}{9}{subsection.2.3.2}
+\contentsline {subsection}{\numberline {2.3.2}Fast Fourier Transform}{10}{subsection.2.3.2}
 \contentsline {subsection}{\numberline {2.3.3}Power spectral density}{11}{subsection.2.3.3}
-\contentsline {subsection}{\numberline {2.3.4}Decimation}{11}{subsection.2.3.4}
+\contentsline {subsection}{\numberline {2.3.4}Decimation}{12}{subsection.2.3.4}
 \contentsline {section}{\numberline {2.4}Embedded systems and microcontrollers}{12}{section.2.4}
-\contentsline {subsection}{\numberline {2.4.1}Embedded systems}{12}{subsection.2.4.1}
-\contentsline {subsection}{\numberline {2.4.2}DSP Hardware Options}{12}{subsection.2.4.2}
-\contentsline {subsection}{\numberline {2.4.3}Real-time constraints}{13}{subsection.2.4.3}
-\contentsline {subsection}{\numberline {2.4.4}ARM Cortex-M4}{13}{subsection.2.4.4}
-\contentsline {subsubsection}{Instruction Set}{14}{subsubsection*.6}
-\contentsline {subsubsection}{Instruction Set}{14}{subsubsection*.6}
-\contentsline {chapter}{\numberline {3}Practical Implementation}{15}{chapter.3}
-\contentsline {section}{\numberline {3.1}Sliver Quality Analysis}{15}{section.3.1}
-\contentsline {subsection}{\numberline {3.1.1}Hardware}{16}{subsection.3.1.1}
-\contentsline {subsubsection}{Control Unit}{16}{subsubsection*.7}
-\contentsline {subsubsection}{Control Unit}{16}{subsubsection*.7}
-\contentsline {subsubsection}{Power Supply Converters}{17}{subsubsection*.8}
-\contentsline {subsubsection}{Power Supply Converters}{17}{subsubsection*.8}
-\contentsline {subsubsection}{Sensors and Input Modules}{18}{subsubsection*.9}
-\contentsline {subsubsection}{Sensors and Input Modules}{18}{subsubsection*.9}
-\contentsline {section}{\numberline {3.2}Algorithm for Sliver Quality Analysis}{19}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}Solution for Embedded Systems Constraints}{21}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}Wavelengths Specification}{22}{subsection.3.2.2}
-\contentsline {subsection}{\numberline {3.2.3}Processing Branch}{23}{subsection.3.2.3}
-\contentsline {subsubsection}{Input Sample}{23}{subsubsection*.10}
-\contentsline {subsubsection}{Input Sample}{23}{subsubsection*.10}
-\contentsline {subsubsection}{FIR Filter and Decimation}{24}{subsubsection*.11}
-\contentsline {subsubsection}{FIR Filter and Decimation}{24}{subsubsection*.11}
-\contentsline {subsubsection}{Buffering}{25}{subsubsection*.12}
-\contentsline {subsubsection}{Buffering}{25}{subsubsection*.12}
-\contentsline {subsubsection}{Windowing}{25}{subsubsection*.13}
-\contentsline {subsubsection}{Windowing}{26}{subsubsection*.13}
-\contentsline {subsubsection}{FFT}{26}{subsubsection*.14}
-\contentsline {subsubsection}{FFT}{26}{subsubsection*.14}
-\contentsline {subsubsection}{Spectrum Filtration}{26}{subsubsection*.15}
-\contentsline {subsubsection}{Spectrum Filtration}{26}{subsubsection*.15}
-\contentsline {subsubsection}{IFFT}{29}{subsubsection*.16}
-\contentsline {subsubsection}{IFFT}{29}{subsubsection*.16}
-\contentsline {subsubsection}{CV Calculation}{29}{subsubsection*.17}
-\contentsline {subsubsection}{CV Calculation}{29}{subsubsection*.17}
-\contentsline {subsection}{\numberline {3.2.4}Variance-Length Curve}{30}{subsection.3.2.4}
-\contentsline {subsection}{\numberline {3.2.5}Measurement and Testing}{30}{subsection.3.2.5}
-\contentsline {subsubsection}{Measurement Application}{31}{subsubsection*.18}
-\contentsline {subsubsection}{Measurement Application}{31}{subsubsection*.18}
-\contentsline {subsubsection}{Measurement}{32}{subsubsection*.19}
-\contentsline {subsubsection}{Measurement}{32}{subsubsection*.19}
-\contentsline {subsection}{\numberline {3.2.6}Algorithm Results}{33}{subsection.3.2.6}
-\contentsline {section}{\numberline {3.3}Yarn Quality Analysis}{34}{section.3.3}
-\contentsline {subsection}{\numberline {3.3.1}Hardware}{35}{subsection.3.3.1}
-\contentsline {subsubsection}{Control Unit}{35}{subsubsection*.20}
-\contentsline {subsubsection}{Control Unit}{36}{subsubsection*.20}
-\contentsline {subsection}{\numberline {3.3.2}Algorithm for Yarn Quality Analysis}{36}{subsection.3.3.2}
-\contentsline {subsection}{\numberline {3.3.3}Processing Branch}{37}{subsection.3.3.3}
-\contentsline {subsubsection}{Windowing}{38}{subsubsection*.21}
-\contentsline {subsubsection}{Windowing}{38}{subsubsection*.21}
-\contentsline {subsubsection}{Spectrogram Calculation}{38}{subsubsection*.22}
-\contentsline {subsubsection}{Spectrogram Calculation}{38}{subsubsection*.22}
-\contentsline {subsubsection}{Correction of Spectrum}{39}{subsubsection*.23}
-\contentsline {subsubsection}{Correction of Spectrum}{39}{subsubsection*.23}
-\contentsline {subsubsection}{Summation of the Frequency Bins}{39}{subsubsection*.24}
-\contentsline {subsubsection}{Summation of the Frequency Bins}{39}{subsubsection*.24}
-\contentsline {subsection}{\numberline {3.3.4}Compilation of Full Spectrogram}{40}{subsection.3.3.4}
-\contentsline {subsection}{\numberline {3.3.5}Measurement and Testing}{40}{subsection.3.3.5}
-\contentsline {subsection}{\numberline {3.3.6}Algorithm Results}{41}{subsection.3.3.6}
-\contentsline {subsubsection}{Alarm Function}{42}{subsubsection*.25}
-\contentsline {subsubsection}{Alarm Function}{42}{subsubsection*.25}
-\contentsline {chapter}{\numberline {4}Prospective Development}{45}{chapter.4}
-\contentsline {chapter}{\numberline {5}Conclusions}{47}{chapter.5}
-\contentsline {chapter}{\numberline {A}Bibliography}{49}{appendix.A}
-\contentsline {chapter}{\numberline {B}Project\ Specification}{51}{section*.26}
+\contentsline {subsection}{\numberline {2.4.1}DSP Hardware Options}{13}{subsection.2.4.1}
+\contentsline {subsection}{\numberline {2.4.2}Real-time constraints}{13}{subsection.2.4.2}
+\contentsline {subsection}{\numberline {2.4.3}ARM Cortex-M4}{14}{subsection.2.4.3}
+\contentsline {subsubsection}{Instruction Set}{14}{subsubsection*.7}
+\contentsline {subsubsection}{Instruction Set}{14}{subsubsection*.7}
+\contentsline {chapter}{\numberline {3}Practical Implementation}{17}{chapter.3}
+\contentsline {section}{\numberline {3.1}Sliver Quality Analysis}{17}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Hardware}{18}{subsection.3.1.1}
+\contentsline {subsubsection}{Control Unit}{18}{subsubsection*.8}
+\contentsline {subsubsection}{Control Unit}{18}{subsubsection*.8}
+\contentsline {subsubsection}{Power Supply Converters}{19}{subsubsection*.9}
+\contentsline {subsubsection}{Power Supply Converters}{19}{subsubsection*.9}
+\contentsline {subsubsection}{Sensors and Input Modules}{20}{subsubsection*.10}
+\contentsline {subsubsection}{Sensors and Input Modules}{20}{subsubsection*.10}
+\contentsline {subsection}{\numberline {3.1.2}Algorithm for Sliver Quality Analysis}{21}{subsection.3.1.2}
+\contentsline {subsection}{\numberline {3.1.3}Solution for Embedded Systems Constraints}{23}{subsection.3.1.3}
+\contentsline {subsection}{\numberline {3.1.4}Wavelengths Specification}{24}{subsection.3.1.4}
+\contentsline {subsection}{\numberline {3.1.5}Processing Branch}{25}{subsection.3.1.5}
+\contentsline {subsubsection}{Input Sample}{25}{subsubsection*.11}
+\contentsline {subsubsection}{Input Sample}{25}{subsubsection*.11}
+\contentsline {subsubsection}{FIR Filter and Decimation}{26}{subsubsection*.12}
+\contentsline {subsubsection}{FIR Filter and Decimation}{26}{subsubsection*.12}
+\contentsline {subsubsection}{Buffering}{27}{subsubsection*.13}
+\contentsline {subsubsection}{Buffering}{27}{subsubsection*.13}
+\contentsline {subsubsection}{Windowing}{27}{subsubsection*.14}
+\contentsline {subsubsection}{Windowing}{28}{subsubsection*.14}
+\contentsline {subsubsection}{FFT}{28}{subsubsection*.15}
+\contentsline {subsubsection}{FFT}{28}{subsubsection*.15}
+\contentsline {subsubsection}{Spectrum Filtration}{28}{subsubsection*.16}
+\contentsline {subsubsection}{Spectrum Filtration}{28}{subsubsection*.16}
+\contentsline {subsubsection}{IFFT}{31}{subsubsection*.17}
+\contentsline {subsubsection}{IFFT}{31}{subsubsection*.17}
+\contentsline {subsubsection}{CV Calculation}{31}{subsubsection*.18}
+\contentsline {subsubsection}{CV Calculation}{31}{subsubsection*.18}
+\contentsline {subsection}{\numberline {3.1.6}Variance-Length Curve}{32}{subsection.3.1.6}
+\contentsline {subsection}{\numberline {3.1.7}Measurement and Testing}{32}{subsection.3.1.7}
+\contentsline {subsubsection}{Measurement Application}{33}{subsubsection*.19}
+\contentsline {subsubsection}{Measurement Application}{33}{subsubsection*.19}
+\contentsline {subsubsection}{Measurement}{34}{subsubsection*.20}
+\contentsline {subsubsection}{Measurement}{34}{subsubsection*.20}
+\contentsline {subsection}{\numberline {3.1.8}Algorithm Results}{35}{subsection.3.1.8}
+\contentsline {section}{\numberline {3.2}Yarn Quality Analysis}{37}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Hardware}{38}{subsection.3.2.1}
+\contentsline {subsubsection}{Control Unit}{38}{subsubsection*.21}
+\contentsline {subsubsection}{Control Unit}{38}{subsubsection*.21}
+\contentsline {subsection}{\numberline {3.2.2}Algorithm for Yarn Quality Analysis}{39}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3}Processing Branch}{40}{subsection.3.2.3}
+\contentsline {subsubsection}{Windowing}{40}{subsubsection*.22}
+\contentsline {subsubsection}{Windowing}{40}{subsubsection*.22}
+\contentsline {subsubsection}{Spectrogram Calculation}{40}{subsubsection*.23}
+\contentsline {subsubsection}{Spectrogram Calculation}{41}{subsubsection*.23}
+\contentsline {subsubsection}{Correction of Spectrum}{41}{subsubsection*.24}
+\contentsline {subsubsection}{Correction of Spectrum}{41}{subsubsection*.24}
+\contentsline {subsubsection}{Summation of the Frequency Bins}{42}{subsubsection*.25}
+\contentsline {subsubsection}{Summation of the Frequency Bins}{42}{subsubsection*.25}
+\contentsline {subsection}{\numberline {3.2.4}Compilation of Full Spectrogram}{42}{subsection.3.2.4}
+\contentsline {subsection}{\numberline {3.2.5}Measurement and Testing}{42}{subsection.3.2.5}
+\contentsline {subsection}{\numberline {3.2.6}Algorithm Results}{43}{subsection.3.2.6}
+\contentsline {subsubsection}{Alarm Function}{43}{subsubsection*.26}
+\contentsline {subsubsection}{Alarm Function}{44}{subsubsection*.26}
+\contentsline {chapter}{\numberline {4}Prospective Development}{47}{chapter.4}
+\contentsline {chapter}{\numberline {5}Conclusions}{49}{chapter.5}
+\contentsline {chapter}{\numberline {A}Bibliography}{51}{appendix.A}
+\contentsline {chapter}{\numberline {B}}{53}{appendix.B}
+\contentsline {section}{\numberline {B.1}Additional Figures}{53}{section.B.1}
+\contentsline {chapter}{\numberline {C}Project\ Specification}{55}{section*.27}

@@ -7,45 +7,45 @@ Warning--entry type for "cite:RIKIpedia_combing" isn't style-file defined
 --line 177 of file ctuDIP_biblio.bib
 Warning--entry type for "cite:brittanicaWavelength" isn't style-file defined
 --line 195 of file ctuDIP_biblio.bib
-You've used 16 entries,
+You've used 17 entries,
             2030 wiz_defined-function locations,
-            579 strings with 5349 characters,
-and the built_in function-call counts, 3494 in all, are:
-= -- 258
-> -- 166
+            586 strings with 5642 characters,
+and the built_in function-call counts, 3917 in all, are:
+= -- 298
+> -- 179
 < -- 0
-+ -- 68
-- -- 51
-* -- 230
-:= -- 608
-add.period$ -- 16
-call.type$ -- 16
-change.case$ -- 61
++ -- 74
+- -- 55
+* -- 258
+:= -- 665
+add.period$ -- 17
+call.type$ -- 17
+change.case$ -- 66
 chr.to.int$ -- 0
-cite$ -- 16
-duplicate$ -- 187
-empty$ -- 340
-format.name$ -- 51
-if$ -- 704
+cite$ -- 17
+duplicate$ -- 210
+empty$ -- 380
+format.name$ -- 55
+if$ -- 804
 int.to.chr$ -- 0
-int.to.str$ -- 16
-missing$ -- 20
-newline$ -- 51
-num.names$ -- 31
-pop$ -- 127
+int.to.str$ -- 17
+missing$ -- 21
+newline$ -- 54
+num.names$ -- 33
+pop$ -- 135
 preamble$ -- 1
-purify$ -- 58
+purify$ -- 62
 quote$ -- 0
-skip$ -- 88
+skip$ -- 107
 stack$ -- 0
-substring$ -- 81
-swap$ -- 31
+substring$ -- 115
+swap$ -- 41
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 44
+type$ -- 48
 warning$ -- 0
-while$ -- 31
-width$ -- 18
-write$ -- 125
+while$ -- 35
+width$ -- 19
+write$ -- 134
 (There were 2 warnings)

@@ -8,7 +8,7 @@
 \BOOKMARK [2][-]{subsection.2.1.5}{Coefficient of Variation}{section.2.1}% 8
 \BOOKMARK [2][-]{subsection.2.1.6}{Variance-length Curve}{section.2.1}% 9
 \BOOKMARK [2][-]{subsection.2.1.7}{Spectrogram}{section.2.1}% 10
-\BOOKMARK [1][-]{section.2.2}{State of Art}{chapter.2}% 11
+\BOOKMARK [1][-]{section.2.2}{State of the Art}{chapter.2}% 11
 \BOOKMARK [2][-]{subsection.2.2.1}{Overview of Yarn Quality Sensors}{section.2.2}% 12
 \BOOKMARK [1][-]{section.2.3}{Digital Signal Processing}{chapter.2}% 13
 \BOOKMARK [2][-]{subsection.2.3.1}{Discrete Fourier Transform}{section.2.3}% 14
@@ -16,28 +16,29 @@
 \BOOKMARK [2][-]{subsection.2.3.3}{Power spectral density}{section.2.3}% 16
 \BOOKMARK [2][-]{subsection.2.3.4}{Decimation}{section.2.3}% 17
 \BOOKMARK [1][-]{section.2.4}{Embedded systems and microcontrollers}{chapter.2}% 18
-\BOOKMARK [2][-]{subsection.2.4.1}{Embedded systems}{section.2.4}% 19
-\BOOKMARK [2][-]{subsection.2.4.2}{DSP Hardware Options}{section.2.4}% 20
-\BOOKMARK [2][-]{subsection.2.4.3}{Real-time constraints}{section.2.4}% 21
-\BOOKMARK [2][-]{subsection.2.4.4}{ARM Cortex-M4}{section.2.4}% 22
-\BOOKMARK [0][-]{chapter.3}{Practical Implementation}{}% 23
-\BOOKMARK [1][-]{section.3.1}{Sliver Quality Analysis}{chapter.3}% 24
-\BOOKMARK [2][-]{subsection.3.1.1}{Hardware}{section.3.1}% 25
-\BOOKMARK [1][-]{section.3.2}{Algorithm for Sliver Quality Analysis}{chapter.3}% 26
-\BOOKMARK [2][-]{subsection.3.2.1}{Solution for Embedded Systems Constraints}{section.3.2}% 27
-\BOOKMARK [2][-]{subsection.3.2.2}{Wavelengths Specification}{section.3.2}% 28
-\BOOKMARK [2][-]{subsection.3.2.3}{Processing Branch}{section.3.2}% 29
-\BOOKMARK [2][-]{subsection.3.2.4}{Variance-Length Curve}{section.3.2}% 30
-\BOOKMARK [2][-]{subsection.3.2.5}{Measurement and Testing}{section.3.2}% 31
-\BOOKMARK [2][-]{subsection.3.2.6}{Algorithm Results}{section.3.2}% 32
-\BOOKMARK [1][-]{section.3.3}{Yarn Quality Analysis}{chapter.3}% 33
-\BOOKMARK [2][-]{subsection.3.3.1}{Hardware}{section.3.3}% 34
-\BOOKMARK [2][-]{subsection.3.3.2}{Algorithm for Yarn Quality Analysis}{section.3.3}% 35
-\BOOKMARK [2][-]{subsection.3.3.3}{Processing Branch}{section.3.3}% 36
-\BOOKMARK [2][-]{subsection.3.3.4}{Compilation of Full Spectrogram}{section.3.3}% 37
-\BOOKMARK [2][-]{subsection.3.3.5}{Measurement and Testing}{section.3.3}% 38
-\BOOKMARK [2][-]{subsection.3.3.6}{Algorithm Results}{section.3.3}% 39
-\BOOKMARK [0][-]{chapter.4}{Prospective Development}{}% 40
-\BOOKMARK [0][-]{chapter.5}{Conclusions}{}% 41
-\BOOKMARK [0][-]{appendix.A}{Bibliography}{}% 42
-\BOOKMARK [0][-]{section*.26}{Project Specification}{}% 43
+\BOOKMARK [2][-]{subsection.2.4.1}{DSP Hardware Options}{section.2.4}% 19
+\BOOKMARK [2][-]{subsection.2.4.2}{Real-time constraints}{section.2.4}% 20
+\BOOKMARK [2][-]{subsection.2.4.3}{ARM Cortex-M4}{section.2.4}% 21
+\BOOKMARK [0][-]{chapter.3}{Practical Implementation}{}% 22
+\BOOKMARK [1][-]{section.3.1}{Sliver Quality Analysis}{chapter.3}% 23
+\BOOKMARK [2][-]{subsection.3.1.1}{Hardware}{section.3.1}% 24
+\BOOKMARK [2][-]{subsection.3.1.2}{Algorithm for Sliver Quality Analysis}{section.3.1}% 25
+\BOOKMARK [2][-]{subsection.3.1.3}{Solution for Embedded Systems Constraints}{section.3.1}% 26
+\BOOKMARK [2][-]{subsection.3.1.4}{Wavelengths Specification}{section.3.1}% 27
+\BOOKMARK [2][-]{subsection.3.1.5}{Processing Branch}{section.3.1}% 28
+\BOOKMARK [2][-]{subsection.3.1.6}{Variance-Length Curve}{section.3.1}% 29
+\BOOKMARK [2][-]{subsection.3.1.7}{Measurement and Testing}{section.3.1}% 30
+\BOOKMARK [2][-]{subsection.3.1.8}{Algorithm Results}{section.3.1}% 31
+\BOOKMARK [1][-]{section.3.2}{Yarn Quality Analysis}{chapter.3}% 32
+\BOOKMARK [2][-]{subsection.3.2.1}{Hardware}{section.3.2}% 33
+\BOOKMARK [2][-]{subsection.3.2.2}{Algorithm for Yarn Quality Analysis}{section.3.2}% 34
+\BOOKMARK [2][-]{subsection.3.2.3}{Processing Branch}{section.3.2}% 35
+\BOOKMARK [2][-]{subsection.3.2.4}{Compilation of Full Spectrogram}{section.3.2}% 36
+\BOOKMARK [2][-]{subsection.3.2.5}{Measurement and Testing}{section.3.2}% 37
+\BOOKMARK [2][-]{subsection.3.2.6}{Algorithm Results}{section.3.2}% 38
+\BOOKMARK [0][-]{chapter.4}{Prospective Development}{}% 39
+\BOOKMARK [0][-]{chapter.5}{Conclusions}{}% 40
+\BOOKMARK [0][-]{appendix.A}{Bibliography}{}% 41
+\BOOKMARK [0][-]{appendix.B}{}{}% 42
+\BOOKMARK [1][-]{section.B.1}{Additional Figures}{appendix.B}% 43
+\BOOKMARK [0][-]{section*.27}{Project Specification}{}% 44
