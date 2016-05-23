@@ -40,12 +40,12 @@
 \contentsline {subsection}{\numberline {2.3.2}Fast Fourier Transform}{10}{subsection.2.3.2}
 \contentsline {subsection}{\numberline {2.3.3}Power spectral density}{11}{subsection.2.3.3}
 \contentsline {subsection}{\numberline {2.3.4}Decimation}{12}{subsection.2.3.4}
-\contentsline {section}{\numberline {2.4}Embedded systems and microcontrollers}{12}{section.2.4}
+\contentsline {section}{\numberline {2.4}Embedded systems and microcontrollers}{13}{section.2.4}
 \contentsline {subsection}{\numberline {2.4.1}DSP Hardware Options}{13}{subsection.2.4.1}
-\contentsline {subsection}{\numberline {2.4.2}Real-time constraints}{13}{subsection.2.4.2}
-\contentsline {subsection}{\numberline {2.4.3}ARM Cortex-M4}{14}{subsection.2.4.3}
-\contentsline {subsubsection}{Instruction Set}{14}{subsubsection*.7}
-\contentsline {subsubsection}{Instruction Set}{14}{subsubsection*.7}
+\contentsline {subsection}{\numberline {2.4.2}Real-time constraints}{14}{subsection.2.4.2}
+\contentsline {subsection}{\numberline {2.4.3}ARM Cortex-M4}{15}{subsection.2.4.3}
+\contentsline {subsubsection}{Instruction Set}{15}{subsubsection*.7}
+\contentsline {subsubsection}{Instruction Set}{15}{subsubsection*.7}
 \contentsline {chapter}{\numberline {3}Practical Implementation}{17}{chapter.3}
 \contentsline {section}{\numberline {3.1}Sliver Quality Analysis}{17}{section.3.1}
 \contentsline {subsection}{\numberline {3.1.1}Hardware}{18}{subsection.3.1.1}

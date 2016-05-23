@@ -57,6 +57,12 @@
 {\sc P.~Stoica and R.~Moses}, {\em Spectral Analysis of Signals}, Prentice
   Hall, 2005.
 
+\bibitem{cite:UsterQuantum}
+{\sc {Uster Technologies}}, {\em Uster Quantum 3: Technical Data}.
+
+\bibitem{cite:UsterTester}
+\leavevmode\vrule height 2pt depth -1.6pt width 23pt, {\em Uster Tester 5}.
+
 \bibitem{cite:ARM-M3}
 {\sc J.~Yiu}, {\em The definitive guide to the ARM cortex-M3}, Newnes, 2010.
 

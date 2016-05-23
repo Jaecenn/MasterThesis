@@ -20,7 +20,8 @@
 \contentsline {figure}{\numberline {2.1}{\ignorespaces Rieter Comber E86 (\cite {cite:RIKIpedia_combing})\relax }}{4}{figure.2.1}
 \contentsline {figure}{\numberline {2.2}{\ignorespaces Wavelength\relax }}{5}{figure.2.2}
 \contentsline {figure}{\numberline {2.3}{\ignorespaces Simplified Spectrogram Example\relax }}{7}{figure.2.3}
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Block Diagram of the System \cite {cite:SE_for_ES}\relax }}{13}{figure.2.4}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Variance-length curves\relax }}{11}{figure.2.4}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Block Diagram of the System \cite {cite:SE_for_ES}\relax }}{13}{figure.2.5}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Block Diagram of the System\relax }}{18}{figure.3.1}
 \contentsline {figure}{\numberline {3.2}{\ignorespaces Hardware Platform - PCB\relax }}{19}{figure.3.2}
@@ -50,4 +51,4 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {B.1}{\ignorespaces Time-domain and frequency-domain of continous-time rectangular, Bartlett and Hann window.\relax }}{53}{figure.B.1}
+\contentsline {figure}{\numberline {B.1}{\ignorespaces Time-domain and frequency-domain of continous-time rectangular, Bartlett and Hann window \cite {cite:3}.\relax }}{53}{figure.B.1}

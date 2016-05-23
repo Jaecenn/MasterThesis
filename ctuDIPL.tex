@@ -29,9 +29,9 @@
 	subfieldofstudy-english = {Cybernetics and Robotics},
 	fieldofstudy-czech = {Senzory a přístrojová technika},
 	subfieldofstudy-czech = {Kybernetika a Robotika},
-	keywords-czech = {zpracování digitálního signálu, textilní vady, nerovnoměrnost},
-	keywords-english = {digital signal processing, textile defects, unevenness},
-	day = 15,
+	keywords-czech = {zpracování digitálního signálu, textilní vady, nerovnoměrnost, příze, pramen, vestavný systém, inteligentní senzor},
+	keywords-english = {digital signal processing, textile defects, unevenness, yarn, sliver, embedded system, intelligent sensor},
+	day = 20,
 	month = 5,
 	year = 2016,
 	specification-file = {ctutest-zadani.pdf},
@@ -79,23 +79,23 @@
 
 % Abstract in Czech
 \begin{abstract-czech}
-Hmotnostní nerovnoměrnost má významný vliv na kvalitu textilních vláken. Analyzováním nerovnoměrností vlákna je tak možné určit jeho kvalitu. Tato práce se zabývá algoritmem pro vyhodnocování kvality textilních vláken analyzováním jejich nerovnoměrnosti. Navržený algorithms pro digitalní zpracování signálu je založen na multi-rate analýze a je implementován jako software pro mikrokontroléry. Byly vyvinuty dva algoritmy založené na stejném principu, a to pro analýzu dvou typů textilních vláken: pramene a příze. Pro analýzu kvality textilního pramene byl také vyvinut vestavný systém za účelem měření průměru pramene a následného zpracování naměřeného signálu. Výsledkem analýzy je rozptylová křivka, která je použita jako měřítko kvality pramene. Pro vyhodnocení kvality příze byla naprogramována softwarová knihovna cílená pro mikrokontroléry. Provedené testy dokázali, že spektrogram, který je výstupem algoritmu, je schopný spolehlivě určit kvalitu příze.
+Hmotnostní nerovnoměrnost má významný vliv na kvalitu textilních vláken. Analyzováním nerovnoměrností vlákna je tak možné určit jeho kvalitu. Tato práce se zabývá algoritmem pro vyhodnocování kvality textilních vláken analyzováním jejich nerovnoměrnosti. Navržený algoritmus pro digitalní zpracování signálu je založen na multi-rate analýze a je implementován jako software pro mikro\-kon\-troléry. Byly vyvinuty dva algoritmy založené na stejném principu, a to pro analýzu dvou typů textilních vláken: pramene a příze. Pro analýzu kvality textilního pramene byl také vyvinut vestavný systém za účelem měření průměru pramene a následného zpracování naměřeného signálu. Výsledkem analýzy je rozptylová křivka, která je použita jako měřítko kvality pramene. Pro vyhodnocení kvality příze byla naprogramována softwarová knihovna cílená pro mikrokontroléry. Provedené testy dokázaly, že spektrogram, který je výstupem algoritmu, je schopný spolehlivě určit kvalitu příze.
 \end{abstract-czech}
 
 % Abstract in English
 \begin{abstract-english}
-Mass unevenness significantly affects a quality of the textile fibers. By analysing the unevenness of a fiber, it is possible to determine its quality. This thesis describes an algorithm for evaluation of the quality of the textile fibers by analysing their unevenness. Designed digital signal processing algorithm is based on a multi-rate analysis and is implemented as software targeted for general-purpose microcontrollers. Two algorithms based on the same basis were developed for an analysis of the two textile fiber types: sliver and yarn.  For the analysis of a sliver quality, an embedded device is developed for measuring the diameter of the sliver and subsequent processing of the measured signal. The result of the analysis is a variance-length curve, which is used as a measure of the sliver quality. For the quality evaluation of the yarn a software library, targeted for microcontrollers, is developed. Executed tests proved that a spectrogram, which is the output of the algorithm, can reliably determine the quality of the yarn.
+Mass unevenness significantly affects a quality of the textile fibers. By analysing the unevenness of a fiber, it is possible to determine its quality. This thesis describes an algorithm for evaluation of the quality of the textile fibers by analysing their unevenness. Designed digital signal processing algorithm is based on a multi-rate analysis and is implemented as software targeted for general-purpose microcontrollers. Two algorithms based on the same basis were developed for an ana\-ly\-sis of the two textile fiber types: sliver and yarn.  For the analysis of a sliver qua\-li\-ty, an embedded device is developed for measuring the diameter of the sliver and subsequent processing of the measured signal. The result of the analysis is a variance-length curve, which is used as a measure of the sliver quality. For the quality evaluation of the yarn a software library, targeted for microcontrollers, is developed. Executed tests proved that a spectrogram, which is the output of the algorithm, can reliably determine the quality of the yarn.
 
 \end{abstract-english}
 
 % Acknowledgements / Podekovani
 \begin{thanks}
-I would like to thank my supervisor Ing. Jakub Parák without whose guidance this thesis could not be written. I would also like to thank Ing. Pavel Kousalík, Ph.D. from Rieter CZ s.r.o, for providing me with invaluable advice and support. And, of course, I would like to thank my family and all the people who supported me during the writing.
+I would like to thank my supervisor Ing. Jakub Parák for assistance and guidance with writing this thesis. I would also like to thank Ing. Pavel Kousalík, Ph.D. from Rieter CZ s.r.o, for providing me with invaluable advice and support. And, of course, I would like to thank my family and all the people who supported me during the writing.
 \end{thanks}
 
 % Declaration / Prohlaseni
 \begin{declaration}
-Některé skutečnosti, uvedené v této práci, jsou předmětem obchodního tajemství Rieter CZ,
+Některé skutečnosti uvedené v této práci jsou předmětem obchodního tajemství Rieter CZ,
 popř. koncernu RIETER ve smyslu ustanovení § 17 a následujících zákona č.513/1991 Sb. ve
 znění pozdějších změn a doplňků (Obchodní zákoník).
 Bez souhlasu Rieter CZ s.r.o. lze tyto informace použít pouze v souladu s platnými předpisy,
@@ -175,7 +175,7 @@ Combing is a preparation process during textile manufacturing. It is sub-part of
 
 Combing is used in a production of medium-fine or fine yarns, where the quality of yarn is important. This quality improvement is at a cost of loss of raw material and high expenses for buying and operating the combing machines. 
 
-Example of comber machine manufactured by Rieter is shown in figure \ref{fig:rieterComber} (\cite{cite:RIKIpedia_combing}).
+Example of comber machine manufactured by Rieter is shown in Figure \ref{fig:rieterComber} (\cite{cite:RIKIpedia_combing}).
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.5\textwidth]{Rieter_comber.jpg}
@@ -209,7 +209,7 @@ All of these systems yields yarn with different structures and properties. Each 
 
 \subsection{Wavelength}
 In encyclopaedia Britannica the \textit{wavelength} is defined as:
-\textit{Distance between corresponding points of two consecutive waves.} \cite{cite:brittanicaWavelength}. In other words, the wavelength is the spatial period of a sinusoidal wave. Under an assumption a wave is moving at a fixed speed, then the frequency of the wave is inversely proportional to the wavelength. This is shown in a figure \ref{fig:wavelengthExplaination}.
+\textit{Distance between corresponding points of two consecutive waves.} \cite{cite:brittanicaWavelength}. In other words, the wavelength is the spatial period of a sinusoidal wave. Under an assumption a wave is moving at a fixed speed, then the frequency of the wave is inversely proportional to the wavelength. This is shown in a Figure \ref{fig:wavelengthExplaination}.
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.7\textwidth]{wavelengt_explained.jpg}
@@ -222,7 +222,7 @@ From the mathematical representation of the sinusoidal waves a formula can be de
 \lambda=\frac{v}{f}
 \end{equation}
 
-In the textile engineering, this term is used to describe wave property of a textile fiber that is being processed. This can improve the perception of a quality by knowing the wavelength of a defect in the fiber \cite{cite:TextileEngineering}. In some book about textile engineering the term wavelength is interchanged with term \textit{cut length}. As an example, this is useful in situations such as when a textile defect has been found at the wavelength $\lambda=8cm$ and it allows to quickly visually check if any unwanted pattern with this wavelength is visible in the fiber.
+In the textile engineering, this term is used to describe wave property of a textile fiber that is being processed. This can improve the perception of a quality by knowing the wavelength of a defect in the fiber \cite{cite:TextileEngineering}. In some book about textile engineering the term wavelength is interchanged with term \textit{cut length}. As an example, this is useful in situations such as when a textile defect has been found at the wavelength $\lambda=8\,cm$ and it allows to quickly visually check if any unwanted pattern with this wavelength is visible in the fiber.
 
 \subsection{Coefficient of Variation}
 \label{sec:CoefficientOfvariation}
@@ -240,9 +240,9 @@ CV\% values for different wavelengths provides useful information about the vari
 \label{SpecExplained}
 In digital signal processing, the spectrogram is a function that represents frequency spectrum of a time-varying signal. Its calculation is done by obtaining the spectrum of a short-time interval. This interval can be obtained by using sliding window over a long signal, breaking it into several short blocks. This technique is known as short-time Fourier transform \cite{cite:RT_DSP}. 
 
-However, in textile engineering, the meaning is different. Spectrogram can be stated as variant of a power-spectral density (described in chapter \ref{sec:PSD}) with respect to the wavelength. This is difference to the usual power-spectral density which is with respect to the frequency. The conversion from frequency to the wavelength is based on equation \ref{eq:wavelengthFormula}.
+However, in textile engineering, the meaning is different. Spectrogram can be stated as variant of a power-spectral density (described in chapter \ref{sec:PSD}) with respect to the wavelength. This is difference to the usual power-spectral density which is with respect to the frequency. The conversion from frequency to the wavelength is based on equation \ref{eq:wavelengthFormula} \cite{cite:paperKorobov_Jun}.
 
-A simple example of the spectrogram is shown in figure \ref{fig:specExpl}. In subfigure \ref{fig:specExpl_A} the spectrogram is calculated on textile fiber that doesn't contain any periodical defect. On the other hand, subfigure \ref{fig:specExpl_B} shows spectrogram of a fiber with a defect. It is clearly visible as a peak and its wavelength can be easily determined.
+A simple example of the spectrogram is shown in Figure \ref{fig:specExpl}. In subfigure \ref{fig:specExpl_A} the spectrogram is calculated on textile fiber that doesn't contain any periodical defect. On the other hand, subfigure \ref{fig:specExpl_B} shows spectrogram of a fiber with a defect. It is clearly visible as a peak and its wavelength can be easily determined.
 \begin{figure}
 	\centering
 	\begin{subfigure}{0.5\textwidth}
@@ -287,7 +287,7 @@ Uster Quantum 3 is modern yarn clearer, which provides detection of many types o
 	\item spectrogram calculation.
 \end{itemize}
 
-Uster Quantum 3 has been developed by company Uster Technologies, which is developing yarn clearers for 30 years. Their devices often feature an application of new technologies.
+Uster Quantum 3 has been developed by company Uster Technologies, which is developing yarn clearers for 30 years. Their devices often feature an application of new technologies \cite{cite:UsterQuantum}.
 
 \subsubsection{USTER® TESTER 5}  
 Complex and large machine for evaluating sliver and yarn quality. Using optical and capacitive technology it measures several quality characteristics:
@@ -299,7 +299,7 @@ Complex and large machine for evaluating sliver and yarn quality. Using optical 
 	\item yarn hairiness,
 	\item spectrograms calculation.
 \end{itemize}
-This machine is developed specifically for testing the textile fibers and it uses state-of-art technologies, but for the price starting at \$400 (basic version) it can't be used as an improvement for mass produced spinning and combing machines.  
+This machine is developed specifically for testing the textile fibers and it uses state-of-art technologies, but for the price starting at \$400 (basic version) it can't be used as an improvement for mass produced spinning and combing machines \cite{cite:UsterTester}.  
 
 In the field of textile engineering with focus on a fiber quality several other companies such as \textit{Premier}, \textit{Kesiokki} or \textit{Changling} manufacture devices for textile fiber evaluation. But none of these companies has any device that would be similar to the developed device. This is due to the fact that none of their devices are capable of obtaining CV\% or spectrograms.
 
@@ -365,7 +365,7 @@ Therefore, a "good" window should have low-level sidelobes and a narrow mainlobe
 	
 	\item Hamming.
 \end{itemize}    
-Their differences (as shown in attached figure \ref{fig:windowComparison}) relays in a different width of mainlobe and peak sidelobe level.
+Their differences (as shown in attached Figure \ref{fig:windowComparison}) lie in a different width of mainlobe and peak sidelobe level.
 % Image according to ADSP 406/ obr 7.26 
 
 %The length N of the DFT should be larger than L = T0/T to obtain a good visual representation of DTFT. If we set N to the power of two N=2^Q, fft calculation %done microcontroller is executed faster.
@@ -409,9 +409,26 @@ Thus, we can calculate $N$-point DFT $X[k]$ from the $N/2$-point DFTs $A[k]$ and
 \end{equation}
 These formulas (\ref{eq:fft3_A}, \ref{eq:fft3_B}) can be applied to any FFT of even length \cite{cite:3}.
 
-This procedure is shown in Figure XXX (\cite{cite:3}). The displayed structure in the figure is called the butterfly network. Each butterfly consists of just a single complex multiplication by the twiddle factor $W^{k}_{N}$, one addition, and one subtraction. 
+This procedure is shown in Figure \ref{fig:fftDecomposition} (\cite{cite:3}). The displayed structure in the figure is called the butterfly network. Each butterfly (see Figure \ref{fig:butterfly}) consists of just a single complex multiplication by the twiddle factor $W^{k}_{N}$, one addition, and one subtraction. 
 
-An example for $N=8$ is shown in Figure XXX. Each $N/2$-point DFT can be computed by two smaller $N/4$-point DFTs. By repeating the same process, we will obtain a set of two-point DFTs, which is illustrated in Figure XXX \cite{cite:RT_DSP}.
+\begin{figure}
+	\centering
+	\begin{subfigure}{0.5\textwidth}
+		\centering
+		\includegraphics[width=1.0\linewidth]{fftDecomposition.eps}
+		\caption{Decomposition of N-point DFT into two N/2-point DFTs, N=8 \cite{cite:RT_DSP}}
+		\label{fig:fftDecomposition}
+	\end{subfigure}%
+	\begin{subfigure}{0.5\textwidth}
+		\centering
+		\includegraphics[width=1.0\textwidth]{butterfly.eps}
+		\caption{Flow graph of butterfly operation \cite{cite:RT_DSP}}
+		\label{fig:butterfly}
+	\end{subfigure}
+	\caption{Variance-length curves}
+	\label{fig:fftExplanation}
+\end{figure}
+Each $N/2$-point DFT can be computed by two smaller $N/4$-point DFTs. By repeating the same process, we will obtain a set of two-point DFTs. \cite{cite:RT_DSP}.
 
 FFT algorithm \textit{decimation-in-frequency} is similar to the decimation-in-time, with important differences, that the decomposition and symmetry relationships are reversed. The bit reversal occurs at the output instead of the input and the order of the output samples $X[k]$ will be rearranged \cite{cite:RT_DSP}.
 
@@ -463,9 +480,9 @@ There are many definitions of embedded systems. The one picked for this thesis s
 
 \textit{"An embedded system is a specialized computer system that is usually integrated as part of a larger system. An embedded system consist of a combination of hardware and software components to form a computational engine that will perform a specific function. Unlike desktop systems which are designed to perform a general function, embedded systems are constrained in their application \cite{cite:SE_for_ES}."}
 
-Embedded systems very often perform in reactive and real-time environments, which has to fulfill the real-time constraints that are described in \ref{R-T constrains}. Not satisfying these constraints can cause significant system consequences. If the consequences consist of a degradation of performance, but not a failure, the system is referred to as a soft real-time system (e.g. highway car counter). On the contrary, if the consequences are a system failure, the system is referred to as a hard real-time system (e.g. a braking system in a vehicle). 
+Embedded systems very often perform in reactive and real-time environments, which has to fulfill the real-time constraints that are described in \ref{R-T constrains}. Not satisfying these constraints can cause significant system consequences. If the consequences consist of a degradation of performance, but not a failure, the system is referred to as a soft real-time system (e.g. highway car counter). On the contrary, if the consequences are a system failure, the system is referred to as a hard real-time system (e.g. a braking system in a vehicle) \cite{cite:SE_for_ES}\cite{cite:RT_DSP}. 
 
-Typical embedded system receives information about the surrounding environment via sensors and responds with actuators. General block diagram of such system is in Figure \ref{fig:generalEmbedded}.                                                                    
+Typical embedded system receives information about the surrounding environment via sensors and responds with actuators. General block diagram of such system is in the Figure \ref{fig:generalEmbedded} \cite{cite:SE_for_ES}.                                                                    
 
 \begin{figure}[h]
 	\centering
@@ -487,7 +504,24 @@ DSP algorithms can be implemented on different types of digital hardware. The fo
 
 Each hardware (HW) platform has different advantages and constraints for different applications, thus, there is no \textit{best} HW platform that could be used for every practical project. Instead, each option should be carefully considered from the point of flexibility, required design time, power consumption, performance, and cost. 
 
-Characteristic of mentioned hardware options are summarized in Table XXX (\cite{cite:RT_DSP}).
+Characteristic of mentioned hardware options are summarized in Table \ref{tab:hardwareOptions} (\cite{cite:RT_DSP}).
+\begin{table}[htbp]
+	\centering
+	\caption{Summary of DSP hardware options \cite{cite:RT_DSP}}
+	\begin{tabular}{c|cccc}
+		\toprule
+		    & $\mu$P/$\mu$C & FPGA & ASIC & DSP processor  \\
+		\midrule
+		Flexibilty & High  & Limited 					& None & High   \\
+		Design time & Short  & Medium 					& Long & Short    \\
+		Power consumption & Medium-High  & Low-medium   & Low & Low-medium   \\
+		Performance & Low-medium  & High				& High & Medium-high  \\
+		Development cost & Low  & Medium   				& High & Low  \\
+		Production cost & Medium-High  & Low-medium   	& Low & Low-medium \\
+		\bottomrule
+	\end{tabular}%
+	\label{tab:hardwareOptions}%
+\end{table}%
 
 \subsection{Real-time constraints}
 \label{R-T constrains}
@@ -495,7 +529,7 @@ Generally, a real-time system is one that must process information and produce a
 \begin{equation} \label{eq:hardRealTime1}
 	t_{p}+t_{o}<T,
 \end{equation}
-where $t_{o}$ is overhead time of input-output (I/O) processing.
+where $t_{o}$ is overhead time of input-output (I/O) processing \cite{cite:RT_DSP}.
 Thus, this limitation gives constraint to the highest frequency signal that can be processed by DSP systems in sample-by-sample processing, given as
 
 \begin{equation} \label{eq:hardRealTime2}
@@ -523,10 +557,10 @@ There are two instruction sets supported by ARM cores in general: the ARM instru
 The ARMv7 architecture is using new instruction set called a Thumb-2 which consists of the 32-bit Thumb instructions and also 16-bit Thumb instructions. This yields big improvement from the perspective of the ease of use, performance and code size. It allows execution of a complex operation in state Thumb which increases the effectivity \cite{cite:ARM-M3}.
 
 \chapter{Practical Implementation}
-Prior to the design of the system architecture, a list of requirements for the device had to be created. This was done in discussion with company Rieter CZ s.r.o. who provided resources for development. The most important requirement is that the device shall be able to analyze the quality of a yarn and sliver. This separates the project in two parts, where core software algorithms are shared but other parts significantly different. 
+Prior to the design of the system architecture, a list of requirements for the device had to be created. This was done in discussion with company Rieter CZ s.r.o. that provided resources for development. The most important requirement is that the device shall be able to analyze the quality of a yarn and sliver. This separates the project in two parts, where core software algorithms are shared but other parts significantly different. 
 
 \section{Sliver Quality Analysis}
-The sliver quality analysis requires a development of software and also additional hardware. In this case - opposite to yarn quality system - it is necessary to design new processing board due to the fact that sliver and yarn have significant size differences (see \ref{textileFibers} and different sensors need to be used). Also, it was decided that device developed in this project will be only prototype version, thus, it has additional functionality that can be removed in a final product. The main requirements and features for the device prototype were defined as follows:
+The sliver quality analysis requires a development of software and also additional hardware. In this case - opposite to yarn quality system - it is necessary to design new processing board due to the fact that sliver and yarn have significant size differences (see \ref{textileFibers}) and different sensors need to be used. Also, it was decided that device developed in this project will be only prototype version, thus, it has additional functionality that can be removed in a final product. The main requirements and features for the device prototype were defined as follows:
 \begin{itemize}
 	\setlength{\itemsep}{5pt}
 	\item The device shall be able to measure the diameter of a sliver.
@@ -538,9 +572,9 @@ The sliver quality analysis requires a development of software and also addition
 	\item The device shall run on ARM microcontroller STM32F446.
 \end{itemize}
 \subsection{Hardware}
-The purpose of the hardware section relays in providing the correct supply to the control unit and the sensors. Another feature of the hardware platform is processing the signals from sensors and converting it to the range which is suitable for ADC\footnote{Analog to digital converter} unit. Additionally, the hardware platform allows communicating with other distributed systems or PC by providing necessary interfaces. 
+The purpose of the hardware section lies in providing the correct supply to the control unit and the sensors. Another feature of the hardware platform is processing the signals from sensors and converting it to the range which is suitable for ADC\footnote{Analog to digital converter} unit. Additionally, the hardware platform allows a communication with other distributed systems or PC by providing necessary interfaces. 
 
-As the main innovation and focus of this project is oriented on the software, the hardware layout of PCB\footnote{Printed circuit board} was designed in Rieter according to the submitted electronic diagram. Resulting hardware platform is shown in figure \ref{fig:cvBox_dps}.
+As the main innovation and focus of this project is oriented on the software, the hardware layout of PCB\footnote{Printed circuit board} was designed in Rieter according to the submitted electronic diagram. Resulting hardware platform is shown in Figure \ref{fig:cvBox_dps}.
 
 The hardware block diagram of the system is shown in Figure \ref{fig:blockDiagram_HW}. Description of each block follows in next paragraphs.
 \begin{figure}[h]
@@ -561,7 +595,7 @@ The hardware block diagram of the system is shown in Figure \ref{fig:blockDiagra
 \label{sec:microController}
 The main part of the hardware is ARM microcontroller STM32F446 from STMicroelectronics. It was chosen by Rieter CZ s.r.o, reasoned by its low cost, sufficient performance and company's good long-term experience with manufacturer's support. 
 
-Microcontroller STM32F446 is based on ARM Cortex-M4 technology with ARMv7 architecture \ref{sec:ARM_M3}. With DSP instructions, it is capable of handling DSP algorithms such as FFT calculation in very short time (less than $0.5 ms$ for 1024-point FFT). Maximal operation frequency is $180 MHz$ at which gives $225 DMIPS$ (Dhrystone benchmark). The most important features and peripherals of this microcontroller are:
+Microcontroller STM32F446 is based on ARM Cortex-M4 technology with ARMv7 architecture \ref{sec:ARM_M3}. With DSP instructions, it is capable of handling DSP algorithms such as FFT calculation in very short time (less than $0.5\,ms$ for 1024-point FFT). Maximal operation frequency is $180\,MHz$ at which gives $225\,DMIPS$ (Dhrystone benchmark). The most important features and peripherals of this microcontroller are:
 \begin{itemize}
 	\setlength{\itemsep}{5pt}
 	\item ARM 32-bit Cortex-M4, 180 MHz,
@@ -575,22 +609,22 @@ Microcontroller STM32F446 is based on ARM Cortex-M4 technology with ARMv7 archit
 Hardware platform of this system has to provide correct supply voltages to microcontroller and sensors. Supplying the sensors is especially complicated since they require three different voltages:
 \begin{itemize}
 	\setlength{\itemsep}{5pt}
-	\item $5 V$,
-	\item $-5 V$,
-	\item $24 V$.
+	\item $5\,V$,
+	\item $-5\,V$,
+	\item $24\,V$.
 \end{itemize}
-Voltage supply of the microcontroller is $3.3 V$.
+Voltage supply of the microcontroller is $3.3\,V$.
 
-The power supply of the hardware board was required to be $12 V$. Therefore, four DC-DC converters has to be designed, specifically:
+The power supply of the hardware board was required to be $12\,V$. Therefore, four DC-DC converters has to be designed, specifically:
 \begin{itemize}
 	\setlength{\itemsep}{5pt}
-	\item $12 V$ to $5 V$,
-	\item $5 V$ to $-5 V$,
-	\item $5 V$ to $24 V$,
-	\item $5 V$ to $3.3 V$.
+	\item $12\,V$ to $5\,V$,
+	\item $5\,V$ to $-5\,V$,
+	\item $5\,V$ to $24\,V$,
+	\item $5\,V$ to $3.3\,V$.
 \end{itemize}
 
-For the first conversion from $12 V$ to $5 V$ was used an integrated step-down voltage regulator LM2594. To obtain $-5 V$ a charge pump inverter TPS60400 was used. The conversion from $5 V$ to $3.3 V$ is done by simple linear regulator MCP1825. The only step-up was necessary to get $24 V$ from $5 V$, for this purpose was chosen step-up voltage regulator LM1577.
+For the first conversion from $12\,V$ to $5\,V$ was used an integrated step-down voltage regulator LM2594. To obtain $-5\,V$ a charge pump inverter TPS60400 was used. The conversion from $5\,V$ to $3.3\,V$ is done by simple linear regulator MCP1825. The only step-up was necessary to get $24\,V$ from $5\,V$, for this purpose was chosen step-up voltage regulator LM1577.
 
 Concrete circuits schematics of these converters are added as an attachment to the CD annexed with this thesis.
 
@@ -601,7 +635,7 @@ As can be seen in \ref{fig:blockDiagram_HW} the hardware platform contains 5 inp
 
 There was a possibility of using capacitive sensor Mini Uster MS120. This is a special type of a sensor capable of determining the diameter of a sliver. A output of the sensor is analogous and the voltage values are in the range $0$ to $-5V$. It provides required specifications but has significant disadvantages. Since it is based on capacitive principle moisture of a measured sliver can influence the result. The sensor is also available only for a higher price than would be suitable to meet the budget requirements. The sensor is designated to be connected to input module 1, which can handle the corresponding output voltage range.
 
-Another possible sensor for measuring the diameter was Baumer Inductive Sensor S35A. This sensor measures distance and not the diameter itself. Thus, additional mechanical parts are necessary for its usage. It can be used in a way where a distance from the sensor to a roller, which is pressed to the sliver by a spring. If the sliver is thicker, the roller gets pushed closer to the sensor. This principle is shown in a figure \ref{fig:inductiveSensorDiagram}.
+Another possible sensor for measuring the diameter was Baumer Inductive Sensor S35A. This sensor measures distance and not the diameter itself. Thus, additional mechanical parts are necessary for its usage. It can be used in a way where a distance from the sensor to a roller, which is pressed to the sliver by a spring. If the sliver is thicker, the roller gets pushed closer to the sensor. This principle is shown in a Figure \ref{fig:inductiveSensorDiagram}.
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.65\textwidth]{SensorDiagram.eps}
@@ -611,13 +645,13 @@ Another possible sensor for measuring the diameter was Baumer Inductive Sensor S
 Sensor is designated to be connected into input module 4, which was designed according to technical specifications from \cite{cite:InductiveSensor}:
 \begin{itemize}
 	\setlength{\itemsep}{5pt}
-	\item Measuring distance: $0$ to $4mm$
-	\item Resolution: less than $0,005 mm$
+	\item Measuring distance: $0$ to $4\,mm$
+	\item Resolution: less than $0,005\,mm$
 	\item Linearity Error: $\pm4\%$
 	\item Temperature Drift: $\pm4\%$
-	\item Response Time: less than $2ms$
-	\item Current Output: $4$ to $20mA$
-	\item Voltage Supply Range: $15$ to $30V$    
+	\item Response Time: less than $2\,ms$
+	\item Current Output: $4$ to $20\,mA$
+	\item Voltage Supply Range: $15$ to $30\,V$    
 \end{itemize}
 The sensor itself is shown in \ref{fig:sensor_only} (from \cite{cite:InductiveSensor}) and its application in a combing machine with additional mechanical parts for its usage is in \ref{fig:sens_Mechanical}.
 
@@ -645,7 +679,7 @@ Other input modules were added to the hardware platform to ensure that if a new 
 
 \subsection{Algorithm for Sliver Quality Analysis}
 \label{algorithmForSliver}
-Algorithm overview diagram is shown in the figure \ref{fig:software_overview}. This is the simplified representation of software used for sliver quality analysis in the microcontroller. The input of the system is a sample - measured by ADC - which represents the diameter of the sliver. Required output shall be a variance-length curve which is composed of CV(\%) values calculated for several wavelengths\footnote{\label{footnote1:textileTerms}For explanation of the terms used in this paragraph see chapter \cite{cite:TextileEngineering}}. Each software components are individually described in following paragraphs.
+Algorithm overview diagram is shown in the Figure \ref{fig:software_overview}. This is the simplified representation of software used for sliver quality analysis in the microcontroller. The input of the system is a sample - measured by ADC - which represents the diameter of the sliver. Required output shall be a variance-length curve which is composed of CV(\%) values calculated for several wavelengths\footnote{\label{footnote1:textileTerms}For explanation of the terms used in this paragraph see chapter \cite{cite:TextileEngineering}}. Each software components are individually described in following paragraphs.
 
 The main principle of designed quality analysis lies in determining the coefficient of variation (CV(\%)) value. This value can be obtain from signal that corresponds to appropriate wavelength (cut length). Different wavelengths can be yielded by filtrating the input signal with lowpass filter that passes only frequencies that correspond to given wavelength. Specifically if it is chosen that signal of wavelengths between $\lambda_{min}$ and $\lambda_{max}$ is required, then signal can contain the frequencies only up to $f_{max}$. Where relation between $\lambda_{min}$ and $f_{max}$ is based on knowledge of the \textit{sliver speed} $v_{s}$\footnote{Speed of winding up sliver during the process of combing.} determined as follows in equation \ref{eq:wavelengthToFreq}:
 
@@ -676,11 +710,11 @@ Using this solution means that only buffers for 1024 samples are needed. Specifi
 
 \subsection{Wavelengths Specification}
 \label{sec:WavelengthSpecification}
-One of the requirements for the software was determined that the device has to be capable of evaluating the quality of a sliver for wavelengths in the range from $0.25 cm$ to $512 cm$ because others wavelengths are not significant enough to the final product. This range is then divided among twelve values, each wavelength representing one stage of calculation. This division will yield each wavelength to be the double of the previous and that allows us to set the decimation factor (see \ref{sec:SolutionForEmbedded}) to $M=2$ for decimators in all stages. The table \ref{tab:Wavelengths} shows these wavelengths and their corresponding sampling frequencies $f_s$ calculated according to equation \ref{eq:wavelengthToFreq} with sliver speed $v_{s}=30 cm/s$. 
+One of the requirements for the software was determined that the device has to be capable of evaluating the quality of a sliver for wavelengths in the range from $0.25\,cm$ to $512\,cm$ because others wavelengths are not significant enough to the final product. This range is then divided among twelve values, each wavelength representing one stage of calculation. This division will yield each wavelength to be the double of the previous and that allows us to set the decimation factor (see \ref{sec:SolutionForEmbedded}) to $M=2$ for decimators in all stages. The Table \ref{tab:Wavelengths} shows these wavelengths and their corresponding sampling frequencies $f_s$ calculated according to equation \ref{eq:wavelengthToFreq} with sliver speed $v_{s}=30\,cm/s$. 
 
 This sliver speed was chosen as it is default settings of combing machines and was used during testing. If different sliver speed is set on combing machine, its value is sent over a CAN communication during initialization and the basic sampling frequency is adjusted in a way that decimation factor always stays set on $M=2$. This allows using the same filter coefficients independently on the value of sliver speed.
 
-Knowing this information allows us to determine a \textit{cut off frequency}\footnote{Frequency above which a power output of the filtered system has decreased below the half of a passband power \cite{cite:RT_DSP}.} $f_c$ of FIR filters that are used for limiting the bandwidth and an anti-aliasing. This is done according to the formula $f_c=f_s/2$ for each wavelength as shown in table \ref{tab:Wavelengths}.
+Knowing this information allows us to determine a \textit{cut off frequency}\footnote{Frequency above which a power output of the filtered system has decreased below the half of a passband power \cite{cite:RT_DSP}.} $f_c$ of FIR filters that are used for limiting the bandwidth and an anti-aliasing. This is done according to the formula $f_c=f_s/2$ for each wavelength as shown in Table \ref{tab:Wavelengths}.
 
 \begin{table}[htbp]
 	\centering
@@ -714,11 +748,11 @@ Knowing this information allows us to determine a \textit{cut off frequency}\foo
 
 \subsection{Processing Branch}
 \label{processingBranch_sliver}
-CV values for each of these wavelengths (as shown in table \ref{tab:Wavelengths}) are calculated in individual processing branch. They are in sequential order and input for each branch is a partial result of the previous one.
+CV values for each of these wavelengths (as shown in Table \ref{tab:Wavelengths}) are calculated in individual processing branch. They are in sequential order and input for each branch is a partial result of the previous one.
 
 With every sampling period, one sample is taken by ADC peripheral and its values are stored in memory by DMA\footnote{Direct Memory Access peripheral} and an interrupt is invoked. Then, in the interrupt handler, a volatile flag determining that new sample was taken is set and main software state machine periodically checks its state. If the flag is set, the state is changed to first processing branch and sample processing begins.
 
-Individual processing branch can be represented in the component diagram as shown in \ref{fig:singleBranch}.
+Individual processing branch can be represented in the component diagram as shown in Figure \ref{fig:singleBranch}.
 
 \begin{figure}[h]
 	\centering
@@ -731,7 +765,7 @@ Following paragraphs contain detail description for each component of processing
 
 \subsubsection{Input Sample}
 Input sample is taken by ADC peripheral of the microcontroller. Particular input pin of ADC is set during initialization phase to the input module that is connected to the mechanical sensor of diameter (see \ref{sec:Sensors}). This sensor was chosen as for the first manufactured version of the device, because of its sufficiently accurate results and significantly lower price than other types of possible sensors. The ADC itself is set in DMA mode, with enabled interrupt after one sample is stored by DMA and to 12b size of the sample.
-The sampling frequency is set to be the double of the frequency required for the first wavelength $\lambda=0.25 cm$. This frequency is dependent on sliver speed which is sent over a CAN communication during initialization. Adjusting the sampling frequency is the only solution that allows using the same filter coefficients independently on a value of the sliver speed. It is done by changing settings of the ADC peripheral.
+The sampling frequency is set to be the double of the frequency required for the first wavelength $\lambda=0.25\,cm$. This frequency is dependent on sliver speed which is sent over a CAN communication during initialization. Adjusting the sampling frequency is the only solution that allows using the same filter coefficients independently on a value of the sliver speed. It is done by changing settings of the ADC peripheral.
 
 \subsubsection{FIR Filter and Decimation}
 \label{FIR filter}
@@ -750,7 +784,7 @@ Output itself is calculated as a sum of the result of multiplication of Input Bu
 	\caption{Flowchart diagram of FIR decimator component}
 	\label{fig:FIR_decimator}
 \end{figure}
-FIR filter used in the FIR decimation was chosen as lowpass filter with order 32 and \textit{Bartlett-Hanning} window. Using this order and window yields required frequency properties as can be seen in its frequency response shown in figure \ref{fig:MagnitudeResponse}. Also its order is still small enough to allow sufficiently fast calculation. The cut-off frequencies are shown in table \ref{tab:Wavelengths}. The cut-off frequency is the same in normalized frequency\footnote{Range 0 to 1 and 1 corresponds to the $f_s/2$} for all the branches. Therefore, the same filter coefficients can be used for all the processing branches.
+FIR filter used in the FIR decimation was chosen as lowpass filter with order 32 and \textit{Bartlett-Hanning} window. Using this order and window yields required frequency properties as can be seen in its frequency response shown in Figure \ref{fig:MagnitudeResponse}. Also its order is still small enough to allow sufficiently fast calculation. The cut-off frequencies are shown in Table \ref{tab:Wavelengths}. The cut-off frequency is the same in normalized frequency\footnote{Range 0 to 1 and 1 corresponds to the $f_s/2$} for all the branches. Therefore, the same filter coefficients can be used for all the processing branches.
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=1.0\textwidth]{magnitudeResponse.eps}
@@ -759,7 +793,7 @@ FIR filter used in the FIR decimation was chosen as lowpass filter with order 32
 \end{figure}
 
 \subsubsection{Buffering}
-Output samples from FIR decimator are buffered in vectors of length 1024. When the buffer is filled to full an appropriate flag is set and calculation can proceed to the next component. This creates a requirement for memory space. We know that it is required to has 12 processing stages and each stage has to have one buffer of 1024 sample and one sample is stored in 2B integer word. Another buffer for 1024 samples has to be ready for an output of FFT. From this conclude that \textit{Memory required} $= 12 \cdot 2 \cdot(1024 \cdot 2)=49152B\cong49.2kB$. This is not an issue for used microcontroller STM32F446 which has 128 kB of SRAM (see \ref{sec:microController}).
+Output samples from FIR decimator are buffered in vectors of length 1024. When the buffer is filled to full an appropriate flag is set and calculation can proceed to the next component. This creates a requirement for memory space. We know that it is required to has 12 processing stages and each stage has to have one buffer of 1024 sample and one sample is stored in 2B integer word. Another buffer for 1024 samples has to be ready for an output of FFT. From this conclude that \textit{Memory required} $= 12 \cdot 2 \cdot(1024 \cdot 2)=49152\,B\cong49.2\,kB$. This is not an issue for used microcontroller STM32F446 which has 128 kB of SRAM (see \ref{sec:microController}).
 
 \subsubsection{Windowing}
 Before calculation of FFT can be executed an operation called windowing (see chapter \ref{sec:DiscreteFourierTransform}) is performed. For sliver quality analysis only simple rectangular window of length 1024 is used. No other window was suitable for using because one of the next steps is inverse FFT, which would yield deformed signal, thus, incorrect CV\% values.
@@ -775,7 +809,7 @@ With frequency spectrum of the signal, we can filter out the frequencies that ar
 
 It would be possible to determine frequencies that are distorting the signal from detailed technical materials about combing machine and its gears. But unfortunately none such materials were available. Therefore, different approach to determine the error frequencies had to be used. 
 
-For this purpose, a special measurement was executed (see chapter \ref{sec:MeasurmentAndTesting}). In this measurement it was possible to run the combing machine without any sliver, thus, only the mechanical vibrations were measured by sensor. Signal from this case was digitally post-processed in MATLAB and, from obtained frequency spectrum, specific artefact frequencies were distinguished. They were clearly visible even to the naked eye, as the given frequencies had much higher amplitude than their surrounding. To obtain concrete frequency bins a peak detection was implemented and used. Result is shown in frequency spectrum of a signal measured without sliver with sampling frequency $f_s=240Hz$ (see figure \ref{fig:withoutMat_foundPeaks}).
+For this purpose, a special measurement was executed (see chapter \ref{sec:MeasurmentAndTesting}). In this measurement it was possible to run the combing machine without any sliver, thus, only the mechanical vibrations were measured by sensor. Signal from this case was digitally post-processed in MATLAB and, from obtained frequency spectrum, specific artefact frequencies were distinguished. They were clearly visible even to the naked eye, as the given frequencies had much higher amplitude than their surrounding. To obtain concrete frequency bins a peak detection was implemented and used. Result is shown in frequency spectrum of a signal measured without sliver with sampling frequency $f_s=240\,Hz$ (see Figure \ref{fig:withoutMat_foundPeaks}).
 
 \begin{figure}[h]
 	\centering
@@ -784,7 +818,7 @@ For this purpose, a special measurement was executed (see chapter \ref{sec:Measu
 	\label{fig:withoutMat_foundPeaks}
 \end{figure}
 
-The most significant found frequencies are listed in table     \ref{tab:DistortinFreq}%as follows.
+The most significant found frequencies are listed in Table \ref{tab:DistortinFreq}.%as follows.
 \begin{table}[htbp]
 	\centering
 	\caption{List of distorting frequencies}
@@ -800,11 +834,11 @@ The most significant found frequencies are listed in table     \ref{tab:Distorti
 \end{table}%
 
 The peak detection algorithm can be described as follows. Given the input signal $x[n]$ where $n=0,1,2\ldots N$ and $\delta$ as parameters. The algorithm identifies local maximum by comparing specific value with its neighbours. If the value of the local maximum $x[i]$ is higher than $x[i+1] + \delta $ and $x[i-1] + \delta$ then the $x[i]$ is marked and stored as peak.
-But since some of the peaks in the frequency spectrum are made of several frequency bins, this method would be insufficient. The improvement to overcome this issue relays in repeating the process of peak detection several times. Each time the peak detection is performed the found peaks are replaced by their local average. In next iteration a new peak may be found next to the one found in previous. This implicates that the original peak was spreaded over more than one frequency bin. Every peak found in all the iterations is stored.
+But since some of the peaks in the frequency spectrum are made of several frequency bins, this method would be insufficient. The improvement to overcome this issue lies in repeating the process of peak detection several times. Each time the peak detection is performed the found peaks are replaced by their local average. In next iteration a new peak may be found next to the one found in previous. This implicates that the original peak was spreaded over more than one frequency bin. Every peak found in all the iterations is stored.
 
-Using this method we know the exact position of the distorting frequencies and they corresponding frequency bins in the result of 1024-point FFT for sampling frequency $f_s=240Hz$. To obtain the location of these frequencies in other stages we use the information that decimation factor is $M=2$. Considering that the length of the FFT is the same (1024) for each stage, we now know that frequency resolution is double for each consequent stage. This allows us to simply divide the positions of the frequency peaks by two, and limit the range to the corresponding sampling frequency. By doing so, we got the frequency bins that needs to be filtered out in each stage before the calculation of CV\%.
+Using this method we know the exact position of the distorting frequencies and they corresponding frequency bins in the result of 1024-point FFT for sampling frequency $f_s=240\,Hz$. To obtain the location of these frequencies in other stages we use the information that decimation factor is $M=2$. Considering that the length of the FFT is the same (1024) for each stage, we now know that frequency resolution is double for each consequent stage. This allows us to simply divide the positions of the frequency peaks by two, and limit the range to the corresponding sampling frequency. By doing so, we got the frequency bins that needs to be filtered out in each stage before the calculation of CV\%.
 
-Now, it is possible to obtain the signal that has suppressed vibration frequencies for each stage. This is done by taking the expected location of the distorting frequency for the given stage and finding the actual position of the peak in its close area determined by an offset. Flowchart diagram of this technique used for filtering is shown in \ref{fig:frequencyFiltration}. To better explain the issue an example can be set: e.g. if we know that expected distorting frequency $f=17.11Hz$ should be in frequency bins 36 and 37 for the second stage, therefore, for wavelength $\lambda=0.5cm$ (calculated according to the previous paragraph). A peak detection is used in range from $36-offset=36-3=33$ to $37+offset=37+3=40$. The highest peak in this area can be proclaimed as distorting frequency and the whole peak is suppressed. This is done by setting its value to the local average.
+Now, it is possible to obtain the signal that has suppressed vibration frequencies for each stage. This is done by taking the expected location of the distorting frequency for the given stage and finding the actual position of the peak in its close area determined by an offset. Flowchart diagram of this technique used for filtering is shown in Figure \ref{fig:frequencyFiltration}. To better explain the issue an example can be set: e.g. if we know that expected distorting frequency $f=17.11Hz$ should be in frequency bins 36 and 37 for the second stage, therefore, for wavelength $\lambda=0.5\,cm$ (calculated according to the previous paragraph). A peak detection is used in range from $36-offset=36-3=33$ to $37+offset=37+3=40$. The highest peak in this area can be proclaimed as distorting frequency and the whole peak is suppressed. This is done by setting its value to the local average.
 
 \begin{figure}[h]
 	\centering
@@ -845,7 +879,7 @@ Last step of every branch is calculation of coefficient of variation (see chapte
 Since we have obtained filtered signal from the IFFT, it is easy to calculate the resulting CV value. This is done for each branch (i.e. wavelength), therefore, there are 12 CV values.
 
 \subsection{Variance-Length Curve}
-The output of the quality sensor for the sliver is required to be a variance-length curve (see chapter \ref{sec:VarianceL_curve}). This curve is composed of the results of the processing branches, therefore, of the CV\% values. These values are concatenated in a vector that represents values on the y-axis of the curve. The x-axis contains values of the corresponding wavelengths (see table \ref{tab:Wavelengths}). Since every wavelength value is the double of the previous one, it is appropriate to use logarithmic scale on the x-axis. Example of the result in form of the variance-length curve is shown in figure \ref{fig:VLC_example11}. This particular curve was calculated on a dataset of high-quality sliver without any simulated defect (more information in chapter \ref{sec:measurement}). 
+The output of the quality sensor for the sliver is required to be a variance-length curve (see chapter \ref{sec:VarianceL_curve}). This curve is composed of the results of the processing branches, therefore, of the CV\% values. These values are concatenated in a vector that represents values on the y-axis of the curve. The x-axis contains values of the corresponding wavelengths (see Table \ref{tab:Wavelengths}). Since every wavelength value is the double of the previous one, it is appropriate to use logarithmic scale on the x-axis. Example of the result in form of the variance-length curve is shown in Figure \ref{fig:VLC_example11}. This particular curve was calculated on a dataset of high-quality sliver without any simulated defect (more information in chapter \ref{sec:measurement}). 
 
 \begin{figure}[h]
 	\centering
@@ -858,7 +892,7 @@ The output of the quality sensor for the sliver is required to be a variance-len
 \label{sec:MeasurmentAndTesting}
 For the purpose of testing the algorithm new data set has to be created. This was obtained in Swiss laboratories of Rieter where measurement was conducted on the prototype of the device. The prototype was connected to the sensor which was placed inside combing machine (see chapter \ref{sec:Combing}). In concrete, the comber type was \textit{E86} developed by Rieter and its technical description is in \cite{cite:ComberE86}. The sensor that was used for the measurement of the diameter was Baumer Inductive Sensor S35A (for details see chapter \ref{sec:Sensors}).
 
-This prototype had to be specifically modified to perform the measurements. Hardware remained the same but change was made in the software to meet the goals of measurement. The device didn't evaluated quality of the sliver but instead sent the measured data to the service computer over the USART peripheral. Specifically, a sample is taken by an ADC from the pin connected to a sensor, then the sample is propagated to the USART interface by DMA. The USART is connected to the computer which stores the data on a hard-drive. The prototype of the device is shown in figure \ref{fig:cvBox_covered}.
+This prototype had to be specifically modified to perform the measurements. Hardware remained the same but change was made in the software to meet the goals of measurement. The device didn't evaluated quality of the sliver but instead sent the measured data to the service computer over the USART peripheral. Specifically, a sample is taken by an ADC from the pin connected to a sensor, then the sample is propagated to the USART interface by DMA. The USART is connected to the computer which stores the data on a hard-drive. The prototype of the device is shown in Figure \ref{fig:cvBox_covered}.
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.75\textwidth]{cvBox_covered.jpg}
@@ -866,7 +900,7 @@ This prototype had to be specifically modified to perform the measurements. Hard
 	\label{fig:cvBox_covered}
 \end{figure}
 
-To obtain as much information as possible, the sampling frequency is needed to be set to the feasible maximum. This maximum is strictly dependent on a number of sensors used since the more samples have to be sent in each cycle. And the sending has to be executed in a time lesser than a sampling period. This is, of course, limited by the speed of the USART which was set to the maximum speed of $115200 b/s$. Maximum allowed sampling frequencies were set as shown in table \ref{tab:possibleFs}.
+To obtain as much information as possible, the sampling frequency is needed to be set to the feasible maximum. This maximum is strictly dependent on a number of sensors used since the more samples have to be sent in each cycle. And the sending has to be executed in a time lesser than a sampling period. This is, of course, limited by the speed of the USART which was set to the maximum speed of $115200\,b/s$. Maximum allowed sampling frequencies were set as shown in Table \ref{tab:possibleFs}.
 \begin{table}[htbp]
 	\centering
 	\caption{Maximum possible sampling frequencies}
@@ -882,7 +916,7 @@ To obtain as much information as possible, the sampling frequency is needed to b
 \end{table}%
 
 \subsubsection{Measurement Application}
-To control and set the properties of measurement and also to store measured values an application for service computer was implemented. This application was written in Java. Its primary purpose relays in connecting the device using USART, receiving measured samples and logging them into a file. As an auxiliary action, it is also capable of sending required settings to the microcontroller and starting or stopping the measurement. Graphical user interface of the application is shown in figure \ref{fig:gui_APP}.
+To control and set the properties of measurement and also to store measured values an application for service computer was implemented. This application was written in Java. Its primary purpose lies in connecting the device using USART, receiving measured samples and logging them into a file. As an auxiliary action, it is also capable of sending required settings to the microcontroller and starting or stopping the measurement. Graphical user interface of the application is shown in Figure \ref{fig:gui_APP}.
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.5\textwidth]{Measurement_app.JPG}
@@ -890,7 +924,7 @@ To control and set the properties of measurement and also to store measured valu
 	\label{fig:gui_APP}
 \end{figure}
 
-The application allows picking sensors that should be used by enabling corresponding ADC pins (1 to 5). Another option to set is sampling frequency. This can be done by choosing from several values offered by graphical user interface. The values offered are changed according to the number of ADC pins enabled and only sampling frequencies smaller than the corresponding one in table \ref{tab:possibleFs} are available. These settings are sent to the microcontroller after button \textit{Connect \& Set} is applied. The microcontroller will parse these values and use them in the initialization of the ADC peripheral.
+The application allows picking sensors that should be used by enabling corresponding ADC pins (1 to 5). Another option to set is sampling frequency. This can be done by choosing from several values offered by graphical user interface. The values offered are changed according to the number of ADC pins enabled and only sampling frequencies smaller than the corresponding one in Table \ref{tab:possibleFs} are available. These settings are sent to the microcontroller after button \textit{Connect \& Set} is applied. The microcontroller will parse these values and use them in the initialization of the ADC peripheral.
 Other options are available for setting in the application that are designated only as parameters for the application itself. It is possible to set a format of the output to either representation in Volts or in unconverted output values of ADC, which ranges between 0 to 4095.
 The data that are read over USART are being continuously logged in a file from the moment the \textit{Start Measurement} is clicked until \textit{Stop Measurement} is pressed. This means that a length of the measured signal is unknown. Thus, no buffering can be used. The data has to be written into the file in a sample by sample technique. %An action diagram of the application is shown in figure XXX.
 
@@ -898,7 +932,7 @@ The data that are read over USART are being continuously logged in a file from t
 \label{sec:measurement}
 To test if the algorithm can properly calculate variance-length curve measurements had to be made with slivers of different qualities. This allows comparing the curve of a high-quality sliver and a sliver that contains defects. The variance-length curves of the two should be clearly distinguishable. Unfortunately, no sliver with a defect is easy to obtain as defects are not known until the sliver is being processed. 
 
-The solution was found by artificially simulating defects. This could be done by incorrect settings of the pressures of the sliver holder in combing machine. The holder can be set by two pressures: $p_{left}$ and $p_{right}$. If these pressures are set to inappropriate values, the sliver gets defected with periodical errors. As inappropriate values can be considered either too high or too uneven levels of pressures. Image of how does it affects the sliver is shown in figure \ref{fig:sliverComparison}.
+The solution was found by artificially simulating defects. This could be done by incorrect settings of the pressures of the sliver holder in combing machine. The holder can be set by two pressures: $p_{left}$ and $p_{right}$. If these pressures are set to inappropriate values, the sliver gets defected with periodical errors. As inappropriate values can be considered either too high or too uneven levels of pressures. Image of how does it affects the sliver is shown in Figure \ref{fig:sliverComparison}.
 \begin{figure}
 	\centering
 	\begin{subfigure}{0.5\textwidth}
@@ -916,7 +950,7 @@ The solution was found by artificially simulating defects. This could be done by
 	\caption{Visual Quality Comparison of Slivers}
 	\label{fig:sliverComparison}
 \end{figure}
-Using this method of simulating defects 6 data sets were measured. Their properties are listed in table \ref{tab:measuredData}.
+Using this method of simulating defects 6 data sets were measured. Their properties are listed in Table \ref{tab:measuredData}.
 \begin{table}[htbp]
 	\centering
 	\caption{Measured data and their properties}
@@ -934,11 +968,11 @@ Using this method of simulating defects 6 data sets were measured. Their propert
 	\end{tabular}%
 	\label{tab:measuredData}%
 \end{table}%
-All the datasets were measured with the same sliver speed $v_s=30cm/s$. This is important for the calculation of the wavelengths, which is described in section \ref{sec:WavelengthSpecification}).
+All the datasets were measured with the same sliver speed $v_s=30\,cm/s$. This is important for the calculation of the wavelengths, which is described in section \ref{sec:WavelengthSpecification}).
 The dataset 6 is a special case where no sliver was placed into the combing machine. This was for the purpose of measuring distorting frequencies caused by vibrations of the gears (see chapter \ref{sec:spectrumFiltration}). Without a sliver as input only these frequencies are measured by the sensor.
 
 \subsection{Algorithm Results}
-The algorithm was tested on the data described in table \ref{tab:measuredData}. To meet the requirements for the device, a result should have following properties:
+The algorithm was tested on the data described in Table \ref{tab:measuredData}. To meet the requirements for the device, a result should have following properties:
 \begin{itemize}
 	\setlength{\itemsep}{5pt}
 	\item Result should have form of variance-length curve.
@@ -947,8 +981,8 @@ The algorithm was tested on the data described in table \ref{tab:measuredData}. 
 
 Slivers with good visual quality are expected to have lower CV\% values than the one with a bad visual quality. This expectation is based on how is the CV\% calculated (see \ref{sec:CoefficientOfvariation}). Another expectation is that the variance-length should be decreasing for the longer wavelengths unless there is a defect on the corresponding wavelength in the sliver.
 
-Variance-length curve calculated on the dataset 5 (see section \ref{sec:measurement}) is shown in the figure \ref{fig:sub_dataset5}. Accordingly to the table \ref{tab:measuredData}, we can state that the sliver in this dataset is of very good visual quality and it was with a low amount of simulated defects. For comparison, the sliver with worse visual quality from dataset 2 is shown in figure \ref{fig:sub_dataset2}. From the \ref{fig:vlc_curves} it is observable that the sliver in dataset 5 has lower CV\% values for all of the wavelengths than sliver in dataset 2. Thus, it has smaller variance and we can state that the quality of the sliver is higher. This observation corresponds to the visual quality of slivers.
-It can also be seen that the shapes of variance-length curves are very similar in both of them. This is due to the fact that used slivers are, in fact, the same one and only difference is in added simulated defects. These defects are significant in wavelengths smaller than $\lambda=16cm$ after which the CV\% values are on an equivalent level. If it would be possible to simulate defect only on a specific wavelength, it would be distinguishable in charts as a peak. 
+Variance-length curve calculated on the dataset 5 (see section \ref{sec:measurement}) is shown in the Figure \ref{fig:sub_dataset5}. Accordingly to the Table \ref{tab:measuredData}, we can state that the sliver in this dataset is of very good visual quality and it was with a low amount of simulated defects. For comparison, the sliver with worse visual quality from dataset 2 is shown in Figure \ref{fig:sub_dataset2}. From the \ref{fig:vlc_curves} it is observable that the sliver in dataset 5 has lower CV\% values for all of the wavelengths than sliver in dataset 2. Thus, it has smaller variance and we can state that the quality of the sliver is higher. This observation corresponds to the visual quality of slivers.
+It can also be seen that the shapes of variance-length curves are very similar in both of them. This is due to the fact that used slivers are, in fact, the same one and only difference is in added simulated defects. These defects are significant in wavelengths smaller than $\lambda=16\,cm$ after which the CV\% values are on an equivalent level. If it would be possible to simulate defect only on a specific wavelength, it would be distinguishable in charts as a peak. 
 
 \begin{figure}
 	\centering
@@ -968,9 +1002,9 @@ It can also be seen that the shapes of variance-length curves are very similar i
 	\label{fig:vlc_curves}
 \end{figure}
 
-The plot of results for the datasets 3-5 is shown in figure \ref{fig:VLC_3_4_5}. All of these datasets were measured with slivers whose visual quality was rated as good or excellent (in the case of dataset 5). This comparison can be considered as a prove that the algorithm is capable of distinguishing slivers of very similar quality. This can be stated because the dataset 5 appears in the chart as superior in terms of quality, which corresponds with its visual quality rating \textit{excellent}. Visual check of the slivers in datasets 3 and 4 could not determine which has better quality as they were both rated \textit{good}.But it is clearly determinable from the variance-length curve that dataset 4 has better quality.
+The plot of results for the datasets 3-5 is shown in Figure \ref{fig:VLC_3_4_5}. All of these datasets were measured with slivers whose visual quality was rated as good or excellent (in the case of dataset 5). This comparison can be considered as a prove that the algorithm is capable of distinguishing slivers of very similar quality. This can be stated because the dataset 5 appears in the chart as superior in terms of quality, which corresponds with its visual quality rating \textit{excellent}. Visual check of the slivers in datasets 3 and 4 could not determine which has better quality as they were both rated \textit{good}.But it is clearly determinable from the variance-length curve that dataset 4 has better quality.
 
-It is interesting to observe that although the dataset 5 has the best quality as determined by visual check and variance-length curve, there is an exception to this statement on wavelength $\lambda=32cm$. From the plot \ref{fig:VLC_3_4_5} it can be seen as a little peak. This is especially visible in comparison with the dataset 4, which doesn't contain this defect. This tells us that there is a small defect on this particular wavelength. And even though the defect is not visible in the sliver, it can cause a visible periodic error in the final product.
+It is interesting to observe that although the dataset 5 has the best quality as determined by visual check and variance-length curve, there is an exception to this statement on wavelength $\lambda=32\,cm$. From the plot \ref{fig:VLC_3_4_5} it can be seen as a little peak. This is especially visible in comparison with the dataset 4, which doesn't contain this defect. This tells us that there is a small defect on this particular wavelength. And even though the defect is not visible in the sliver, it can cause a visible periodic error in the final product.
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=1.0\textwidth]{VLC_curves_3_4_5.eps}
@@ -978,7 +1012,7 @@ It is interesting to observe that although the dataset 5 has the best quality as
 	\label{fig:VLC_3_4_5}
 \end{figure}
 
-Comparison of the results of the algorithm on all datasets 1-5 is shown in the figure \ref{fig:VLC_all}.
+Comparison of the results of the algorithm on all datasets 1-5 is shown in the Figure \ref{fig:VLC_all}.
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=1.0\textwidth]{VLC_allCurves.eps}
@@ -1018,7 +1052,7 @@ The microcontroller is based on ARM Cortex-M4 technology with ARMv7 architecture
 \subsection{Algorithm for Yarn Quality Analysis}
 Digital signal processing algorithm for evaluation of yarn quality is based on the idea described in \cite{cite:1}. Its implementation is similar to the algorithm for sliver quality analysis (see chapter \ref{algorithmForSliver}) but has certain important differences. The first difference is caused by distinct required output of the algorithm. For a sliver it was the variance-length curve, but for a yarn it is spectrogram (see chapter \ref{SpecExplained}). This modifies some of the software components used for slivers.
 
-The block diagram (shown in figure \ref{fig:software_overview_yarn}) of the software remains the same with two exceptions:
+The block diagram (shown in Figure \ref{fig:software_overview_yarn}) of the software remains the same with two exceptions:
 \begin{itemize}
 	\setlength{\itemsep}{5pt}
 	\item Output of each processing branch is partial spectrogram. 
@@ -1031,10 +1065,10 @@ The block diagram (shown in figure \ref{fig:software_overview_yarn}) of the soft
 	\label{fig:software_overview_yarn}
 \end{figure}
 
-To obtain spectrogram it is necessary to calculate frequency spectrum. But it is not possible to store sufficient amount of samples in the microcontroller to determine the frequency spectrum of very low frequencies (i.e. high wavelengths) with adequate resolution. For this reason, the multi-rate analysis needs to be implemented. This uses decimation and appropriate filtration to obtain signals which contain only frequencies for particular wavelengths. The frequency spectrum is calculated by FFT from these signals and its components are used for calculation of spectrogram. Processed are the same wavelengths as in the sliver analysis, which are described in table \ref{tab:Wavelengths}.
+To obtain spectrogram it is necessary to calculate frequency spectrum. But it is not possible to store sufficient amount of samples in the microcontroller to determine the frequency spectrum of very low frequencies (i.e. high wavelengths) with adequate resolution. For this reason, the multi-rate analysis needs to be implemented. This uses decimation and appropriate filtration to obtain signals which contain only frequencies for particular wavelengths. The frequency spectrum is calculated by FFT from these signals and its components are used for calculation of spectrogram. Processed are the same wavelengths as in the sliver analysis, which are described in Table \ref{tab:Wavelengths}.
 
 \subsection{Processing Branch}
-In processing branch for yarn quality analysis signal is first filtered by FIR filter that is described in \ref{FIR filter}. This prevents aliasing that could occur after downsampling, which is done as the next step of processing. This filtration and downsampling are executed sample-to-sample. After each sample passes the decimation, it is buffered for calculation of FFT. Also, it is used as input sample in the next processing branch. The software block diagram of each processing branch is in figure \ref{fig:singleBranch_yarn}.
+In processing branch for yarn quality analysis signal is first filtered by FIR filter that is described in \ref{FIR filter}. This prevents aliasing that could occur after downsampling, which is done as the next step of processing. This filtration and downsampling are executed sample-to-sample. After each sample passes the decimation, it is buffered for calculation of FFT. Also, it is used as input sample in the next processing branch. The software block diagram of each processing branch is in Figure \ref{fig:singleBranch_yarn}.
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=1.0\textwidth]{yarn_singleBranch.eps}
@@ -1045,12 +1079,12 @@ In processing branch for yarn quality analysis signal is first filtered by FIR f
 As yarn processing branch is equal in many components with the processing branch for sliver (see chapter \ref{processingBranch_sliver}) only blocks that differ are described in detail in following paragraphs.
 
 \subsubsection{Windowing}
-Before calculation of FFT can be executed an operation called windowing is performed. This can prevent leakage and smearing (see chapter \ref{sec:DiscreteFourierTransform}), which are effects that are distorting the frequency spectrum obtained by FFT. Used window is Hann (or Hanning) of length 1024. It is shown in figure \ref{fig:windowComparison} in attachments to this thesis.
+Before calculation of FFT can be executed an operation called windowing is performed. This can prevent leakage and smearing (see chapter \ref{sec:DiscreteFourierTransform}), which are effects that are distorting the frequency spectrum obtained by FFT. Used window is Hann (or Hanning) of length 1024. It is shown in Figure \ref{fig:windowComparison} in attachments to this thesis.
 
 \subsubsection{Spectrogram Calculation}
 Spectrograms used in textile industry are explained in chapter \ref{SpecExplained}. For calculation of spectrogram in this application is used frequency spectrum obtained by FFT. The FFT output in each stage has a length of 1024 and spectrogram can be obtained by summing some of its samples. 
 
-The full spectrogram is formed of partial spectrograms, each of them calculated in one processing branch. Each of the processing branches can give information about certain range of wavelengths determined by $\lambda_{min}$ and $\lambda_{max}$ (see table \ref{tab:Wavelengths}). In frequency spectrum these wavelengths corresponds to frequency from $f_s/4$ to $f_s/2$. In the output of the FFT, this frequency range is mapped into frequency bins from $L/4$ to $L/2$, where $L$ is the length of the FFT output (for this application $L=1024$). Thus, the partial spectrogram is obtained by summing the frequency bins in this range. 
+The full spectrogram is formed of partial spectrograms, each of them calculated in one processing branch. Each of the processing branches can give information about certain range of wavelengths determined by $\lambda_{min}$ and $\lambda_{max}$ (see Table \ref{tab:Wavelengths}). In frequency spectrum these wavelengths corresponds to frequency from $f_s/4$ to $f_s/2$. In the output of the FFT, this frequency range is mapped into frequency bins from $L/4$ to $L/2$, where $L$ is the length of the FFT output (for this application $L=1024$). Thus, the partial spectrogram is obtained by summing the frequency bins in this range. 
 This would be true if partial spectrogram was represented by only one column (or bin) in a full spectrogram. However, that would yield a poor resolution of the result. Therefore, the frequency range for summing is split between several bins, which create the partial spectrogram. The number of bins in partial spectrogram was determined as 5 as this yields sufficient resolution and still fulfills the real-time constraints of the application. 
 
 Unfortunately, dividing the frequency spectrum is more complicated because the resulting spectrogram has to be equidistant in logarithmic scale. This is necessary for displaying all the wavelengths at once. Thus, the division needs to respect this requirement. The logarithmic scale implies that ratio between two adjacent points is a constant. This can be described by equation $x[n]=x[n-1]\cdot q$ where $n=1\ldots N$.
@@ -1062,7 +1096,7 @@ Now, by realizing that after 5 multiplications (number of bins $N=5$ for one sta
 \begin{equation} \label{eq:spectro2}
 	q={\left(\frac{L/4}{L/2}\right)}^{\frac{1}{N}}={\left(\frac{1}{2}\right)}^{\frac{1}{N}}=0.8706
 \end{equation}
-With the coefficient $q$ we can simply put the corresponding numbers to the equation \ref{eq:spectro1} for $n=1\ldots N$. The results are border values (as frequency bins) of all the 5 bins and they are shown in table \ref{tab:indiciesBins}.
+With the coefficient $q$ we can simply put the corresponding numbers to the equation \ref{eq:spectro1} for $n=1\ldots N$. The results are border values (as frequency bins) of all the 5 bins and they are shown in Table \ref{tab:indiciesBins}.
 
 \begin{table}[htbp]
 	\centering
@@ -1078,10 +1112,10 @@ With the coefficient $q$ we can simply put the corresponding numbers to the equa
 \end{table}%
 
 \subsubsection{Correction of Spectrum}
-Frequency bins from table \ref{tab:indiciesBins} has to be summed to obtain one spectrogram bin. Before this step is executed a correction has to be made. This is a process that corrects the amplitudes of the frequency spectrum, which are distorted because the frequency response of the used FIR filter (see figure \ref{fig:MagnitudeResponse}) is not equal in the passband. Therefore, correction coefficients were obtained from the magnitude response. This was done by scaling left half of magnitude response (the passband) to the same scale as useful frequency bins (1-512). The process of correction is now done by dividing the frequency bins by the corresponding value on the scaled magnitude response. This equalizes the passband of the filter and allows to generate non-distorted spectrogram.
+Frequency bins from Table \ref{tab:indiciesBins} has to be summed to obtain one spectrogram bin. Before this step is executed a correction has to be made. This is a process that corrects the amplitudes of the frequency spectrum, which are distorted because the frequency response of the used FIR filter (see Figure \ref{fig:MagnitudeResponse}) is not equal in the passband. Therefore, correction coefficients were obtained from the magnitude response. This was done by scaling left half of magnitude response (the passband) to the same scale as useful frequency bins (1-512). The process of correction is now done by dividing the frequency bins by the corresponding value on the scaled magnitude response. This equalizes the passband of the filter and allows to generate non-distorted spectrogram.
 
 \subsubsection{Summation of the Frequency Bins}
-The summation is done over the ranges noted in table \ref{tab:indiciesBins}. After all the values in given range are summed an effective value of the spectrum (RMS) is calculated. This is described in \cite{cite:1} and the equation for obtaining the RMS values of the spectrum $X$ is  
+The summation is done over the ranges noted in Table \ref{tab:indiciesBins}. After all the values in given range are summed an effective value of the spectrum (RMS) is calculated. This is described in \cite{cite:1} and the equation for obtaining the RMS values of the spectrum $X$ is  
 \begin{equation} \label{eq:spectro3}
 	RMS[k]=\frac{\sqrt{2}}{L}\cdot \sqrt{|X[k]|^2},
 \end{equation}
@@ -1093,7 +1127,7 @@ Using the formula \ref{eq:spectro3} and border values from the indicies vector $
 This calculation is done in each processing branch, thus, we obtain 12 partial spectrograms, each containing $N$ spectrogram bins.
 
 \subsection{Compilation of Full Spectrogram}
-Now, that we have the partial spectrograms, we need to compile them in one full spectrogram. This is done simply by concatenating the partial spectrogram with the partial spectrogram of another branch. Doing this for all branches consequently, creates a vector of length $N\cdot 12$, with values to the left belonging to the first processing branch. This process is explained in the figure \ref{fig:yarnSpec_color} which shows resulting spectrogram with color separation of each partial spectrogram. Every 5 bins, distinguished by color, are the result of a one processing branch.
+Now, that we have the partial spectrograms, we need to compile them in one full spectrogram. This is done simply by concatenating the partial spectrogram with the partial spectrogram of another branch. Doing this for all branches consequently, creates a vector of length $N\cdot 12$, with values to the left belonging to the first processing branch. This process is explained in the Figure \ref{fig:yarnSpec_color} which shows resulting spectrogram with color separation of each partial spectrogram. Every 5 bins, distinguished by color, are the result of a one processing branch.
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=1.0\textwidth]{sp_barevny.eps}
@@ -1102,7 +1136,7 @@ Now, that we have the partial spectrograms, we need to compile them in one full 
 \end{figure}
 
 \subsection{Measurement and Testing}
-For testing of yarn analysis algorithm no particular measurements had to be done because three datasets of measured yarn diameter by raw camera sensor were already available from Rieter. The description of the datasets is in table \ref{tab:measuredDataYarn}. The visual quality of the yarn could not be evaluated by naked eye since the diameter is in a range of micrometers. Thus, to obtain datasets of poor quality a yarn was found that caused the periodical defect in the final product - the cloth.
+For testing of yarn analysis algorithm no particular measurements had to be done because three datasets of measured yarn diameter by raw camera sensor were already available from Rieter. The description of the datasets is in Table \ref{tab:measuredDataYarn}. The visual quality of the yarn could not be evaluated by naked eye since the diameter is in a range of micrometers. Thus, to obtain datasets of poor quality a yarn was found that caused the periodical defect in the final product - the cloth.
 \begin{table}[htbp]
 	\centering
 	\caption{Measured yarn data and their properties}
@@ -1117,10 +1151,10 @@ For testing of yarn analysis algorithm no particular measurements had to be done
 	\end{tabular}%
 	\label{tab:measuredDataYarn}%
 \end{table}%
-Data were measured with sampling frequency $f_s=2400 Hz$ but for testing purposes they were decimated with factor $M = 5$ to $f_s=480Hz$. The yarn speed $v_y$ (speed of the material during the process of spinning) was $v_y=30cm/s$.
+Data were measured with sampling frequency $f_s=2400\,Hz$ but for testing purposes they were decimated with factor $M = 5$ to $f_s=480\,Hz$. The yarn speed $v_y$ (speed of the material during the process of spinning) was $v_y=30\,cm/s$.
 
 \subsection{Algorithm Results}
-Algorithm for yarn quality analysis was tested on the datasets described in the table \ref{tab:measuredDataYarn}. The result in the form of the full spectrogram is shown in figure \ref{fig:yarnSpec_1}. This particular spectrogram is calculated on dataset 1.
+Algorithm for yarn quality analysis was tested on the datasets described in the Table \ref{tab:measuredDataYarn}. The result in the form of the full spectrogram is shown in Figure \ref{fig:yarnSpec_1}. This particular spectrogram is calculated on dataset 1.
 
 \begin{figure}[h]
 	\centering
@@ -1128,7 +1162,7 @@ Algorithm for yarn quality analysis was tested on the datasets described in the 
 	\caption{Spectrogram Example with Highlighted Partial Spectrograms}
 	\label{fig:yarnSpec_1}
 \end{figure}
-Detection of the defects from spectrogram is shown in figure \ref{fig:specComparison}. The subfigure \ref{fig:specData2} contains the spectrogram of the dataset 2, thus, it should contain little or no defect. In the other subfigure \ref{fig:specData3} is shown the spectrogram of the dataset 3, which should contain significant defects.
+Detection of the defects from spectrogram is shown in Figure \ref{fig:specComparison}. The subfigure \ref{fig:specData2} contains the spectrogram of the dataset 2, thus, it should contain little or no defect. In the other subfigure \ref{fig:specData3} is shown the spectrogram of the dataset 3, which should contain significant defects.
 \begin{figure}
 	\centering
 	\begin{subfigure}{0.5\textwidth}
@@ -1148,7 +1182,7 @@ Detection of the defects from spectrogram is shown in figure \ref{fig:specCompar
 	\label{fig:specComparison}
 \end{figure}
 
-Spectrograms shown in \ref{fig:specComparison} are zoomed to the are showing only 8 partial spectrograms and not full spectrogram for the reason of figure clarity. In the subfigure \ref{fig:specData3} there are clearly visible peaks, which denote that on the particular wavelengths there are periodical defects of the yarn. From these results, it is possible to say that the algorithm can clearly distinguish the yarn quality. Therefore, the primary requirement is fulfilled.
+Spectrograms shown in Figure \ref{fig:specComparison} are zoomed to the are showing only 8 partial spectrograms and not full spectrogram for the reason of figure clarity. In the subfigure \ref{fig:specData3} there are clearly visible peaks, which denote that on the particular wavelengths there are periodical defects of the yarn. From these results, it is possible to say that the algorithm can clearly distinguish the yarn quality. Therefore, the primary requirement is fulfilled.
 
 \subsubsection{Alarm Function}
 As an enhancement of the algorithm an automatic evaluation was also tested. This was done using empirically derived equation \ref{eq:alarmFunction} for spectrogram alarm function $a$ (taken from \cite{cite:1}). The only user definable parameter of the alarm function is \textit{CA} (Coefficient of Alarm) which can range from 0 to 1. Where setting lower number means that alarm gets triggered for defects with lesser significance.
@@ -1164,14 +1198,14 @@ Now, that we have alarm function $a$, then an alarm is triggered when
 \begin{equation} \label{eq:alarmTrig}
 	SPC[i] \geq a[i], \text{for } i=1\ldots N \cdot 12.
 \end{equation}
-When this occurs, service personnel can react by changing yarn source or by resolving any possible mechanical defect on the spinning machine. Example of alarm function in spectrogram is shown in figure \ref{fig:alarm1}.
+When this occurs, service personnel can react by changing yarn source or by resolving any possible mechanical defect on the spinning machine. Example of alarm function in spectrogram is shown in Figure \ref{fig:alarm1}.
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.75\textwidth]{prize1_alarm.eps}
 	\caption{Spectrogram with alarm function}
 	\label{fig:alarm1}
 \end{figure}
-Effect of \textit{CA} (Coefficient of Alarm) is shown in figure \ref{fig:alarm2}. It contains comparison of two alarm functions with different \textit{CA}. From the figure we can see that alarm with higher \textit{CA} would not be triggered by this defects. Alarm with lower \textit{CA} would get triggered as condition \ref{eq:alarmTrig} is fulfilled.
+Effect of \textit{CA} (Coefficient of Alarm) is shown in Figure \ref{fig:alarm2}. It contains comparison of two alarm functions with different \textit{CA}. From the Figure we can see that alarm with higher \textit{CA} would not be triggered by this defects. Alarm with lower \textit{CA} would get triggered as condition \ref{eq:alarmTrig} is fulfilled.
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.75\textwidth]{moire1_alarm.eps}
